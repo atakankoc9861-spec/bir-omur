@@ -1,0 +1,2238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bir-omur/content/countries/_sablon.schema.json",
+  "title": "Bir Ömür ülke profili (şablon v0.2)",
+  "description": "K1 ülke profillerinin biçimsel şeması. Açıklamalar: _sablon.md. '_' ile başlayan anahtarlar serbest açıklamadır. Ek kurallar (kaynak kimlikleri, durum zinciri, oyunda_kullanilabilir tutarlılığı, havuz bağlantıları, dönem sırası) scripts/validate_countries.py içinde.",
+  "type": "object",
+  "patternProperties": {
+    "^_": {}
+  },
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "kaynaklar",
+    "yerelSayilar",
+    "dil",
+    "din",
+    "topluluklar",
+    "egitim",
+    "askerlik",
+    "emeklilik",
+    "evlilikAile",
+    "isimler",
+    "meslekler",
+    "konut",
+    "ulasim",
+    "saglik",
+    "goc",
+    "tarihselOlaylar",
+    "icBolgeler",
+    "gunlukHayat",
+    "hassasiyet",
+    "acikSorular"
+  ],
+  "$defs": {
+    "durum": {
+      "enum": [
+        "dogrulandi",
+        "dogrulanmali",
+        "tahmin",
+        "bos"
+      ]
+    },
+    "yil": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1800,
+      "maximum": 2100
+    },
+    "yilZorunlu": {
+      "type": "integer",
+      "minimum": 1800,
+      "maximum": 2100
+    },
+    "kaynakListesi": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "metinler": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gelirDilimi": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "kentKir": {
+      "enum": [
+        "kent",
+        "kir",
+        "ikisi"
+      ]
+    },
+    "bilgiAlanlari": {
+      "description": "Her bilgi kaydında bulunan ortak alanlar. Doğrudan kullanılmaz; her kayıt bunları ayrıca listeler (additionalProperties nedeniyle).",
+      "type": "object"
+    },
+    "agirlik": {
+      "description": "Çekiliş ağırlığı. Değer 0-1 arası pay. Değer çoğunlukla Veri departmanının serisinden gelir; o zaman veriAnahtari doldurulur ve deger null kalabilir.",
+      "type": "object",
+      "patternProperties": {
+        "^_": {}
+      },
+      "additionalProperties": false,
+      "required": [
+        "deger",
+        "veriAnahtari",
+        "kaynak",
+        "durum",
+        "oyunda_kullanilabilir"
+      ],
+      "properties": {
+        "deger": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "aralik": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "veriAnahtari": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z0-9]+(\\.[a-zA-Z0-9_-]+)+$"
+        },
+        "kaynak": {
+          "$ref": "#/$defs/kaynakListesi"
+        },
+        "durum": {
+          "$ref": "#/$defs/durum"
+        },
+        "oyunda_kullanilabilir": {
+          "type": "boolean"
+        },
+        "not": {
+          "type": "string"
+        },
+        "atakan_karari_bekliyor": {
+          "type": "string"
+        }
+      }
+    },
+    "olcek": {
+      "type": "object",
+      "patternProperties": {
+        "^_": {}
+      },
+      "additionalProperties": false,
+      "required": [
+        "deger",
+        "birim",
+        "kaynak",
+        "durum",
+        "oyunda_kullanilabilir"
+      ],
+      "properties": {
+        "deger": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "birim": {
+          "type": "string"
+        },
+        "yil": {
+          "$ref": "#/$defs/yil"
+        },
+        "kaynak": {
+          "$ref": "#/$defs/kaynakListesi"
+        },
+        "durum": {
+          "$ref": "#/$defs/durum"
+        },
+        "oyunda_kullanilabilir": {
+          "type": "boolean"
+        },
+        "not": {
+          "type": "string"
+        }
+      }
+    },
+    "kayit": {
+      "description": "Serbest metinli basit bilgi kaydı (özet, not vb.)",
+      "type": "object",
+      "patternProperties": {
+        "^_": {}
+      },
+      "additionalProperties": false,
+      "required": [
+        "kaynak",
+        "durum",
+        "oyunda_kullanilabilir"
+      ],
+      "properties": {
+        "ozet": {
+          "type": "string"
+        },
+        "not": {
+          "type": "string"
+        },
+        "notlar": {
+          "type": "string"
+        },
+        "yasal": {
+          "type": "boolean"
+        },
+        "taniniyor": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "yilBas": {
+          "$ref": "#/$defs/yil"
+        },
+        "yilSon": {
+          "$ref": "#/$defs/yil"
+        },
+        "veriAnahtari": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kaynak": {
+          "$ref": "#/$defs/kaynakListesi"
+        },
+        "durum": {
+          "$ref": "#/$defs/durum"
+        },
+        "oyunda_kullanilabilir": {
+          "type": "boolean"
+        },
+        "atakan_karari_bekliyor": {
+          "type": "string"
+        }
+      }
+    },
+    "donemliKayit": {
+      "type": "object",
+      "required": [
+        "yilBas",
+        "yilSon",
+        "kaynak",
+        "durum",
+        "oyunda_kullanilabilir"
+      ],
+      "properties": {
+        "yilBas": {
+          "$ref": "#/$defs/yilZorunlu"
+        },
+        "yilSon": {
+          "$ref": "#/$defs/yil"
+        }
+      }
+    }
+  },
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "iso3",
+        "adTr",
+        "adYerel",
+        "katman",
+        "bolge",
+        "sablonSurumu",
+        "hazirlayan",
+        "tarih",
+        "denetim"
+      ],
+      "properties": {
+        "iso3": {
+          "type": "string",
+          "pattern": "^([A-Z]{3}|OWID_[A-Z]{3})$"
+        },
+        "adTr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adYerel": {
+          "type": "string"
+        },
+        "katman": {
+          "enum": [
+            "K1",
+            "K2",
+            "K3"
+          ]
+        },
+        "bolge": {
+          "type": "string",
+          "pattern": "^R(0[1-9]|1[0-3])$"
+        },
+        "sablonSurumu": {
+          "type": "string"
+        },
+        "hazirlayan": {
+          "type": "string"
+        },
+        "tarih": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "denetim": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "durum",
+            "belge"
+          ],
+          "properties": {
+            "durum": {
+              "enum": [
+                "bekliyor",
+                "gecti",
+                "sartli_gecti",
+                "reddedildi"
+              ]
+            },
+            "belge": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "kaynaklar": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ad",
+          "kurum",
+          "url",
+          "yil",
+          "erisim",
+          "lisans",
+          "tur",
+          "not"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "ad": {
+            "type": "string"
+          },
+          "kurum": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "yil": {
+            "$ref": "#/$defs/yil"
+          },
+          "erisim": {
+            "type": "string"
+          },
+          "lisans": {
+            "type": "string"
+          },
+          "tur": {
+            "enum": [
+              "birincil",
+              "ikincil",
+              "kaynaksiz"
+            ]
+          },
+          "birincilAdres": {
+            "type": "string"
+          },
+          "not": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "yerelSayilar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ad",
+          "yil",
+          "deger",
+          "birim",
+          "veriAnahtari",
+          "kaynak",
+          "durum",
+          "oyunda_kullanilabilir"
+        ],
+        "properties": {
+          "ad": {
+            "type": "string"
+          },
+          "yil": {
+            "$ref": "#/$defs/yil"
+          },
+          "deger": {
+            "type": [
+              "number",
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "number"
+            }
+          },
+          "birim": {
+            "type": "string"
+          },
+          "veriAnahtari": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kaynak": {
+            "$ref": "#/$defs/kaynakListesi"
+          },
+          "durum": {
+            "$ref": "#/$defs/durum"
+          },
+          "oyunda_kullanilabilir": {
+            "type": "boolean"
+          },
+          "not": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dil": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resmi",
+        "konusulanlar",
+        "donemSecimi",
+        "donemler"
+      ],
+      "properties": {
+        "resmi": {
+          "$ref": "#/$defs/metinler"
+        },
+        "konusulanlar": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "ad",
+              "agirlik",
+              "bolgeler",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "ad": {
+                "type": "string"
+              },
+              "agirlik": {
+                "$ref": "#/$defs/agirlik"
+              },
+              "bolgeler": {
+                "$ref": "#/$defs/metinler"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              },
+              "not": {
+                "type": "string"
+              },
+              "atakan_karari_bekliyor": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "donemSecimi": {
+          "type": "string"
+        },
+        "donemler": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              }
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "yilBas": {},
+              "yilSon": {},
+              "okulDili": {
+                "$ref": "#/$defs/metinler"
+              },
+              "kisitlamalar": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "din": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resmiVeriVar",
+        "dagilim",
+        "devletDinIliskisi",
+        "notlar"
+      ],
+      "properties": {
+        "resmiVeriVar": {
+          "type": "boolean"
+        },
+        "dagilim": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "grup",
+              "ustGrup",
+              "altGruplar",
+              "agirlik",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "grup": {
+                "type": "string"
+              },
+              "ustGrup": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Başka bir dagilim kaydının id'si. Pay hesabında alt kaydın payı üst kaydın İÇİNDE sayılır; aynı topluluk iki ayrı kökte yer alamaz."
+              },
+              "altGruplar": {
+                "$ref": "#/$defs/metinler"
+              },
+              "agirlik": {
+                "$ref": "#/$defs/agirlik"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              },
+              "not": {
+                "type": "string"
+              },
+              "kendiniTanimlama": {
+                "type": "string"
+              },
+              "atakan_karari_bekliyor": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "devletDinIliskisi": {
+          "$ref": "#/$defs/kayit"
+        },
+        "notlar": {
+          "type": "string"
+        }
+      }
+    },
+    "topluluklar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ad",
+          "tur",
+          "diller",
+          "dinler",
+          "icBolgeler",
+          "isimHavuzlari",
+          "yedekHavuz",
+          "havuzHazir",
+          "agirlik",
+          "kaynak",
+          "durum",
+          "oyunda_kullanilabilir"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "ad": {
+            "type": "string"
+          },
+          "kendiAdi": {
+            "type": "string"
+          },
+          "tur": {
+            "enum": [
+              "etnikDil",
+              "gocmen",
+              "dini"
+            ]
+          },
+          "diller": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "dil.konusulanlar id'leri"
+          },
+          "dinler": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "din.dagilim id'leri; topluluk içinde dinin ayrıca çekilebileceği seçenekler"
+          },
+          "icBolgeler": {
+            "$ref": "#/$defs/metinler"
+          },
+          "isimHavuzlari": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "yedekHavuz": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Topluluğun kendi havuzu boşken (ya da hiç yokken) genel havuzu açıkça kullanıp kullanamayacağı. 'genel' ise motor bu topluluğa genel havuzdan isim verir; null ise vermez. Varsayılan null: yedek, gerekçe ve kaynak ister.",
+            "required": [
+              "havuz",
+              "gerekce",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "havuz": {
+                "enum": [
+                  "genel",
+                  null
+                ]
+              },
+              "gerekce": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          },
+          "havuzHazir": {
+            "type": "boolean",
+            "description": "true ancak: (a) isimHavuzlari dolu ve hepsi dolu, ya da (b) yedekHavuz.havuz == 'genel' ve genel havuzların hepsi dolu. false ise motor bu topluluğu çekilişte KULLANMAZ."
+          },
+          "yilBas": {
+            "$ref": "#/$defs/yil"
+          },
+          "agirlik": {
+            "$ref": "#/$defs/agirlik"
+          },
+          "kaynak": {
+            "$ref": "#/$defs/kaynakListesi"
+          },
+          "durum": {
+            "$ref": "#/$defs/durum"
+          },
+          "oyunda_kullanilabilir": {
+            "type": "boolean"
+          },
+          "not": {
+            "type": "string"
+          },
+          "hassasiyet": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "egitim": {
+      "type": "object",
+      "patternProperties": {
+        "^_": {}
+      },
+      "additionalProperties": false,
+      "required": [
+        "donemSecimi",
+        "donemler",
+        "sinavlar",
+        "okulTurleri",
+        "yuksekogretim",
+        "esitsizlikNotlari"
+      ],
+      "properties": {
+        "donemSecimi": {
+          "type": "string"
+        },
+        "donemler": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              }
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "zorunluYil",
+              "kademeler"
+            ],
+            "properties": {
+              "yilBas": {},
+              "yilSon": {},
+              "zorunluYil": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "kademeler": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "ad",
+                    "yasBas",
+                    "yasSon",
+                    "zorunlu"
+                  ],
+                  "properties": {
+                    "ad": {
+                      "type": "string"
+                    },
+                    "yasBas": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "yasSon": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "zorunlu": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "sinavlar": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ad",
+              "gecis",
+              "yas",
+              "yilBas",
+              "yilSon",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "ad": {
+                "type": "string"
+              },
+              "gecis": {
+                "enum": [
+                  "ortaogretim",
+                  "yuksekogretim",
+                  "kamuIs",
+                  "diger"
+                ]
+              },
+              "yas": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "yilBas": {
+                "$ref": "#/$defs/yilZorunlu"
+              },
+              "yilSon": {
+                "$ref": "#/$defs/yil"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              },
+              "not": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "okulTurleri": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "ad",
+              "ozellik",
+              "kimlerGider",
+              "agirlik",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "ad": {
+                "type": "string"
+              },
+              "ozellik": {
+                "type": "string"
+              },
+              "kimlerGider": {
+                "type": "string"
+              },
+              "agirlik": {
+                "$ref": "#/$defs/agirlik"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "yuksekogretim": {
+          "$ref": "#/$defs/kayit"
+        },
+        "esitsizlikNotlari": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kayit"
+          }
+        }
+      }
+    },
+    "askerlik": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "donemSecimi",
+        "donemler",
+        "vicdaniRet",
+        "notlar"
+      ],
+      "properties": {
+        "donemSecimi": {
+          "type": "string"
+        },
+        "donemler": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              }
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "zorunlu",
+              "kimler",
+              "yasAraligi",
+              "sure",
+              "bedelli"
+            ],
+            "properties": {
+              "yilBas": {},
+              "yilSon": {},
+              "zorunlu": {
+                "type": "boolean"
+              },
+              "kimler": {
+                "enum": [
+                  "erkek",
+                  "kadin",
+                  "herkes",
+                  "yok"
+                ]
+              },
+              "yasAraligi": {
+                "type": "array",
+                "prefixItems": [
+                  {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  }
+                ],
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "sure": {
+                "type": "object",
+                "description": "Ay cinsinden. Kim hangi türü yapar: _sablon.md 'Askerlik süre türleri'.",
+                "patternProperties": {
+                  "^_": {}
+                },
+                "additionalProperties": false,
+                "required": [
+                  "er"
+                ],
+                "properties": {
+                  "er": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "kisaDonem": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "yedekSubay": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "yedekAstsubay": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "bedelliTemelEgitim": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "bedelli": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "var",
+                  "not"
+                ],
+                "properties": {
+                  "var": {
+                    "type": "boolean"
+                  },
+                  "not": {
+                    "type": "string"
+                  }
+                }
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "vicdaniRet": {
+          "$ref": "#/$defs/kayit"
+        },
+        "notlar": {
+          "type": "string"
+        }
+      }
+    },
+    "emeklilik": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "donemSecimi",
+        "donemler",
+        "kayitDisi"
+      ],
+      "properties": {
+        "donemSecimi": {
+          "type": "string"
+        },
+        "donemler": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              }
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sistemler",
+              "yasKadin",
+              "yasErkek",
+              "baskaSart"
+            ],
+            "properties": {
+              "yilBas": {},
+              "yilSon": {},
+              "sistemler": {
+                "$ref": "#/$defs/metinler"
+              },
+              "yasKadin": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "yasErkek": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "baskaSart": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "kayitDisi": {
+          "$ref": "#/$defs/kayit"
+        }
+      }
+    },
+    "evlilikAile": {
+      "type": "object",
+      "patternProperties": {
+        "^_": {}
+      },
+      "additionalProperties": false,
+      "required": [
+        "yasalYas",
+        "ilkEvlilikYasOrt",
+        "eslesmeBicimleri",
+        "nikahTurleri",
+        "torenler",
+        "bosanma",
+        "aileYapisi",
+        "yasliBakimi",
+        "yasalDurumlar"
+      ],
+      "properties": {
+        "yasalYas": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              }
+            ],
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kadin",
+              "erkek",
+              "istisna"
+            ],
+            "properties": {
+              "yilBas": {},
+              "yilSon": {},
+              "kadin": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "erkek": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "istisna": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "ilkEvlilikYasOrt": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "yil",
+              "kadin",
+              "erkek",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "yil": {
+                "$ref": "#/$defs/yilZorunlu"
+              },
+              "kadin": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "erkek": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "veriAnahtari": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "eslesmeBicimleri": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "ad",
+              "yayginlik",
+              "kimlerde",
+              "agirlik",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "ad": {
+                "type": "string"
+              },
+              "yayginlik": {
+                "enum": [
+                  "cok yaygin",
+                  "yaygin",
+                  "bazi bolgelerde",
+                  "nadir"
+                ]
+              },
+              "kimlerde": {
+                "type": "string"
+              },
+              "agirlik": {
+                "$ref": "#/$defs/agirlik"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "nikahTurleri": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ad",
+              "yasalGecerlilik",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "ad": {
+                "type": "string"
+              },
+              "yasalGecerlilik": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "torenler": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ad",
+              "aciklama",
+              "kimlerde",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "ad": {
+                "type": "string"
+              },
+              "aciklama": {
+                "type": "string"
+              },
+              "kimlerde": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "bosanma": {
+          "$ref": "#/$defs/kayit"
+        },
+        "aileYapisi": {
+          "$ref": "#/$defs/kayit"
+        },
+        "yasliBakimi": {
+          "$ref": "#/$defs/kayit"
+        },
+        "yasalDurumlar": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "konu",
+              "deger",
+              "yilBas",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "konu": {
+                "type": "string"
+              },
+              "deger": {
+                "type": "string"
+              },
+              "yilBas": {
+                "$ref": "#/$defs/yil"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "isimler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "yapi",
+        "kaynakKurallari",
+        "havuzlar",
+        "soyadlari"
+      ],
+      "properties": {
+        "yapi": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "adSayisi",
+            "soyadi",
+            "evlilikteSoyadi",
+            "kaynak",
+            "durum",
+            "oyunda_kullanilabilir"
+          ],
+          "properties": {
+            "adSayisi": {
+              "type": "string"
+            },
+            "soyadi": {
+              "type": "string"
+            },
+            "evlilikteSoyadi": {
+              "type": "string"
+            },
+            "kaynak": {
+              "$ref": "#/$defs/kaynakListesi"
+            },
+            "durum": {
+              "$ref": "#/$defs/durum"
+            },
+            "oyunda_kullanilabilir": {
+              "type": "boolean"
+            }
+          }
+        },
+        "kaynakKurallari": {
+          "type": "string"
+        },
+        "havuzlar": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "cinsiyet",
+              "yilBas",
+              "yilSon",
+              "topluluk",
+              "din",
+              "agirlik",
+              "isimler",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "cinsiyet": {
+                "enum": [
+                  "kadin",
+                  "erkek"
+                ]
+              },
+              "yilBas": {
+                "$ref": "#/$defs/yilZorunlu",
+                "description": "Doğum yılı aralığı başı (dahil)"
+              },
+              "yilSon": {
+                "$ref": "#/$defs/yil",
+                "description": "Doğum yılı aralığı sonu (HARİÇ); null = bugüne kadar"
+              },
+              "topluluk": {
+                "type": "string",
+                "description": "'genel' ya da topluluklar[].id"
+              },
+              "din": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "null ya da din.dagilim[].id; dine özgü havuzlar için"
+              },
+              "agirlik": {
+                "$ref": "#/$defs/agirlik"
+              },
+              "isimler": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              },
+              "not": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "soyadlari": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "topluluk",
+              "isimler",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "topluluk": {
+                "type": "string"
+              },
+              "isimler": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              },
+              "not": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "meslekler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kent",
+        "kirsal"
+      ],
+      "properties": {
+        "kent": {
+          "type": "array",
+          "items": {
+            "$ref": "#/properties/meslekler/$defs/meslek"
+          }
+        },
+        "kirsal": {
+          "type": "array",
+          "items": {
+            "$ref": "#/properties/meslekler/$defs/meslek"
+          }
+        }
+      },
+      "$defs": {
+        "meslek": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "ad",
+            "gelirDilimi",
+            "kayitDisiRiski",
+            "yilBas",
+            "yilSon",
+            "bolgeler",
+            "agirlik",
+            "kaynak",
+            "durum",
+            "oyunda_kullanilabilir"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+$"
+            },
+            "ad": {
+              "type": "string"
+            },
+            "gelirDilimi": {
+              "$ref": "#/$defs/gelirDilimi"
+            },
+            "kayitDisiRiski": {
+              "enum": [
+                "dusuk",
+                "orta",
+                "yuksek"
+              ]
+            },
+            "yilBas": {
+              "$ref": "#/$defs/yilZorunlu"
+            },
+            "yilSon": {
+              "$ref": "#/$defs/yil"
+            },
+            "bolgeler": {
+              "$ref": "#/$defs/metinler"
+            },
+            "agirlik": {
+              "$ref": "#/$defs/agirlik"
+            },
+            "not": {
+              "type": "string"
+            },
+            "kaynak": {
+              "$ref": "#/$defs/kaynakListesi"
+            },
+            "durum": {
+              "$ref": "#/$defs/durum"
+            },
+            "oyunda_kullanilabilir": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "konut": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tipler"
+      ],
+      "properties": {
+        "tipler": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "ad",
+              "kentKir",
+              "gelirDilimi",
+              "yilBas",
+              "yilSon",
+              "bolgeler",
+              "agirlik",
+              "gorselNot",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$"
+              },
+              "ad": {
+                "type": "string"
+              },
+              "kentKir": {
+                "$ref": "#/$defs/kentKir"
+              },
+              "gelirDilimi": {
+                "$ref": "#/$defs/gelirDilimi"
+              },
+              "yilBas": {
+                "$ref": "#/$defs/yilZorunlu"
+              },
+              "yilSon": {
+                "$ref": "#/$defs/yil"
+              },
+              "bolgeler": {
+                "$ref": "#/$defs/metinler"
+              },
+              "agirlik": {
+                "$ref": "#/$defs/agirlik"
+              },
+              "gorselNot": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ulasim": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "arac",
+          "kentKir",
+          "gelirDilimi",
+          "yilBas",
+          "yilSon",
+          "agirlik",
+          "kaynak",
+          "durum",
+          "oyunda_kullanilabilir"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "arac": {
+            "type": "string"
+          },
+          "kentKir": {
+            "$ref": "#/$defs/kentKir"
+          },
+          "gelirDilimi": {
+            "$ref": "#/$defs/gelirDilimi"
+          },
+          "yilBas": {
+            "$ref": "#/$defs/yilZorunlu"
+          },
+          "yilSon": {
+            "$ref": "#/$defs/yil"
+          },
+          "agirlik": {
+            "$ref": "#/$defs/agirlik"
+          },
+          "not": {
+            "type": "string"
+          },
+          "kaynak": {
+            "$ref": "#/$defs/kaynakListesi"
+          },
+          "durum": {
+            "$ref": "#/$defs/durum"
+          },
+          "oyunda_kullanilabilir": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "saglik": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "donemSecimi",
+        "donemler",
+        "erisimFarklari"
+      ],
+      "properties": {
+        "donemSecimi": {
+          "type": "string"
+        },
+        "donemler": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              },
+              {
+                "$ref": "#/$defs/kayit"
+              }
+            ]
+          }
+        },
+        "erisimFarklari": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kayit"
+          }
+        }
+      }
+    },
+    "goc": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "tur",
+          "yilBas",
+          "yilSon",
+          "kimler",
+          "nereden",
+          "nereye",
+          "olcek",
+          "kaynak",
+          "durum",
+          "oyunda_kullanilabilir",
+          "hassasiyet"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "tur": {
+            "enum": [
+              "icGoc",
+              "disGoc",
+              "gelenGoc"
+            ]
+          },
+          "yilBas": {
+            "$ref": "#/$defs/yilZorunlu"
+          },
+          "yilSon": {
+            "$ref": "#/$defs/yil"
+          },
+          "kimler": {
+            "type": "string"
+          },
+          "nereden": {
+            "type": "string"
+          },
+          "nereye": {
+            "type": "string"
+          },
+          "olcek": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/olcek"
+            }
+          },
+          "kaynak": {
+            "$ref": "#/$defs/kaynakListesi"
+          },
+          "durum": {
+            "$ref": "#/$defs/durum"
+          },
+          "oyunda_kullanilabilir": {
+            "type": "boolean"
+          },
+          "hassasiyet": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tarihselOlaylar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "patternProperties": {
+          "^_": {}
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ad",
+          "yilBas",
+          "yilSon",
+          "tur",
+          "kapsam",
+          "etkilenenGruplar",
+          "etki",
+          "olcek",
+          "oyunNotu",
+          "hassasiyet",
+          "kaynak",
+          "durum",
+          "oyunda_kullanilabilir"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "ad": {
+            "type": "string"
+          },
+          "yilBas": {
+            "$ref": "#/$defs/yilZorunlu"
+          },
+          "yilSon": {
+            "$ref": "#/$defs/yil"
+          },
+          "tur": {
+            "enum": [
+              "savas",
+              "catisma",
+              "ekonomikKriz",
+              "afet",
+              "pandemi",
+              "darbe",
+              "siyasi",
+              "toplumsal",
+              "goc"
+            ]
+          },
+          "kapsam": {
+            "oneOf": [
+              {
+                "const": "ulusal"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "etkilenenGruplar": {
+            "$ref": "#/$defs/metinler"
+          },
+          "etki": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ekonomi": {
+                "type": "string"
+              },
+              "saglik": {
+                "type": "string"
+              },
+              "egitim": {
+                "type": "string"
+              },
+              "goc": {
+                "type": "string"
+              },
+              "guvenlik": {
+                "type": "string"
+              },
+              "gundelik": {
+                "type": "string"
+              }
+            }
+          },
+          "olcek": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/olcek"
+            }
+          },
+          "oyunNotu": {
+            "type": "string"
+          },
+          "hassasiyet": {
+            "type": "string"
+          },
+          "kaynak": {
+            "$ref": "#/$defs/kaynakListesi"
+          },
+          "durum": {
+            "$ref": "#/$defs/durum"
+          },
+          "oyunda_kullanilabilir": {
+            "type": "boolean"
+          },
+          "atakan_karari_bekliyor": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "icBolgeler": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ad",
+          "kapsam",
+          "kentlesme",
+          "ekonomi",
+          "dilDin",
+          "dogurganlik",
+          "konut",
+          "kaynak",
+          "durum",
+          "oyunda_kullanilabilir"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "ad": {
+            "type": "string"
+          },
+          "kapsam": {
+            "type": "string"
+          },
+          "kentlesme": {
+            "type": "string"
+          },
+          "ekonomi": {
+            "type": "string"
+          },
+          "dilDin": {
+            "type": "string"
+          },
+          "dogurganlik": {
+            "type": "string"
+          },
+          "konut": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "konut.tipler id'leri"
+          },
+          "veriAnahtari": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kaynak": {
+            "$ref": "#/$defs/kaynakListesi"
+          },
+          "durum": {
+            "$ref": "#/$defs/durum"
+          },
+          "oyunda_kullanilabilir": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "gunlukHayat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bayramlar",
+        "gecisTorenleri",
+        "yemek",
+        "medyaDonemleri",
+        "evcilHayvan"
+      ],
+      "properties": {
+        "bayramlar": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ad",
+              "tur",
+              "kimler",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "ad": {
+                "type": "string"
+              },
+              "tur": {
+                "enum": [
+                  "dini",
+                  "milli",
+                  "geleneksel"
+                ]
+              },
+              "kimler": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "gecisTorenleri": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ad",
+              "yas",
+              "kimler",
+              "aciklama",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "ad": {
+                "type": "string"
+              },
+              "yas": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "kimler": {
+                "type": "string"
+              },
+              "aciklama": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "yemek": {
+          "type": "string"
+        },
+        "medyaDonemleri": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/donemliKayit"
+              },
+              {
+                "$ref": "#/$defs/kayit"
+              }
+            ]
+          }
+        },
+        "evcilHayvan": {
+          "type": "string"
+        }
+      }
+    },
+    "hassasiyet": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "konu",
+          "neden",
+          "oneri"
+        ],
+        "properties": {
+          "konu": {
+            "type": "string"
+          },
+          "neden": {
+            "type": "string"
+          },
+          "oneri": {
+            "type": "string"
+          },
+          "atakan_karari_bekliyor": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "acikSorular": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

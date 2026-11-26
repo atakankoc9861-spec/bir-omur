@@ -1,0 +1,15 @@
+{
+  "_aciklama": "Oyunun ülke kodu (oyunKodu) ile veri dosyalarındaki kod (veriKodu) farklı olduğunda tek eşleme yeri. Motor ve profiller oyunKodu kullanır; Veri departmanının scriptleri veriKodu ile okuyup oyunKodu ile yazar. Veri kendi ülke kodu tablosunu kurduğunda bu dosya oraya taşınır ve buradan silinir.",
+  "surum": "0.1",
+  "tarih": "2026-11-26",
+  "eslemeler": [
+    {
+      "oyunKodu": "XKX",
+      "veriKodu": { "owid": "OWID_KOS", "bmWpp": null, "dunyaBankasi": "XKX" },
+      "adTr": "Kosova",
+      "bolge": "R13",
+      "not": "XKX resmî ISO 3166-1 kodu değil; Avrupa Birliği ve Dünya Bankası'nın kullandığı geçici koddur. OWID dosyasında Kosova ayrı satır (OWID_KOS, 2023: 20.514 doğum) ve Sırbistan'ın içinde sayılmıyor. BM WPP'nin kendi CSV'sinde Kosova'nın nasıl yer aldığı (ayrı satır mı, Sırbistan içinde mi) Veri tarafından kontrol edilmeli; bmWpp bu yüzden null. Dünya Bankası kodu doğrulanmalı.",
+      "durum": "dogrulanmali"
+    }
+  ]
+}

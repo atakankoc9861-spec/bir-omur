@@ -1,0 +1,6235 @@
+{
+  "_aciklama": "Türkiye K1 profili, şablonun tam doldurulmuş örneği (v0.2, Kalite denetimi sonrası). 'dogrulanmali' işaretli her bilgi oyuna girmeden önce birincil kaynakta kontrol edilmeli. oyunda_kullanilabilir: false olan hiçbir bilgi motor tarafından kullanılmaz.",
+  "meta": {
+    "iso3": "TUR",
+    "adTr": "Türkiye",
+    "adYerel": "Türkiye",
+    "katman": "K1",
+    "bolge": "R07",
+    "sablonSurumu": "0.2",
+    "hazirlayan": "Dünya ve Kültür",
+    "tarih": "2026-11-26",
+    "denetim": {
+      "durum": "sartli_gecti",
+      "belge": "docs/denetim/2026-11-26-dunya-kultur.md"
+    }
+  },
+  "kaynaklar": [
+    {
+      "id": "wpp2024-owid",
+      "ad": "Number of births (UN WPP 2024, OWID işlenmiş)",
+      "kurum": "BM Nüfus Bölümü / Our World in Data",
+      "url": "https://ourworldindata.org/grapher/number-of-births-per-year",
+      "yil": 2024,
+      "erisim": "2026-11-26",
+      "lisans": "CC BY (OWID işlemesi); kaynak BM",
+      "not": "Birincil veri BM; dosya OWID'den indirildi",
+      "tur": "ikincil",
+      "birincilAdres": "population.un.org/wpp (BM kendi CSV dosyası; Veri departmanı çekecek)"
+    },
+    {
+      "id": "tuik-dogum-2024",
+      "ad": "Doğum İstatistikleri, 2024",
+      "kurum": "TÜİK",
+      "url": "https://www.alomaliye.com/2025/05/13/dogum-istatistikleri-2024/",
+      "yil": 2025,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil: TÜİK bülteninin aktarımı. Birincil bülten data.tuik.gov.tr'de kontrol edilmeli",
+      "tur": "ikincil",
+      "birincilAdres": "data.tuik.gov.tr, Doğum İstatistikleri 2024 bülteni (kontrol edilmedi)"
+    },
+    {
+      "id": "tuik-dogum-2023",
+      "ad": "Doğum İstatistikleri, 2023 (haber aktarımı)",
+      "kurum": "TÜİK",
+      "url": "https://www.ntv.com.tr/turkiye/turkiyede-2023te-958-bin-408-bebek-dogdu,vapiLPVaFkOsT7qpzFXX4g",
+      "yil": 2024,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil: haber başlığı. Birincil bülten kontrol edilmeli",
+      "tur": "ikincil",
+      "birincilAdres": "data.tuik.gov.tr, Doğum İstatistikleri 2023 bülteni (kontrol edilmedi)"
+    },
+    {
+      "id": "tuik-evlenme-2024",
+      "ad": "Evlenme ve Boşanma İstatistikleri, 2024",
+      "kurum": "TÜİK",
+      "url": "https://www.alomaliye.com/2025/02/24/evlenme-ve-bosanma-istatistikleri-2024/",
+      "yil": 2025,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil aktarım",
+      "tur": "ikincil",
+      "birincilAdres": "data.tuik.gov.tr, Evlenme ve Boşanma İstatistikleri 2024 bülteni (kontrol edilmedi)"
+    },
+    {
+      "id": "kanun-7179",
+      "ad": "7179 sayılı Askeralma Kanunu (2019)",
+      "kurum": "TBMM / MSB",
+      "url": "https://bianet.org/haber/yeni-zorunlu-askerlik-sistemi-yasalasti-209758",
+      "yil": 2019,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil haber özeti. Kanun metni: msb.gov.tr ve mevzuat.gov.tr",
+      "tur": "ikincil",
+      "birincilAdres": "mevzuat.gov.tr / Resmî Gazete 25 Haziran 2019 civarı, 7179 sayılı kanun metni (kontrol edilmedi); İngilizce metin msb.gov.tr"
+    },
+    {
+      "id": "nvi-isim-1941",
+      "ad": "1941-1950 Tarihleri Arasında En Çok Verilen İsimler",
+      "kurum": "Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/1941_1950-Tarihleri-Arasinda-En-Cok-Verilen-Isimler.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-1961",
+      "ad": "1961-1970 Tarihleri Arasında En Çok Verilen İsimler",
+      "kurum": "NVİ",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/1961_1970Tarihleri_Arasinda_En_cok_Verilen_isimler.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-1971",
+      "ad": "1971-1980 Tarihleri Arasında En Çok Verilen İsimler",
+      "kurum": "NVİ",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/1971_1980Tarihleri_Arasinda_En_cok_Verilen_isimler.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-1981",
+      "ad": "1981-1990 Tarihleri Arasında En Çok Verilen İsimler",
+      "kurum": "NVİ",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/1981_1990Tarihleri_Arasinda_En_cok_Verilen_isimler.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-1991",
+      "ad": "1991-2000 Tarihleri Arasında En Çok Verilen İsimler",
+      "kurum": "NVİ",
+      "url": "https://www.nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/1991_2000Tarihleri_Arasinda_En_cok_Verilen_isimler.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-2004",
+      "ad": "2004 Yılı En Çok Verilen İsimler",
+      "kurum": "NVİ",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/2004Yili_En_cok_Verilen_isimler.pdf",
+      "yil": 2004,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil; tek yıl, 2000'ler için temsilî kabul edildi",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-2020",
+      "ad": "2020 yılında en çok tercih edilen isimler (NVİ verisi, haber)",
+      "kurum": "NVİ / CNN Türk (İHA)",
+      "url": "https://www.cnnturk.com/yasam/2020-yilinda-en-cok-tercih-edilen-isim-yusuf-ve-zeynep-oldu-1608104",
+      "yil": 2021,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil; sıralama haberdeki sırayla, sadece ilk 3 sayılı",
+      "tur": "ikincil"
+    },
+    {
+      "id": "trt-isim-2025",
+      "ad": "Türkiye'de 2025'in en yaygın isimleri",
+      "kurum": "TÜİK / TRT Haber",
+      "url": "https://www.trthaber.com/infografik/turkiyede-2025in-en-yaygin-isimleri-belli-oldu-898.html",
+      "yil": 2025,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Tüm nüfusta en yaygın: Mehmet, Fatma, soyadı Yılmaz",
+      "tur": "ikincil"
+    },
+    {
+      "id": "sigpwned-names",
+      "ad": "popular-names-by-country-dataset",
+      "kurum": "sigpwned (GitHub)",
+      "url": "https://github.com/sigpwned/popular-names-by-country-dataset",
+      "yil": null,
+      "erisim": "henüz indirilmedi",
+      "lisans": "CC0",
+      "not": "Doğum yılı boyutu yok; sadece tamamlayıcı. Bkz. docs/ARASTIRMA-ARACLAR.md",
+      "tur": "ikincil"
+    },
+    {
+      "id": "icisleri-deprem-2024",
+      "ad": "6 Şubat depremleri güncel can kaybı açıklaması (İçişleri Bakanı, Şubat 2024)",
+      "kurum": "İçişleri Bakanlığı / AFAD (Sözcü aktarımı)",
+      "url": "https://www.sozcu.com.tr/yil-donumune-gunler-kala-aciklandi-6-subat-felaketinde-53-bin-537-olu-p19731",
+      "yil": 2024,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil haber",
+      "tur": "ikincil",
+      "birincilAdres": "AFAD açıklamaları ve TÜİK Ölüm ve Ölüm Nedeni İstatistikleri ile karşılaştırılmalı (kontrol edilmedi)"
+    },
+    {
+      "id": "tuik-tufe-2022-10",
+      "ad": "Tüketici Fiyat Endeksi, Ekim 2022",
+      "kurum": "TÜİK (Evrensel aktarımı)",
+      "url": "https://www.evrensel.net/haber/473815/ekim-ayinda-yillik-enflasyon-enaga-gore-yuzde-185-tuike-gore-yuzde-85-51e-oldu",
+      "yil": 2022,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İkincil (arama sonucu başlığı); birincil bülten kontrol edilmeli",
+      "tur": "ikincil",
+      "birincilAdres": "data.tuik.gov.tr, TÜFE Ekim 2022 bülteni (kontrol edilmedi)"
+    },
+    {
+      "id": "goc-gecici-koruma",
+      "ad": "Geçici koruma kapsamındaki Suriyeliler istatistikleri",
+      "kurum": "Göç İdaresi Başkanlığı",
+      "url": "https://www.goc.gov.tr",
+      "yil": null,
+      "erisim": "kontrol edilmedi",
+      "lisans": "",
+      "not": "Rakamlar haber başlıklarından; birincil sayfa kontrol edilmeli",
+      "tur": "birincil"
+    },
+    {
+      "id": "mevzuat",
+      "ad": "Mevzuat Bilgi Sistemi (kanun metinleri)",
+      "kurum": "Cumhurbaşkanlığı",
+      "url": "https://www.mevzuat.gov.tr",
+      "yil": null,
+      "erisim": "kontrol edilmedi",
+      "lisans": "Kamu",
+      "not": "Kanun numara ve tarihleri buradan doğrulanacak: 222, 4306, 6287, 743, 4721, 2525, 506, 5434, 1479, 4447, 5510, 7438, 224, 6306",
+      "tur": "birincil"
+    },
+    {
+      "id": "tuik-ibbs",
+      "ad": "İstatistiki Bölge Birimleri Sınıflandırması (İBBS)",
+      "kurum": "TÜİK",
+      "url": "https://www.tuik.gov.tr",
+      "yil": 2002,
+      "erisim": "kontrol edilmedi",
+      "lisans": "",
+      "not": "Düzey 1: 12 bölge",
+      "tur": "birincil"
+    },
+    {
+      "id": "kaynaksiz",
+      "ad": "KAYNAKSIZ: hazırlayanın bilgisi, kaynak gösterilmedi",
+      "kurum": "-",
+      "url": "",
+      "yil": null,
+      "erisim": "-",
+      "lisans": "",
+      "not": "Bu bir kaynak DEĞİLDİR. Sadece bu kimliği taşıyan bilgi oyunda kullanılamaz (oyunda_kullanilabilir: false). Kaynak bulunduğunda bu kimlik kaldırılır.",
+      "tur": "kaynaksiz"
+    },
+    {
+      "id": "tuik-tufe-sbb",
+      "ad": "Ekim 2022 Enflasyon Verileri",
+      "kurum": "Strateji ve Bütçe Başkanlığı",
+      "url": "https://www.sbb.gov.tr/ekim-2022-enflasyon-verileri/",
+      "yil": 2022,
+      "erisim": "2026-11-26 (Kalite denetimi)",
+      "lisans": "Kamu",
+      "tur": "birincil",
+      "not": "Kalite denetiminde %85,51 doğrulandı"
+    },
+    {
+      "id": "deprem-medyascope-2024",
+      "ad": "Yerlikaya: depremlerde 53 bin 537 canımızı yitirdik",
+      "kurum": "Medyascope",
+      "url": "https://medyascope.tv/2024/02/02/ali-yerlikaya-depremlerde-53-bin-537-canimizi-yitirdik-38-bin-901-bina-yikildi-691-bin-afetzede-konteynerde-kaliyor/",
+      "yil": 2024,
+      "erisim": "2026-11-26 (Kalite denetimi)",
+      "lisans": "",
+      "tur": "ikincil",
+      "not": "Bakan açıklaması aktarımı"
+    },
+    {
+      "id": "soma-dunya",
+      "ad": "Soma'da 301 maden işçisi hayatını kaybetti",
+      "kurum": "Dünya Gazetesi",
+      "url": "https://www.dunya.com/gundem/soma039da-301-maden-iscisi-hayatini-kaybetti-haberi-246792",
+      "yil": 2014,
+      "erisim": "2026-11-26 (Kalite denetimi)",
+      "lisans": "",
+      "tur": "ikincil",
+      "not": ""
+    },
+    {
+      "id": "soma-cumhuriyet",
+      "ad": "Soma katliamının 8. yılı",
+      "kurum": "Cumhuriyet",
+      "url": "https://www.cumhuriyet.com.tr/turkiye/soma-katliaminin-8-yili-hayatini-kaybeden-301-madenci-aniliyor-1935529",
+      "yil": 2022,
+      "erisim": "2026-11-26 (Kalite denetimi)",
+      "lisans": "",
+      "tur": "ikincil",
+      "not": ""
+    },
+    {
+      "id": "marmara-ntv",
+      "ad": "17 Ağustos depreminin 26. yılı",
+      "kurum": "NTV (TBMM Araştırma Komisyonu raporu, Temmuz 2010 aktarımı)",
+      "url": "https://www.ntv.com.tr/turkiye/17-agustos-depreminin-26-yili,0249EYhh8kWQXCawcOdzuA",
+      "yil": 2025,
+      "erisim": "2026-11-26 (Kalite denetimi)",
+      "lisans": "",
+      "tur": "ikincil",
+      "birincilAdres": "TBMM araştırma komisyonu raporu (2010), kontrol edilmedi",
+      "not": "17.480 ölü, 43.953 yaralı"
+    },
+    {
+      "id": "suriyeli-alain",
+      "ad": "Türkiye'deki Suriyelilerin sayısı yeniden gündemde",
+      "kurum": "Al Ain Türkçe (Göç İdaresi rakamı aktarımı)",
+      "url": "https://tr.al-ain.com/article/turkiye-deki-suriyelilerin-say-s-yeniden-g-ndemde-son-veriler-geri-d-n-ler-ve-ehirlerdeki-da-l-m",
+      "yil": 2025,
+      "erisim": "2026-11-26 (Kalite denetimi)",
+      "lisans": "",
+      "tur": "ikincil",
+      "not": "Tarih (27 Kasım) yılı belirsiz, büyük ihtimalle 2025"
+    }
+  ],
+  "yerelSayilar": [
+    {
+      "ad": "Canlı doğum sayısı",
+      "yil": 2024,
+      "deger": 937559,
+      "birim": "bebek",
+      "kaynak": [
+        "tuik-dogum-2024",
+        "wpp2024-owid"
+      ],
+      "durum": "dogrulandi",
+      "not": "İkincil aktarımdan. BM WPP 2024'ün 2023 tahmini 1.072.014; TÜİK 2023 kaydı 958.408. Fark BM'nin tahmin yönteminden (ülkede yaşayan tüm nüfus, kayıt düzeltmesi) kaynaklanıyor olabilir; doğum çekilişinde BM kullanılır.",
+      "veriAnahtari": "tuik.dogum.canliDogum",
+      "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Canlı doğum sayısı",
+      "yil": 2023,
+      "deger": 958408,
+      "birim": "bebek",
+      "kaynak": [
+        "tuik-dogum-2023"
+      ],
+      "durum": "dogrulandi",
+      "not": "Haber aktarımından (NTV, TRT Haber); TÜİK bülteni eklenmeli",
+      "veriAnahtari": "tuik.dogum.canliDogum",
+      "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Toplam doğurganlık hızı",
+      "yil": 2024,
+      "deger": 1.48,
+      "birim": "çocuk/kadın",
+      "kaynak": [
+        "tuik-dogum-2024"
+      ],
+      "durum": "dogrulandi",
+      "not": "En yüksek Şanlıurfa 3,28; en düşük Bartın ve Eskişehir 1,12",
+      "veriAnahtari": "tuik.dogum.toplamDogurganlik",
+      "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Doğum yapan annelerin ortalama yaşı / ilk doğum yaşı",
+      "yil": 2024,
+      "deger": [
+        29.3,
+        27.3
+      ],
+      "birim": "yaş",
+      "kaynak": [
+        "tuik-dogum-2024"
+      ],
+      "durum": "dogrulandi",
+      "not": "",
+      "veriAnahtari": "tuik.dogum.anneYasi",
+      "oyunda_kullanilabilir": true
+    }
+  ],
+  "dil": {
+    "resmi": [
+      "Türkçe"
+    ],
+    "konusulanlar": [
+      {
+        "id": "turkce",
+        "ad": "Türkçe",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "tümü"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Ana dil olarak büyük çoğunluk; resmî oran yok",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "kurmanci",
+        "ad": "Kürtçe (Kurmanci)",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "tahmin",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "TRB",
+          "TRC",
+          "TRA",
+          "TR1 (göçle)",
+          "TR5",
+          "TR3"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "tahmin",
+        "not": "Kürtçe konuşanların oranı için resmî veri yok; son sayımda anadil sorusu 1965'te soruldu (doğrulanmalı). Anket tahminleri farklı; oran Veri'ye kaynaklı olarak sorulmalı.",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "zazaca",
+        "ad": "Zazaca (Kırmancki/Dimilki)",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "TRB",
+          "TRC"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Ayrı dil mi Kürtçenin lehçesi mi tartışmalı; konuşanların kimlik tercihi farklı olabilir, metinlerde dayatma yapılmamalı",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "arapca",
+        "ad": "Arapça",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "TRC (Mardin, Siirt, Şanlıurfa)",
+          "TR6 (Hatay)",
+          "2011 sonrası Suriyeli göçmenler"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "karadeniz-dilleri",
+        "ad": "Lazca, Hemşince, Gürcüce",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "TR9"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "kafkas-dilleri",
+        "ad": "Çerkez dilleri (Adigece, Kabardeyce), Abhazca",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "Orta ve Doğu Anadolu köyleri",
+          "TR4"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "balkan-dilleri",
+        "ad": "Balkan dilleri (Boşnakça, Arnavutça, Pomakça)",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "TR1",
+          "TR2",
+          "TR4"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Balkan göçmeni aileler",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "azinlik-dilleri",
+        "ad": "Ermenice, Rumca, Ladino, Süryanice (Turoyo), Romanca (Romani)",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Resmî oran yok; Veri kaynaklı anket bulursa veriAnahtari bağlanır"
+        },
+        "bolgeler": [
+          "TR1",
+          "TRC (Turoyo)",
+          "çeşitli"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Küçük topluluklar; Ermeni, Rum, Yahudi okulları Lozan kapsamında",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "donemSecimi": "Okul dili için kişinin okula başladığı yıl; kısıtlamalar için olayın yaşandığı yıl.",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": 1983,
+        "okulDili": [
+          "Türkçe"
+        ],
+        "kisitlamalar": "Okul dili yalnızca Türkçe; azınlık okulları (Ermeni, Rum, Yahudi) hariç.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1983,
+        "yilSon": 1991,
+        "okulDili": [
+          "Türkçe"
+        ],
+        "kisitlamalar": "2932 sayılı kanunla Kürtçe yayın ve kamusal kullanım kısıtlaması (1991'de kaldırıldı).",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1991,
+        "yilSon": 2012,
+        "okulDili": [
+          "Türkçe"
+        ],
+        "kisitlamalar": "Kademeli serbestleşme: özel Kürtçe kurslar (2000'ler başı), TRT'de Kürtçe kanal (2009). İsimlerde q, w, x harfleri 2013'e kadar kullanılamadı.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2012,
+        "yilSon": null,
+        "okulDili": [
+          "Türkçe"
+        ],
+        "kisitlamalar": "Ortaokulda seçmeli 'Yaşayan Diller ve Lehçeler' dersi (Kurmanci, Zazaca, Lazca, Adigece vb.).",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "din": {
+    "resmiVeriVar": false,
+    "dagilim": [
+      {
+        "id": "muslim",
+        "grup": "Müslüman",
+        "ustGrup": null,
+        "altGruplar": [
+          "Sünni Hanefi",
+          "Sünni Şafii (Kürtlerin ve Arapların bir kısmı)",
+          "Caferi (Şii, Iğdır-Kars ve İstanbul)",
+          "Arap Alevi / Nusayri (Hatay, Adana, Mersin)"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "tahmin",
+          "oyunda_kullanilabilir": false,
+          "aralik": [
+            null,
+            null
+          ],
+          "not": "Pay anketlerden gelecek; Veri departmanı kaynaklı aralık ve veriAnahtari verecek"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "tahmin",
+        "not": "Kimlikte din hanesi resmî istatistik değil; dağılım ancak anketlerden gelir. Anketler büyük çoğunluğun Müslüman olduğunu gösterir; aralık Veri tarafından KONDA / Pew / Optimar gibi kaynaklı anketlerden yazılmalı. ÇİFT SAYIM ÖNLEMİ: Bu kayıt Alevileri İÇERMEZ; Aleviler sadece \"alevi\" kaydında sayılır.",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "alevi",
+        "grup": "Alevi",
+        "ustGrup": null,
+        "altGruplar": [
+          "Türk Alevileri",
+          "Kürt ve Zaza Alevileri",
+          "Bektaşi"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "tahmin",
+          "oyunda_kullanilabilir": false,
+          "aralik": [
+            null,
+            null
+          ],
+          "not": "Pay anketlerden gelecek; Veri departmanı kaynaklı aralık ve veriAnahtari verecek"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "tahmin",
+        "not": "Resmî veri yok; tahminler çok geniş aralıkta. Alevilik ayrı bir inanç topluluğu olarak da tanımlanır; cemevi, dede, muharrem orucu.",
+        "kendiniTanimlama": "Bir kısmı kendini \"Müslüman, Alevi\", bir kısmı \"Alevi\" (İslam dışı ya da İslam üstü bir inanç yolu) olarak tanımlar. Oyunda karakterin kendi tanımı ayrı bir alan olarak taşınmalı.",
+        "atakan_karari_bekliyor": "Alevilik din listesinde nasıl gösterilsin: Müslüman kaydının alt grubu (ustGrup: \"muslim\") mu, ayrı grup (ustGrup: null) mu? Şimdilik ayrı ve tek kayıt; karar yalnızca ustGrup alanını değiştirir, çift sayım oluşmaz.",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "hristiyan",
+        "grup": "Hristiyan",
+        "ustGrup": null,
+        "altGruplar": [
+          "Ermeni Apostolik",
+          "Rum Ortodoks",
+          "Süryani",
+          "Katolik",
+          "Protestan"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "aralik": [
+            null,
+            null
+          ],
+          "not": "Pay anketlerden gelecek; Veri departmanı kaynaklı aralık ve veriAnahtari verecek"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Çok küçük; çoğu İstanbul'da ve Mardin-Tur Abdin'de",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "yahudi",
+        "grup": "Yahudi",
+        "ustGrup": null,
+        "altGruplar": [
+          "Sefarad"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "aralik": [
+            null,
+            null
+          ],
+          "not": "Pay anketlerden gelecek; Veri departmanı kaynaklı aralık ve veriAnahtari verecek"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Çok küçük, çoğu İstanbul",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "ezidi",
+        "grup": "Ezidi",
+        "ustGrup": null,
+        "altGruplar": [],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "aralik": [
+            null,
+            null
+          ],
+          "not": "Pay anketlerden gelecek; Veri departmanı kaynaklı aralık ve veriAnahtari verecek"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Çok küçük; 1980-90'larda çoğu Almanya'ya göçtü",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "inancsiz",
+        "grup": "İnançsız / deist / dine bağlı olmayan",
+        "ustGrup": null,
+        "altGruplar": [],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "tahmin",
+          "oyunda_kullanilabilir": false,
+          "aralik": [
+            null,
+            null
+          ],
+          "not": "Pay anketlerden gelecek; Veri departmanı kaynaklı aralık ve veriAnahtari verecek"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "tahmin",
+        "not": "Gençlerde ve büyük şehirlerde arttığını gösteren anketler var; oran kaynaklı yazılmalı",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "devletDinIliskisi": {
+      "ozet": "Anayasal olarak laik (1937'den beri anayasada). Sünni İslam hizmetleri Diyanet İşleri Başkanlığı (1924) eliyle yürütülür; imamlar devlet memurudur. Okullarda 'Din Kültürü ve Ahlak Bilgisi' dersi zorunlu (1982 Anayasası). Gayrimüslim azınlıkların hakları 1923 Lozan Antlaşması'na dayanır.",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "notlar": "Dindarlık düzeyi kişiden kişiye, bölgeden bölgeye ve kuşaktan kuşağa çok değişir. Oyunda 'aile inancı' ve 'kişinin kendi inancı' ayrı tutulmalı; kişi hayatı boyunca değişebilir."
+  },
+  "topluluklar": [
+    {
+      "id": "turk",
+      "ad": "Türk",
+      "tur": "etnikDil",
+      "diller": [
+        "turkce"
+      ],
+      "dinler": [
+        "muslim",
+        "alevi",
+        "inancsiz"
+      ],
+      "icBolgeler": [
+        "tümü"
+      ],
+      "isimHavuzlari": [
+        "tr-k-1940",
+        "tr-e-1940",
+        "tr-k-1950",
+        "tr-e-1950",
+        "tr-k-1960",
+        "tr-e-1960",
+        "tr-k-1970",
+        "tr-e-1970",
+        "tr-k-1980",
+        "tr-e-1980",
+        "tr-k-1990",
+        "tr-e-1990",
+        "tr-k-2000",
+        "tr-e-2000",
+        "tr-k-2010",
+        "tr-e-2010",
+        "tr-k-2020",
+        "tr-e-2020"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Gerekmez: genel havuzlar zaten bu topluluğun kendi havuzu.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Genel isim havuzlarını kullanır. havuzHazir şimdilik false: 1950-1959 ve 2010-2019 genel havuzları boş; NVİ listeleri eklenince true yapılır.",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kurt",
+      "ad": "Kürt",
+      "tur": "etnikDil",
+      "diller": [
+        "kurmanci",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim",
+        "alevi",
+        "ezidi",
+        "inancsiz"
+      ],
+      "icBolgeler": [
+        "TRB",
+        "TRC",
+        "TRA",
+        "TR1",
+        "TR5",
+        "TR6",
+        "TR3"
+      ],
+      "isimHavuzlari": [
+        "tr-k-kurt",
+        "tr-e-kurt"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Bilinçli olarak null: Kürtçe isimler bu topluluğun görünürlüğü için önemli (Kalite bulgusu 2.1). Kürtçe havuz dolana kadar topluluk çekilişe girmez. Atakan/Kalite isterse 'genel' yapılabilir.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Hem genel hem Kürtçe isimler kullanılır; Kürtçe havuz dolunca havuzHazir true olur",
+      "hassasiyet": "Kimlik tek bir mağduriyet ya da çatışma hikâyesine indirgenmez (bkz. hassasiyet)",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "zaza",
+      "ad": "Zaza",
+      "tur": "etnikDil",
+      "diller": [
+        "zazaca",
+        "kurmanci",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim",
+        "alevi"
+      ],
+      "icBolgeler": [
+        "TRB",
+        "TRC"
+      ],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": "genel",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Kendi (Zazaca/Kürtçe) ek havuzu eklenince yedek kaldırılmalı ya da oranla karıştırılmalı.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Kendini Kürt ya da ayrı topluluk olarak tanımlayanlar var; kişinin tanımı esas",
+      "hassasiyet": "Kimlik tanımı tartışmalı; dayatma yok",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "arap",
+      "ad": "Arap (Türkiye vatandaşı)",
+      "tur": "etnikDil",
+      "diller": [
+        "arapca",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim"
+      ],
+      "icBolgeler": [
+        "TRC",
+        "TR6"
+      ],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": "genel",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Arapça isimlerin bir kısmı genel havuzla örtüşür; kendi ek havuzu eklenmeli.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Hatay, Mardin, Siirt, Şanlıurfa; Arap Alevileri (Nusayri) bu topluluk içindedir, din kaydında muslim altında",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "laz-hemsinli-gurcu",
+      "ad": "Laz, Hemşinli, Gürcü",
+      "tur": "etnikDil",
+      "diller": [
+        "karadeniz-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim"
+      ],
+      "icBolgeler": [
+        "TR9"
+      ],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": "genel",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı).",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Genel havuzu kullanıp kullanmadıkları kaynakla doğrulanmalı; o zamana kadar ayrı topluluk olarak çekilmez",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kafkas",
+      "ad": "Çerkez, Abhaz ve diğer Kafkas kökenliler",
+      "tur": "etnikDil",
+      "diller": [
+        "kafkas-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim"
+      ],
+      "icBolgeler": [
+        "TR4",
+        "TR7",
+        "TR5"
+      ],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": "genel",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Kafkas kökenli isimler (ek havuz) ileride eklenebilir.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Aynı not",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "balkan",
+      "ad": "Balkan göçmeni aileler (Boşnak, Arnavut, Pomak, Bulgaristan ve Yunanistan Türkleri)",
+      "tur": "gocmen",
+      "diller": [
+        "balkan-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim"
+      ],
+      "icBolgeler": [
+        "TR1",
+        "TR2",
+        "TR4",
+        "TR3"
+      ],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": "genel",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Bu topluluk önceden genel havuzlara doğrudan bağlıydı; artık yedek üzerinden bağlı.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Çoğu genel Türkçe isimleri kullanır (doğrulanmalı); aile geçmişi olarak göç olayına bağlanır. havuzHazir şimdilik false: yedek genel havuzların 1950-1959 ve 2010-2019 dilimleri boş.",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "roman",
+      "ad": "Roman",
+      "tur": "etnikDil",
+      "diller": [
+        "azinlik-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim"
+      ],
+      "icBolgeler": [
+        "TR2",
+        "TR1",
+        "TR3"
+      ],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": "genel",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı).",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "",
+      "hassasiyet": "Ayrımcılık ve yoksulluk gerçek ama topluluk bunlara indirgenmez",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "ermeni",
+      "ad": "Ermeni",
+      "tur": "etnikDil",
+      "diller": [
+        "azinlik-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "hristiyan"
+      ],
+      "icBolgeler": [
+        "TR1"
+      ],
+      "isimHavuzlari": [
+        "tr-k-ermeni",
+        "tr-e-ermeni"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Kendi topluluk havuzu (gayrimüslim ya da göçmen isimleri) genel havuzdan belirgin biçimde farklı; yedek kullanılırsa kimlik görünmez olur.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "rum",
+      "ad": "Rum",
+      "tur": "etnikDil",
+      "diller": [
+        "azinlik-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "hristiyan"
+      ],
+      "icBolgeler": [
+        "TR1"
+      ],
+      "isimHavuzlari": [
+        "tr-k-rum",
+        "tr-e-rum"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Kendi topluluk havuzu (gayrimüslim ya da göçmen isimleri) genel havuzdan belirgin biçimde farklı; yedek kullanılırsa kimlik görünmez olur.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "yahudi",
+      "ad": "Yahudi",
+      "tur": "dini",
+      "diller": [
+        "azinlik-dilleri",
+        "turkce"
+      ],
+      "dinler": [
+        "yahudi"
+      ],
+      "icBolgeler": [
+        "TR1",
+        "TR3"
+      ],
+      "isimHavuzlari": [
+        "tr-k-yahudi",
+        "tr-e-yahudi"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Kendi topluluk havuzu (gayrimüslim ya da göçmen isimleri) genel havuzdan belirgin biçimde farklı; yedek kullanılırsa kimlik görünmez olur.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "suryani",
+      "ad": "Süryani",
+      "tur": "etnikDil",
+      "diller": [
+        "azinlik-dilleri",
+        "turkce",
+        "arapca"
+      ],
+      "dinler": [
+        "hristiyan"
+      ],
+      "icBolgeler": [
+        "TRC",
+        "TR1"
+      ],
+      "isimHavuzlari": [
+        "tr-k-suryani",
+        "tr-e-suryani"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Kendi topluluk havuzu (gayrimüslim ya da göçmen isimleri) genel havuzdan belirgin biçimde farklı; yedek kullanılırsa kimlik görünmez olur.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Mardin-Tur Abdin ve İstanbul",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "suriyeli",
+      "ad": "Suriyeli sığınmacılar",
+      "tur": "gocmen",
+      "diller": [
+        "arapca",
+        "kurmanci",
+        "turkce"
+      ],
+      "dinler": [
+        "muslim"
+      ],
+      "icBolgeler": [
+        "TRC",
+        "TR6",
+        "TR1"
+      ],
+      "isimHavuzlari": [
+        "tr-k-suriyeli",
+        "tr-e-suriyeli"
+      ],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Kendi topluluk havuzu (gayrimüslim ya da göçmen isimleri) genel havuzdan belirgin biçimde farklı; yedek kullanılırsa kimlik görünmez olur.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "yilBas": 2011,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "tahmin",
+        "oyunda_kullanilabilir": false,
+        "not": "Resmî etnik köken verisi yok; ağırlık yöntemi Veri ile birlikte belirlenecek"
+      },
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "tahmin",
+      "not": "Türkiye'de doğan çocuklar dahil; isimler R06 Arap havuzundan (Suriye) alınabilir",
+      "hassasiyet": "Oyunun sesi ayrımcı olmaz",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "egitim": {
+    "_egitimNot": "1997: 4306 sayılı kanun. 2012: 6287 sayılı kanun (4+4+4), ilkokula başlama yaşı ayla belirlenir (66-69 ay civarı, doğrulanmalı). 1961 tarihli 222 sayılı İlköğretim Kanunu 5 yıllık zorunluluğu düzenler.",
+    "donemSecimi": "Kişinin o kademeye başladığı yıl. Sınavlar için sınava girdiği yıl.",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": 1997,
+        "zorunluYil": 5,
+        "kademeler": [
+          {
+            "ad": "İlkokul",
+            "yasBas": 7,
+            "yasSon": 12,
+            "zorunlu": true
+          },
+          {
+            "ad": "Ortaokul",
+            "yasBas": 12,
+            "yasSon": 15,
+            "zorunlu": false
+          },
+          {
+            "ad": "Lise",
+            "yasBas": 15,
+            "yasSon": 18,
+            "zorunlu": false
+          }
+        ],
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1997,
+        "yilSon": 2012,
+        "zorunluYil": 8,
+        "kademeler": [
+          {
+            "ad": "İlköğretim okulu (8 yıl kesintisiz)",
+            "yasBas": 6,
+            "yasSon": 14,
+            "zorunlu": true
+          },
+          {
+            "ad": "Lise (2005'e kadar 3 yıl, sonra 4 yıl)",
+            "yasBas": 14,
+            "yasSon": 18,
+            "zorunlu": false
+          }
+        ],
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2012,
+        "yilSon": null,
+        "zorunluYil": 12,
+        "kademeler": [
+          {
+            "ad": "İlkokul",
+            "yasBas": 6,
+            "yasSon": 10,
+            "zorunlu": true
+          },
+          {
+            "ad": "Ortaokul",
+            "yasBas": 10,
+            "yasSon": 14,
+            "zorunlu": true
+          },
+          {
+            "ad": "Lise (örgün ya da açık öğretim)",
+            "yasBas": 14,
+            "yasSon": 18,
+            "zorunlu": true
+          }
+        ],
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "sinavlar": [
+      {
+        "ad": "Fen ve Anadolu liseleri giriş sınavları",
+        "gecis": "ortaogretim",
+        "yas": 11,
+        "yilBas": 1975,
+        "yilSon": 1997,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Yıllar doğrulanmalı",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "LGS (Liselere Giriş Sınavı, eski)",
+        "gecis": "ortaogretim",
+        "yas": 14,
+        "yilBas": 1998,
+        "yilSon": 2003,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "OKS (Ortaöğretim Kurumları Sınavı)",
+        "gecis": "ortaogretim",
+        "yas": 14,
+        "yilBas": 2004,
+        "yilSon": 2007,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "SBS (Seviye Belirleme Sınavı)",
+        "gecis": "ortaogretim",
+        "yas": 12,
+        "yilBas": 2008,
+        "yilSon": 2013,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "6, 7 ve 8. sınıflarda",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "TEOG",
+        "gecis": "ortaogretim",
+        "yas": 13,
+        "yilBas": 2013,
+        "yilSon": 2017,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "LGS (Liselere Geçiş Sistemi)",
+        "gecis": "ortaogretim",
+        "yas": 14,
+        "yilBas": 2018,
+        "yilSon": null,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Sınavsız mahalle lisesine yerleşme de mümkün",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "ÜSS (Üniversitelerarası Seçme Sınavı)",
+        "gecis": "yuksekogretim",
+        "yas": 17,
+        "yilBas": 1974,
+        "yilSon": 1980,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "ÖSS + ÖYS (iki aşamalı)",
+        "gecis": "yuksekogretim",
+        "yas": 17,
+        "yilBas": 1981,
+        "yilSon": 1998,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "ÖSS (tek aşama)",
+        "gecis": "yuksekogretim",
+        "yas": 17,
+        "yilBas": 1999,
+        "yilSon": 2009,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "1999-2011 arası meslek lisesi mezunlarına düşük katsayı uygulaması (doğrulanmalı)",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "YGS + LYS",
+        "gecis": "yuksekogretim",
+        "yas": 17,
+        "yilBas": 2010,
+        "yilSon": 2017,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "YKS (TYT + AYT + YDT)",
+        "gecis": "yuksekogretim",
+        "yas": 17,
+        "yilBas": 2018,
+        "yilSon": null,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Tekrar tekrar girilebilir; 'mezuna kalmak' yaygın",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "KPSS (Kamu Personeli Seçme Sınavı)",
+        "gecis": "kamuIs",
+        "yas": null,
+        "yilBas": 2002,
+        "yilSon": null,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Memurluk ve öğretmen ataması için; yıllarca hazırlanan mezunlar yaygın",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "okulTurleri": [
+      {
+        "id": "devlet",
+        "ad": "Devlet ilkokulu / ortaokulu (mahalle okulu)",
+        "ozellik": "Ücretsiz; kalabalık sınıf, ikili öğretim yaygın olabilir",
+        "kimlerGider": "Çoğunluk",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "koy-okulu",
+        "ad": "Köy okulu / birleştirilmiş sınıf, taşımalı eğitim",
+        "ozellik": "Küçük köylerde birden çok sınıf aynı odada; 1990'lardan sonra taşımalı eğitim ve YİBO (yatılı bölge okulları)",
+        "kimlerGider": "Kırsal çocuklar",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "anadolu-fen",
+        "ad": "Anadolu lisesi / Fen lisesi",
+        "ozellik": "Sınavla giriş, akademik",
+        "kimlerGider": "Sınavda başarılı öğrenciler",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "imam-hatip",
+        "ad": "İmam hatip okulu",
+        "ozellik": "Din eğitimi ağırlıklı; 1997-2012 arası ortaokul kısmı kapalıydı",
+        "kimlerGider": "Dindar aileler, 2012 sonrası daha geniş kesim",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "meslek-lisesi",
+        "ad": "Meslek lisesi (endüstri meslek, kız meslek, ticaret, sağlık meslek)",
+        "ozellik": "Erken iş hayatı, çıraklık",
+        "kimlerGider": "Daha çok dar gelirli aileler",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "ozel-okul",
+        "ad": "Özel okul / kolej",
+        "ozellik": "Ücretli, yabancı dil ağırlıklı",
+        "kimlerGider": "Üst gelir dilimleri",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "azinlik-okulu",
+        "ad": "Azınlık okulları (Ermeni, Rum, Yahudi)",
+        "ozellik": "Lozan kapsamında",
+        "kimlerGider": "İlgili topluluk çocukları",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "dershane",
+        "ad": "Dershane / etüt merkezi / özel ders",
+        "ozellik": "Sınava hazırlık; 2014 yasasıyla dershaneler dönüştürüldü, özel ders ve kurs devam etti",
+        "kimlerGider": "Parası yeten aileler; aile bütçesinde önemli kalem",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "acik-ogretim",
+        "ad": "Açık öğretim (lise ve üniversite)",
+        "ozellik": "Çalışarak okuma; 1982'den beri üniversite düzeyinde",
+        "kimlerGider": "Çalışanlar, ev kadınları, erken evlenenler",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Okul türü payı MEB istatistiklerinden (Veri)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "yuksekogretim": {
+      "ozet": "YÖK (1981) merkezî sistem; devlet üniversiteleri ücretsiz ya da düşük harçlı, vakıf üniversiteleri ücretli. 2006 sonrası 'her ile bir üniversite'. KYK yurt ve kredisi; büyük şehirde okumak barınma maliyeti demek. 1990'ların sonundan 2010 civarına kadar üniversitelerde başörtüsü yasağı uygulandı (doğrulanmalı).",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "esitsizlikNotlari": [
+      {
+        "not": "Kırsalda ve Doğu/Güneydoğu'da, özellikle eski kuşak kızlarda okula gönderilmeme ve erken okul terki daha yaygındı; zorunlu eğitimin uzaması bu farkı azalttı. Oranlar Veri'den (TÜİK okullaşma, TNSA) gelmeli.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "not": "Mevsimlik tarım işçisi ailelerin çocukları okul yılının bir kısmını kaçırır.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "not": "Suriyeli çocuklar için 2016 sonrası Türk okullarına geçiş; dil engeli.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "askerlik": {
+    "donemSecimi": "Kişinin 20 yaşına girdiği yıl (yükümlülük başlangıcı). Erteleme (öğrencilik vb.) varsa askere gittiği yıl.",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": 1990,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          null
+        ],
+        "sure": {
+          "er": null
+        },
+        "bedelli": {
+          "var": false,
+          "not": "Tek seferlik bedelli uygulamaları bazı yıllarda çıktı (1987 dahil, doğrulanmalı)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1990,
+        "yilSon": 2003,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          41
+        ],
+        "sure": {
+          "er": 18,
+          "kisaDonem": 8
+        },
+        "bedelli": {
+          "var": false,
+          "not": "1992 ve 1999'da tek seferlik bedelli (doğrulanmalı)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2003,
+        "yilSon": 2013,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          41
+        ],
+        "sure": {
+          "er": 15,
+          "yedekSubay": 12,
+          "kisaDonem": 6
+        },
+        "bedelli": {
+          "var": false,
+          "not": "2011'de tek seferlik bedelli (doğrulanmalı)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2013,
+        "yilSon": 2019,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          41
+        ],
+        "sure": {
+          "er": 12,
+          "yedekSubay": 12,
+          "kisaDonem": 6
+        },
+        "bedelli": {
+          "var": false,
+          "not": "2014, 2016, 2018'de tek seferlik bedelli (doğrulanmalı)"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2019,
+        "yilSon": null,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          41
+        ],
+        "sure": {
+          "er": 6,
+          "yedekSubay": 12,
+          "yedekAstsubay": 12,
+          "bedelliTemelEgitim": 1
+        },
+        "bedelli": {
+          "var": true,
+          "not": "Kalıcı bedelli: ücret ödeyen 1 ay temel eğitim yapar. 2019'da ücret 31.343 TL idi, her altı ayda memur zammı oranında artar. İsteyen 6 ay daha maaşlı kalabilir."
+        },
+        "kaynak": [
+          "kanun-7179"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      }
+    ],
+    "vicdaniRet": {
+      "taniniyor": false,
+      "not": "Vicdani ret yasal olarak tanınmıyor (doğrulanmalı). Yurt dışında yaşayanlar için dövizle askerlik seçeneği var.",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "notlar": "Kadınlar zorunlu askerlikle yükümlü değil (doğrulanmalı). Askerlik erkek hayatında büyük geçiş anıdır: asker uğurlaması, iş/evlilik planlarının ertelenmesi, 'askerliğini yapmadan iş bulamamak'. 1984 sonrası Doğu ve Güneydoğu'da görev yapan erlerde çatışma riski vardı (bkz. olay: pkk-catisma). Üniversite öğrencilerine erteleme hakkı."
+  },
+  "emeklilik": {
+    "donemSecimi": "Kişinin İLK sigortalı olduğu yıl (geçiş hükümleri ilk giriş tarihine bağlı). Sonradan gelen düzenlemeler (ör. EYT) tarihsel olay olarak işlenir.",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": 1999,
+        "sistemler": [
+          "SSK (işçiler)",
+          "Emekli Sandığı (memurlar, 1949)",
+          "Bağ-Kur (esnaf ve serbest çalışanlar, 1971)"
+        ],
+        "yasKadin": null,
+        "yasErkek": null,
+        "baskaSart": "Uzun dönemler boyunca yaş şartı aranmadan hizmet yılıyla emeklilik (kadın ~20, erkek ~25 yıl); 1986-1992 arasında yaş şartı vardı, 1992'de kaldırıldı (doğrulanmalı). Sonuç: 38-45 yaşında emekli olanlar yaygındı.",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1999,
+        "yilSon": 2008,
+        "sistemler": [
+          "SSK",
+          "Emekli Sandığı",
+          "Bağ-Kur"
+        ],
+        "yasKadin": 58,
+        "yasErkek": 60,
+        "baskaSart": "4447 sayılı kanunla yeni girenlere yaş şartı; eski sigortalılara kademeli geçiş.",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2008,
+        "yilSon": null,
+        "sistemler": [
+          "SGK (tek çatı, 5510 sayılı kanun)"
+        ],
+        "yasKadin": 58,
+        "yasErkek": 60,
+        "baskaSart": "Emeklilik yaşı 2036'dan itibaren kademeli artarak 2048'de 65'e çıkacak (doğrulanmalı). 2023'te EYT düzenlemesi (7438 sayılı kanun): 8 Eylül 1999'dan önce sigortalı olanlar yaş şartı olmadan emekli olabildi.",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "kayitDisi": {
+      "not": "Kayıt dışı çalışanlar, ücretsiz aile işçisi olarak tarımda çalışan kadınlar ve ev kadınları çoğu zaman emekli maaşı alamaz; yaşlılıkta çocuklarına, 65 yaş aylığına (2022 sayılı kanun) ya da sonradan isteğe bağlı prim ödemeye dayanır. Kayıt dışılık oranı Veri'den (TÜİK İşgücü) gelmeli.",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "veriAnahtari": "tuik.isgucu.kayitDisiOran",
+      "oyunda_kullanilabilir": false
+    }
+  },
+  "evlilikAile": {
+    "yasalYas": [
+      {
+        "yilBas": 1950,
+        "yilSon": 2002,
+        "kadin": 15,
+        "erkek": 17,
+        "istisna": "Hakim izniyle daha erken (743 sayılı Medeni Kanun)",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2002,
+        "yilSon": null,
+        "kadin": 18,
+        "erkek": 18,
+        "istisna": "17 yaşında veli izniyle, olağanüstü durumda 16 yaşında hakim kararıyla (4721 sayılı Türk Medeni Kanunu)",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "ilkEvlilikYasOrt": [
+      {
+        "yil": 2024,
+        "kadin": 25.8,
+        "erkek": 28.3,
+        "kaynak": [
+          "tuik-evlenme-2024"
+        ],
+        "durum": "dogrulandi",
+        "veriAnahtari": "tuik.evlenme.ilkEvlilikYasOrt",
+        "oyunda_kullanilabilir": true
+      }
+    ],
+    "_evlilikSayilari2024": "568.395 evlenen çift, kaba evlenme hızı binde 6,65; 187.343 boşanma; yabancı gelin 29.115 (gelinlerin %5,1'i). Kaynak: tuik-evlenme-2024, dogrulandi.",
+    "eslesmeBicimleri": [
+      {
+        "id": "tanisarak",
+        "ad": "Tanışarak / flört (okul, iş, arkadaş çevresi, sonra internet ve uygulamalar)",
+        "yayginlik": "yaygin",
+        "kimlerde": "Kentte ve genç kuşaklarda giderek artan",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Pay Veri serisinden; yayginlik sadece niteliksel açıklama"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "gorucu",
+        "ad": "Görücü usulü (aileler aracılığıyla, son kararı çiftin vermesi giderek yaygın)",
+        "yayginlik": "yaygin",
+        "kimlerde": "Her kesimde, kırsalda ve eski kuşaklarda daha çok",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Pay Veri serisinden; yayginlik sadece niteliksel açıklama"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "akraba",
+        "ad": "Akraba evliliği (kuzen evliliği)",
+        "yayginlik": "bazi bolgelerde",
+        "kimlerde": "Daha çok kırsal ve Doğu/Güneydoğu; azalıyor. Oran TÜİK Aile Yapısı Araştırması'ndan alınmalı",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": "tuik.aileYapisi.akrabaEvliligiOran",
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Pay Veri serisinden; yayginlik sadece niteliksel açıklama"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "kacarak",
+        "ad": "Kaçarak evlenme",
+        "yayginlik": "bazi bolgelerde",
+        "kimlerde": "Aile onayı alınamayan çiftler; bazen başlık parasından kaçınmak için",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Pay Veri serisinden; yayginlik sadece niteliksel açıklama"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "baslik",
+        "ad": "Başlık parası",
+        "yayginlik": "bazi bolgelerde",
+        "kimlerde": "Bazı kırsal bölgeler; azalıyor",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Pay Veri serisinden; yayginlik sadece niteliksel açıklama"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "erken-evlilik",
+        "ad": "Erken / çocuk yaşta evlilik",
+        "yayginlik": "nadir",
+        "kimlerde": "Yasal yaş altı, çoğu zaman sadece dini nikahla; oranı yıllar içinde düştü. Oyunda sahne gösterilmeden, gerçek oranla ve destek bilgisiyle işlenir",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": "unicef.cocukEvliligi.oran",
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Pay Veri serisinden; yayginlik sadece niteliksel açıklama"
+        },
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "nikahTurleri": [
+      {
+        "ad": "Resmî nikah (belediye nikah memuru; 2017'den beri müftülükler de kıyabilir)",
+        "yasalGecerlilik": "Tek yasal geçerli nikah",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Dini nikah (imam nikahı)",
+        "yasalGecerlilik": "Yasal sonucu yok; resmî nikaha ek olarak yaygın. Yalnız dini nikahla birliktelikte kadının miras ve nafaka hakları korunmaz",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "torenler": [
+      {
+        "ad": "Kız isteme, söz, nişan",
+        "aciklama": "Damadın ailesi kızın ailesini ziyaret eder; kahve, yüzük takma",
+        "kimlerde": "Çok yaygın",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Kına gecesi",
+        "aciklama": "Düğünden önceki gece kadınlar arasında",
+        "kimlerde": "Yaygın",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Düğün",
+        "aciklama": "Salon düğünü, köy/sokak düğünü (davul-zurna, halay), otel düğünü; takı takma geleneği aile bütçesinde önemli",
+        "kimlerde": "Gelire ve bölgeye göre çok farklı",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Çeyiz ve ev kurma",
+        "aciklama": "Kızın çeyizi, erkeğin ev ve eşya hazırlığı; borçlanma sebebi olabilir",
+        "kimlerde": "Yaygın",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "bosanma": {
+      "yasal": true,
+      "notlar": "1926'dan beri medeni hukuka göre mahkeme kararıyla. 2024'te 187.343 çift boşandı. Kırsalda ve muhafazakâr çevrelerde boşanmanın sosyal bedeli daha yüksek.",
+      "kaynak": [
+        "tuik-evlenme-2024",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "aileYapisi": {
+      "ozet": "Çekirdek aile çoğunlukta; kırsalda ve bazı bölgelerde geniş aile (oğlun ailesiyle birlikte yaşama) devam ediyor. Büyük şehirlerde bile ailelerin aynı bina ya da mahallede oturması, büyükannenin çocuk bakması çok yaygın. Gençler çoğunlukla evlenene kadar aile evinde kalır.",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "yasliBakimi": {
+      "ozet": "Yaşlı bakımı büyük ölçüde ailede, genellikle kız çocukların ya da gelinin üstünde. Huzurevi sosyal olarak hâlâ zor bir karar.",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "yasalDurumlar": [
+      {
+        "konu": "Çok eşlilik",
+        "deger": "Yasak (1926 Medeni Kanunu'ndan beri); dini nikahla fiilen nadir görülür",
+        "yilBas": 1926,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "konu": "Eşcinsel birliktelik",
+        "deger": "Yasal olarak tanınmıyor; eşcinsellik suç değil",
+        "yilBas": null,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "konu": "Kadının evlilikte soyadı",
+        "deger": "Evlenen kadın kocasının soyadını alır, önüne kendi soyadını ekleyebilir; Anayasa Mahkemesi'nin ilgili madde hakkında iptal kararı var, güncel durum doğrulanmalı",
+        "yilBas": null,
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "isimler": {
+    "yapi": {
+      "adSayisi": "Bir ya da iki ad (ikinci ad yaygın; 2010'lardan sonra 'Ömer Asaf', 'Ali Asaf' gibi birleşik adlar moda)",
+      "soyadi": "1934 Soyadı Kanunu (2525) ile zorunlu; babadan geçer",
+      "evlilikteSoyadi": "Bkz. evlilikAile.yasalDurumlar",
+      "kaynak": [
+        "mevzuat",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    "kaynakKurallari": "Doğum on yılı boyutu NVİ'nin on yıllık 'en çok verilen isimler' listelerinden ve TÜİK/NVİ yıllık bebek ismi açıklamalarından gelir. sigpwned/popular-names-by-country-dataset (CC0) sadece tamamlayıcı olarak kullanılabilir (doğum yılı boyutu yok). philipperemy/name-dataset KULLANILMAZ (Facebook sızıntısından üretilmiş). Aşağıdaki listeler ilk 10; her havuz en az 30 isme genişletilmeli. NVİ listeleri o yıllarda verilen adları sayar; ikinci adlar ayrıca sayılmış olabilir (doğrulanmalı). Havuz doğum yılı aralığı: yilBas dahil, yilSon hariç. Boş havuzlu topluluk çekilişte kullanılmaz (topluluklar[].havuzHazir).",
+    "havuzlar": [
+      {
+        "id": "tr-k-1940",
+        "cinsiyet": "kadin",
+        "yilBas": 1940,
+        "yilSon": 1950,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Fatma",
+          "Ayşe",
+          "Emine",
+          "Hatice",
+          "Zeynep",
+          "Şerife",
+          "Meryem",
+          "Hanife",
+          "Sultan",
+          "Sevim"
+        ],
+        "kaynak": [
+          "nvi-isim-1941"
+        ],
+        "durum": "dogrulandi",
+        "not": "1941-1950; büyükanne kuşağı için",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-1940",
+        "cinsiyet": "erkek",
+        "yilBas": 1940,
+        "yilSon": 1950,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Ahmet",
+          "Ali",
+          "Hüseyin",
+          "Hasan",
+          "İsmail",
+          "İbrahim",
+          "Osman",
+          "Halil"
+        ],
+        "kaynak": [
+          "nvi-isim-1941"
+        ],
+        "durum": "dogrulandi",
+        "not": "1941-1950",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-1950",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": 1960,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "NVİ 1951-1960 listesi bulunup eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-1950",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": 1960,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "NVİ 1951-1960 listesi bulunup eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-1960",
+        "cinsiyet": "kadin",
+        "yilBas": 1960,
+        "yilSon": 1970,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Fatma",
+          "Ayşe",
+          "Emine",
+          "Hatice",
+          "Zeynep",
+          "Sevim",
+          "Aysel",
+          "Meryem",
+          "Hülya",
+          "Aynur"
+        ],
+        "kaynak": [
+          "nvi-isim-1961"
+        ],
+        "durum": "dogrulandi",
+        "not": "1961-1970",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-1960",
+        "cinsiyet": "erkek",
+        "yilBas": 1960,
+        "yilSon": 1970,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Ahmet",
+          "Ali",
+          "Hüseyin",
+          "Hasan",
+          "İbrahim",
+          "İsmail",
+          "Ramazan",
+          "Osman"
+        ],
+        "kaynak": [
+          "nvi-isim-1961"
+        ],
+        "durum": "dogrulandi",
+        "not": "1961-1970",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-1970",
+        "cinsiyet": "kadin",
+        "yilBas": 1970,
+        "yilSon": 1980,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Fatma",
+          "Ayşe",
+          "Emine",
+          "Hatice",
+          "Zeynep",
+          "Hülya",
+          "Dilek",
+          "Filiz",
+          "Yasemin",
+          "Özlem"
+        ],
+        "kaynak": [
+          "nvi-isim-1971"
+        ],
+        "durum": "dogrulandi",
+        "not": "1971-1980",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-1970",
+        "cinsiyet": "erkek",
+        "yilBas": 1970,
+        "yilSon": 1980,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Murat",
+          "Ahmet",
+          "Ali",
+          "Hüseyin",
+          "Hasan",
+          "İbrahim",
+          "İsmail",
+          "Hakan"
+        ],
+        "kaynak": [
+          "nvi-isim-1971"
+        ],
+        "durum": "dogrulandi",
+        "not": "1971-1980",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-1980",
+        "cinsiyet": "kadin",
+        "yilBas": 1980,
+        "yilSon": 1990,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Fatma",
+          "Ayşe",
+          "Emine",
+          "Hatice",
+          "Zeynep",
+          "Özlem",
+          "Elif",
+          "Yasemin",
+          "Esra",
+          "Dilek"
+        ],
+        "kaynak": [
+          "nvi-isim-1981"
+        ],
+        "durum": "dogrulandi",
+        "not": "1981-1990",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-1980",
+        "cinsiyet": "erkek",
+        "yilBas": 1980,
+        "yilSon": 1990,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Murat",
+          "Ahmet",
+          "Ali",
+          "Fatih",
+          "Hüseyin",
+          "İbrahim",
+          "Hasan",
+          "Gökhan"
+        ],
+        "kaynak": [
+          "nvi-isim-1981"
+        ],
+        "durum": "dogrulandi",
+        "not": "1981-1990",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-1990",
+        "cinsiyet": "kadin",
+        "yilBas": 1990,
+        "yilSon": 2000,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Merve",
+          "Fatma",
+          "Büşra",
+          "Elif",
+          "Kübra",
+          "Esra",
+          "Zeynep",
+          "Ayşe",
+          "Emine",
+          "Hatice"
+        ],
+        "kaynak": [
+          "nvi-isim-1991"
+        ],
+        "durum": "dogrulandi",
+        "not": "1991-2000",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-1990",
+        "cinsiyet": "erkek",
+        "yilBas": 1990,
+        "yilSon": 2000,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Ahmet",
+          "Emre",
+          "Ali",
+          "Murat",
+          "İbrahim",
+          "Ömer",
+          "Burak",
+          "Hüseyin"
+        ],
+        "kaynak": [
+          "nvi-isim-1991"
+        ],
+        "durum": "dogrulandi",
+        "not": "1991-2000",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-2000",
+        "cinsiyet": "kadin",
+        "yilBas": 2000,
+        "yilSon": 2010,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Zeynep",
+          "Elif",
+          "Sıla",
+          "İrem",
+          "Merve",
+          "Fatma",
+          "Esra",
+          "Rabia",
+          "Ayşe",
+          "Hatice"
+        ],
+        "kaynak": [
+          "nvi-isim-2004"
+        ],
+        "durum": "dogrulandi",
+        "not": "Sadece 2004 yılı listesi; on yıl için temsilî kabul edildi, diğer yıllarla genişletilmeli",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-2000",
+        "cinsiyet": "erkek",
+        "yilBas": 2000,
+        "yilSon": 2010,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Yusuf",
+          "Mehmet",
+          "Mustafa",
+          "Furkan",
+          "Ahmet",
+          "Emre",
+          "Enes",
+          "Ali",
+          "Eren",
+          "Ömer"
+        ],
+        "kaynak": [
+          "nvi-isim-2004"
+        ],
+        "durum": "dogrulandi",
+        "not": "Sadece 2004 yılı listesi",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-2010",
+        "cinsiyet": "kadin",
+        "yilBas": 2010,
+        "yilSon": 2020,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "2010-2019 yıllık listeleri bulunmalı",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-2010",
+        "cinsiyet": "erkek",
+        "yilBas": 2010,
+        "yilSon": 2020,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "2010-2019 yıllık listeleri bulunmalı",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-2020",
+        "cinsiyet": "kadin",
+        "yilBas": 2020,
+        "yilSon": 2030,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Zeynep",
+          "Elif",
+          "Defne",
+          "Asel",
+          "Azra",
+          "Eylül",
+          "Nehir",
+          "Eslem",
+          "Asya"
+        ],
+        "kaynak": [
+          "nvi-isim-2020"
+        ],
+        "durum": "dogrulandi",
+        "not": "Sadece 2020 yılı; ilk 3 sıralı, diğerleri haberdeki sırayla. 2021-2025 yıllarıyla genişletilmeli",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-2020",
+        "cinsiyet": "erkek",
+        "yilBas": 2020,
+        "yilSon": 2030,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Yusuf",
+          "Miraç",
+          "Eymen",
+          "Ömer Asaf",
+          "Kerem",
+          "Alparslan",
+          "Mustafa",
+          "Hamza",
+          "Ali Asaf"
+        ],
+        "kaynak": [
+          "nvi-isim-2020"
+        ],
+        "durum": "dogrulandi",
+        "not": "Sadece 2020 yılı",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-k-kurt",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "kurt",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Kürt aileler hem genel havuzdaki hem Kürtçe isimleri kullanır. Kürtçe isim listesi kaynaklı olarak (akademik çalışma ya da il bazlı NVİ verisi) eklenmeli; uydurma örnek yazılmadı. 2013 öncesi q, w, x harfli isimler kayda geçemiyordu (doğrulanmalı).",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-kurt",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "kurt",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Kürt aileler hem genel havuzdaki hem Kürtçe isimleri kullanır. Kürtçe isim listesi kaynaklı olarak (akademik çalışma ya da il bazlı NVİ verisi) eklenmeli; uydurma örnek yazılmadı. 2013 öncesi q, w, x harfli isimler kayda geçemiyordu (doğrulanmalı).",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-alevi",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "genel",
+        "din": "alevi",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Alevi ailelerde Ali, Hüseyin, Hasan, Haydar, Zeynep gibi Ehl-i Beyt adlarının daha sık olduğu belirtilir; kaynakla doğrulanmalı. Ömer, Osman, Ebubekir gibi adların daha seyrek olduğu da söylenir, doğrulanmalı. Bu havuz topluluktan bağımsız, din: alevi olan ailelerde genel ya da topluluk havuzuna EK olarak kullanılır.",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-alevi",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "genel",
+        "din": "alevi",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Alevi ailelerde Ali, Hüseyin, Hasan, Haydar, Zeynep gibi Ehl-i Beyt adlarının daha sık olduğu belirtilir; kaynakla doğrulanmalı. Ömer, Osman, Ebubekir gibi adların daha seyrek olduğu da söylenir, doğrulanmalı. Bu havuz topluluktan bağımsız, din: alevi olan ailelerde genel ya da topluluk havuzuna EK olarak kullanılır.",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-ermeni",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "ermeni",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-ermeni",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "ermeni",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-rum",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "rum",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-rum",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "rum",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-yahudi",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "yahudi",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-yahudi",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "yahudi",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-suryani",
+        "cinsiyet": "kadin",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "suryani",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-suryani",
+        "cinsiyet": "erkek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "topluluk": "suryani",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "Topluluk kaynaklarından eklenmeli",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-k-suriyeli",
+        "cinsiyet": "kadin",
+        "yilBas": 2011,
+        "yilSon": null,
+        "topluluk": "suriyeli",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "R06 Arap isim havuzundan (Suriye) alınabilir",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "tr-e-suriyeli",
+        "cinsiyet": "erkek",
+        "yilBas": 2011,
+        "yilSon": null,
+        "topluluk": "suriyeli",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "not": "R06 Arap isim havuzundan (Suriye) alınabilir",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "soyadlari": [
+      {
+        "id": "tr-soyad-1",
+        "topluluk": "genel",
+        "isimler": [
+          "Yılmaz"
+        ],
+        "kaynak": [
+          "trt-isim-2025"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-soyad-2",
+        "topluluk": "genel",
+        "isimler": [
+          "Kaya",
+          "Demir",
+          "Şahin",
+          "Çelik",
+          "Yıldız",
+          "Yıldırım",
+          "Öztürk",
+          "Aydın",
+          "Özdemir"
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "not": "sigpwned-names (CC0) ya da NVİ soyadı istatistiğiyle doğrulanmalı",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "meslekler": {
+    "kent": [
+      {
+        "id": "esnaf",
+        "ad": "Esnaf (bakkal, berber, terzi, kahveci, lokanta)",
+        "gelirDilimi": [
+          2,
+          4
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Bakkallar 2000'ler sonrası zincir marketler karşısında azaldı",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "fabrika-iscisi",
+        "ad": "Fabrika işçisi (tekstil, hazır giyim, otomotiv, gıda)",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Küçük atölyelerde kayıt dışı ve çocuk işçiliği riski",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "insaat-iscisi",
+        "ad": "İnşaat işçisi",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "İç göçle gelen erkeklerin ilk işi; iş kazası riski",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "memur",
+        "ad": "Memur (öğretmen, hemşire, polis, büro memuru, imam)",
+        "gelirDilimi": [
+          2,
+          4
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "İş güvencesi; tayin ve 'şark görevi'; KPSS sonrası",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "sofor",
+        "ad": "Şoför (taksi, dolmuş, servis, tır)",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "satis-kasiyer-magaza",
+        "ad": "Satış, kasiyer, mağaza ve AVM çalışanı",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 1990,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "cagri-merkezi-calisani",
+        "ad": "Çağrı merkezi çalışanı",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 2000,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Üniversite mezunu gençlerde yaygın",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "kurye-motokurye",
+        "ad": "Kurye / motokurye",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 2015,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "2020 pandemisiyle hızla arttı; trafik kazası riski",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "ev-iscisi-temizlik",
+        "ad": "Ev işçisi, temizlik, çocuk ve yaşlı bakıcısı",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Çoğunlukla kadınlar; göçmen kadınlar da",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "sanayi-ustasi-ve",
+        "ad": "Sanayi ustası ve çırak (oto sanayi, kaynakçı, elektrikçi)",
+        "gelirDilimi": [
+          2,
+          3
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Meslek lisesi ya da çıraklıkla",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "guvenlik-gorevlisi",
+        "ad": "Güvenlik görevlisi",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 2004,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "beyaz-yaka",
+        "ad": "Beyaz yaka (mühendis, muhasebeci, bankacı, yazılımcı, avukat, doktor)",
+        "gelirDilimi": [
+          3,
+          5
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Yazılımcılık 2000 sonrası; 2020'lerde bu grupta yurt dışına göç eğilimi",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "isveren-sirket-sahibi",
+        "ad": "İşveren / şirket sahibi / müteahhit",
+        "gelirDilimi": [
+          4,
+          5
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "kirsal": [
+      {
+        "id": "ciftci",
+        "ad": "Çiftçi (buğday, arpa, şeker pancarı)",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR7",
+          "TR5",
+          "TRA"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Ailecek çalışma; kadınlar çoğu zaman ücretsiz aile işçisi",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "hayvancilik-cobanlik",
+        "ad": "Hayvancılık / çobanlık",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TRA",
+          "TRB",
+          "TR7"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Yaylaya çıkma",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "findik-ve-cay",
+        "ad": "Fındık ve çay üreticisi",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR9",
+          "TR8"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Hasatta mevsimlik işçi çalıştırılır",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "pamuk-misir-ve",
+        "ad": "Pamuk, mısır ve sebze üreticisi; seracılık",
+        "gelirDilimi": [
+          1,
+          4
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR6",
+          "TRC",
+          "TR3"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "GAP sulamasıyla (1990'lar sonrası) Harran ovası",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "zeytin-uzum-incir",
+        "ad": "Zeytin, üzüm, incir, tütün üreticisi",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR3",
+          "TR2",
+          "TRC"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Tütün üretimi 2000'lerde kotalarla azaldı (doğrulanmalı)",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "mevsimlik-gezici-tarim",
+        "ad": "Mevsimlik gezici tarım işçisi",
+        "gelirDilimi": [
+          1,
+          1
+        ],
+        "kayitDisiRiski": "yuksek",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TRC kökenli, ülke geneline gider"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Aileler çocuklarıyla birlikte çadırda kalır; ulaşım kazaları; 2011 sonrası Suriyeli işçiler de",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "balikci",
+        "ad": "Balıkçı",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR9",
+          "TR8",
+          "TR2",
+          "TR3"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "maden-iscisi",
+        "ad": "Maden işçisi",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR8 (Zonguldak)",
+          "TR3 (Soma)"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "Maden kazaları (bkz. olay soma-2014)",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "koy-ogretmeni-saglik",
+        "ad": "Köy öğretmeni, sağlık ocağı ebesi, muhtar, imam",
+        "gelirDilimi": [
+          2,
+          3
+        ],
+        "kayitDisiRiski": "dusuk",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Meslek payı TÜİK İşgücü / ISCO kodlarıyla Veri tarafından bağlanacak"
+        },
+        "not": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "konut": {
+    "tipler": [
+      {
+        "id": "koy-kerpic",
+        "ad": "Kerpiç ya da taş köy evi (düz toprak dam)",
+        "kentKir": "kir",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR7",
+          "TRA",
+          "TRB",
+          "TRC"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Tek katlı, kalın duvar, küçük pencere, damda kurutulan bulgur ya da tezek; avluda ahır, tandır; içeride yer minderleri, soba, kilim",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "koy-ahsap-karadeniz",
+        "ad": "Ahşap / taş-ahşap Karadeniz evi",
+        "kentKir": "kir",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR9",
+          "TR8"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Yamaçta dağınık evler, iki katlı, alt kat taş üst ahşap, eğimli çatı (sonra sac), serender (ahşap ambar), çay ya da fındık bahçesi, sis",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "koy-tas-ege",
+        "ad": "Taş Ege/Akdeniz köy evi",
+        "kentKir": "kir",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR3",
+          "TR6",
+          "TR2"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "İki katlı taş ev, kiremit çatı, asma, zeytin ağaçları, avluda çeşme",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "koy-beton",
+        "ad": "Sonradan yapılmış beton köy evi",
+        "kentKir": "kir",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "yilBas": 1975,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Bir-iki katlı, sıvasız tuğla ya da beton, üstte çıkmış demirler (ileride kat çıkılacak), çatıda güneş enerjili su ısıtıcısı ve çanak anten",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "gecekondu",
+        "ad": "Gecekondu",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          1,
+          2
+        ],
+        "yilBas": 1950,
+        "yilSon": 2010,
+        "bolgeler": [
+          "TR1",
+          "TR5",
+          "TR3",
+          "TR4"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Şehir kenarında tepe yamacında tek katlı, bahçeli, kendi yapılmış evler; zamanla üstüne kat çıkılır; sobalı, bahçede sebze ve tavuk. 2000'lerden sonra kentsel dönüşümle azaldı",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "apartman-eski",
+        "ad": "Eski apartman (yap-sat, 4-6 kat)",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          2,
+          4
+        ],
+        "yilBas": 1965,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Bitişik nizam, balkonlar (çamaşır ipi, saksılar), doğalgaz öncesi kalorifer ya da soba, kapıcı dairesi, 3+1 daire, misafir odası, televizyonun etrafında oturma; depreme dayanıksız olabilir",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "toki",
+        "ad": "TOKİ konutu",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "yilBas": 2003,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Şehir dışında aynı tip yüksek bloklar, geniş otoparklar, yeni yollar, ağaçsız peyzaj; uzun vadeli taksitle alınır",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "site",
+        "ad": "Kapalı site / rezidans",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          4,
+          5
+        ],
+        "yilBas": 1995,
+        "yilSon": null,
+        "bolgeler": [
+          "TR1",
+          "TR5",
+          "TR3",
+          "TR6"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Güvenlikli giriş, havuz, yeşil alan, otopark; rezidansta cam kule",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "kentsel-donusum",
+        "ad": "Kentsel dönüşüm binası",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          2,
+          4
+        ],
+        "yilBas": 2012,
+        "yilSon": null,
+        "bolgeler": [
+          "TR1",
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Yıkılan eski apartman yerine daha yüksek, daha küçük daireli yeni bina; kira ve inşaat döneminde başka yerde oturma",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "lojman",
+        "ad": "Lojman",
+        "kentKir": "ikisi",
+        "gelirDilimi": [
+          2,
+          3
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Memur, öğretmen, asker aileleri için aynı tip bloklar; sık taşınma",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "mustakil-kasaba",
+        "ad": "Bahçeli müstakil kasaba evi",
+        "kentKir": "ikisi",
+        "gelirDilimi": [
+          2,
+          4
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "İlçe merkezinde bir-iki katlı, bahçede meyve ağacı, kapı önünde oturan komşular",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "yali-villa",
+        "ad": "Yalı / villa",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          5,
+          5
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "TR1",
+          "TR3",
+          "TR6"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Boğaz kıyısında ahşap yalı ya da bahçeli modern villa",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "konteyner-kent",
+        "ad": "Konteyner kent / çadır kent (afet sonrası)",
+        "kentKir": "ikisi",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "yilBas": 1999,
+        "yilSon": null,
+        "bolgeler": [
+          "Deprem bölgeleri"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "Sıra sıra beyaz konteynerler, ortak çamaşırhane ve okul konteyneri; geçici ama yıllarca sürebilir",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "id": "yurt",
+        "ad": "Öğrenci yurdu / öğrenci evi",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          1,
+          3
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [
+          "tümü"
+        ],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Konut tipi payı TÜİK Bina ve Konut / SILC serilerinden (Veri)"
+        },
+        "gorselNot": "KYK yurdunda ranzalı çok kişilik oda; öğrenci evinde paylaşılan eski daire",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "ulasim": [
+    {
+      "id": "at-esek-arabasi",
+      "arac": "At/eşek arabası, traktör, römork",
+      "kentKir": "kir",
+      "gelirDilimi": [
+        1,
+        3
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "At arabası azaldı, traktör köy hayatının merkezinde",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "sehirlerarasi-otobus",
+      "arac": "Şehirlerarası otobüs (muavin, kolonya, mola yerleri)",
+      "kentKir": "ikisi",
+      "gelirDilimi": [
+        1,
+        4
+      ],
+      "yilBas": 1960,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "Göç ve bayram yolculuklarının ana aracı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "dolmus-ve-minibus",
+      "arac": "Dolmuş ve minibüs",
+      "kentKir": "ikisi",
+      "gelirDilimi": [
+        1,
+        3
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "belediye-otobusu",
+      "arac": "Belediye otobüsü",
+      "kentKir": "kent",
+      "gelirDilimi": [
+        1,
+        3
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "vapur",
+      "arac": "Vapur",
+      "kentKir": "kent",
+      "gelirDilimi": [
+        1,
+        4
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "İstanbul ve İzmir",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "metro-tramvay-marmaray",
+      "arac": "Metro, tramvay, Marmaray",
+      "kentKir": "kent",
+      "gelirDilimi": [
+        1,
+        4
+      ],
+      "yilBas": 1989,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "Büyükşehirlerde; açılış yılları şehirlere göre doğrulanmalı (Marmaray 2013)",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "yerli-otomobil",
+      "arac": "Yerli otomobil (Anadol, Murat 124, Şahin, Doğan)",
+      "kentKir": "ikisi",
+      "gelirDilimi": [
+        3,
+        5
+      ],
+      "yilBas": 1966,
+      "yilSon": 2002,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "1970-90'larda araba sahibi olmak orta sınıf hayali; sonra ithal ve yerli üretim çeşitlendi",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "ozel-otomobil",
+      "arac": "Özel otomobil (genel)",
+      "kentKir": "ikisi",
+      "gelirDilimi": [
+        3,
+        5
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "Kredi ve taksitle; sahiplik oranı Veri'den",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "yuksek-hizli-tren",
+      "arac": "Yüksek hızlı tren",
+      "kentKir": "kent",
+      "gelirDilimi": [
+        2,
+        5
+      ],
+      "yilBas": 2009,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "İlk hat Ankara-Eskişehir (doğrulanmalı)",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "ucak",
+      "arac": "Uçak (iç hatlar)",
+      "kentKir": "kent",
+      "gelirDilimi": [
+        3,
+        5
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "2000'lerde ucuz havayollarıyla yaygınlaştı (doğrulanmalı)",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "motosiklet-ve-bisiklet",
+      "arac": "Motosiklet ve bisiklet",
+      "kentKir": "ikisi",
+      "gelirDilimi": [
+        1,
+        3
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "Bazı düz ovalık şehirlerde (ör. Konya) bisiklet yaygın (doğrulanmalı)",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "saglik": {
+    "donemSecimi": "Olayın (hastalık, doğum, tedavi) yaşandığı yıl.",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": 2003,
+        "ozet": "Parçalı sistem: SSK hastaneleri (işçiler), Emekli Sandığı (memurlar), Bağ-Kur (esnaf); sigortasızlar cepten öder. 1961 sosyalizasyon kanunuyla (224) kırsalda sağlık ocakları ve ebeler. 1992'den itibaren yoksullar için Yeşil Kart. SSK hastanelerinde uzun kuyruklar.",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2003,
+        "yilSon": null,
+        "ozet": "Sağlıkta Dönüşüm Programı: SSK hastaneleri Sağlık Bakanlığı'na geçti (2005), Genel Sağlık Sigortası (2008 sonrası, kademeli), aile hekimliği (pilot 2005, tüm ülke 2010), özel hastanelerin büyümesi, katkı payları, şehir hastaneleri (2017 sonrası). Yeşil Kart GSS'ye devredildi (2012).",
+        "kaynak": [
+          "mevzuat",
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "erisimFarklari": [
+      {
+        "not": "Büyükşehir ile kırsal ve Doğu bölgeleri arasında uzman hekime erişim farkı; ağır hastalar büyük şehre sevk edilir (yol ve konaklama masrafı).",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "not": "Eski kuşaklarda evde ebe ile doğum yaygındı; bugün doğumların neredeyse tamamı hastanede (oran TNSA'dan alınmalı).",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "not": "Kayıtsız göçmenler sağlık sistemine sınırlı erişir.",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "goc": [
+    {
+      "id": "koyden-kente",
+      "tur": "icGoc",
+      "yilBas": 1950,
+      "yilSon": null,
+      "kimler": "Köylü aileler, önce genç erkekler",
+      "nereden": "Kırsal Anadolu, Karadeniz, Doğu",
+      "nereye": "İstanbul, Ankara, İzmir, Bursa, Adana, sonra Kocaeli, Antalya",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "avrupa-isci",
+      "tur": "disGoc",
+      "yilBas": 1961,
+      "yilSon": 1974,
+      "kimler": "Genç işçiler, sonra aileleri",
+      "nereden": "Türkiye'nin her yerinden",
+      "nereye": "Batı Almanya (1961 anlaşması), sonra Avusturya, Hollanda, Belçika, Fransa, İsveç",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "'Gurbetçi' hayatı: ayrı kalan aileler, 'Almancı' damgası, dönüş ve dönememe",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "avrupa-aile-birlesimi",
+      "tur": "disGoc",
+      "yilBas": 1974,
+      "yilSon": null,
+      "kimler": "Eşler ve çocuklar, evlilik yoluyla gidenler, siyasi mülteciler (1980 sonrası)",
+      "nereden": "Türkiye",
+      "nereye": "Avrupa",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "ortadogu-isci",
+      "tur": "disGoc",
+      "yilBas": 1975,
+      "yilSon": 1995,
+      "kimler": "İnşaat işçileri, müteahhit firmalar",
+      "nereden": "Türkiye",
+      "nereye": "Libya, Suudi Arabistan, Irak; sonra Rusya ve Türki cumhuriyetler",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "zorunlu-goc-1990",
+      "tur": "icGoc",
+      "yilBas": 1990,
+      "yilSon": 2000,
+      "kimler": "Doğu ve Güneydoğu'da köyleri boşaltılan ya da çatışmadan kaçan aileler",
+      "nereden": "TRB, TRC, TRA",
+      "nereye": "Diyarbakır, Van gibi bölge kentleri; Adana, Mersin, İzmir, İstanbul",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "Yüksek: sayılar tartışmalı, resmî ve bağımsız kaynaklar farklı; tarafsız dil ve kaynaklı rakam şart",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "balkan-gocmenleri",
+      "tur": "gelenGoc",
+      "yilBas": 1950,
+      "yilSon": 1989,
+      "kimler": "Bulgaristan, Yugoslavya, Yunanistan'dan Türk ve Müslüman göçmenler (1950-51 ve 1989 büyük dalgalar)",
+      "nereden": "Balkanlar",
+      "nereye": "Bursa, İstanbul, Edirne, İzmir",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "gayrimuslim-azalma",
+      "tur": "disGoc",
+      "yilBas": 1950,
+      "yilSon": 1980,
+      "kimler": "Rum, Ermeni, Yahudi vatandaşlar",
+      "nereden": "İstanbul, İzmir",
+      "nereye": "Yunanistan, İsrail, Avrupa, Amerika",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "Yüksek: 1955 olayları ve 1964 sınır dışı etmeler bağlamı (bkz. tarihsel olaylar)",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "suriyeli-siginmacilar",
+      "tur": "gelenGoc",
+      "yilBas": 2011,
+      "yilSon": null,
+      "kimler": "Suriye iç savaşından kaçanlar (geçici koruma statüsü)",
+      "nereden": "Suriye",
+      "nereye": "Gaziantep, Şanlıurfa, Hatay, İstanbul ve ülke geneli",
+      "olcek": [
+        {
+          "deger": 3737000,
+          "birim": "kişi (geçici koruma, zirve)",
+          "yil": 2021,
+          "kaynak": [
+            "suriyeli-alain"
+          ],
+          "durum": "dogrulanmali",
+          "oyunda_kullanilabilir": false,
+          "not": "Kalite denetimi haber aktarımında buldu; Göç İdaresi'nden tarihli alınmalı"
+        },
+        {
+          "deger": 2371412,
+          "birim": "kişi (geçici koruma)",
+          "yil": 2025,
+          "kaynak": [
+            "suriyeli-alain"
+          ],
+          "durum": "dogrulanmali",
+          "oyunda_kullanilabilir": false,
+          "not": "27 Kasım tarihli; yılı büyük ihtimalle 2025. Rakam hızlı değişiyor, Göç İdaresi'nden tarihli alınmalı"
+        }
+      ],
+      "kaynak": [
+        "goc-gecici-koruma"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "Yüksek: göçmen karşıtlığı gerçek bir toplumsal olgu ama oyun dili ayrımcı olmamalı; Suriyeli bir hayat da oyuncunun hayatı olabilir",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "diger-gocmenler",
+      "tur": "gelenGoc",
+      "yilBas": 2000,
+      "yilSon": null,
+      "kimler": "Afgan, Iraklı, İranlı göçmen ve sığınmacılar; 2022 sonrası Rus ve Ukraynalılar; Orta Asya'dan ev işçileri",
+      "nereden": "",
+      "nereye": "İstanbul, Antalya, sınır illeri",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "beyin-gocu",
+      "tur": "disGoc",
+      "yilBas": 2015,
+      "yilSon": null,
+      "kimler": "Eğitimli gençler (doktor, mühendis, yazılımcı, akademisyen)",
+      "nereden": "Büyükşehirler",
+      "nereye": "Almanya, Hollanda, İngiltere, ABD, Kanada",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "mevsimlik-goc",
+      "tur": "icGoc",
+      "yilBas": 1950,
+      "yilSon": null,
+      "kimler": "Mevsimlik tarım işçisi aileler",
+      "nereden": "TRC (Şanlıurfa, Adıyaman, Mardin)",
+      "nereye": "Çukurova, Karadeniz (fındık), İç Anadolu, Ege",
+      "olcek": [],
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "hassasiyet": "",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "tarihselOlaylar": [
+    {
+      "id": "aile-hafizasi-1939-1945",
+      "ad": "Erzincan depremi (1939) ve İkinci Dünya Savaşı yokluk yılları",
+      "yilBas": 1939,
+      "yilSon": 1945,
+      "tur": "afet",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Büyükanne-büyükbaba kuşağı"
+      ],
+      "etki": {
+        "ekonomi": "Karne, yokluk, Varlık Vergisi (1942; gayrimüslimleri ağır etkiledi)",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "Savaşa girilmedi ama uzun seferberlik",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Oyun öncesi; sadece aile anlatılarında (büyükannenin hikâyeleri)",
+      "hassasiyet": "Varlık Vergisi gayrimüslimler açısından hassas",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kore-savasi",
+      "ad": "Kore Savaşı'na asker gönderilmesi",
+      "yilBas": 1950,
+      "yilSon": 1953,
+      "tur": "savas",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Askerlik çağındaki erkekler"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "Cepheye giden askerler",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "1930'larda doğan erkekler için",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "6-7-eylul",
+      "ad": "6-7 Eylül 1955 olayları",
+      "yilBas": 1955,
+      "yilSon": 1955,
+      "tur": "toplumsal",
+      "kapsam": [
+        "TR1",
+        "TR3"
+      ],
+      "etkilenenGruplar": [
+        "Rum, Ermeni ve Yahudi topluluklar"
+      ],
+      "etki": {
+        "ekonomi": "Dükkân, ev, kilise ve okulların yağmalanması",
+        "saglik": "",
+        "egitim": "",
+        "goc": "Rumların göçünü hızlandırdı",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Sadece ilgili topluluktan bir hayatta ya da İstanbul'daki tanık hayatlarda",
+      "hassasiyet": "Yüksek",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "darbe-1960",
+      "ad": "27 Mayıs 1960 askerî darbesi",
+      "yilBas": 1960,
+      "yilSon": 1961,
+      "tur": "darbe",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Siyasetle ilgili aileler"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "Sıkıyönetim",
+        "gundelik": "Radyodan duyulan haber"
+      },
+      "olcek": [],
+      "oyunNotu": "Arka plan olayı",
+      "hassasiyet": "Siyasi taraf tutulmamalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "rum-sinir-disi-1964",
+      "ad": "Yunan uyruklu Rumların sınır dışı edilmesi",
+      "yilBas": 1964,
+      "yilSon": 1964,
+      "tur": "toplumsal",
+      "kapsam": [
+        "TR1"
+      ],
+      "etkilenenGruplar": [
+        "İstanbul Rumları"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "Aileler bölündü, büyük göç",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "Yüksek",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "muhtira-1971",
+      "ad": "12 Mart 1971 muhtırası",
+      "yilBas": 1971,
+      "yilSon": 1973,
+      "tur": "darbe",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Üniversite öğrencileri",
+        "Sol örgütlerle ilişkilendirilenler"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "Üniversitelerde baskı",
+        "goc": "",
+        "guvenlik": "Sıkıyönetim, gözaltılar",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "Siyasi taraf tutulmamalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kibris-1974",
+      "ad": "Kıbrıs harekâtı",
+      "yilBas": 1974,
+      "yilSon": 1974,
+      "tur": "savas",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Askerdeki erkekler",
+        "Kıbrıs'ta yakını olanlar"
+      ],
+      "etki": {
+        "ekonomi": "Sonrasında ABD silah ambargosu",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "Seferberlik, karartma",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "1950-1954 doğumlu erkeklerin askerliğine denk gelebilir",
+      "hassasiyet": "Taraflara göre adı farklı anılır; tarafsız ad kullanılmalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "atakan_karari_bekliyor": "Olayın adı. Şu anki 'Kıbrıs harekâtı' Türkiye tarafının adı. Kalite önerisi: '1974 Kıbrıs savaşı (Türkiye'nin askerî müdahalesi)'. Karar verilene kadar ad değiştirilmedi.",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kriz-1977-1980",
+      "ad": "Döviz darlığı ve yokluk yılları, 24 Ocak 1980 kararları",
+      "yilBas": 1977,
+      "yilSon": 1980,
+      "tur": "ekonomikKriz",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Herkes"
+      ],
+      "etki": {
+        "ekonomi": "Yüksek enflasyon, karaborsa",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "Tüp, yağ, gaz kuyrukları"
+      },
+      "olcek": [],
+      "oyunNotu": "Enflasyon oranları Veri'nin serisinden",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "siyasi-siddet-1976-1980",
+      "ad": "Siyasi şiddet yılları (1977 Taksim 1 Mayıs, 1978 Maraş, 1980 Çorum olayları dahil)",
+      "yilBas": 1976,
+      "yilSon": 1980,
+      "tur": "catisma",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Gençler, öğrenciler",
+        "Maraş ve Çorum'da Aleviler"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "Okullarda boykot ve çatışma",
+        "goc": "",
+        "guvenlik": "Sokakta silahlı çatışmalar",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "1955-1962 doğumlu genç hayatlarında risk ve kaygı",
+      "hassasiyet": "Yüksek",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "darbe-1980",
+      "ad": "12 Eylül 1980 askerî darbesi",
+      "yilBas": 1980,
+      "yilSon": 1983,
+      "tur": "darbe",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Siyasi görüşlü gençler",
+        "Sendikacılar",
+        "Öğretmenler"
+      ],
+      "etki": {
+        "ekonomi": "Serbest piyasa dönüşümü",
+        "saglik": "",
+        "egitim": "YÖK kuruldu (1981)",
+        "goc": "Avrupa'ya siyasi göç",
+        "guvenlik": "Toplu gözaltılar, işkence iddiaları, idamlar",
+        "gundelik": "Sokağa çıkma yasakları, kitap yakma"
+      },
+      "olcek": [],
+      "oyunNotu": "Karar anı: siyasi örgütlenme, aileden birinin gözaltına alınması",
+      "hassasiyet": "Yüksek; sahne göstermeden",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "pkk-catisma",
+      "ad": "PKK ile silahlı çatışma dönemi",
+      "yilBas": 1984,
+      "yilSon": null,
+      "tur": "catisma",
+      "kapsam": [
+        "TRB",
+        "TRC",
+        "TRA"
+      ],
+      "etkilenenGruplar": [
+        "Bölgede yaşayan siviller",
+        "Askerlik yapan erkekler ve aileleri",
+        "Köy korucuları"
+      ],
+      "etki": {
+        "ekonomi": "Bölgede yatırım eksikliği",
+        "saglik": "",
+        "egitim": "Okulların kapanması, öğretmen eksikliği",
+        "goc": "Bkz. goc.zorunlu-goc-1990",
+        "guvenlik": "En yoğun 1990'lar; 2013-2015 çözüm süreci; 2015-2016 kent çatışmaları ve sokağa çıkma yasakları; 2025'te silah bırakma süreci (doğrulanmalı)",
+        "gundelik": "Yol kontrolleri, OHAL (1987-2002)"
+      },
+      "olcek": [],
+      "oyunNotu": "Hem bölgede yaşayan Kürt ve Türk sivillerin hem de batıdan askere giden gençlerin hayatına farklı yollardan dokunur. 'yilSon' güncel durumla doğrulanmalı.",
+      "hassasiyet": "Çok yüksek: terimler, taraflar ve rakamlar Kalite'nin özel denetiminden geçmeli; şiddet sahnesi gösterilmez",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "cernobil-1986",
+      "ad": "Çernobil serpintisi",
+      "yilBas": 1986,
+      "yilSon": 1986,
+      "tur": "afet",
+      "kapsam": [
+        "TR9",
+        "TR8"
+      ],
+      "etkilenenGruplar": [
+        "Karadeniz halkı, çay üreticileri"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "Uzun dönem kanser kaygıları (kanıt durumu tartışmalı)",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "Sağlık etkileri kanıtlanmış gibi sunulmamalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "bulgaristan-gocu-1989",
+      "ad": "Bulgaristan'dan zorunlu göç",
+      "yilBas": 1989,
+      "yilSon": 1989,
+      "tur": "goc",
+      "kapsam": [
+        "TR1",
+        "TR2",
+        "TR4"
+      ],
+      "etkilenenGruplar": [
+        "Bulgaristan Türkleri"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "Yüz binlerce kişi (doğrulanmalı)",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Bursa ve İstanbul'da göçmen aile geçmişi",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "sivas-1993",
+      "ad": "Sivas Madımak Oteli yangını",
+      "yilBas": 1993,
+      "yilSon": 1993,
+      "tur": "toplumsal",
+      "kapsam": [
+        "TR7"
+      ],
+      "etkilenenGruplar": [
+        "Aleviler",
+        "Aydınlar ve sanatçılar"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "Alevi toplumunun kolektif hafızasında derin yer"
+      },
+      "olcek": [],
+      "oyunNotu": "Alevi aile hayatlarında anma",
+      "hassasiyet": "Yüksek",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kriz-1994",
+      "ad": "1994 ekonomik krizi (5 Nisan kararları)",
+      "yilBas": 1994,
+      "yilSon": 1994,
+      "tur": "ekonomikKriz",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "İşçiler, memurlar, küçük esnaf"
+      ],
+      "etki": {
+        "ekonomi": "Devalüasyon, işten çıkarmalar",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Rakamlar Veri'den",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "28-subat-1997",
+      "ad": "28 Şubat süreci",
+      "yilBas": 1997,
+      "yilSon": 2002,
+      "tur": "darbe",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Başörtülü öğrenciler ve kamu çalışanları",
+        "İmam hatip öğrencileri",
+        "Dindar iş insanları"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "8 yıllık kesintisiz eğitim; imam hatiplerin orta kısmı kapandı; üniversitelerde başörtüsü yasağının sertleşmesi; katsayı uygulaması",
+        "goc": "Bazı öğrencilerin yurt dışında okuması",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Başörtülü bir genç kadın için üniversite kararı: başörtüsünü çıkarmak, okumamak, yurt dışı, peruk vb. Gerçek seçenekler, yargısız",
+      "hassasiyet": "Yüksek; siyasi taraf tutulmamalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "atakan_karari_bekliyor": "Olayın türü. Şu an 'darbe'; Kalite önerisi 'siyasi' (sınıflandırma tartışmalı). Karar verilene kadar değiştirilmedi.",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "marmara-depremi-1999",
+      "ad": "17 Ağustos 1999 Marmara (Gölcük) depremi ve 12 Kasım 1999 Düzce depremi",
+      "yilBas": 1999,
+      "yilSon": 1999,
+      "tur": "afet",
+      "kapsam": [
+        "TR4",
+        "TR1"
+      ],
+      "etkilenenGruplar": [
+        "Kocaeli, Sakarya, Yalova, Düzce, İstanbul (Avcılar) halkı"
+      ],
+      "etki": {
+        "ekonomi": "Sanayi bölgesi hasarı",
+        "saglik": "Ölü ve yaralılar, travma",
+        "egitim": "",
+        "goc": "Bölgeden geçici göç",
+        "guvenlik": "",
+        "gundelik": "Çadır kentler, prefabrik evler, zorunlu deprem sigortası (DASK, 2000)"
+      },
+      "olcek": [
+        {
+          "deger": 17480,
+          "birim": "ölü (17 Ağustos 1999)",
+          "yil": 2010,
+          "kaynak": [
+            "marmara-ntv"
+          ],
+          "durum": "dogrulandi",
+          "oyunda_kullanilabilir": true,
+          "not": "TBMM araştırma komisyonu raporu (Temmuz 2010), NTV aktarımı; 43.953 yaralı"
+        },
+        {
+          "deger": null,
+          "birim": "ölü (12 Kasım 1999 Düzce)",
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        }
+      ],
+      "oyunNotu": "17 Ağustos rakamı kaynaklı; Düzce rakamı eklenmeli",
+      "hassasiyet": "Sahne gösterilmez",
+      "kaynak": [
+        "marmara-ntv",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kriz-2001",
+      "ad": "Kasım 2000 ve Şubat 2001 ekonomik krizi",
+      "yilBas": 2000,
+      "yilSon": 2002,
+      "tur": "ekonomikKriz",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Herkes; özellikle esnaf ve bankacılık çalışanları"
+      ],
+      "etki": {
+        "ekonomi": "Devalüasyon, banka iflasları, toplu işten çıkarmalar",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "Esnafın kasa fırlatma protestosu (doğrulanmalı)"
+      },
+      "olcek": [],
+      "oyunNotu": "Ailede iş kaybı, borç",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "ytl-2005",
+      "ad": "Yeni Türk Lirası: paradan 6 sıfır atılması",
+      "yilBas": 2005,
+      "yilSon": 2005,
+      "tur": "siyasi",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Herkes"
+      ],
+      "etki": {
+        "ekonomi": "Fiyat gösteriminin değişmesi",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "'Milyon' yerine 'lira'; yaşlılar uzun süre eski birimle konuştu"
+      },
+      "olcek": [],
+      "oyunNotu": "Bütçe metinlerinde para biriminin yıla göre gösterilmesi için önemli (Simülasyon)",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kuresel-kriz-2008",
+      "ad": "Küresel finans krizi",
+      "yilBas": 2008,
+      "yilSon": 2009,
+      "tur": "ekonomikKriz",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Sanayi işçileri, ihracatçılar"
+      ],
+      "etki": {
+        "ekonomi": "İşsizlik artışı",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "van-depremi-2011",
+      "ad": "Van depremi",
+      "yilBas": 2011,
+      "yilSon": 2011,
+      "tur": "afet",
+      "kapsam": [
+        "TRB"
+      ],
+      "etkilenenGruplar": [
+        "Van ve Erciş halkı"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "Konteyner kentler, kış"
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "Sahne gösterilmez",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "suriye-savasi",
+      "ad": "Suriye iç savaşı ve sığınmacı akını",
+      "yilBas": 2011,
+      "yilSon": null,
+      "tur": "goc",
+      "kapsam": [
+        "TRC",
+        "TR6",
+        "TR1"
+      ],
+      "etkilenenGruplar": [
+        "Sınır illeri",
+        "Suriyeli sığınmacılar"
+      ],
+      "etki": {
+        "ekonomi": "Kira ve ücretlerde baskı, kayıt dışı işgücü",
+        "saglik": "",
+        "egitim": "Okullarda yabancı öğrenciler",
+        "goc": "Bkz. goc.suriyeli-siginmacilar",
+        "guvenlik": "Sınır ötesi saldırılar",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Suriyeli bir hayatın Türkiye bölümü de bu profilden yararlanır",
+      "hassasiyet": "Yüksek",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "gezi-2013",
+      "ad": "Gezi Parkı protestoları",
+      "yilBas": 2013,
+      "yilSon": 2013,
+      "tur": "toplumsal",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Kentli gençler"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Sadece katılım isteğe bağlı küçük bir olay olarak",
+      "hassasiyet": "Siyasi taraf tutulmamalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "soma-2014",
+      "ad": "Soma maden faciası",
+      "yilBas": 2014,
+      "yilSon": 2014,
+      "tur": "afet",
+      "kapsam": [
+        "TR3"
+      ],
+      "etkilenenGruplar": [
+        "Maden işçileri ve aileleri"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "İş güvenliği tartışması",
+        "gundelik": ""
+      },
+      "olcek": [
+        {
+          "deger": 301,
+          "birim": "ölü",
+          "yil": 2014,
+          "kaynak": [
+            "soma-dunya",
+            "soma-cumhuriyet"
+          ],
+          "durum": "dogrulandi",
+          "oyunda_kullanilabilir": true
+        }
+      ],
+      "oyunNotu": "Madenci hayatında risk olayı (genel maden kazası oranı Veri'den)",
+      "hassasiyet": "Sahne gösterilmez",
+      "kaynak": [
+        "soma-dunya",
+        "soma-cumhuriyet",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "saldirilar-2015-2017",
+      "ad": "Bombalı saldırılar dönemi",
+      "yilBas": 2015,
+      "yilSon": 2017,
+      "tur": "catisma",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Büyükşehirlerde yaşayanlar"
+      ],
+      "etki": {
+        "ekonomi": "Turizmde düşüş",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "Kalabalık yerlerden kaçınma",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Doğrudan etki çok nadir; çoğu hayatta kaygı ve haber olarak",
+      "hassasiyet": "Yüksek",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "darbe-girisimi-2016",
+      "ad": "15 Temmuz 2016 darbe girişimi, OHAL ve kamu ihraçları",
+      "yilBas": 2016,
+      "yilSon": 2018,
+      "tur": "darbe",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Kamu çalışanları, askerler, öğretmenler, akademisyenler",
+        "O gece sokağa çıkanlar"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "Okul ve üniversite kapatmaları",
+        "goc": "Yurt dışına göç",
+        "guvenlik": "OHAL (2016-2018)",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Memur hayatlarında iş kaybı riski; rakamlar kaynaklı olmalı",
+      "hassasiyet": "Çok yüksek; siyasi taraf tutulmamalı",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kur-krizi-2018",
+      "ad": "2018 kur krizi",
+      "yilBas": 2018,
+      "yilSon": 2019,
+      "tur": "ekonomikKriz",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Dövizle borçlu şirketler, çalışanlar"
+      ],
+      "etki": {
+        "ekonomi": "Liranın sert değer kaybı, enflasyon",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "covid-19",
+      "ad": "COVID-19 salgını",
+      "yilBas": 2020,
+      "yilSon": 2022,
+      "tur": "pandemi",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Herkes; 65 yaş üstü ve 20 yaş altına özel sokağa çıkma kısıtlamaları",
+        "Sağlık çalışanları"
+      ],
+      "etki": {
+        "ekonomi": "İş kayıpları, kısa çalışma ödeneği",
+        "saglik": "Ölümler (resmî sayı birincil kaynaktan)",
+        "egitim": "Uzaktan eğitim (EBA TV); internet ve tableti olmayan çocuklar geride kaldı",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "Maske, HES kodu, tam kapanmalar"
+      },
+      "olcek": [],
+      "oyunNotu": "Evrensel olaylarla eşleşmeli (Simülasyon)",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "orman-yanginlari-2021",
+      "ad": "2021 orman yangınları",
+      "yilBas": 2021,
+      "yilSon": 2021,
+      "tur": "afet",
+      "kapsam": [
+        "TR6",
+        "TR3"
+      ],
+      "etkilenenGruplar": [
+        "Manavgat, Marmaris ve çevresi köyleri"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "",
+      "hassasiyet": "",
+      "kaynak": [
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "enflasyon-2021-2024",
+      "ad": "Yüksek enflasyon ve hayat pahalılığı dönemi",
+      "yilBas": 2021,
+      "yilSon": 2024,
+      "tur": "ekonomikKriz",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Sabit gelirliler, emekliler, kiracılar, öğrenciler"
+      ],
+      "etki": {
+        "ekonomi": "Yıllık TÜFE Ekim 2022'de %85,51 ile zirve",
+        "saglik": "",
+        "egitim": "Öğrenci barınma krizi",
+        "goc": "Gençlerde yurt dışı isteği",
+        "guvenlik": "",
+        "gundelik": "Kira artışları, ev sahibi-kiracı anlaşmazlıkları, asgari ücretin yılda iki kez artırılması"
+      },
+      "olcek": [
+        {
+          "deger": 85.51,
+          "birim": "% yıllık TÜFE (Ekim 2022)",
+          "yil": 2022,
+          "kaynak": [
+            "tuik-tufe-2022-10",
+            "tuik-tufe-sbb"
+          ],
+          "durum": "dogrulandi",
+          "oyunda_kullanilabilir": true
+        }
+      ],
+      "oyunNotu": "Bütçe sisteminin en sert test dönemi; aylık seriler Veri'den",
+      "hassasiyet": "Alternatif enflasyon hesaplamaları (ör. ENAG) farklı; oyunda resmî seri kullanılır, not düşülebilir",
+      "kaynak": [
+        "tuik-tufe-2022-10",
+        "tuik-tufe-sbb",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "_not": "Sadece olcek rakamı doğrulandı; etki metinleri kaynaksız.",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "kahramanmaras-2023",
+      "ad": "6 Şubat 2023 Kahramanmaraş merkezli depremler",
+      "yilBas": 2023,
+      "yilSon": 2023,
+      "tur": "afet",
+      "kapsam": [
+        "TRC",
+        "TR6",
+        "TRB"
+      ],
+      "etkilenenGruplar": [
+        "11 ilde yaşayanlar (Kahramanmaraş, Hatay, Adıyaman, Malatya, Gaziantep, Osmaniye, Diyarbakır, Şanlıurfa, Kilis, Adana, Elazığ)",
+        "Bölgedeki Suriyeli sığınmacılar"
+      ],
+      "etki": {
+        "ekonomi": "Konut ve iş yerlerinin yıkımı; bölgede kira artışı",
+        "saglik": "Ölü ve yaralılar, travma",
+        "egitim": "Okulların taşınması, öğrencilerin başka illere nakli",
+        "goc": "Bölgeden büyük iç göç",
+        "guvenlik": "",
+        "gundelik": "Çadır ve konteyner kentler, kalıcı konutlar"
+      },
+      "olcek": [
+        {
+          "deger": 53537,
+          "birim": "ölü (Türkiye)",
+          "yil": 2024,
+          "kaynak": [
+            "icisleri-deprem-2024",
+            "deprem-medyascope-2024"
+          ],
+          "durum": "dogrulandi",
+          "oyunda_kullanilabilir": true,
+          "not": "İçişleri Bakanı açıklaması, Şubat 2024; TÜİK ölüm istatistiğiyle karşılaştırılmalı"
+        },
+        {
+          "deger": 107213,
+          "birim": "yaralı",
+          "yil": 2024,
+          "kaynak": [
+            "icisleri-deprem-2024"
+          ],
+          "durum": "dogrulandi",
+          "oyunda_kullanilabilir": true
+        }
+      ],
+      "oyunNotu": "Etkilenen illerde doğmuş hayatlarda en büyük olaylardan biri; ülke genelinde de yakın kaybı, yardım, gönüllülük olayları",
+      "hassasiyet": "Çok yüksek; sahne gösterilmez, gerçek kişilerin adları kullanılmaz",
+      "kaynak": [
+        "icisleri-deprem-2024",
+        "deprem-medyascope-2024",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "_not": "Sadece olcek rakamları doğrulandı; etki metinleri ve etkilenen gruplar kaynaksız.",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "eyt-2023",
+      "ad": "EYT ile emeklilik",
+      "yilBas": 2023,
+      "yilSon": 2023,
+      "tur": "siyasi",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "8 Eylül 1999 öncesi sigortalı olanlar"
+      ],
+      "etki": {
+        "ekonomi": "Milyonlarca kişinin erken emekliliği (sayı doğrulanmalı)",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [],
+      "oyunNotu": "Bkz. emeklilik.donemler",
+      "hassasiyet": "",
+      "kaynak": [
+        "mevzuat",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "icBolgeler": [
+    {
+      "id": "TR1",
+      "ad": "İstanbul",
+      "kapsam": "İstanbul",
+      "kentlesme": "Neredeyse tamamen kentsel",
+      "ekonomi": "Ülkenin ekonomik merkezi; çok büyük gelir farkları (yalılardan gecekondu kökenli mahallelere)",
+      "dilDin": "Ülkenin her yerinden göçle gelmiş karışık nüfus; gayrimüslim toplulukların çoğu burada",
+      "dogurganlik": "Düşük (rakam Veri'den)",
+      "konut": [
+        "apartman-eski",
+        "site",
+        "kentsel-donusum",
+        "gecekondu",
+        "yali-villa"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR2",
+      "ad": "Batı Marmara",
+      "kapsam": "Tekirdağ, Edirne, Kırklareli, Balıkesir, Çanakkale",
+      "kentlesme": "Orta",
+      "ekonomi": "Tarım (ayçiçeği, çeltik), Tekirdağ'da sanayi",
+      "dilDin": "Balkan göçmeni aileler yaygın",
+      "dogurganlik": "Düşük",
+      "konut": [
+        "mustakil-kasaba",
+        "koy-tas-ege",
+        "apartman-eski"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR3",
+      "ad": "Ege",
+      "kapsam": "İzmir, Aydın, Denizli, Muğla, Manisa, Afyonkarahisar, Kütahya, Uşak",
+      "kentlesme": "Yüksek",
+      "ekonomi": "Tarım (zeytin, üzüm, pamuk, incir), turizm, tekstil (Denizli), maden (Soma)",
+      "dilDin": "Alevi, Yörük, Balkan göçmeni ve Kürt göçmen topluluklar",
+      "dogurganlik": "Düşük",
+      "konut": [
+        "koy-tas-ege",
+        "apartman-eski",
+        "site"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR4",
+      "ad": "Doğu Marmara",
+      "kapsam": "Bursa, Kocaeli, Sakarya, Düzce, Bolu, Yalova, Eskişehir, Bilecik",
+      "kentlesme": "Yüksek",
+      "ekonomi": "Sanayi kuşağı (otomotiv, kimya)",
+      "dilDin": "Balkan, Kafkas (Çerkez, Gürcü) kökenli aileler, iç göçmenler",
+      "dogurganlik": "Düşük (Eskişehir 2024'te 1,12 ile en düşük illerden)",
+      "konut": [
+        "apartman-eski",
+        "toki",
+        "site"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "tuik-dogum-2024",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR5",
+      "ad": "Batı Anadolu",
+      "kapsam": "Ankara, Konya, Karaman",
+      "kentlesme": "Yüksek (Ankara), orta (Konya)",
+      "ekonomi": "Ankara'da kamu ve hizmet sektörü ağırlıklı; Konya'da tarım, sanayi ve üniversiteler",
+      "dilDin": "Konya'da dindar-muhafazakâr kesim ağırlıklı, kentte farklı yaşam tarzları da var; Ankara'da kamu çalışanları büyük yer tutar; Orta Anadolu Kürtleri (Kulu, Cihanbeyli)",
+      "dogurganlik": "Orta-düşük",
+      "konut": [
+        "apartman-eski",
+        "toki",
+        "lojman",
+        "gecekondu"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR6",
+      "ad": "Akdeniz",
+      "kapsam": "Antalya, Isparta, Burdur, Adana, Mersin, Hatay, Kahramanmaraş, Osmaniye",
+      "kentlesme": "Yüksek",
+      "ekonomi": "Turizm (Antalya), tarım (Çukurova pamuk, narenciye, seracılık)",
+      "dilDin": "Arap Alevileri (Hatay, Adana, Mersin), Kürt göçmenler, Suriyeli sığınmacılar, Yörükler",
+      "dogurganlik": "Orta",
+      "konut": [
+        "apartman-eski",
+        "site",
+        "koy-beton",
+        "konteyner-kent"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR7",
+      "ad": "Orta Anadolu",
+      "kapsam": "Kayseri, Sivas, Yozgat, Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir",
+      "kentlesme": "Orta",
+      "ekonomi": "Tahıl, hayvancılık, Kayseri'de sanayi ve ticaret",
+      "dilDin": "Sünni ve Alevi köyler (Sivas, Yozgat, Kırşehir)",
+      "dogurganlik": "Orta-düşük",
+      "konut": [
+        "koy-kerpic",
+        "koy-beton",
+        "mustakil-kasaba",
+        "apartman-eski"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR8",
+      "ad": "Batı Karadeniz",
+      "kapsam": "Zonguldak, Karabük, Bartın, Kastamonu, Çankırı, Sinop, Samsun, Tokat, Çorum, Amasya",
+      "kentlesme": "Orta",
+      "ekonomi": "Kömür, demir-çelik, fındık, tarım",
+      "dilDin": "Sünni ve Alevi (Tokat, Çorum, Amasya)",
+      "dogurganlik": "Düşük (Bartın 2024'te 1,12 ile en düşük illerden)",
+      "konut": [
+        "koy-ahsap-karadeniz",
+        "mustakil-kasaba",
+        "apartman-eski"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "tuik-dogum-2024",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TR9",
+      "ad": "Doğu Karadeniz",
+      "kapsam": "Trabzon, Ordu, Giresun, Rize, Artvin, Gümüşhane",
+      "kentlesme": "Orta",
+      "ekonomi": "Çay, fındık, balıkçılık; büyükşehirlere ve yurt dışına çok göç veren bölge",
+      "dilDin": "Laz, Hemşinli, Gürcü topluluklar",
+      "dogurganlik": "Düşük",
+      "konut": [
+        "koy-ahsap-karadeniz",
+        "koy-beton",
+        "apartman-eski"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TRA",
+      "ad": "Kuzeydoğu Anadolu",
+      "kapsam": "Erzurum, Erzincan, Bayburt, Ağrı, Kars, Iğdır, Ardahan",
+      "kentlesme": "Orta-düşük",
+      "ekonomi": "Hayvancılık, kamu; uzun ve sert kış",
+      "dilDin": "Türk, Kürt, Azeri (Kars, Iğdır; Caferi topluluklar), Terekeme topluluklar",
+      "dogurganlik": "Orta-yüksek (Ağrı yüksek)",
+      "konut": [
+        "koy-kerpic",
+        "koy-beton",
+        "lojman",
+        "apartman-eski"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TRB",
+      "ad": "Ortadoğu Anadolu",
+      "kapsam": "Malatya, Elazığ, Bingöl, Tunceli, Van, Muş, Bitlis, Hakkâri",
+      "kentlesme": "Orta",
+      "ekonomi": "Hayvancılık, kayısı (Malatya), kamu, sınır ticareti",
+      "dilDin": "Kürtçe ve Zazaca yaygın; Tunceli'de Alevi çoğunluk",
+      "dogurganlik": "Yüksek (Van, Muş, Hakkâri)",
+      "konut": [
+        "koy-kerpic",
+        "koy-beton",
+        "apartman-eski",
+        "konteyner-kent"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
+      "id": "TRC",
+      "ad": "Güneydoğu Anadolu",
+      "kapsam": "Gaziantep, Adıyaman, Kilis, Şanlıurfa, Diyarbakır, Mardin, Batman, Şırnak, Siirt",
+      "kentlesme": "Orta-yüksek",
+      "ekonomi": "Gaziantep sanayi ve ticaret; GAP sulu tarım (pamuk); mevsimlik işçi veren bölge",
+      "dilDin": "Kürt çoğunluk ve Türk, Arap, Süryani, Ezidi topluluklar; Suriyeli sığınmacılar",
+      "dogurganlik": "En yüksek (Şanlıurfa 2024'te 3,28)",
+      "konut": [
+        "koy-kerpic",
+        "koy-beton",
+        "apartman-eski",
+        "toki",
+        "konteyner-kent"
+      ],
+      "kaynak": [
+        "tuik-ibbs",
+        "tuik-dogum-2024",
+        "kaynaksiz"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "gunlukHayat": {
+    "bayramlar": [
+      {
+        "ad": "Ramazan Bayramı (Şeker Bayramı) ve Ramazan orucu",
+        "tur": "dini",
+        "kimler": "Müslümanların çoğu; bayram ziyaretleri, el öpme, harçlık",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Kurban Bayramı",
+        "tur": "dini",
+        "kimler": "Müslümanların çoğu; kurban kesimi parası olan aileler, memleket ziyareti",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Muharrem orucu, Aşure, cem",
+        "tur": "dini",
+        "kimler": "Aleviler (aşure herkes tarafından da yapılır)",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Nevruz",
+        "tur": "geleneksel",
+        "kimler": "Özellikle Kürtler ve Aleviler; bahar bayramı",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Hıdrellez",
+        "tur": "geleneksel",
+        "kimler": "Özellikle Balkan kökenliler, Romanlar, Anadolu'nun birçok yeri",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Paskalya, Noel; Yom Kipur, Hamursuz",
+        "tur": "dini",
+        "kimler": "Hristiyan ve Yahudi topluluklar",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "23 Nisan, 19 Mayıs, 29 Ekim, 30 Ağustos",
+        "tur": "milli",
+        "kimler": "Okullarda törenler; 23 Nisan çocuk bayramı",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Yılbaşı",
+        "tur": "geleneksel",
+        "kimler": "Laik kutlama, Milli Piyango bileti; dindar çevrelerde kutlanmayabilir",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "gecisTorenleri": [
+      {
+        "ad": "Doğum: lohusalık, kırk çıkarma, kulağa ezan okuyarak ad koyma",
+        "yas": 0,
+        "kimler": "Yaygın (dindarlığa göre değişir)",
+        "aciklama": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Sünnet ve sünnet düğünü",
+        "yas": 7,
+        "kimler": "Müslüman erkek çocuklar; yaş genelde 5-10 arası, hastanede yapılması yaygınlaştı",
+        "aciklama": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Asker uğurlaması",
+        "yas": 20,
+        "kimler": "Erkekler",
+        "aciklama": "Konvoy, davul, otogar uğurlaması",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Hac / umre",
+        "yas": null,
+        "kimler": "Parası yeten dindar yaşlılar; 'hacı' unvanı",
+        "aciklama": "",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "ad": "Cenaze",
+        "yas": null,
+        "kimler": "Müslümanlarda genellikle aynı ya da ertesi gün defin, cenaze namazı, taziye evi, helva, mevlit, yedi/kırk/elli iki; Alevilerde cemevinde cenaze; Hristiyan ve Yahudi topluluklarda kendi mezarlıkları",
+        "aciklama": "Kore geri bildirimi: cenaze isteği (ARASTIRMA.md 3.8)",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "yemek": "Kahvaltı kültürü, çay (günde birçok bardak), ekmek ve tandır ekmeği, bölgesel mutfaklar (Karadeniz hamsi ve mısır, Güneydoğu kebap ve bulgur, Ege zeytinyağlı). Gelire göre et tüketimi büyük fark yaratır.",
+    "medyaDonemleri": [
+      {
+        "yilBas": 1950,
+        "yilSon": 1968,
+        "ozet": "Radyo dönemi (radyo tiyatrosu, haberler), Yeşilçam sineması",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1968,
+        "yilSon": 1990,
+        "ozet": "TRT tek kanal televizyon; komşuda televizyon izleme; siyah-beyaz, sonra renkli",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 1990,
+        "yilSon": 2005,
+        "ozet": "Özel kanallar, diziler, arabesk ve pop; internet kafeler (1990'ların sonu)",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      },
+      {
+        "yilBas": 2005,
+        "yilSon": null,
+        "ozet": "Cep telefonu, sosyal medya, dizilerin ihracatı, akıllı telefon (2010'lar)",
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "evcilHayvan": "Sokak kedileri ve köpekleri kentin parçası; mahalle kedisini besleme çok yaygın. Kırsalda çoban köpeği, tavuk, inek. Evde kedi ve muhabbet kuşu yaygın; ev köpeği daha çok kentli orta-üst gelirde."
+  },
+  "hassasiyet": [
+    {
+      "konu": "Kürt meselesi ve 1984 sonrası çatışma",
+      "neden": "Toplumda çok derin ve taraflı bir konu; terimler bile tartışmalı",
+      "oneri": "Olaylar tarafsız adlarla ve kaynaklı rakamlarla; Kürt bir hayat tek bir 'mağduriyet' ya da 'tehdit' hikâyesine indirgenmez; Kürt kimliği şehirli, köylü, zengin, yoksul, dindar, laik tüm hâlleriyle temsil edilir"
+    },
+    {
+      "konu": "Alevilik",
+      "neden": "Tanımı (İslam içinde mi ayrı mı) topluluk içinde de tartışmalı; tarihsel acılar (Maraş, Çorum, Sivas)",
+      "oneri": "Kişi kendi kimliğini nasıl tanımlıyorsa öyle; tek bir tanım dayatılmaz"
+    },
+    {
+      "konu": "Gayrimüslim topluluklar",
+      "neden": "1915 olayları, 1942, 1955, 1964 gibi konular uluslararası ve iç siyasette hassas",
+      "oneri": "Oyun 1950 sonrası; geçmiş sadece aile hafızası olarak ve Kalite denetimiyle",
+      "atakan_karari_bekliyor": "'1915 olayları' ifadesi bir tarafın tercih ettiği ad. Kalite önerisi: betimleyici bir ifade (ör. '1915'te Ermenilerin sürgünü ve toplu ölümleri') ve adlandırmanın tartışmalı olduğu notu. Karar verilene kadar metin değiştirilmedi."
+    },
+    {
+      "konu": "Darbeler ve siyasi dönemler",
+      "neden": "Parti ve ideoloji kutuplaşması",
+      "oneri": "Siyasi parti adı ve lider adı kullanılmaz; olaylar etkileri üzerinden anlatılır"
+    },
+    {
+      "konu": "Göçmenler ve sığınmacılar",
+      "neden": "Göçmen karşıtlığı yaygın",
+      "oneri": "Ayrımcılık gerçek bir olay olarak yaşanabilir ama oyunun sesi ayrımcı olmaz"
+    },
+    {
+      "konu": "Depremler",
+      "neden": "Yakın ve büyük kayıplar",
+      "oneri": "Sahne gösterilmez; gerçek kişi ve bina adları kullanılmaz"
+    },
+    {
+      "konu": "Başörtüsü ve din-laiklik",
+      "neden": "İki tarafın da kendi mağduriyet hafızası var",
+      "oneri": "Seçenekler gerçek, yargısız; hiçbir yaşam biçimi 'doğru cevap' olarak sunulmaz"
+    }
+  ],
+  "acikSorular": [
+    "Alevilik din dağılımında Müslüman alt grubu olarak mı ayrı grup olarak mı gösterilsin?",
+    "BM doğum sayısı ile TÜİK sayısı arasındaki fark oyunda kullanıcıya gösterilsin mi?",
+    "Kürtçe, Arapça ve azınlık isim havuzları için hangi kaynak kullanılacak (NVİ il bazlı veri mümkün mü, akademik çalışma mı)?",
+    "1950 öncesi askerlik süreleri ve 1950-1990 dönemi askerlik süreleri birincil kaynaktan bulunmalı.",
+    "Oyun 'Geçmiş' modunda hangi en erken doğum yılına kadar gidecek? (1950 varsayıldı.)"
+  ]
+}

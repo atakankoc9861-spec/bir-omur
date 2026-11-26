@@ -1,0 +1,660 @@
+{
+  "_aciklama": "Ülke profili şablonu v0.2. Biçimsel şema: _sablon.schema.json. Doğrulama: python3 -I scripts/validate_countries.py. Açıklamalar: _sablon.md. Her bilgi kaydında kaynak + durum + oyunda_kullanilabilir zorunlu. durum: dogrulandi | dogrulanmali | tahmin | bos. Dönemlerde yilBas dahil, yilSon HARİÇ (null = bugün de geçerli).",
+  "meta": {
+    "iso3": "XXX",
+    "adTr": "",
+    "adYerel": "",
+    "katman": "K1",
+    "bolge": "R01",
+    "sablonSurumu": "0.2",
+    "hazirlayan": "Dünya ve Kültür",
+    "tarih": "YYYY-AA-GG",
+    "denetim": {
+      "durum": "bekliyor",
+      "belge": null
+    }
+  },
+  "kaynaklar": [
+    {
+      "id": "ornek-kaynak",
+      "ad": "",
+      "kurum": "",
+      "url": "",
+      "yil": null,
+      "erisim": "YYYY-AA-GG",
+      "lisans": "",
+      "tur": "birincil",
+      "birincilAdres": "İkincil kaynaksa birincilin adresi",
+      "not": ""
+    },
+    {
+      "id": "kaynaksiz",
+      "ad": "KAYNAKSIZ: hazırlayanın bilgisi, kaynak gösterilmedi",
+      "kurum": "-",
+      "url": "",
+      "yil": null,
+      "erisim": "-",
+      "lisans": "",
+      "tur": "kaynaksiz",
+      "not": "Bu bir kaynak değildir. Bu kimliği taşıyan bilgi oyunda kullanılamaz."
+    }
+  ],
+  "yerelSayilar": [
+    {
+      "ad": "",
+      "yil": null,
+      "deger": null,
+      "birim": "",
+      "veriAnahtari": null,
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false,
+      "not": "BM verisinden farkı ve nedeni"
+    }
+  ],
+  "dil": {
+    "resmi": [],
+    "konusulanlar": [
+      {
+        "id": "dil-kimligi",
+        "ad": "",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "bolgeler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false,
+        "not": ""
+      }
+    ],
+    "donemSecimi": "Hangi yıl esas alınır? (ör. okula başlama yılı)",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "okulDili": [],
+        "kisitlamalar": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "din": {
+    "resmiVeriVar": false,
+    "dagilim": [
+      {
+        "id": "din-kimligi",
+        "grup": "",
+        "ustGrup": null,
+        "altGruplar": [],
+        "agirlik": {
+          "deger": null,
+          "aralik": [
+            null,
+            null
+          ],
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false,
+        "not": "Bir topluluk yalnızca BİR kayıtta yer alır (çift sayım yasak). Alt grup ilişkisi ustGrup ile kurulur.",
+        "kendiniTanimlama": ""
+      }
+    ],
+    "devletDinIliskisi": {
+      "ozet": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "notlar": ""
+  },
+  "topluluklar": [
+    {
+      "id": "topluluk-kimligi",
+      "ad": "",
+      "kendiAdi": "Topluluğun kendine verdiği ad",
+      "tur": "etnikDil",
+      "diller": [
+        "dil-kimligi"
+      ],
+      "dinler": [
+        "din-kimligi"
+      ],
+      "icBolgeler": [],
+      "isimHavuzlari": [],
+      "yedekHavuz": {
+        "havuz": null,
+        "gerekce": "Varsayılan null. 'genel' yapılacaksa bu topluluğun genel havuzdaki isimleri yaygın kullandığını gösteren gerekçe ve kaynak yazılır.",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "havuzHazir": false,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false,
+      "not": "havuzHazir false ise motor bu topluluğu çekilişte kullanmaz; sessizce 'genel'e düşürmez.",
+      "hassasiyet": ""
+    }
+  ],
+  "egitim": {
+    "donemSecimi": "Kişinin o kademeye başladığı yıl",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "zorunluYil": null,
+        "kademeler": [
+          {
+            "ad": "",
+            "yasBas": null,
+            "yasSon": null,
+            "zorunlu": true
+          }
+        ],
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "sinavlar": [
+      {
+        "ad": "",
+        "gecis": "ortaogretim",
+        "yas": null,
+        "yilBas": 1950,
+        "yilSon": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false,
+        "not": ""
+      }
+    ],
+    "okulTurleri": [
+      {
+        "id": "okul-kimligi",
+        "ad": "",
+        "ozellik": "",
+        "kimlerGider": "",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "yuksekogretim": {
+      "ozet": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "esitsizlikNotlari": [
+      {
+        "not": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "askerlik": {
+    "donemSecimi": "Yükümlülüğün başladığı yaşa girilen yıl",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "zorunlu": false,
+        "kimler": "yok",
+        "yasAraligi": [
+          null,
+          null
+        ],
+        "sure": {
+          "er": null,
+          "kisaDonem": null,
+          "yedekSubay": null,
+          "yedekAstsubay": null,
+          "bedelliTemelEgitim": null
+        },
+        "bedelli": {
+          "var": false,
+          "not": ""
+        },
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "vicdaniRet": {
+      "taniniyor": null,
+      "not": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "notlar": ""
+  },
+  "emeklilik": {
+    "donemSecimi": "Hangi yıl esas alınır? (çoğu ülkede ilk sigortalı olunan yıl)",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "sistemler": [],
+        "yasKadin": null,
+        "yasErkek": null,
+        "baskaSart": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "kayitDisi": {
+      "not": "Prim ödemeyenler yaşlılıkta neye dayanır?",
+      "veriAnahtari": null,
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    }
+  },
+  "evlilikAile": {
+    "yasalYas": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "kadin": null,
+        "erkek": null,
+        "istisna": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "ilkEvlilikYasOrt": [
+      {
+        "yil": 2024,
+        "kadin": null,
+        "erkek": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "eslesmeBicimleri": [
+      {
+        "id": "eslesme-kimligi",
+        "ad": "",
+        "yayginlik": "yaygin",
+        "kimlerde": "",
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "nikahTurleri": [
+      {
+        "ad": "",
+        "yasalGecerlilik": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "torenler": [
+      {
+        "ad": "",
+        "aciklama": "",
+        "kimlerde": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "bosanma": {
+      "yasal": true,
+      "notlar": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "aileYapisi": {
+      "ozet": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "yasliBakimi": {
+      "ozet": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "yasalDurumlar": [
+      {
+        "konu": "",
+        "deger": "",
+        "yilBas": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "isimler": {
+    "yapi": {
+      "adSayisi": "",
+      "soyadi": "",
+      "evlilikteSoyadi": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    },
+    "kaynakKurallari": "Doğum yılı boyutu resmî listelerden. sigpwned/popular-names-by-country-dataset (CC0) sadece tamamlayıcı. philipperemy/name-dataset KULLANILMAZ (Facebook sızıntısı).",
+    "havuzlar": [
+      {
+        "id": "havuz-kimligi",
+        "cinsiyet": "kadin",
+        "yilBas": 1980,
+        "yilSon": 1990,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false,
+        "not": "yilBas-yilSon: doğum yılı aralığı (yilSon hariç)"
+      }
+    ],
+    "soyadlari": [
+      {
+        "id": "soyad-kimligi",
+        "topluluk": "genel",
+        "isimler": [],
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "meslekler": {
+    "kent": [
+      {
+        "id": "meslek-kimligi",
+        "ad": "",
+        "gelirDilimi": [
+          1,
+          5
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "not": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "kirsal": [
+      {
+        "id": "meslek-kimligi-2",
+        "ad": "",
+        "gelirDilimi": [
+          1,
+          5
+        ],
+        "kayitDisiRiski": "orta",
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "not": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "konut": {
+    "tipler": [
+      {
+        "id": "konut-kimligi",
+        "ad": "",
+        "kentKir": "kent",
+        "gelirDilimi": [
+          1,
+          5
+        ],
+        "yilBas": 1950,
+        "yilSon": null,
+        "bolgeler": [],
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        },
+        "gorselNot": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "ulasim": [
+    {
+      "id": "arac-kimligi",
+      "arac": "",
+      "kentKir": "ikisi",
+      "gelirDilimi": [
+        1,
+        5
+      ],
+      "yilBas": 1950,
+      "yilSon": null,
+      "agirlik": {
+        "deger": null,
+        "veriAnahtari": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      },
+      "not": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "saglik": {
+    "donemSecimi": "Olayın yaşandığı yıl",
+    "donemler": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "ozet": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "erisimFarklari": [
+      {
+        "not": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
+  },
+  "goc": [
+    {
+      "id": "goc-kimligi",
+      "tur": "icGoc",
+      "yilBas": 1950,
+      "yilSon": null,
+      "kimler": "",
+      "nereden": "",
+      "nereye": "",
+      "olcek": [
+        {
+          "deger": null,
+          "birim": "kişi",
+          "yil": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        }
+      ],
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false,
+      "hassasiyet": ""
+    }
+  ],
+  "tarihselOlaylar": [
+    {
+      "id": "olay-kimligi",
+      "ad": "",
+      "yilBas": 1950,
+      "yilSon": null,
+      "tur": "afet",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": ""
+      },
+      "olcek": [
+        {
+          "deger": null,
+          "birim": "",
+          "yil": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false
+        }
+      ],
+      "oyunNotu": "",
+      "hassasiyet": "",
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "icBolgeler": [
+    {
+      "id": "",
+      "ad": "",
+      "kapsam": "",
+      "kentlesme": "",
+      "ekonomi": "",
+      "dilDin": "",
+      "dogurganlik": "",
+      "konut": [],
+      "veriAnahtari": null,
+      "kaynak": [],
+      "durum": "bos",
+      "oyunda_kullanilabilir": false
+    }
+  ],
+  "gunlukHayat": {
+    "bayramlar": [
+      {
+        "ad": "",
+        "tur": "dini",
+        "kimler": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "gecisTorenleri": [
+      {
+        "ad": "",
+        "yas": null,
+        "kimler": "",
+        "aciklama": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "yemek": "",
+    "medyaDonemleri": [
+      {
+        "yilBas": 1950,
+        "yilSon": null,
+        "ozet": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ],
+    "evcilHayvan": ""
+  },
+  "hassasiyet": [
+    {
+      "konu": "",
+      "neden": "",
+      "oneri": ""
+    }
+  ],
+  "acikSorular": []
+}
