@@ -45,6 +45,10 @@ Tek doğruluk kaynağı. Her departman işe başlamadan bunu okur. Yeni karar en
 | 34 | 2026-11-26 | MVP-0 (metin akışı + üstte sahne) Atakan tarafından beğenilmedi: kötü bir kopya, anlam yok. Altyapı (veri, doğum çekilişi, yaşam tabloları, çizim motoru) korunur; oyunun yüzü yeniden tasarlanır. |
 | 35 | 2026-11-26 | Yeni yön adayı: oyun bir telefon/mesajlaşma arayüzü üzerinden yaşanır (aile grubu, sınıf grubu, iş grubu, emlakçı, sevgili...). WhatsApp adı/görünüşü kopyalanmaz, kendi uygulamamız. Önce tek yıllık demo: Türkiye, 18 yaş, YKS yılı. Demo, Atakan'a gitmeden önce Oyun Testi departmanınca "eğlenceli mi" diye oynanır. |
 
+| 36 | 2026-11-26 | Göstergeler sohbet ekranında görünmez; ekranı yukarıdan aşağı kaydırınca açılan "durum paneli"nde görünür: cüzdan, sağlık, ruh hâli, bilgi, kalan akşamlar; dönemin hedef kartı; en yakın 5 kişi; bu ay ne değişti. |
+| 37 | 2026-11-26 | Panelde rakam + kısa anlam gösterilir. Sonuçlar kesin değil ihtimal olarak gösterilir (ör. "Tıp: yüksek ihtimal %85"); stres, uyku, şans etkisi sürer. |
+| 38 | 2026-11-26 | Hedef kartında gerçek veriler (ör. ÖSYM taban sıralamaları) kaynaklı olarak kullanılır. |
+
 ## Açık sorular
 - Kesin oyun adı
 - Bir hayatın toplam süresi
