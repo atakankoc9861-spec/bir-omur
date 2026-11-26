@@ -49,6 +49,10 @@ Tek doğruluk kaynağı. Her departman işe başlamadan bunu okur. Yeni karar en
 | 37 | 2026-11-26 | Panelde rakam + kısa anlam gösterilir. Sonuçlar kesin değil ihtimal olarak gösterilir (ör. "Tıp: yüksek ihtimal %85"); stres, uyku, şans etkisi sürer. |
 | 38 | 2026-11-26 | Hedef kartında gerçek veriler (ör. ÖSYM taban sıralamaları) kaynaklı olarak kullanılır. |
 
+| 39 | 2026-11-26 | Sohbet demosu (ay ay tek yıl) konseptten koptu: "sınav simülasyonu gibi". Atakan'ın oyundan istediği: karakterle özdeşleşip onun bilgisine, parasına, borcuna bakarak hayatına yön vermek. |
+| 40 | 2026-11-26 | v1 kurgusu: yıl yıl akan, yönetilen bir ömür (orijinaldeki "yıl akar, ben yön veririm" hissi temel). Göstergeler (para, borç, bilgi, sağlık, iş, ilişkiler) her zaman görünür. Büyük kararlar telefondan mesaj olarak gelir (emlakçı, iş teklifi, banka, sevgili, kardeş). Sohbetler doku olarak kalır, oyunun kendisi değil. Bir ömür 40-60 dakika. Rastgele doğum, gerçek istatistikle ölüm, hayat özeti korunur. |
+| 41 | 2026-11-26 | Teslim: 27 Kasım 2026 akşamı bitmiş oyun (demo değil). Yapımcı ara ara kendisi oynayıp test eder ve Atakan'a ekran görüntüsü gönderir. |
+
 ## Açık sorular
 - Kesin oyun adı
 - Bir hayatın toplam süresi
