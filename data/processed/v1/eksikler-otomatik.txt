@@ -1,0 +1,145 @@
+- ABW (Aruba): `gini` Dünya Bankası'nda yok → null
+- AFG (Afganistan): `gini` Dünya Bankası'nda yok → null
+- AIA (Anguilla): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- AIA (Anguilla): `gini` Dünya Bankası'nda yok → null
+- AIA (Anguilla): `urbanShare` Dünya Bankası'nda yok → null
+- AND (Andorra): `gini` Dünya Bankası'nda yok → null
+- ASM (Amerikan Samoası): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- ASM (Amerikan Samoası): `gini` Dünya Bankası'nda yok → null
+- ATG (Antigua ve Barbuda): `gini` Dünya Bankası'nda yok → null
+- AZE (Azerbaycan): `gini` en son 2005 yılına ait (eski)
+- BES (Karayip Hollandası): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- BES (Karayip Hollandası): `gini` Dünya Bankası'nda yok → null
+- BES (Karayip Hollandası): `urbanShare` Dünya Bankası'nda yok → null
+- BHR (Bahreyn): `gini` Dünya Bankası'nda yok → null
+- BHS (Bahamalar): `gini` Dünya Bankası'nda yok → null
+- BLM (Saint Barthelemy): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- BLM (Saint Barthelemy): `gini` Dünya Bankası'nda yok → null
+- BLM (Saint Barthelemy): `urbanShare` Dünya Bankası'nda yok → null
+- BMU (Bermuda): `gini` Dünya Bankası'nda yok → null
+- BRN (Brunei): `gini` Dünya Bankası'nda yok → null
+- COG (Kongo Cumhuriyeti): `gini` en son 2011 yılına ait (eski)
+- COK (Cook Adaları): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- COK (Cook Adaları): `gini` Dünya Bankası'nda yok → null
+- COK (Cook Adaları): `urbanShare` Dünya Bankası'nda yok → null
+- CUB (Küba): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- CUB (Küba): `gini` Dünya Bankası'nda yok → null
+- CUW (Curaçao): `gini` Dünya Bankası'nda yok → null
+- CYM (Cayman Adaları): `gini` Dünya Bankası'nda yok → null
+- DMA (Dominika): `gini` Dünya Bankası'nda yok → null
+- DZA (Cezayir): `gini` en son 2011 yılına ait (eski)
+- ERI (Eritre): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- ERI (Eritre): `gini` Dünya Bankası'nda yok → null
+- ESH (Batı Sahra): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- ESH (Batı Sahra): `gini` Dünya Bankası'nda yok → null
+- ESH (Batı Sahra): `urbanShare` Dünya Bankası'nda yok → null
+- FLK (Falkland Adaları): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- FLK (Falkland Adaları): `gini` Dünya Bankası'nda yok → null
+- FLK (Falkland Adaları): `urbanShare` Dünya Bankası'nda yok → null
+- FRO (Faroe Adaları): `gini` Dünya Bankası'nda yok → null
+- GGY (Guernsey): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- GGY (Guernsey): `gini` Dünya Bankası'nda yok → null
+- GGY (Guernsey): `urbanShare` Dünya Bankası'nda yok → null
+- GIB (Cebelitarık): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- GIB (Cebelitarık): `gini` Dünya Bankası'nda yok → null
+- GLP (Guadeloupe): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- GLP (Guadeloupe): `gini` Dünya Bankası'nda yok → null
+- GLP (Guadeloupe): `urbanShare` Dünya Bankası'nda yok → null
+- GRL (Grönland): `gini` Dünya Bankası'nda yok → null
+- GUF (Fransız Guyanası): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- GUF (Fransız Guyanası): `gini` Dünya Bankası'nda yok → null
+- GUF (Fransız Guyanası): `urbanShare` Dünya Bankası'nda yok → null
+- GUM (Guam): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- GUM (Guam): `gini` Dünya Bankası'nda yok → null
+- GUY (Guyana): `gini` en son 1998 yılına ait (eski)
+- HKG (Çin Hong Kong ÖİB): `gini` Dünya Bankası'nda yok → null
+- HTI (Haiti): `gini` en son 2012 yılına ait (eski)
+- IMN (Man Adası): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- IMN (Man Adası): `gini` Dünya Bankası'nda yok → null
+- JEY (Jersey): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- JEY (Jersey): `gini` Dünya Bankası'nda yok → null
+- JEY (Jersey): `urbanShare` Dünya Bankası'nda yok → null
+- JOR (Ürdün): `gini` en son 2010 yılına ait (eski)
+- KHM (Kamboçya): `gini` Dünya Bankası'nda yok → null
+- KNA (Saint Kitts ve Nevis): `gini` Dünya Bankası'nda yok → null
+- KWT (Kuveyt): `gini` Dünya Bankası'nda yok → null
+- LBY (Libya): `gini` Dünya Bankası'nda yok → null
+- LIE (Liechtenstein): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- LIE (Liechtenstein): `gini` Dünya Bankası'nda yok → null
+- MAC (Çin Makao ÖİB): `gini` Dünya Bankası'nda yok → null
+- MAF (Saint Martin): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- MAF (Saint Martin): `gini` Dünya Bankası'nda yok → null
+- MCO (Monako): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- MCO (Monako): `gini` Dünya Bankası'nda yok → null
+- MNP (Kuzey Mariana Adaları): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- MNP (Kuzey Mariana Adaları): `gini` Dünya Bankası'nda yok → null
+- MSR (Montserrat): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- MSR (Montserrat): `gini` Dünya Bankası'nda yok → null
+- MSR (Montserrat): `urbanShare` Dünya Bankası'nda yok → null
+- MTQ (Martinik): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- MTQ (Martinik): `gini` Dünya Bankası'nda yok → null
+- MTQ (Martinik): `urbanShare` Dünya Bankası'nda yok → null
+- MYT (Mayotte): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- MYT (Mayotte): `gini` Dünya Bankası'nda yok → null
+- MYT (Mayotte): `urbanShare` Dünya Bankası'nda yok → null
+- NCL (Yeni Kaledonya): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- NCL (Yeni Kaledonya): `gini` Dünya Bankası'nda yok → null
+- NIU (Niue): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- NIU (Niue): `gini` Dünya Bankası'nda yok → null
+- NIU (Niue): `urbanShare` Dünya Bankası'nda yok → null
+- NRU (Nauru): `gini` en son 2012 yılına ait (eski)
+- NZL (Yeni Zelanda): `gini` Dünya Bankası'nda yok → null
+- OMN (Umman): `gini` Dünya Bankası'nda yok → null
+- PLW (Palau): `gini` Dünya Bankası'nda yok → null
+- PNG (Papua Yeni Gine): `gini` en son 2009 yılına ait (eski)
+- PRI (Porto Riko): `gini` Dünya Bankası'nda yok → null
+- PRK (Kuzey Kore): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- PRK (Kuzey Kore): `gini` Dünya Bankası'nda yok → null
+- PYF (Fransız Polinezyası): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- PYF (Fransız Polinezyası): `gini` Dünya Bankası'nda yok → null
+- REU (Reunion): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- REU (Reunion): `gini` Dünya Bankası'nda yok → null
+- REU (Reunion): `urbanShare` Dünya Bankası'nda yok → null
+- SAU (Suudi Arabistan): `gini` Dünya Bankası'nda yok → null
+- SGP (Singapur): `gini` Dünya Bankası'nda yok → null
+- SHN (Saint Helena): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- SHN (Saint Helena): `gini` Dünya Bankası'nda yok → null
+- SHN (Saint Helena): `urbanShare` Dünya Bankası'nda yok → null
+- SLB (Solomon Adaları): `gini` en son 2012 yılına ait (eski)
+- SMR (San Marino): `gini` Dünya Bankası'nda yok → null
+- SOM (Somali): `gini` Dünya Bankası'nda yok → null
+- SPM (Saint Pierre ve Miquelon): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- SPM (Saint Pierre ve Miquelon): `gini` Dünya Bankası'nda yok → null
+- SPM (Saint Pierre ve Miquelon): `urbanShare` Dünya Bankası'nda yok → null
+- SSD (Güney Sudan): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- SXM (Sint Maarten): `gini` Dünya Bankası'nda yok → null
+- TCA (Turks ve Caicos Adaları): `gini` Dünya Bankası'nda yok → null
+- TKL (Tokelau): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- TKL (Tokelau): `gini` Dünya Bankası'nda yok → null
+- TKL (Tokelau): `urbanShare` Dünya Bankası'nda yok → null
+- TKM (Türkmenistan): `gini` en son 1998 yılına ait (eski)
+- TTO (Trinidad ve Tobago): `gini` en son 1992 yılına ait (eski)
+- TUV (Tuvalu): `gini` en son 2010 yılına ait (eski)
+- TWN (Tayvan): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- TWN (Tayvan): `gini` Dünya Bankası'nda yok → null
+- TWN (Tayvan): `urbanShare` Dünya Bankası'nda yok → null
+- VAT (Vatikan): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- VAT (Vatikan): `gini` Dünya Bankası'nda yok → null
+- VAT (Vatikan): `urbanShare` Dünya Bankası'nda yok → null
+- VCT (Saint Vincent ve Grenadinler): `gini` Dünya Bankası'nda yok → null
+- VEN (Venezuela): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- VEN (Venezuela): `gini` en son 2006 yılına ait (eski)
+- VGB (Britanya Virjin Adaları): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- VGB (Britanya Virjin Adaları): `gini` Dünya Bankası'nda yok → null
+- VIR (ABD Virjin Adaları): `gini` Dünya Bankası'nda yok → null
+- WLF (Wallis ve Futuna): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- WLF (Wallis ve Futuna): `gini` Dünya Bankası'nda yok → null
+- WLF (Wallis ve Futuna): `urbanShare` Dünya Bankası'nda yok → null
+- YEM (Yemen): `gdpPerCapitaPpp` Dünya Bankası'nda yok → null
+- TUR: `ilkokulNetOkullasma` son yıl 2017
+- IND: `ilkokulNetOkullasma` son yıl 2013
+- NGA: `ilkokulNetOkullasma` son yıl 2010
+- NGA: `yuksekogretimBrutOkullasma` son yıl 2011
+- CHN: `ilkokulNetOkullasma` son yıl 1997
+- CHN: `ortaogretimBrutOkullasma` son yıl 2012
+- USA: `ilkokulNetOkullasma` son yıl 2017

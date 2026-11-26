@@ -2,3 +2,9 @@ node_modules/
 dist/
 android/app/build/
 .DS_Store
+
+# Veri: 50 MB'tan büyük ham BM dosyaları depoya girmez.
+# Yeniden indirmek için: python3 -I scripts/veri/indir.py  (parmak izleri data/raw/MANIFEST.json'da)
+data/raw/un-wpp-2024/WPP2024_Life_Table_Complete_*.csv.gz
+data/raw/un-wpp-2024/WPP2024_Fertility_by_Age5.csv.gz
+data/raw/**/*.part

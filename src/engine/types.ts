@@ -3,6 +3,13 @@
 export type Sex = "female" | "male";
 export type Era = "past" | "today" | "future";
 
+/** Bir alanın kaynağı ve yılı (data/processed/v1/countries.json → meta.kaynaklar kimlikleri). */
+export interface FieldSource {
+  kaynak: string | null; // değer null ise kaynak da null
+  yil: number | null;
+  seri: string;
+}
+
 /** Bir ülkenin oyunda kullanılan verisi (data/processed içinden yüklenir). */
 export interface CountryData {
   iso3: string;
@@ -12,10 +19,25 @@ export interface CountryData {
   population: number;
   lifeExpectancy: { female: number; male: number };
   under5Mortality: number; // 1000 doğumda
-  gdpPerCapitaPpp: number;
-  gini: number | null;
-  urbanShare: number; // 0-1
+  gdpPerCapitaPpp: number | null; // sabit 2021 uluslararası $; kaynakta yoksa null
+  gini: number | null; // 0-100
+  urbanShare: number | null; // 0-1; kaynakta yoksa null
   source: string; // ör. "UN WPP 2024; World Bank WDI"
+  /** Referans yılı bu ülke için olağan dışıysa (ör. Türkiye 2023 depremi) not; motor/ekran bunu göstermeli. */
+  yearNote?: { olaganDisi: boolean; not: string; alanlar: string[] };
+  /** Alan alan kaynak ve yıl (veri v1'den itibaren dolu). */
+  fieldSources?: Partial<
+    Record<
+      | "annualBirths"
+      | "population"
+      | "lifeExpectancy"
+      | "under5Mortality"
+      | "gdpPerCapitaPpp"
+      | "gini"
+      | "urbanShare",
+      FieldSource
+    >
+  >;
 }
 
 export interface Meters {
