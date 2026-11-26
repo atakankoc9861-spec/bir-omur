@@ -12,7 +12,9 @@ Gerçek dünya istatistiklerine dayalı, Android için bir hayat simülasyonu.
 ## Yapı
 ```
 src/engine/   Simülasyon motoru (saf TypeScript, arayüzden bağımsız)
+src/scene/    Yaşayan sahne (kodla piksel sanat) — docs/stil-rehberi.md
 src/ui/       Arayüz (sonra)
+prototype/    sahne.html: telefonda açılan sahne önizlemesi
 data/         Ham veri ve işlenmiş JSON
 scripts/      Veri indirme/dönüştürme scriptleri
 tests/        Motor testleri
@@ -23,4 +25,6 @@ tests/        Motor testleri
 npm install
 npm run typecheck
 npm test
+npm run sahne:ornek      # docs/gorsel-ornekler/ PNG'leri
+npm run sahne:onizleme   # prototype/sahne.html
 ```

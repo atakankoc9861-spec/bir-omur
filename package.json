@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "sahne:ornek": "vite-node scripts/render-samples.ts",
+    "sahne:onizleme": "node scripts/build-preview.mjs"
   },
   "devDependencies": {
+    "esbuild": "^0.21.5",
     "typescript": "^5.6.0",
+    "vite-node": "^2.1.9",
     "vitest": "^2.1.0"
   }
 }
