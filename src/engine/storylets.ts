@@ -105,7 +105,7 @@ function jobWord(c: Game): string {
 
 const T = {
   siblingBorn: [
-    "Evde yeni bir ses var: #kisi# doğdu. #anne.cap# yorgun ama gülümsüyor.",
+    "Evde yeni bir ses var: #kisi.cap# doğdu. #anne.cap# yorgun ama gülümsüyor.",
     "#kisi.cap# dünyaya geldi. Artık evdeki en küçük sen değilsin.",
     "Bir gece evde koşuşturma oldu; sabah #kisi# vardı.",
   ],
@@ -115,13 +115,22 @@ const T = {
   ],
   childBorn: [
     "#kisi.cap# doğdu. Ev biraz daha kalabalık, biraz daha gürültülü.",
-    "Bir çocuğun daha oldu: #kisiAd#. Büyükler küçüğü kucaklamak için sıraya giriyor.",
-    "#kisiAd# aramıza katıldı. Bu sefer daha az korkuyorsun, daha çok seviniyorsun.",
+    "Bir çocuğun daha oldu: #kisiAd.cap#. Büyükler küçüğü kucaklamak için sıraya giriyor.",
+    "#kisiAd.cap# aramıza katıldı. Bu sefer daha az korkuyorsun, daha çok seviniyorsun.",
   ],
   personDies: [
     "#kisi.cap# #olumYas# yaşında hayatını kaybetti. Nedeni #neden#.",
-    "#kisi.cap# öldü. #olumYas# yaşındaydı; doktorlar #neden# dedi. #agirHis#",
+    "#kisi.cap# öldü. #olumYas# yaşındaydı; doktorlar #neden# dedi. #agirHis.cap#",
+    "Telefon gece çaldı: #kisi# #olumYas# yaşında, #neden# yüzünden hayatını kaybetmiş.",
+    "#kisi.in.cap# ölüm haberi bir sabah geldi. #olumYas# yaşındaydı; nedeni #neden#.",
+    "#kisiAd.cap# #olumYas# yaşında, #neden# nedeniyle aramızdan ayrıldı. Ona son söylediğin şeyi hatırlamaya çalışıyorsun.",
+    "Cenazede herkes #kisiAd.in# bir huyunu anlattı. #olumYas# yaşındaydı; #neden# almıştı onu.",
+    "#kisi.cap# artık yok. #olumYas# yaşındaydı. Nedenini sordular, #neden# dedin; asıl söylemek istediğin başka şeydi.",
+  ],
+  personDiesHome: [
     "#kisiAd.cap# artık yok. #olumYas# yaşında, #neden# yüzünden. Evde sesi eksik.",
+    "#kisi.cap# #olumYas# yaşında, #neden# nedeniyle evde, aranızda öldü. Odasının kapısını bir süre kimse açmadı.",
+    "#kisiAd.cap# #olumYas# yaşında, #neden# yüzünden öldü. Sofrada onun yeri günlerce boş kaldı.",
   ],
   childDies: [
     "#kisi.cap# #olumYas# yaşında öldü. Nedeni #neden#. Hiçbir kelime bunu anlatmıyor.",
@@ -129,13 +138,13 @@ const T = {
   ],
   petDies: ["#kisiAd.cap# yaşlandı ve bir sabah uyanmadı. Bahçede ona küçük bir yer açıyorsun.", "#kisiAd.cap# öldü. Kapının önünde seni bekleyen kimse yok artık."],
   dieInfant: [
-    "Hayatın çok kısa sürdü. #yas# yaşını göremeden, #neden# nedeniyle öldün.",
+    "Hayatın çok kısa sürdü. #yas.cap# yaşını göremeden, #neden# nedeniyle öldün.",
     "Daha çok küçükken, #neden# nedeniyle hayatını kaybettin. Ailen seni hiç unutmayacak.",
   ],
-  dieYoung: ["#yas# yaşında, #neden# nedeniyle hayatını kaybettin. Önünde uzun bir yol vardı."],
+  dieYoung: ["#yas.cap# yaşında, #neden# nedeniyle hayatını kaybettin. Önünde uzun bir yol vardı."],
   dieAdult: [
-    "#yas# yaşında, #neden# nedeniyle hayatını kaybettin.",
-    "#yas# yaşında öldün. Nedeni #neden#.",
+    "#yas.cap# yaşında, #neden# nedeniyle hayatını kaybettin.",
+    "#yas.cap# yaşında öldün. Nedeni #neden#.",
   ],
 };
 
@@ -150,8 +159,8 @@ const birth: S = {
     c.vars.cins = c.s.sex === "female" ? "bir kız" : "bir erkek";
   },
   text: [
-    "#yil# yılında #ulke.de#, bir #yer.de# #cins# bebek olarak dünyaya geldin.",
-    "#yil#. #ulke.cap#, bir #yer#. #cins.cap# bebek olarak doğdun.",
+    "#yil.cap# yılında #ulke.de#, bir #yer.de# #cins# bebek olarak dünyaya geldin.",
+    "#yil.cap#. #ulke.cap#, bir #yer#. #cins.cap# bebek olarak doğdun.",
   ],
   stat: (c) => statU5(c),
   fx: (c) => {
@@ -163,7 +172,7 @@ const birth: S = {
     const inc = c.baseIncome(c.s.familyDecile);
     const rel = inc / c.medianIncome();
     c.vars.gelir = rel < 0.6 ? "Ailenin geliri bu ülkedeki çoğu ailenin altında." : rel > 1.6 ? "Ailen bu ülkedeki çoğu aileden rahat." : "Ailenin geliri bu ülkede ortalarda bir yerde.";
-    c.say(["#anne.cap# #anneYas#, #baba# #babaYas# yaşında. #kardesler# #gelir#"], "notr", { key: "aile", refs: [m, f].filter(Boolean) as GPerson[], stat: lifeStat(c) });
+    c.say(["#anne.cap# #anneYas#, #baba# #babaYas# yaşında. #kardesler.cap# #gelir#"], "notr", { key: "aile", refs: [m, f].filter(Boolean) as GPerson[], stat: lifeStat(c) });
     if (c.s.givenName) c.say(["Adını #ben# koydular.", "Sana #ben# adını verdiler."], "notr", { key: "ad" });
   },
 };
@@ -187,7 +196,7 @@ const schoolStart: S = {
     const p = Math.min(0.995, r * DENGE.schoolIncomeMult[Math.floor(c.s.familyDecile / 2)]);
     if (c.rng.chance(p)) {
       c.s.inSchool = true; c.s.student = "primary";
-      c.say(["#zaman#, #anne# elini tutup seni okula götürdü. Çantan sırtına biraz büyük geliyor.", "Okul başladı. Sıranın tahtasına birinin kazıdığı harflere bakıyorsun.", "İlk gün okulun kapısında ağladın mı, yoksa koşarak mı girdin? Herkes başka anlatıyor."], "onemli", { key: "okul-ilk", important: true, stat: schoolStat(c, "primary") });
+      c.say(["#zaman.cap#, #anne# elini tutup seni okula götürdü. Çantan sırtına biraz büyük geliyor.", "Okul başladı. Sıranın tahtasına birinin kazıdığı harflere bakıyorsun.", "İlk gün okulun kapısında ağladın mı, yoksa koşarak mı girdin? Herkes başka anlatıyor."], "onemli", { key: "okul-ilk", important: true, stat: schoolStat(c, "primary") });
     } else {
       c.flag("okulsuz");
       c.say(["Yaşıtların okula başladı; sen evdesin. #anne.cap#, 'Bu yıl olmaz,' dedi.", "Okul uzak, para dar. Sen evde kalıp küçüklere bakıyorsun."], "kotu", { key: "okul-yok", important: true, stat: schoolStat(c, "primary") });
@@ -236,7 +245,7 @@ const jobStart: S = {
     c.vars.is = jobWord(c);
     const w = c.tur?.womenEmployment;
     if (c.s.job.working) {
-      c.say(["İlk kazancın #is# geldi. Parayı eline aldığında bir süre bakıyorsun.", "Çalışmaya başladın: #is#. İlk hafta akşamları ayakların zonkluyor.", "Artık #is# çalışıyorsun. Eve getirdiğin ilk parayla #anne.e# bir şey alıyorsun."], "onemli", { key: "ilk-is", important: true });
+      c.say(["İlk kazancın #is# geldi. Parayı eline aldığında bir süre bakıyorsun.", "Çalışmaya başladın: #is.cap#. İlk hafta akşamları ayakların zonkluyor.", "Artık #is# çalışıyorsun. Eve getirdiğin ilk parayla #anne.e# bir şey alıyorsun."], "onemli", { key: "ilk-is", important: true });
       c.meter("happiness", 3);
     } else {
       const stat = c.s.sex === "female" && w && c.tur?.careTimeMinutes
@@ -282,10 +291,10 @@ const military: S = {
       cc.meter("health", 2);
       cc.money(-cc.income * (ay / 12) * 0.5);
       cc.vars.ay = String(ay);
-      return ["#ay# ay askerlik yaptın. Döndüğünde sokaklar aynı, sen biraz farklısın.", "Asker uğurlamasında #anne# ağladı. #ay# ay sonra kapıda yine o vardı."];
+      return ["#ay.cap# ay askerlik yaptın. Döndüğünde sokaklar aynı, sen biraz farklısın.", "Asker uğurlamasında #anne# ağladı. #ay.cap# ay sonra kapıda yine o vardı."];
     };
     if (r.er) ops.push({ id: "er", label: `Er olarak git (${r.er} ay)`, effect: away(r.er), tone: "onemli", important: true });
-    if (r.yedekSubay && c.s.edu === "tertiary") ops.push({ id: "yedeksubay", label: `Yedek subay olarak git (${r.yedekSubay} ay, maaşlı)`, effect: (cc) => { cc.flag("askerlik-tamam"); cc.meter("knowledge", 2); cc.vars.ay = String(r.yedekSubay); return ["#ay# ay yedek subay olarak görev yaptın. Bir bölüğün sorumluluğunu taşımak seni şaşırtacak kadar yordu."]; }, tone: "onemli", important: true });
+    if (r.yedekSubay && c.s.edu === "tertiary") ops.push({ id: "yedeksubay", label: `Yedek subay olarak git (${r.yedekSubay} ay, maaşlı)`, effect: (cc) => { cc.flag("askerlik-tamam"); cc.meter("knowledge", 2); cc.vars.ay = String(r.yedekSubay); return ["#ay.cap# ay yedek subay olarak görev yaptın. Bir bölüğün sorumluluğunu taşımak seni şaşırtacak kadar yordu."]; }, tone: "onemli", important: true });
     if (r.bedelliAy) {
       const cost = c.cost("bedelli");
       ops.push({ id: "bedelli", label: `Bedelli askerlik (${r.bedelliAy} ay temel eğitim)`, cost, locked: c.canAfford(cost) ? null : "Bedeli karşılayacak birikimin yok.", effect: (cc) => { cc.flag("askerlik-tamam"); cc.vars.ay = String(r.bedelliAy); return ["Bedelini ödedin, #ay# ay temel eğitimle askerliği bitirdin. Birikimin eridi ama işin yerinde duruyor."]; }, tone: "notr", important: true });
@@ -337,8 +346,8 @@ const meet: S = {
       prompt: "#nerede.cap# #yeni# ile tanıştın. Konuşurken saatin nasıl geçtiğini anlamadın.",
       stat: marriageStat(c),
       options: [
-        { id: "devam", label: "Görüşmeye devam et", effect: (cc) => { const p = cc.addPerson("partner", sex, by, { name: name ?? "", bond: 62, decile: Math.max(0, Math.min(9, cc.s.job.decile + cc.rng.int(-2, 2))) }); p.works = cc.rng.chance(sex === "female" ? (cc.tur?.womenEmployment?.female ?? DENGE.womenWorkShare) : (cc.tur?.womenEmployment?.male ?? DENGE.menWorkShare)); cc.target = p; cc.meter("happiness", F.mid); return ["#yeni# ile buluşmalar sıklaştı. Telefonu her çaldığında kalbin hızlanıyor."]; }, tone: "iyi", important: true },
-        { id: "arkadas", label: "Arkadaş olarak kal", effect: (cc) => { cc.meter("relationships", 2); return ["#yeni# ile arkadaş kaldınız. Bazen bunun doğru olup olmadığını düşünüyorsun."]; } },
+        { id: "devam", label: "Görüşmeye devam et", effect: (cc) => { const p = cc.addPerson("partner", sex, by, { name: name ?? "", bond: 62, decile: Math.max(0, Math.min(9, cc.s.job.decile + cc.rng.int(-2, 2))) }); p.works = cc.rng.chance(sex === "female" ? (cc.tur?.womenEmployment?.female ?? DENGE.womenWorkShare) : (cc.tur?.womenEmployment?.male ?? DENGE.menWorkShare)); cc.target = p; cc.meter("happiness", F.mid); return ["#yeni.cap# ile buluşmalar sıklaştı. Telefonu her çaldığında kalbin hızlanıyor."]; }, tone: "iyi", important: true },
+        { id: "arkadas", label: "Arkadaş olarak kal", effect: (cc) => { cc.meter("relationships", 2); return ["#yeni.cap# ile arkadaş kaldınız. Bazen bunun doğru olup olmadığını düşünüyorsun."]; } },
         { id: "yalniz", label: "Şimdilik kendi yolunda kal", effect: (cc) => { cc.flag("yalniz-secim-" + Math.floor(cc.age / 5)); cc.meter("happiness", 1); return ["Kendine zaman tanımaya karar verdin. Yalnızlık bazen bir oda dolusu sessizlik, bazen bir nefes."]; } },
       ],
     };
@@ -363,16 +372,16 @@ const marry: S = {
       cc.s.leftHome = true;
       for (const x of cc.alive()) if (x.role === "mother" || x.role === "father" || x.role === "sibling") x.livesTogether = false;
       cc.meter("happiness", big ? F.big : F.mid);
-      return big ? ["Düğün sabaha kadar sürdü. #kisiAd# ile artık evlisiniz; ayakların şişmiş, yüzün gülüyor.", "Kalabalık bir düğünle evlendiniz. Takılar, müzik, uykusuz bir gece."] : ["#kisiAd# ile sade bir nikâhla evlendiniz. Akşam iki kişilik bir sofrada oturdunuz.", "Birkaç yakınla, gösterişsiz bir törenle evlendiniz. Ne eksik ne fazla."];
+      return big ? ["Düğün sabaha kadar sürdü. #kisiAd.cap# ile artık evlisiniz; ayakların şişmiş, yüzün gülüyor.", "Kalabalık bir düğünle evlendiniz. Takılar, müzik, uykusuz bir gece."] : ["#kisiAd.cap# ile sade bir nikâhla evlendiniz. Akşam iki kişilik bir sofrada oturdunuz.", "Birkaç yakınla, gösterişsiz bir törenle evlendiniz. Ne eksik ne fazla."];
     };
     return {
-      prompt: "#kisiAd# ile bir süredir birliktesiniz. Evlilik konusu açıldı.",
+      prompt: "#kisiAd.cap# ile bir süredir birliktesiniz. Evlilik konusu açıldı.",
       stat: marriageStat(c),
       options: [
         { id: "dugun", label: "Düğünle evlen", cost: wed, locked: c.canAfford(wed, 0.5) ? null : "Düğün masrafını şu an karşılayamazsınız.", effect: (cc) => marryFx(cc, true), tone: "onemli", important: true },
         { id: "nikah", label: "Sade bir nikâh", cost: simple, effect: (cc) => marryFx(cc, false), tone: "onemli", important: true },
-        { id: "bekle", label: "Biraz daha bekle", effect: (cc) => { cc.bond(cc.partner(), -3); return ["Acele etmemeye karar verdiniz. #kisiAd# bunu anlayışla karşıladı, ama bir süre suskun kaldı."]; } },
-        { id: "ayril", label: "Yollarınızı ayır", effect: (cc) => { const p = cc.partner()!; p.role = "ex"; p.livesTogether = false; cc.meter("happiness", -F.mid); return ["#kisiAd# ile ayrıldınız. Bazı akşamlar telefonu elinde, yazmadan bekliyorsun."]; }, tone: "kotu", important: true },
+        { id: "bekle", label: "Biraz daha bekle", effect: (cc) => { cc.bond(cc.partner(), -3); return ["Acele etmemeye karar verdiniz. #kisiAd.cap# bunu anlayışla karşıladı, ama bir süre suskun kaldı."]; } },
+        { id: "ayril", label: "Yollarınızı ayır", effect: (cc) => { const p = cc.partner()!; p.role = "ex"; p.livesTogether = false; cc.meter("happiness", -F.mid); return ["#kisiAd.cap# ile ayrıldınız. Bazı akşamlar telefonu elinde, yazmadan bekliyorsun."]; }, tone: "kotu", important: true },
       ],
     };
   },
@@ -390,7 +399,7 @@ const kidsTalk: S = {
     prompt: "Bir akşam #kisiAd# sordu: 'Çocuk istiyor muyuz?'",
     stat: { text: `${suffix(c.country.nameTr, "de")} bugün kadın başına ortalama ${c.num(tfr(c), 2)} çocuk doğuyor (${c.country.e0.yil}, yaşa göre doğurganlıktan).`, kaynak: c.src("wpp2024") },
     options: [
-      { id: "evet", label: "Evet, istiyoruz", effect: (cc) => { cc.s.wantKids = "yes"; cc.bond(cc.partner(), 4); return ["Kararı verdiniz. #kisiAd# o gece uzun süre tavana bakıp gülümsedi."]; } },
+      { id: "evet", label: "Evet, istiyoruz", effect: (cc) => { cc.s.wantKids = "yes"; cc.bond(cc.partner(), 4); return ["Kararı verdiniz. #kisiAd.cap# o gece uzun süre tavana bakıp gülümsedi."]; } },
       { id: "sonra", label: "Biraz daha bekleyelim", effect: (cc) => { cc.s.wantKids = "later"; return ["Şimdilik beklemeye karar verdiniz. Önce biraz yerleşmek istiyorsunuz."]; } },
       { id: "hayir", label: "Çocuk istemiyoruz", effect: (cc) => { cc.s.wantKids = "no"; return ["Çocuksuz bir hayat seçtiniz. Akrabalar sormaya devam edecek; siz kararınızdan eminsiniz."]; } },
     ],
@@ -406,13 +415,17 @@ function turRetireAge(c: Game, completeYear: number): number | null {
   const rule = t.retirement.find((d) => d.from <= start && (d.to === null || start < d.to));
   if (!rule) return null;
   const f = c.s.sex === "female";
-  if (rule.from >= 2008) {
-    const steps: [number, number, number][] = [[2036, 59, 61], [2038, 60, 62], [2040, 61, 63], [2042, 62, 64], [2044, 63, 65], [2046, 64, 65], [2048, 65, 65]];
-    let k = f ? 58 : 60;
-    for (const [y, kf, km] of steps) if (completeYear >= y) k = f ? kf : km;
-    return k;
-  }
-  return f ? rule.yasKadin : rule.yasErkek;
+  // Kademeli yaş TUR.json baskaSart metninden okunur (gamedata.retirementSteps); yoksa dönemin sabit yaşı.
+  let k = f ? rule.yasKadin : rule.yasErkek;
+  for (const [y, kf, km] of rule.steps) if (completeYear >= y) k = f ? kf : km;
+  return k;
+}
+
+function lastStep(c: Game): string {
+  const st = c.tur?.retirement.find((d) => d.steps.length)?.steps;
+  if (!st?.length) return "";
+  const [y, kf, km] = st[st.length - 1];
+  return kf === km ? ` (${y} yılından itibaren ${kf})` : ` (${y} yılından itibaren kadın ${kf}, erkek ${km})`;
 }
 
 const retire: S = {
@@ -425,7 +438,8 @@ const retire: S = {
     if (!j.working || j.retired) return false;
     if (c.isTur && j.formal) {
       const a = turRetireAge(c, c.year);
-      return a !== null && j.formalYears >= 20 && c.age >= a; // 7200 gün prim ≈ 20 yıl
+      const prim = c.tur?.retirement.find((d) => d.from <= (j.startYear ?? c.year) && (d.to === null || (j.startYear ?? c.year) < d.to))?.primGun ?? null;
+      return a !== null && j.formalYears >= (prim ? prim / 360 : 20) && c.age >= a; // prim günü TUR.json'dan; yılda 360 gün varsayımı (denge)
     }
     if (c.isTur) return c.age >= DENGE.retireAgeRange[1] || (c.age >= DENGE.retireAgeRange[0] && c.s.meters.health < 40); // kayıt dışı çalışan: emekli maaşı yok
     return c.age >= DENGE.retireAgeRange[0] && (c.age >= DENGE.retireAgeRange[1] || c.s.meters.health < 40);
@@ -435,7 +449,7 @@ const retire: S = {
     const turRule = c.isTur && c.s.job.formal;
     c.say(turRule ? ["Emekli oldun. Son gün iş arkadaşların küçük bir pasta aldı.", "Emeklilik dilekçen onaylandı. Sabah alarmı kurmadan uyandığın ilk gün tuhaf geçti."] : ["Çalışmayı bıraktın. Ellerin bir süre ne yapacağını bilemedi.", "Artık işe gitmiyorsun. Günler daha uzun, maaş daha kısa."], "onemli", {
       key: "emekli", important: true,
-      stat: turRule ? { text: "2008 sonrası ilk kez sigortalı olanlarda emeklilik için 7200 gün prim ve şartların tamamlandığı yıla göre kademeli yaş şartı var (2048'den itibaren 65).", kaynak: "5510 sayılı Kanun (content/countries/TUR.json)" } : null,
+      stat: turRule ? { text: `2008 sonrası ilk kez sigortalı olanlarda emeklilik için ${c.tur?.retirement.find((d) => d.primGun)?.primGun ?? "belirli"} gün prim ve şartların tamamlandığı yıla göre kademeli yaş şartı var${lastStep(c)}.`, kaynak: "5510 sayılı Kanun (content/countries/TUR.json)" } : null,
     });
     c.meter("happiness", 2);
   },
@@ -488,7 +502,7 @@ const critical: S[] = [
     choice: (c) => {
       c.vars.nerede = c.s.inSchool ? "Sınıfa" : "Mahalleye";
       return {
-        prompt: "#nerede# yeni bir çocuk geldi. Herkes ona uzaktan bakıyor; o da yalnız oturuyor.",
+        prompt: "#nerede.cap# yeni bir çocuk geldi. Herkes ona uzaktan bakıyor; o da yalnız oturuyor.",
         critical: true,
         options: [
           { id: "yanina", label: "Yanına git, yiyeceğini paylaş", effect: (cc) => { const f = newFriend(cc, 75); cc.target = f; cc.meter("relationships", F.mid); return ["Yanına oturup #kucukSey# uzattın. Adı #kisiAd#. O günden sonra hep beraber yürüdünüz."]; }, tone: "iyi", important: true },
@@ -554,7 +568,7 @@ const critical: S[] = [
       critical: true,
       options: [
         { id: "acil", label: "Duygularını söyle", effect: (cc) => {
-          if (cc.rng.chance(0.55)) { const sex: Sex = cc.s.sex === "female" ? "male" : "female"; const ex = cc.addPerson("ex", sex, cc.year - cc.age + cc.rng.int(-1, 1), { bond: 50 }); cc.target = ex; cc.meter("happiness", F.mid); return ["#kisiAd# de seni düşünüyormuş. Birkaç ay boyunca dünya çok parlaktı; sonra yaz bitti, siz de bittiniz."]; }
+          if (cc.rng.chance(0.55)) { const sex: Sex = cc.s.sex === "female" ? "male" : "female"; const ex = cc.addPerson("ex", sex, cc.year - cc.age + cc.rng.int(-1, 1), { bond: 50 }); cc.target = ex; cc.meter("happiness", F.mid); return ["#kisiAd.cap# de seni düşünüyormuş. Birkaç ay boyunca dünya çok parlaktı; sonra yaz bitti, siz de bittiniz."]; }
           cc.meter("happiness", -F.small); return ["Söyledin. Karşılık gelmedi. Yine de içinde bir şey hafifledi."];
         }, important: true },
         { id: "sakla", label: "İçinde tut, bir deftere yaz", effect: (cc) => { cc.meter("knowledge", 1); return ["Defterin yarısı ona yazılmış ama ona hiç gösterilmemiş cümlelerle doldu."]; } },
@@ -631,18 +645,21 @@ const lateUni: S = {
 
 // ------------------------------------------------------------------ anlatı olayları (karar yok)
 
+/** Yası tutulan yakınlar: anne, baba, kardeş, eş, çocuk, en yakın arkadaş; ölümünden 1-6 yıl sonra. */
+const mourned = (c: Game) => c.s.people.filter((p) => !p.alive && ["mother", "father", "sibling", "partner", "child", "friend"].includes(p.role) && p.deathYear !== undefined && c.year - p.deathYear >= 1 && c.year - p.deathYear <= 6 && p.bond >= 50);
+
 const kin = (c: Game, roles: GPerson["role"][]) => {
   const l = c.alive().filter((p) => roles.includes(p.role));
   return l.length ? pick(c, l) : null;
 };
 
 const narrative: S[] = [
-  { id: "ilk-adim", ages: [1, 1], tone: "iyi", important: true, text: ["İlk adımlarını attın. #anne.cap# ellerini çırparak seni çağırdı, sen ona doğru sendeledin.", "#zaman#, masanın kenarını bırakıp üç adım attın. Evdeki herkes alkışladı."], fx: (c) => c.meter("happiness", 2) },
+  { id: "ilk-adim", ages: [1, 1], tone: "iyi", important: true, text: ["İlk adımlarını attın. #anne.cap# ellerini çırparak seni çağırdı, sen ona doğru sendeledin.", "#zaman.cap#, masanın kenarını bırakıp üç adım attın. Evdeki herkes alkışladı."], fx: (c) => c.meter("happiness", 2) },
   { id: "ilk-kelime", ages: [1, 2], tone: "iyi", text: ["İlk kelimen çıktı. Herkes kendi adını söylediğini iddia ediyor.", "Bir sabah ilk kelimeni söyledin. #anne.cap# bunu bütün akrabalara tek tek anlattı."], fx: (c) => c.meter("relationships", 2) },
   { id: "bebek-hasta", ages: [0, 4], tone: "kotu", weight: (c) => 0.6 + c.country.under5.v / 40, max: 2, cooldown: 2, text: ["Ateşlendin. İki gece boyunca #anne# başından ayrılmadı.", "Uzun süren bir ishal seni çok zayıflattı. Ailen seni kucakta sağlık ocağına taşıdı.", "Öksürük nöbetleri haftalarca sürdü. Sonunda geçti; ama evde herkes korktu."], stat: statU5, fx: (c) => { c.meter("health", -F.mid); c.bond(c.mother(), 3); } },
   { id: "oyuncak", ages: [2, 5], tone: "iyi", text: ["En sevdiğin oyuncak #kucukSey#. Onu kimseye vermiyorsun.", "#baba.cap# eski bir tahtadan sana bir araba yonttu. Tekerlekleri dönmüyor, umurunda değil.", "Bir bez bebek bütün geceler koynunda. Kulağı çoktan kopmuş."], fx: (c) => c.meter("happiness", 2) },
-  { id: "kardes-kavga", ages: [4, 14], tone: "notr", max: 2, cooldown: 4, pickPerson: (c) => kin(c, ["sibling"]), text: ["#kisi.cap# ile aynı şey için kavga ettiniz. Akşama barışmıştınız bile.", "#kisiAd# senin defterini yırttı, sen de onun ayakkabısını sakladın. Ceza ikinize de çıktı.", "#kisi.cap# seni mahalledeki büyük çocuklardan korudu. Bunu hiç unutmadın."], fx: (c) => { c.bond(c.target, 4); } },
-  { id: "kar-yagmur", ages: [3, 12], tone: "iyi", text: ["#zaman# hava birden değişti. Sokaktaki bütün çocuklar dışarıya döküldü.", "Bütün gün yağmur yağdı. Pencereden damlaların yarışını izledin, hep aynı damla kazandı.", "Burnunda #koku# kokusu, kulağında #ses#. Sıradan bir gün; ama aklında kalacak."], fx: (c) => c.meter("happiness", 2) },
+  { id: "kardes-kavga", ages: [4, 14], tone: "notr", max: 2, cooldown: 4, pickPerson: (c) => kin(c, ["sibling"]), text: ["#kisi.cap# ile aynı şey için kavga ettiniz. Akşama barışmıştınız bile.", "#kisiAd.cap# senin defterini yırttı, sen de onun ayakkabısını sakladın. Ceza ikinize de çıktı.", "#kisi.cap# seni mahalledeki büyük çocuklardan korudu. Bunu hiç unutmadın."], fx: (c) => { c.bond(c.target, 4); } },
+  { id: "kar-yagmur", ages: [3, 12], tone: "iyi", text: ["#zaman.cap# hava birden değişti. Sokaktaki bütün çocuklar dışarıya döküldü.", "Bütün gün yağmur yağdı. Pencereden damlaların yarışını izledin, hep aynı damla kazandı.", "Burnunda #koku# kokusu, kulağında #ses#. Sıradan bir gün; ama aklında kalacak."], fx: (c) => c.meter("happiness", 2) },
   { id: "tasinma-cocuk", ages: [3, 14], tone: "notr", weight: 0.5, text: ["Ailen başka bir eve taşındı. Eski evin duvarına adını kazıdın.", "Eşyalar bir kamyonetin arkasına yüklendi. Yeni mahallede ilk gün kimseyi tanımıyorsun."], fx: (c) => { c.meter("relationships", -2); c.meter("happiness", -1); } },
   { id: "ogretmen", ages: [7, 15], tone: "iyi", when: (c) => c.s.inSchool, text: ["Bir öğretmenin yazdığın şeyi sınıfa okudu. Yanakların yandı ama içten içe uçtun.", "Öğretmenin seni teneffüste yanına çağırıp 'Sende bir şey var,' dedi. Ne olduğunu sormadın."], fx: (c) => c.meter("knowledge", F.small) },
   { id: "bisiklet", ages: [6, 12], tone: "iyi", when: (c) => c.s.familyDecile >= 2, text: ["Bisiklet sürmeyi öğrendin. #kardes.cap# arkandan tutuyordu, bir ara bıraktığını fark etmedin.", "Biri sana eski bir bisiklet verdi. Zinciri hep çıkıyor, sen hep takıyorsun."], fx: (c) => { c.meter("health", 2); c.meter("happiness", 2); } },
@@ -650,7 +667,7 @@ const narrative: S[] = [
   { id: "bayram", ages: [4, 13], tone: "iyi", max: 2, cooldown: 3, text: ["Bir bayram günü yeni giysilerini giydin. Bütün gün kirletmemeye çalıştın, olmadı.", "Bayram sofrası kalabalıktı. Büyükler konuştu, çocuklar masanın altında kendi dünyasını kurdu."], fx: (c) => { c.meter("happiness", 3); c.meter("relationships", 2); } },
   { id: "ayna", ages: [12, 15], tone: "notr", text: ["Aynada kendine uzun uzun bakıyorsun. Yüzün değişiyor; sesin de.", "Bir sabah eski giysilerinin hiçbirinin olmadığını fark ettin. Bir anda büyümüşsün."] },
   { id: "arkadas-buldu", ages: [11, 16], tone: "iyi", important: true, when: (c) => !c.friend(), text: ["Bir yaz #kisiAd# ile tanıştın. Konuşmaya başladığınızda gece oldu.", "Aynı otobüsü bekleyen bir çocukla her sabah selamlaşıyordun. Bir gün konuştunuz ve bitmedi. Adı #kisiAd#."], prep: (c) => { const f = newFriend(c, 70); c.target = f; c.vars.kisiAd = f.name || "o"; }, fx: (c) => c.meter("relationships", F.mid) },
-  { id: "arkadas-tasindi", ages: [10, 30], tone: "kotu", weight: 0.4, pickPerson: (c) => c.friend(), text: ["#kisi.cap# başka bir şehre taşındı. İlk aylar her hafta konuştunuz, sonra seyrekleşti.", "#kisiAd# ile aranız soğudu. Kimse bir şey yapmadı; hayat araya girdi."], fx: (c) => { c.bond(c.target, -20); c.meter("relationships", -F.small); } },
+  { id: "arkadas-tasindi", ages: [10, 30], tone: "kotu", weight: 0.4, pickPerson: (c) => c.friend(), text: ["#kisi.cap# başka bir şehre taşındı. İlk aylar her hafta konuştunuz, sonra seyrekleşti.", "#kisiAd.cap# ile aranız soğudu. Kimse bir şey yapmadı; hayat araya girdi."], fx: (c) => { c.bond(c.target, -20); c.meter("relationships", -F.small); } },
   { id: "dede-nene", ages: [4, 12], tone: "notr", text: ["Büyüklerinden biri sana çocukluğundan bir hikâye anlattı. Hikâyede herkes yoksul ama herkes güçlüydü.", "Yaşlı bir akraba seni dizine oturtup sana eski bir şarkı öğretti."], fx: (c) => c.meter("knowledge", 1) },
   { id: "ilk-maas-harca", ages: [16, 30], tone: "iyi", when: (c) => c.s.job.working, text: ["İlk kez kendi paranla kendine bir şey aldın. Pahalı değildi, ama seçen sendin."], fx: (c) => c.meter("happiness", 2) },
   { id: "terfi", ages: [24, 60], max: 3, cooldown: 5, tone: "iyi", when: (c) => c.s.job.working && c.year >= c.s.job.unemployedUntil, weight: (c) => (c.s.edu === "tertiary" ? 1.4 : 0.8), text: ["İşte sorumluluğun arttı, maaşın da. Akşam eve biraz daha geç dönüyorsun.", "Patronun seni odasına çağırdı. Korktun; terfi çıktı.", "Yıllardır yaptığın işi artık başkalarına öğretiyorsun. Maaş bordrosu da bunu fark etmiş."], fx: (c) => { c.s.job.decile = Math.min(9, c.s.job.decile + 1); c.meter("happiness", F.small); } },
@@ -659,26 +676,26 @@ const narrative: S[] = [
   { id: "hastalik", ages: [25, 90], max: 3, cooldown: 6, tone: "kotu", weight: (c) => 0.3 + c.age / 80, text: ["Haftalarca geçmeyen bir öksürük seni yatağa düşürdü. Geçti, ama eski gücün geri gelmedi.", "Doktor tahlillere uzun uzun baktı. 'Bundan sonra dikkat etmen gerek,' dedi.", "Bir hastalık seni aylarca evden çıkarmadı. Pencereden mevsimin değişmesini izledin.", "Tansiyonun yükseldi. Artık her sabah bir ilaçla güne başlıyorsun."], fx: (c) => { c.meter("health", -F.big); c.money(-c.income * 0.08); } },
   { id: "komsu", ages: [20, 85], max: 2, cooldown: 10, tone: "iyi", text: ["Yan dairedeki yaşlı kadın sana her bayram tatlı getiriyor. Sen de onun pazar alışverişini taşıyorsun.", "Komşunun çocuğu kayboldu; bütün mahalle aradı, bulundu. O gece herkes birbirine biraz daha yakın uyudu."], fx: (c) => c.meter("relationships", F.small) },
   { id: "eski-mesaj", ages: [25, 80], tone: "iyi", weight: 0.5, text: ["Okuldan eski bir arkadaşın yıllar sonra sana yazdı. Mesajı okurken kendini on beş yaşında hissettin.", "Bir düğünde çocukluk arkadaşlarından birini gördün. İkiniz de yaşlanmıştınız ve ikiniz de bunu söylemediniz."], fx: (c) => c.meter("happiness", F.small) },
-  { id: "cocuk-adim", ages: [18, 70], max: 2, cooldown: 3, tone: "iyi", pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) === 1); return k.length ? pick(c, k) : null; }, text: ["#kisi.cap# ilk adımlarını attı. Sen de bir zamanlar böyle mi sendelemiştin?", "#kisiAd# ilk kelimesini söyledi. Hangi kelime olduğu konusunda evde hâlâ anlaşmazlık var."], fx: (c) => c.meter("happiness", F.mid) },
-  { id: "cocuk-okul", ages: [22, 75], max: 3, cooldown: 2, tone: "iyi", pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) === 6 || yasOf(c, x) === 7); return k.length ? pick(c, k) : null; }, text: ["#kisi.cap# okula başladı. Kapıda elini bırakması senin için daha zordu.", "#kisiAd# okulun ilk günü dönüp sana baktı. Gülümsedin; sonra köşeyi dönünce gözlerin doldu."], fx: (c) => c.meter("happiness", F.small) },
-  { id: "cocuk-ayrildi", ages: [35, 85], max: 3, cooldown: 2, tone: "notr", important: true, pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) >= 19 && x.livesTogether !== false); return k.length ? pick(c, k) : null; }, text: ["#kisi.cap# evden ayrıldı. Odası hâlâ onun kokuyor.", "#kisiAd# kendi hayatını kurmaya gitti. Sofraya bir tabak eksik koyuyorsun artık."], fx: (c) => { if (c.target) c.target.livesTogether = false; c.meter("happiness", -2); } },
-  { id: "torun", ages: [40, 95], max: 3, cooldown: 3, tone: "iyi", important: true, pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) >= 22 && yasOf(c, x) <= 42); return k.length ? pick(c, k) : null; }, weight: 0.8, text: ["#kisi.in# bir bebeği oldu. Torununu ilk kucağına aldığında ellerin hiç titremedi.", "Torunun dünyaya geldi. #kisiAd# sana bebeğin fotoğrafını gece yarısı gönderdi."], fx: (c) => { c.meter("happiness", F.mid); c.bond(c.target, 4); } },
-  { id: "anne-yasli", ages: [25, 70], tone: "notr", pickPerson: (c) => { const l = [c.mother(), c.father()].filter((p): p is GPerson => !!p && yasOf(c, p) >= 70); return l.length ? pick(c, l) : null; }, text: ["#kisi.cap# artık yavaş yürüyor. Telefonda sesini her duyduğunda içinden bir şey sayıyorsun.", "#kisiAd.e# bir ilaç kutusu aldın, günlere bölünmüş. Bir zamanlar o senin için yapardı bunu."], fx: (c) => c.bond(c.target, 4) },
-  { id: "yildonumu", ages: [25, 90], max: 3, cooldown: 7, tone: "iyi", pickPerson: (c) => { const p = c.partner(); return p && p.married ? p : null; }, text: ["#kisiAd# ile evliliğinizin yıl dönümünde eski fotoğraflara baktınız. İkiniz de o kadar genç miydiniz?", "#kisiAd# yıl dönümünüzü unuttu; sen de unuttun. Fark ettiğinizde uzun uzun güldünüz."], fx: (c) => { c.bond(c.target, 5); c.meter("happiness", 2); } },
-  { id: "es-tartisma", ages: [20, 80], max: 3, cooldown: 4, tone: "kotu", pickPerson: (c) => c.partner(), text: ["#kisiAd# ile para yüzünden kavga ettiniz. Kapılar çarptı, sonra sessizlik.", "Aranızda bir mesafe büyüyor. Aynı sofrada oturup başka şeyler düşünüyorsunuz."], fx: (c) => { c.bond(c.target, -8); c.meter("happiness", -F.small); } },
-  { id: "ayrilik", ages: [20, 80], max: 2, cooldown: 5, tone: "kotu", important: true, pickPerson: (c) => c.partner(), weight: (c) => { const p = c.partner(); return p ? Math.max(0, (60 - p.bond) / 20) * DENGE.separationBase * 40 : 0; }, text: ["#kisiAd# ile ayrıldınız. Eşyaları bölüştürmek, yılları bölüştürmekten kolaydı.", "Bir gün #kisiAd# 'Böyle olmuyor,' dedi. Haklıydı. Ayrı evlere taşındınız."], fx: (c) => { const p = c.target!; p.role = "ex"; p.livesTogether = false; p.married = false; c.flag("birlikte", false); c.flag("evli", false); c.flag("bosandi"); c.s.wantKids = null; c.meter("happiness", -F.big); } },
+  { id: "cocuk-adim", ages: [18, 70], max: 2, cooldown: 3, tone: "iyi", pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) === 1); return k.length ? pick(c, k) : null; }, text: ["#kisi.cap# ilk adımlarını attı. Sen de bir zamanlar böyle mi sendelemiştin?", "#kisiAd.cap# ilk kelimesini söyledi. Hangi kelime olduğu konusunda evde hâlâ anlaşmazlık var."], fx: (c) => c.meter("happiness", F.mid) },
+  { id: "cocuk-okul", ages: [22, 75], max: 3, cooldown: 2, tone: "iyi", pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) === 6 || yasOf(c, x) === 7); return k.length ? pick(c, k) : null; }, text: ["#kisi.cap# okula başladı. Kapıda elini bırakması senin için daha zordu.", "#kisiAd.cap# okulun ilk günü dönüp sana baktı. Gülümsedin; sonra köşeyi dönünce gözlerin doldu."], fx: (c) => c.meter("happiness", F.small) },
+  { id: "cocuk-ayrildi", ages: [35, 85], max: 3, cooldown: 2, tone: "notr", important: true, pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) >= 19 && x.livesTogether !== false); return k.length ? pick(c, k) : null; }, text: ["#kisi.cap# evden ayrıldı. Odası hâlâ onun kokuyor.", "#kisiAd.cap# kendi hayatını kurmaya gitti. Sofraya bir tabak eksik koyuyorsun artık.", "#kisiAd.cap# eşyalarını topladı. Kapıda 'Her hafta ararım,' dedi; ilk ay gerçekten aradı.", "#kisi.cap# başka bir şehre taşındı. Ev büyüdü sanki, sesler azaldı."], fx: (c) => { if (c.target) c.target.livesTogether = false; c.meter("happiness", -2); } },
+  { id: "torun", ages: [40, 95], max: 3, cooldown: 3, tone: "iyi", important: true, pickPerson: (c) => { const k = c.alive("child").filter((x) => yasOf(c, x) >= 22 && yasOf(c, x) <= 42); return k.length ? pick(c, k) : null; }, weight: 0.8, text: ["#kisi.in.cap# bir bebeği oldu. Torununu ilk kucağına aldığında ellerin hiç titremedi.", "Torunun dünyaya geldi. #kisiAd.cap# sana bebeğin fotoğrafını gece yarısı gönderdi.", "Bir torunun daha oldu. Bu kez adını sana sordular.", "#kisiAd.cap# kucağında bir bebekle kapında belirdi. Bebek seni görünce ağladı, sonra uyudu."], fx: (c) => { c.meter("happiness", F.mid); c.bond(c.target, 4); } },
+  { id: "anne-yasli", ages: [25, 70], tone: "notr", pickPerson: (c) => { const l = [c.mother(), c.father()].filter((p): p is GPerson => !!p && yasOf(c, p) >= 70); return l.length ? pick(c, l) : null; }, text: ["#kisi.cap# artık yavaş yürüyor. Telefonda sesini her duyduğunda içinden bir şey sayıyorsun.", "#kisiAd.e.cap# bir ilaç kutusu aldın, günlere bölünmüş. Bir zamanlar o senin için yapardı bunu."], fx: (c) => c.bond(c.target, 4) },
+  { id: "yildonumu", ages: [25, 90], max: 3, cooldown: 7, tone: "iyi", pickPerson: (c) => { const p = c.partner(); return p && p.married ? p : null; }, text: ["#kisiAd.cap# ile evliliğinizin yıl dönümünde eski fotoğraflara baktınız. İkiniz de o kadar genç miydiniz?", "#kisiAd.cap# yıl dönümünüzü unuttu; sen de unuttun. Fark ettiğinizde uzun uzun güldünüz."], fx: (c) => { c.bond(c.target, 5); c.meter("happiness", 2); } },
+  { id: "es-tartisma", ages: [20, 80], max: 3, cooldown: 4, tone: "kotu", pickPerson: (c) => c.partner(), text: ["#kisiAd.cap# ile para yüzünden kavga ettiniz. Kapılar çarptı, sonra sessizlik.", "Aranızda bir mesafe büyüyor. Aynı sofrada oturup başka şeyler düşünüyorsunuz."], fx: (c) => { c.bond(c.target, -8); c.meter("happiness", -F.small); } },
+  { id: "ayrilik", ages: [20, 80], max: 2, cooldown: 5, tone: "kotu", important: true, pickPerson: (c) => c.partner(), weight: (c) => { const p = c.partner(); return p ? Math.max(0, (60 - p.bond) / 20) * DENGE.separationBase * 40 : 0; }, text: ["#kisiAd.cap# ile ayrıldınız. Eşyaları bölüştürmek, yılları bölüştürmekten kolaydı.", "Bir gün #kisiAd# 'Böyle olmuyor,' dedi. Haklıydı. Ayrı evlere taşındınız."], fx: (c) => { const p = c.target!; p.role = "ex"; p.livesTogether = false; p.married = false; c.flag("birlikte", false); c.flag("evli", false); c.flag("bosandi"); c.s.wantKids = null; c.meter("happiness", -F.big); } },
   { id: "yalnizlik", ages: [32, 90], max: 2, cooldown: 10, tone: "notr", when: (c) => !c.partner(), text: ["Kendi düzenini seviyorsun: kendi saatin, kendi çayın, kendi sessizliğin. Bazen biri olsun istiyorsun; bazen hiç.", "Akrabalar 'Hâlâ mı?' diye soruyor. Sen hayatının dolu olduğunu biliyorsun."], fx: (c) => c.meter("happiness", 1) },
-  { id: "dogum-gunu", ages: [40, 80], max: 3, cooldown: 10, tone: "notr", when: (c) => c.age % 10 === 0, text: ["#yas# yaşına girdin. Kimse sormadan kendi kendine bir hesap yapıyorsun.", "#yas# yaşındasın. Mumları üflerken bir dilek tuttun, ne olduğunu kendine bile söylemedin."] },
-  { id: "kardes-evlendi", ages: [10, 60], max: 2, cooldown: 4, tone: "iyi", pickPerson: (c) => { const l = c.alive("sibling").filter((x) => yasOf(c, x) >= 20 && yasOf(c, x) <= 40 && !x.married); return l.length ? pick(c, l) : null; }, weight: 0.6, text: ["#kisi.cap# evlendi. Düğünde en çok sen dans ettin.", "#kisiAd# evlendi. Aile fotoğrafında yeni bir yüz var artık."], fx: (c) => { c.bond(c.target, 2); c.meter("happiness", 2); if (c.target) { c.target.livesTogether = false; c.target.married = true; } } },
-  { id: "kardes-yardim", ages: [20, 80], max: 2, cooldown: 8, tone: "iyi", pickPerson: (c) => kin(c, ["sibling"]), weight: 0.5, text: ["#kisi.cap# zor bir dönemden geçerken birkaç ay yanında kaldı. Ev daraldı, siz yakınlaştınız.", "#kisiAd# ile uzun bir telefon konuşması yaptınız. Çocukluğunuzdan kimsenin hatırlamadığı şeyleri hatırladınız."], fx: (c) => { c.bond(c.target, 6); c.meter("relationships", 2); } },
-  { id: "yas-tutmak", ages: [5, 100], max: 2, cooldown: 6, tone: "notr", when: (c) => c.s.people.some((p) => !p.alive && p.role !== "pet" && p.deathYear !== undefined && c.year - p.deathYear >= 1 && c.year - p.deathYear <= 6 && p.bond >= 50), prep: (c) => { const l = c.s.people.filter((p) => !p.alive && p.role !== "pet" && p.deathYear !== undefined && c.year - p.deathYear >= 1 && c.year - p.deathYear <= 6 && p.bond >= 50); const p = pick(c, l); c.vars.olen = c.nameOf(p); }, text: ["Bir dükkânın önünden geçerken #olen# geldi aklına. Bir an durdun.", "Rüyanda #olen.i# gördün. Hiçbir şey söylemedi, sadece gülümsedi.", "#olen.in# eski bir eşyasını buldun. Bir süre elinde tuttun, sonra yerine koydun."], fx: (c) => c.meter("happiness", -1) },
+  { id: "dogum-gunu", ages: [40, 80], max: 3, cooldown: 10, tone: "notr", when: (c) => c.age % 10 === 0, text: ["#yas.cap# yaşına girdin. Kimse sormadan kendi kendine bir hesap yapıyorsun.", "#yas.cap# yaşındasın. Mumları üflerken bir dilek tuttun, ne olduğunu kendine bile söylemedin."] },
+  { id: "kardes-evlendi", ages: [10, 60], max: 2, cooldown: 4, tone: "iyi", pickPerson: (c) => { const l = c.alive("sibling").filter((x) => yasOf(c, x) >= 20 && yasOf(c, x) <= 40 && !x.married); return l.length ? pick(c, l) : null; }, weight: 0.6, text: ["#kisi.cap# evlendi. Düğünde en çok sen dans ettin.", "#kisiAd.cap# evlendi. Aile fotoğrafında yeni bir yüz var artık."], fx: (c) => { c.bond(c.target, 2); c.meter("happiness", 2); if (c.target) { c.target.livesTogether = false; c.target.married = true; } } },
+  { id: "kardes-yardim", ages: [20, 80], max: 2, cooldown: 8, tone: "iyi", pickPerson: (c) => kin(c, ["sibling"]), weight: 0.5, text: ["#kisi.cap# zor bir dönemden geçerken birkaç ay yanında kaldı. Ev daraldı, siz yakınlaştınız.", "#kisiAd.cap# ile uzun bir telefon konuşması yaptınız. Çocukluğunuzdan kimsenin hatırlamadığı şeyleri hatırladınız."], fx: (c) => { c.bond(c.target, 6); c.meter("relationships", 2); } },
+  { id: "yas-tutmak", ages: [5, 100], max: 3, cooldown: 5, tone: "notr", when: (c) => mourned(c).length > 0, prep: (c) => { const p = pick(c, mourned(c)); c.vars.olen = c.nameOf(p); c.vars.yer2 = p.livesTogether !== false && !c.s.leftHome ? "evde" : "bir sokakta"; }, text: ["Bir dükkânın önünden geçerken #olen# geldi aklına. Bir an durdun.", "Rüyanda #olen.i# gördün. Hiçbir şey söylemedi, sadece gülümsedi.", "#olen.in.cap# eski bir eşyasını buldun. Bir süre elinde tuttun, sonra yerine koydun.", "Bir şarkı çaldı, #olen# hep onu mırıldanırdı. Radyoyu kapatmadın.", "#olen.in.cap# ölüm yıl dönümünde mezarına gittin. Yanına küçük bir şey bıraktın.", "Bugün #olen.e# anlatmak istediğin bir şey oldu. Kime anlatacağını bilemedin."], fx: (c) => c.meter("happiness", -1) },
   { id: "hayvan", ages: [6, 75], tone: "iyi", important: true, weight: 0.5, when: (c) => !c.alive("pet").length, prep: (c) => { const nm = pick(c, ["Pamuk", "Karabaş", "Tarçın", "Boncuk", "Duman", "Fındık", "Zeytin", "Paşa"]); c.vars.hayvanAd = nm; const p = c.addPerson("pet", "female", c.year, { name: nm, bond: 70, livesTogether: true }); c.target = p; }, text: ["Kapının önünde titreyen bir köpek yavrusu buldun. Adını #hayvanAd# koydun; o gün bu gündür evde.", "Bir sokak kedisi seni seçti. Adı #hayvanAd# oldu ve yatağın yarısı artık onun."], fx: (c) => { c.meter("happiness", F.small); } },
-  { id: "sessiz-an", ages: [20, 95], max: 3, cooldown: 8, tone: "notr", text: ["Bir akşam balkonda tek başına oturdun. Ne bir şey istedin ne bir şeyden kaçtın.", "Sabah herkesten önce uyandın. Evin sessizliği sana ait gibiydi.", "#zaman# eski bir şarkı çaldı radyoda. Hangi yıl olduğunu hatırladın, hangi sokak olduğunu da."], fx: (c) => c.meter("happiness", 2) },
+  { id: "sessiz-an", ages: [20, 95], max: 3, cooldown: 8, tone: "notr", text: ["Bir akşam balkonda tek başına oturdun. Ne bir şey istedin ne bir şeyden kaçtın.", "Sabah herkesten önce uyandın. Evin sessizliği sana ait gibiydi.", "#zaman.cap# eski bir şarkı çaldı radyoda. Hangi yıl olduğunu hatırladın, hangi sokak olduğunu da."], fx: (c) => c.meter("happiness", 2) },
   { id: "ay-sonu", ages: [18, 90], max: 3, cooldown: 3, tone: "kotu", when: (c) => c.s.leftHome && c.cash < 0, text: ["Ay sonu geldi, para gelmedi. Bakkalın defterine adın bir daha yazıldı.", "Faturaları masaya dizdin, hangisini önce ödeyeceğine karar veremedin.", "Borç yüzünden geceleri uyuyamıyorsun. Kimseye söylemiyorsun."], fx: (c) => { c.meter("happiness", -F.small); c.meter("health", -2); } },
   { id: "borc-bitti", ages: [20, 90], max: 1, tone: "iyi", when: (c) => c.s.leftHome && c.has("borclandi") && c.cash > 0, text: ["Son borcunu da ödedin. Omuzlarından bir yük kalktı; bunu ancak şimdi fark ediyorsun."], fx: (c) => { c.flag("borclandi", false); c.meter("happiness", F.mid); } },
   { id: "yaslilik", ages: [70, 110], max: 3, cooldown: 4, tone: "notr", text: ["Gözlüğünü arıyorsun; başının üstünde. Buna artık sen de gülüyorsun.", "Merdivenler uzadı, günler kısaldı. Yine de her sabah pencereyi açıyorsun.", "Eski bir fotoğrafta kendini zor tanıdın. O çocuk hâlâ içinde bir yerde."], fx: (c) => c.meter("health", -2) },
   { id: "torun-masal", ages: [60, 100], tone: "iyi", when: (c) => c.s.counts["torun"] > 0, text: ["Torununa senin çocukluğunu anlattın. Bazı yerleri biraz süsledin; hakkın var."], fx: (c) => c.meter("happiness", F.small) },
-  { id: "tur-bakim", ages: [22, 70], tone: "notr", countries: ["TUR"], when: (c) => c.s.sex === "female" && c.s.leftHome && !!c.tur?.careTimeMinutes, text: ["Günün çoğu yemek, temizlik, çocuklar ve yaşlıların ihtiyaçlarıyla geçiyor. Akşam oturduğunda kimse 'Yoruldun mu?' diye sormuyor."], stat: (c) => { const t = c.tur!.careTimeMinutes!; return { text: `Türkiye'de kadınlar günde ortalama ${Math.floor(t.v / 60)} saat ${t.v % 60} dakikayı hane ve aile bakımına ayırıyor (${t.yil}; çalışan erkeklerde 46 dakika).`, kaynak: "TÜİK Zaman Kullanım Araştırması 2014-2015 (content/countries/TUR.json)" }; }, fx: (c) => c.meter("health", -1) },
+  { id: "tur-bakim", ages: [22, 70], tone: "notr", countries: ["TUR"], when: (c) => c.s.sex === "female" && c.s.leftHome && !!c.tur?.careTimeMinutes, text: ["Günün çoğu yemek, temizlik, çocuklar ve yaşlıların ihtiyaçlarıyla geçiyor. Akşam oturduğunda kimse 'Yoruldun mu?' diye sormuyor."], stat: (c) => { const t = c.tur!.careTimeMinutes!; return { text: `Türkiye'de kadınlar günde ortalama ${Math.floor(t.v / 60)} saat ${t.v % 60} dakikayı hane ve aile bakımına ayırıyor (${t.yil}${t.menWorking !== null ? `; çalışan erkeklerde ${t.menWorking} dakika` : ""}).`, kaynak: "TÜİK Zaman Kullanım Araştırması 2014-2015 (content/countries/TUR.json)" }; }, fx: (c) => c.meter("health", -1) },
 ];
 
 // ------------------------------------------------------------------ yetişkin karar anları
@@ -723,7 +740,7 @@ const decisions: S[] = [
       return {
         prompt: "#kisi.cap# artık tek başına yaşamakta zorlanıyor. Bir karar vermek gerek.",
         options: [
-          { id: "yanina", label: "Yanına al", effect: (cc) => { const p = cc.target!; p.livesTogether = true; cc.bond(p, 12); cc.meter("happiness", -2); cc.meter("health", -2); cc.money(-cc.income * 0.05); return ["#kisiAd# artık seninle yaşıyor. Geceleri kalkıp ilacını veriyorsun; bazen birlikte eski şarkılar dinliyorsunuz."]; }, tone: "onemli", important: true },
+          { id: "yanina", label: "Yanına al", effect: (cc) => { const p = cc.target!; p.livesTogether = true; cc.bond(p, 12); cc.meter("happiness", -2); cc.meter("health", -2); cc.money(-cc.income * 0.05); return ["#kisiAd.cap# artık seninle yaşıyor. Geceleri kalkıp ilacını veriyorsun; bazen birlikte eski şarkılar dinliyorsunuz."]; }, tone: "onemli", important: true },
           { id: "para", label: "Bakım için para gönder", cost: pay, locked: c.canAfford(pay) ? null : "Göndereceğin para yok.", effect: (cc) => { cc.bond(cc.target, 3); return ["Her ay bakım için para gönderiyorsun. Telefonda sesi iyi; yanında olmamak içini kemiriyor."]; } },
           { id: "ziyaret", label: "Fırsat buldukça ziyaret et", effect: (cc) => { cc.bond(cc.target, -4); cc.meter("happiness", -1); return ["Ayda bir gidebiliyorsun. Her gidişinde biraz daha küçülmüş buluyorsun onu."]; } },
         ],
@@ -764,7 +781,7 @@ const decisions: S[] = [
         prompt: "#kisi.cap# zor durumda; senden borç istedi. Geri ödenip ödenmeyeceği belli değil.",
         options: [
           { id: "ver", label: "Ver", cost: amt, locked: c.canAfford(amt) ? null : "Verebilecek paran yok.", effect: (cc) => { cc.bond(cc.target, 10); if (cc.rng.chance(0.5)) { cc.money(Math.round(amt * 0.8)); return ["Parayı verdin. İki yıl sonra #kisiAd# çoğunu geri getirdi; yanında bir de kutu tatlı vardı."]; } return ["Parayı verdin. Bir daha konusu açılmadı. Bazen aklına geliyor; ama aranız iyi."]; } },
-          { id: "yarim", label: "Bir kısmını ver", cost: Math.round(amt / 3), locked: c.canAfford(Math.round(amt / 3)) ? null : "Bir kısmını bile veremezsin.", effect: (cc) => { cc.bond(cc.target, 3); return ["Elinden geleni verdin. #kisiAd# teşekkür etti; gözlerinde biraz kırgınlık da vardı."]; } },
+          { id: "yarim", label: "Bir kısmını ver", cost: Math.round(amt / 3), locked: c.canAfford(Math.round(amt / 3)) ? null : "Bir kısmını bile veremezsin.", effect: (cc) => { cc.bond(cc.target, 3); return ["Elinden geleni verdin. #kisiAd.cap# teşekkür etti; gözlerinde biraz kırgınlık da vardı."]; } },
           { id: "hayir", label: "Veremeyeceğini söyle", effect: (cc) => { cc.bond(cc.target, -10); return ["Veremeyeceğini söyledin. Haklı sebeplerin vardı; yine de telefonlar seyrekleşti."]; } },
         ],
       };
@@ -803,8 +820,8 @@ const decisions: S[] = [
       prompt: "#kisi.cap# zor günlerden geçiyor. Gece yarısı aradı; sesi titriyordu.",
       options: [
         { id: "git", label: "Hemen yanına git", effect: (cc) => { cc.bond(cc.target, 12); cc.meter("health", -1); return ["Gece yarısı kapısını çaldın. Sabaha kadar mutfakta oturdunuz; pek konuşmadınız."]; } },
-        { id: "para", label: "Para gönder", cost: c.cost("donation"), locked: c.canAfford(c.cost("donation")) ? null : "Gönderecek paran yok.", effect: (cc) => { cc.bond(cc.target, 4); return ["Bir miktar para gönderdin. #kisiAd# 'Sağ ol,' yazdı; ama asıl ihtiyacı bu muydu, emin değilsin."]; } },
-        { id: "mesaj", label: "Sabah ararım, de", effect: (cc) => { cc.bond(cc.target, -6); return ["Sabah aradın. #kisiAd# 'Geçti,' dedi. Sesi hâlâ uzaktı."]; } },
+        { id: "para", label: "Para gönder", cost: c.cost("donation"), locked: c.canAfford(c.cost("donation")) ? null : "Gönderecek paran yok.", effect: (cc) => { cc.bond(cc.target, 4); return ["Bir miktar para gönderdin. #kisiAd.cap# 'Sağ ol,' yazdı; ama asıl ihtiyacı bu muydu, emin değilsin."]; } },
+        { id: "mesaj", label: "Sabah ararım, de", effect: (cc) => { cc.bond(cc.target, -6); return ["Sabah aradın. #kisiAd.cap# 'Geçti,' dedi. Sesi hâlâ uzaktı."]; } },
       ],
     }),
   },
@@ -856,9 +873,9 @@ const decisions: S[] = [
       return {
         prompt: "#kisi.cap# okulda zorlanıyor. Öğretmeni seninle konuşmak istedi.",
         options: [
-          { id: "ders", label: "Özel ders aldır", cost, locked: c.canAfford(cost) ? null : "Özel derse ayıracak para yok.", effect: (cc) => { cc.bond(cc.target, 3); return ["Özel ders notlarını biraz yükseltti. #kisiAd# yine de en çok seninle çalıştığı akşamları hatırlayacak."]; } },
+          { id: "ders", label: "Özel ders aldır", cost, locked: c.canAfford(cost) ? null : "Özel derse ayıracak para yok.", effect: (cc) => { cc.bond(cc.target, 3); return ["Özel ders notlarını biraz yükseltti. #kisiAd.cap# yine de en çok seninle çalıştığı akşamları hatırlayacak."]; } },
           { id: "kendin", label: "Akşamları kendin çalıştır", effect: (cc) => { cc.bond(cc.target, 8); cc.meter("health", -1); return ["Mutfak masasında birlikte çalıştınız. Bazı soruları sen de bilmiyordun; birlikte bulduğunuz cevaplar daha güzeldi."]; } },
-          { id: "baski", label: "Kendisi halletsin", effect: (cc) => { cc.bond(cc.target, -6); return ["'Kendi işini kendin hallet,' dedin. #kisiAd# halletti; ama sana daha az anlatmaya başladı."]; } },
+          { id: "baski", label: "Kendisi halletsin", effect: (cc) => { cc.bond(cc.target, -6); return ["'Kendi işini kendin hallet,' dedin. #kisiAd.cap# halletti; ama sana daha az anlatmaya başladı."]; } },
         ],
       };
     },
@@ -872,7 +889,7 @@ export const REFLECTIONS: { age: number; question: string; options: string[] }[]
   { age: 15, question: "On beş yaşındaki bu genç, on beş yaşındaki sana bir şey sorsaydı, ne sorardı?", options: ["Korkuyor muydun?", "Kimi seviyordun?", "Ne olmak istiyordun?", "Bunu hiç düşünmedim"] },
   { age: 30, question: "Otuz yaş. Senin hayatında bu yaşa kadar en çok emek verdiğin şey ne oldu, ya da ne olacak?", options: ["Bir insan", "Bir iş", "Kendim", "Henüz bilmiyorum"] },
   { age: 50, question: "Elli yaşında insan geriye ve ileriye eşit bakabiliyor. Sen hangi tarafa daha çok bakıyorsun?", options: ["Geriye", "İleriye", "Bugüne", "İkisine de bakmamaya çalışıyorum"] },
-  { age: 70, question: "Yetmiş yaşına gelen bu insanla bir çay içseydin, ona ne söylerdin?", options: ["Teşekkür ederim", "Özür dilerim", "Anlat, dinliyorum", "Hiçbir şey; sadece otururdum"] },
+  { age: 70, question: "Yetmiş yaşına gelen bu insanla karşılıklı otursaydın, ona ne söylerdin?", options: ["Teşekkür ederim", "Özür dilerim", "Anlat, dinliyorum", "Hiçbir şey; sadece otururdum"] },
 ];
 
 // ------------------------------------------------------------------ dışa aktarım

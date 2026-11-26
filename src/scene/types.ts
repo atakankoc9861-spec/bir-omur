@@ -41,6 +41,8 @@ export interface SceneState {
   profile?: VisualProfileId;
   /** Kit bu ülke için çizildi mi ("tam"), ödünç mü ("gecici"), yoksa açıkça istenen yedek mi ("yedek")? */
   kitStatus?: "tam" | "gecici" | "yedek";
+  /** Kiti olmayan ülke: desensiz, başlıksız, bölgeye özgü kesimi olmayan nötr giysi. */
+  neutralDress?: boolean;
 }
 
 /** Yönetmenin seçtiği, aynı hayatta tekrar etmeyen sahne planı. */

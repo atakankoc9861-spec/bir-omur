@@ -10,7 +10,7 @@ import { SceneDirector } from "../scene/director";
 import { sceneStateFromLife } from "../scene/fromLife";
 import type { Season, TimeOfDay } from "../scene/types";
 import { SceneView } from "../scene/view";
-import { fallbackRegionFor, profileOverride } from "./kit-esleme";
+import { fallbackRegionFor, needsNeutralDress } from "./kit-esleme";
 
 const D = data as GameData;
 const KEY_CUR = "birOmur.mvp0.hayat";
@@ -43,6 +43,22 @@ const TONE_COLOR: Record<Tone, string> = { notr: "#4a4656", iyi: "#6f9e5f", kotu
 const TONE_NAME: Record<Tone, string> = { notr: "sakin", iyi: "iyi", kotu: "zor", onemli: "dönüm noktası", kayip: "kayıp" };
 const METERS: [keyof Game["s"]["meters"], string][] = [["health", "Sağlık"], ["happiness", "Mutluluk"], ["knowledge", "Bilgi"], ["relationships", "İlişkiler"]];
 type Speed = 0 | 1 | 4;
+
+/** Denge ayarından ya da tahminden türeyen tutarlar yuvarlanır (Kalite K4): 2 anlamlı basamak. */
+function approx(x: number): string {
+  const a = Math.abs(x);
+  if (a < 100) return fmtNum(Math.round(a / 10) * 10);
+  const p = 10 ** (Math.floor(Math.log10(a)) - 1);
+  return fmtNum(Math.round(a / p) * p);
+}
+
+/** Yaşa göre isimsiz anma: çocuk → genç → yetişkin (Kalite O4). */
+function personWord(sex: string, age: number): string {
+  const f = sex === "female";
+  if (age < 13) return f ? "Bir kız" : "Bir oğlan";
+  if (age < 18) return f ? "Bir genç kız" : "Bir genç";
+  return f ? "Bir kadın" : "Bir adam";
+}
 
 // ------------------------------------------------------------------ ana ekran
 
@@ -258,8 +274,7 @@ function sceneFor(rep: YearReport) {
     st.family = st.family
       .filter((m) => m.role !== "ex" && m.age >= 0)
       .map((m) => { const p = byId.get(m.id); return p && p.livesTogether !== undefined ? { ...m, livesTogether: p.livesTogether } : m; });
-    const pr = profileOverride(G.country.iso3);
-    if (pr) st.profile = pr;
+    if (needsNeutralDress(G.country.iso3)) st.neutralDress = true;
     view.showRendered(director.compose(st));
   } catch (e) {
     console.warn("sahne çizilemedi", e);
@@ -297,7 +312,7 @@ function entryEl(e: Entry): HTMLElement {
     const names: Record<string, string> = { health: "sağlık", happiness: "mutluluk", knowledge: "bilgi", relationships: "ilişkiler", money: "$" };
     for (const [k, v] of Object.entries(e.fx)) {
       if (!v || Math.abs(v) < 1) continue;
-      const t = k === "money" ? `${v > 0 ? "+" : "−"}${fmtNum(Math.abs(v))} $` : `${names[k]} ${v > 0 ? "+" : "−"}${Math.round(Math.abs(v))}`;
+      const t = k === "money" ? `${v > 0 ? "+" : "−"}${approx(v)} $` : `${names[k]} ${v > 0 ? "+" : "−"}${Math.round(Math.abs(v))}`;
       fx.append(h("span", v > 0 ? "up" : "down", t));
     }
     if (fx.childElementCount) d.append(fx);
@@ -315,7 +330,7 @@ function updateStatus() {
   if (!G) return;
   const s = G.s;
   const age = lastRep?.age ?? 0;
-  $("#who").textContent = s.name || (s.sex === "female" ? "Bir kız" : "Bir oğlan");
+  $("#who").textContent = s.name || personWord(s.sex, age);
   $("#when").textContent = ` · ${age} yaş · ${G.country.nameTr} · ${s.urban ? "şehir" : "köy"}`;
   const m = $("#meters");
   m.innerHTML = "";
@@ -335,9 +350,16 @@ function updateStatus() {
   const relTxt = rel < 0.75 ? "ülke ortancasının altında" : rel > 1.33 ? "ülke ortancasının üstünde" : "ülke ortancası civarında";
   const cash = s.budget.cash;
   const who = s.leftHome ? "Hanen" : "Ailen";
-  const purse = !s.leftHome ? "" : ` · ${cash >= 0 ? `birikim ${fmtNum(cash)} $` : `borç ${fmtNum(-cash)} $`}`;
-  $("#money").textContent = `${who}: kişi başı yılda ~${fmtNum(inc)} $ (${relTxt})${purse}`;
-  $("#money").title = "Dolar: satın alma gücü paritesiyle (2021 uluslararası $). Gelir: kişi başı GSYH × ülkenin gelir/tüketim ondalık payı (Dünya Bankası WDI + PIP). Bu bir tahmindir.";
+  const purse = !s.leftHome ? "" : ` · ${cash >= 0 ? `birikim ≈${approx(cash)} $` : `borç ≈${approx(-cash)} $`}`;
+  const mon = $("#money");
+  mon.innerHTML = "";
+  mon.append(document.createTextNode(`${who}: kişi başı yılda ≈${approx(inc)} $ (${relTxt})${purse} `));
+  const tag = h("button", "tag", "tahmin");
+  tag.onclick = () => { const n = document.getElementById("money-note"); if (n) n.classList.toggle("hidden"); };
+  mon.append(tag);
+  const note = h("div", "fine hidden", "Dolar: satın alma gücüyle (2021 uluslararası $). Gelir = kişi başı GSYH × ülkenin gelir/tüketim ondalık payı (Dünya Bankası WDI + PIP); bu bir tahmindir. Birikim ve borç oyunun kendi hesabıdır, istatistik değildir.");
+  note.id = "money-note";
+  mon.append(note);
 }
 
 function showDecision(rep: YearReport) {
@@ -356,7 +378,7 @@ function showDecision(rep: YearReport) {
   for (const o of d.options) {
     const b = h("button", "opt");
     b.append(h("span", "", o.label));
-    if (o.cost) b.append(h("small", "", `Bedeli ~${fmtNum(o.cost)} $`));
+    if (o.cost) b.append(h("small", "", `Bedeli ≈${approx(o.cost)} $`));
     if (o.locked) { b.disabled = true; b.append(h("small", "lock", o.locked)); }
     b.onclick = () => pickOption(o.id);
     opts.append(b);
@@ -463,7 +485,7 @@ function summary(g: Game) {
   a.className = "screen end";
   const card = h("div", "card");
   card.append(h("div", "kicker", "Bir ömür"));
-  card.append(h("h1", "", s.name || (s.sex === "female" ? "Bir kız" : "Bir oğlan")));
+  card.append(h("h1", "", s.name || personWord(s.sex, s.age)));
   card.append(h("p", "big-line", `${s.birthYear} – ${s.deathYear ?? "?"} · ${s.country} · ${s.age} yıl`));
   if (s.cause) card.append(h("p", "", `Ölüm nedeni: ${s.cause}.`));
   if (s.causeStat) { const st = h("div", "stat"); st.append(h("span", "", s.causeStat.text), h("small", "", ` Kaynak: ${s.causeStat.kaynak}`)); card.append(st); }

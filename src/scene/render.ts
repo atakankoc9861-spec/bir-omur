@@ -112,7 +112,21 @@ function poseFor(a: Actor, slot: Slot, indoor: boolean, frail: boolean, rng: Rng
 
 /** Kitin görünüşü + başörtüsü/başlık ile ten arasında kontrast garantisi (Kalite Y4). */
 function lookOf(kit: RegionKit, i: LookInput): Look {
-  return ensureHeadContrast(kit.look(i));
+  const l = kit.look(i);
+  return ensureHeadContrast(i.state.neutralDress ? neutralize(l) : l);
+}
+
+/** Kiti olmayan ülkeler için: bölgeye özgü desen, başlık ve geleneksel kesim kaldırılır (Yapımcı kararı, Kalite O1). */
+function neutralize(l: Look): Look {
+  const solid = (g: Look["top"]) => ({ ...g, pattern: "solid" as const });
+  return {
+    ...l,
+    headwear: "none",
+    top: solid(l.top),
+    bottom: solid(l.bottom),
+    outer: l.outer ? solid(l.outer) : null,
+    bottomKind: l.bottomKind === "robe" ? "trousers" : l.bottomKind,
+  };
 }
 
 function lookInput(a: Actor, s: SceneState, plan: ScenePlan, household: ReturnType<RegionKit["household"]>): LookInput {

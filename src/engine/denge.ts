@@ -78,7 +78,7 @@ export const DENGE = {
   firstUnionMeanAge: { female: 26, male: 28 },
   /** Ortalama yaşta yıllık eş bulma olasılığı (zirve). */
   unionPeak: 0.4,
-  /** Hiç evlenmemiş kalan hayatlar için tavan (tamamı tesadüf ve kararlarla belirlenir). */
+  /** Eş bulma olayının en erken yaşı (Türkiye'de yasal evlilik yaşıyla büyüğü alınır). */
   unionMinAge: 18,
   /** Eşin yaş farkı (eş − oyuncu) erkek oyuncu için; kadın oyuncuda işaret ters. */
   partnerAgeGap: [-6, 1] as const,

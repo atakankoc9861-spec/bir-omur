@@ -48,9 +48,10 @@ export interface TurRules {
   education: { from: number; to: number | null; zorunluYil: number; startAge: number; endAge: number }[];
   marriageLegal: { from: number; to: number | null; kadin: number; erkek: number }[];
   firstMarriageAge: { female: number; male: number; yil: number; kaynak: string } | null;
-  retirement: { from: number; to: number | null; yasKadin: number | null; yasErkek: number | null }[];
+  /** steps: [yıl, kadın yaşı, erkek yaşı] — şartların tamamlandığı yıla göre kademeli yaş (baskaSart metninden okunur). */
+  retirement: { from: number; to: number | null; yasKadin: number | null; yasErkek: number | null; steps: [number, number, number][]; primGun: number | null }[];
   womenEmployment: { female: number; male: number | null; yil: number; kaynak: string } | null;
-  careTimeMinutes: { v: number; yil: number; kaynak: string } | null;
+  careTimeMinutes: { v: number; menWorking: number | null; yil: number; kaynak: string } | null;
   conscientiousObjection: boolean | null;
   kaynakAdlari: Record<string, string>;
 }
@@ -265,7 +266,7 @@ export function turRules(p: any): TurRules | null {
   );
   const fm = safe(() => (p.evlilikAile.ilkEvlilikYasOrt as any[]).filter(usable).sort((a, b) => b.yil - a.yil)[0], null);
   const retirement = safe(
-    () => (p.emeklilik.donemler as any[]).filter(usable).map((d) => ({ from: d.yilBas, to: d.yilSon ?? null, yasKadin: d.yasKadin ?? null, yasErkek: d.yasErkek ?? null })),
+    () => (p.emeklilik.donemler as any[]).filter(usable).map((d) => ({ from: d.yilBas, to: d.yilSon ?? null, yasKadin: d.yasKadin ?? null, yasErkek: d.yasErkek ?? null, steps: retirementSteps(d.baskaSart ?? ""), primGun: ((m) => (m ? +m[1] : null))(/(\d{3,5}) gün prim/.exec(d.baskaSart ?? "")) })),
     [],
   );
   const emp = safe(() => (p.yerelSayilar as any[]).find((y) => usable(y) && y.veriAnahtari === "tuik.isgucu.istihdamOrani.kadin"), null);
@@ -285,10 +286,25 @@ export function turRules(p: any): TurRules | null {
     firstMarriageAge: fm ? { female: fm.kadin, male: fm.erkek, yil: fm.yil, kaynak: (fm.kaynak ?? []).join(",") } : null,
     retirement,
     womenEmployment,
-    careTimeMinutes: care && typeof care.deger === "number" ? { v: care.deger, yil: care.yil, kaynak: (care.kaynak ?? []).join(",") } : null,
+    careTimeMinutes: care && typeof care.deger === "number" ? { v: care.deger, menWorking: menMinutes(care.not ?? ""), yil: care.yil, kaynak: (care.kaynak ?? []).join(",") } : null,
     conscientiousObjection: co,
     kaynakAdlari,
   };
+}
+
+/** "2036-2037 59/61, ..., 2048'den itibaren 65/65" → [[2036,59,61], ..., [2048,65,65]]. Okunamazsa boş. */
+export function retirementSteps(text: string): [number, number, number][] {
+  const out: [number, number, number][] = [];
+  for (const m of text.matchAll(/(\d{4})\s*[-–]\s*\d{4}\s+(\d{2})\/(\d{2})/g)) out.push([+m[1], +m[2], +m[3]]);
+  const last = /(\d{4})'[dt][ae]n itibaren\s+(\d{2})\/(\d{2})/.exec(text);
+  if (last) out.push([+last[1], +last[2], +last[3]]);
+  return out.sort((a, b) => a[0] - b[0]);
+}
+
+/** "Çalışan erkekler 46 dk." → 46. Okunamazsa null (cümle yazılmaz). */
+export function menMinutes(text: string): number | null {
+  const m = /erkekler\s+(\d+)\s*dk/i.exec(text);
+  return m ? +m[1] : null;
 }
 
 export interface RawInputs {

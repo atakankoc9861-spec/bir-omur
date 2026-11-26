@@ -56,6 +56,12 @@ function checkLife(g: Game): string[] {
   const dup = texts.length - new Set(texts).size;
   if (dup) out.push(`tohum ${g.seed}: ${dup} tekrar eden metin`);
   for (const t of texts) if (t.includes("#")) out.push(`tohum ${g.seed}: açılmamış sembol: ${t}`);
+  // Kalite O2: hiçbir cümle küçük harfle başlamaz (isimsiz kişilerde "eşin ..." gibi).
+  for (const t of texts)
+    for (const sent of t.split(/(?<=[.!?])\s+/)) {
+      const m = /\p{L}/u.exec(sent);
+      if (m && m.index <= 1 && m[0] !== m[0].toLocaleUpperCase("tr")) out.push(`tohum ${g.seed}: küçük harfle başlayan cümle: ${t}`);
+    }
   for (const p of g.s.people) {
     const deaths = log.filter((e) => e.about === p.id).length;
     if (p.alive && deaths) out.push(`tohum ${g.seed}: ${p.id} yaşıyor ama ölüm satırı var`);
@@ -193,6 +199,12 @@ describe("veri ve dayanıklılık", () => {
     const g = new Game(d2, 1, { forceCountry: "TUR" });
     playOut(g);
     expect(g.finished).toBe(true);
+  });
+  it("Türkiye emeklilik basamakları ve bakım süresi TUR.json'dan okunur", () => {
+    const r = data.tur!.retirement.find((d) => d.from === 2008)!;
+    expect(r.steps.length).toBeGreaterThanOrEqual(5);
+    expect(r.steps[r.steps.length - 1]).toEqual([2048, 65, 65]);
+    expect(data.tur!.careTimeMinutes!.menWorking).toBe(46);
   });
   it("Türkiye isimleri yalnız oyunda kullanılabilir genel havuzlardan", () => {
     expect(data.names.TUR.pools.length).toBeGreaterThanOrEqual(10);

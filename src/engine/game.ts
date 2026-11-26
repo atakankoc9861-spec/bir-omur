@@ -240,17 +240,29 @@ export class Game implements Ctx {
     }
   }
 
-  say(text: string | string[], tone: Tone, opt: { stat?: StatLine | null; important?: boolean; key?: string; refs?: GPerson[]; about?: string } = {}): boolean {
+  /** İsim, akrabalık sözcüğü ve sayılar çıkarılmış cümle kalıbı (Kalite O5: yalnız ismi değişen tekrar). */
+  private patternOf(t: string): string {
+    let x = t.toLocaleLowerCase("tr");
+    const names = this.s.people.map((p) => p.name).filter(Boolean).concat(this.s.givenName ? [this.s.givenName] : []);
+    for (const n of names.sort((a, b) => b.length - a.length)) x = x.split(n.toLocaleLowerCase("tr")).join("□");
+    x = x.replace(/(annen|baban|ablan|ağabeyin|kız kardeşin|erkek kardeşin|eşin|sevgilin|eski sevgilin|kızın|oğlun|en yakın arkadaşın|büyüklerinden biri|evdeki büyüklerden biri|yakınlarından biri|bir arkadaşın)\p{L}*/gu, "□");
+    return x.replace(/\d+/g, "#").replace(/(□\s*)+/g, "□ ");
+  }
+  private readonly patterns = new Set<string>();
+
+  say(text: string | string[], tone: Tone, opt: { stat?: StatLine | null; important?: boolean; key?: string; refs?: GPerson[]; about?: string; allowPatternRepeat?: boolean } = {}): boolean {
     if (!this.rep) return false;
     const texts = Array.isArray(text) ? text : [text];
     const vars = { ...this.baseVars(), ...this.vars };
     let out: string | null = null;
     const order = texts.map((_, i) => i).sort(() => this.rng.next() - 0.5);
-    for (const i of order) {
-      out = expandUnique(texts[i], G as Grammar, vars, this.rng, this.mem);
-      if (out) break;
+    for (const i of [...order, ...order]) {
+      const o = expandUnique(texts[i], G as Grammar, vars, this.rng, this.mem);
+      if (!o) continue;
+      if (opt.allowPatternRepeat || !this.patterns.has(this.patternOf(o))) { out = o; break; }
     }
     if (!out) return false;
+    this.patterns.add(this.patternOf(out));
     const refs = new Set<string>(this.refsNow);
     for (const p of opt.refs ?? []) refs.add(p.id);
     const e: Entry = { age: this.s.age, year: this.year, key: opt.key ?? "olay", text: out, tone, refs: [...refs], important: opt.important };
@@ -436,7 +448,7 @@ export class Game implements Ctx {
     if (res) {
       const o = { key: `${p.key}:${opt.id}`, important: opt.important ?? p.spec.critical };
       // Aynı karar ikinci kez geldiyse ve sonuç metinleri tükendiyse: sade, yıla bağlı bir satır.
-      if (!this.say(res, opt.tone ?? "notr", o)) this.say(`${this.year}: bu kez de "${opt.label.toLocaleLowerCase("tr")}" dedin.`, opt.tone ?? "notr", o);
+      if (!this.say(res, opt.tone ?? "notr", o)) this.say(`${this.year}: bu kez de "${opt.label.toLocaleLowerCase("tr")}" dedin.`, opt.tone ?? "notr", { ...o, allowPatternRepeat: true });
     }
     if (opt.cost) { const l = this.lastEntry(); if (l) l.fx = { ...l.fx, money: (l.fx?.money ?? 0) - opt.cost }; }
     this.target = null;
@@ -602,15 +614,17 @@ export class Game implements Ctx {
     p.deathYear = this.year;
     p.deathAge = age;
     if (p.role !== "pet") p.deathCause = this.causeFor(p.sex, age);
+    const wasHome = p.livesTogether;
     p.livesTogether = false;
     this.target = p;
     this.refsNow = new Set();
     this.vars = { neden: p.deathCause ? CAUSE_TR[p.deathCause] ?? "" : "", olumYas: String(age) };
     const close = ["mother", "father", "partner", "child", "sibling", "friend"].includes(p.role);
-    const t = p.role === "pet" ? SYSTEM.texts.petDies : p.role === "child" ? SYSTEM.texts.childDies : SYSTEM.texts.personDies;
+    const home = wasHome === true || ((p.role === "mother" || p.role === "father" || p.role === "sibling") && !this.s.leftHome) || (p.role === "partner" && !!p.married);
+    const t = p.role === "pet" ? SYSTEM.texts.petDies : p.role === "child" ? SYSTEM.texts.childDies : home ? [...SYSTEM.texts.personDies, ...SYSTEM.texts.personDiesHome] : SYSTEM.texts.personDies;
     if (!this.say(t, "kayip", { key: `olum:${p.role}`, important: close, about: p.id })) {
       // Metin tükendiyse bile ölüm kayda geçer (sade cümle, yıl ile benzersiz).
-      this.say(`#kisi.cap# ${this.year} yılında, ${age} yaşında öldü.`, "kayip", { key: `olum:${p.role}`, important: close, about: p.id });
+      this.say(`#kisi.cap# ${this.year} yılında, ${age} yaşında öldü.`, "kayip", { key: `olum:${p.role}`, important: close, about: p.id, allowPatternRepeat: true });
     }
     const hit = Math.round(p.bond / (p.role === "child" || p.role === "partner" ? 3 : 6));
     this.meter("happiness", -hit);
@@ -690,7 +704,7 @@ export class Game implements Ctx {
     this.target = null;
     this.refsNow = new Set();
     const t = s.age < 5 ? SYSTEM.texts.dieInfant : s.age < 18 ? SYSTEM.texts.dieYoung : SYSTEM.texts.dieAdult;
-    this.say(t, "kayip", { key: "olum:ben", important: true, stat: this.causeStat(code, s.sex, s.age), about: "ben" });
+    this.say(t, "kayip", { key: "olum:ben", important: true, stat: this.causeStat(code, s.sex, s.age), about: "ben", allowPatternRepeat: true });
     s.yearTones[s.yearTones.length - 1] = "kayip";
     this.finished = true;
     if (this.rep) this.rep.died = true;

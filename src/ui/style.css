@@ -73,3 +73,5 @@ canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edge
 .moments { margin: 0; padding-left: 18px; font-size: 14px; }
 .moments li { margin: 4px 0; }
 textarea { width: 100%; min-height: 70px; background: #1d1a24; color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 10px; font: inherit; }
+.tag { border: 1px solid #5a5468; background: transparent; color: var(--accent); border-radius: 8px; font-size: 11px; padding: 1px 6px; margin-left: 2px; }
+#money-note { margin-top: 4px; }

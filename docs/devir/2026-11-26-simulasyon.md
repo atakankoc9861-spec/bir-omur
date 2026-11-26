@@ -61,3 +61,20 @@ Ana ekran → "Doğ" → doğum kartı (MVP dışı ülke: "Bu ülke henüz haz�
 3. Eş seçimi şimdilik karşı cinsten. Bunu nasıl ele alalım?
 4. Hindistan/Çin/ABD sahneleri geçici kitlerle çiziliyor (ABD'de Akdeniz evleri). Görsel'in sıradaki kit sırası buna göre mi olsun?
 5. Hız: 1× montajda yılı ~2-3 sn, yetişkinlikte ~3-4 sn gösteriyor. Uygun mu?
+
+---
+
+## Ek: Kalite düzeltmeleri (denetim `docs/denetim/2026-11-26-oyna-mvp0.md`, şartlı geçti)
+| Bulgu | Yapılan |
+|---|---|
+| O1 IND/CHN/USA başka bölgenin giysisiyle | Yapımcı kararıyla nötr: `SceneState.neutralDress` (desen, bölgesel başlık, entari yok; `src/scene/render.ts`), "yedek" nötr profil (Çin'e verilen profil ödüncü kaldırıldı), üçü de Akdeniz kitinin genel şehir/köy dokusunda (Batı Afrika'nın kerpiç/baobab işaretleri kalktı). `src/ui/kit-esleme.ts` |
+| O2 cümle küçük harfle başlıyor | storylets.ts'te cümle başındaki 54 değişkene `.cap`; testte her hayat için "hiçbir cümle küçük harfle başlamaz" |
+| O3 gelir tahmini görünmüyor | Üst satırda "tahmin" düğmesi, dokununca yöntem notu; gelir, birikim, borç ve bedeller 2 anlamlı basamağa yuvarlandı (≈) |
+| O4 yetişkine "Bir oğlan" | 13 altı kız/oğlan, 13-17 genç, 18+ kadın/adam |
+| O5 yalnız ismi değişen tekrar | Motor artık isim, akrabalık sözcüğü ve sayılar çıkarılmış kalıbın da tekrarını engelliyor; ölüm cümleleri 2 → 10 (3'ü yalnız aynı evde yaşayanlar için: "Evde sesi eksik" vb.), yas cümleleri 3 → 6 ve yalnız yakın akraba/eş/çocuk/en yakın arkadaş için; evden ayrılma ve torun cümleleri çoğaltıldı |
+| K1, K2 koda elle yazılmış rakam | "Çalışan erkeklerde 46 dk", emeklilik yaş basamakları ve 7200 gün prim artık TUR.json metninden okunuyor (`gamedata.ts`: `menMinutes`, `retirementSteps`); okunamazsa cümle/kural sessizce düşer. Test eklendi |
+| K3 | `unionMinAge` açıklaması düzeltildi |
+| K5 "çay" | 70 yaş sorusu nötr: "karşılıklı otursaydın" |
+
+`npm test` 53/53 (oyun testleri ~140 sn; kalıp kontrolü maliyeti), typecheck temiz. `prototype/oyna.html` 380 KB, tarayıcıda 4 hayat (CHN, CHN, IND, NGA) + kayıt/devam hatasız.
+Hâlâ açık: Çin'de nötr "yedek" profil bütün ten tonlarını eşit dağıtıyor; Görsel'in Doğu Asya kiti/profili gelince düzelir.

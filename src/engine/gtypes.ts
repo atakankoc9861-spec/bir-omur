@@ -177,5 +177,5 @@ export interface Ctx {
   nameOf(p: GPerson): string;
   money$(x: number): string;
   /** Kayıt dışı bir sistem olayı: hemen metin ekler (benzersizse). */
-  say(text: string | string[], tone: Tone, opt?: { stat?: StatLine | null; important?: boolean; key?: string; refs?: GPerson[]; about?: string }): boolean;
+  say(text: string | string[], tone: Tone, opt?: { stat?: StatLine | null; important?: boolean; key?: string; refs?: GPerson[]; about?: string; allowPatternRepeat?: boolean }): boolean;
 }
