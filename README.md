@@ -6,6 +6,8 @@ Gerçek dünya istatistiklerine dayalı, Android için bir hayat simülasyonu.
 - [docs/ARASTIRMA.md](docs/ARASTIRMA.md) — Benzer oyunlar, sevilen yönler, eleştiriler, fikirler
 - [docs/TASARIM.md](docs/TASARIM.md) — Oyun tasarım taslağı ve MVP kapsamı
 - [data/README.md](data/README.md) — Veri kaynakları ve işleme planı
+- [KARARLAR.md](KARARLAR.md) — Verilen kararlar ve açık sorular
+- [docs/departmanlar/](docs/departmanlar/) — 7 departmanın yönergeleri
 
 ## Yapı
 ```

@@ -40,9 +40,10 @@ Sağlık, mutluluk, bilgi, ilişkiler (orijinaldeki gibi) + **ayrı bir hane bü
 - Olasılıklar veriden gelir (ör. 5 yaş altı ölüm, okula kayıt, çocuk evliliği, cinayet oranı).
 - Aynı olay aynı hayatta aynı metinle iki kez gelmez.
 
-### Ülke paketleri
-- Başlangıçta **Türkiye derin paketi**: askerlik, YKS/KPSS, asgari ücret, deprem, büyükşehre göç, yurt dışı, emeklilik, düğün, kira.
-- Diğer ülkeler genel veriyle çalışır; zamanla paket eklenir.
+### Ülke katmanları (oyun tüm dünyada geçer)
+- **K1 derin profil (~20 ülke + Türkiye):** Doğumların çoğunu kapsayan ülkeler. Kendi okul sistemi, sınavları, askerliği, emekliliği, evlilik gelenekleri, tarihsel olayları, isimleri.
+- **K2 bölge şablonu (~12 bölge):** Ülke verisi kendinin, kültürel doku bölgeden.
+- **K3 genel:** İstatistik + evrensel olaylar. Zamanla üst katmana terfi eder.
 
 ### Modlar
 - **Gerçek çekiliş** (varsayılan).
@@ -56,15 +57,12 @@ Sağlık, mutluluk, bilgi, ilişkiler (orijinaldeki gibi) + **ayrı bir hane bü
 - Ağır konular gerçek oranlarında, sahne göstermeden.
 
 ## İlk sürüm (MVP) kapsamı
-1. 30 ülke (doğumların büyük kısmını kapsayan ülkeler + Türkiye), gerçek veriyle.
-2. Doğum, yıllık döngü, 4 gösterge, temel bütçe.
+1. Tüm ülkeler istatistikle (K3), ilk 5 K1 ülke profili, ilk 3 bölge şablonu.
+2. Doğum, montaj çocukluk, yıllık döngü, 4 gösterge, temel bütçe.
 3. Aile kişileri (anne, baba, kardeş, eş, çocuk).
-4. ~80 olay, Türkiye paketi başlangıcı.
-5. Ölüm, hayat özeti, yaşam haritası.
-6. Android APK.
+4. ~80 evrensel olay, ülke değişkenleriyle.
+5. Yaşayan sahnenin ilk sürümü (1-2 bölge kiti).
+6. Ölüm, hayat özeti, yaşam haritası.
+7. Android APK.
 
-## Açık sorular (Atakan'a)
-- Oyunun adı ne olsun? ("Bir Ömür" çalışma adı.)
-- Bir hayat ne kadar sürsün? (Orijinal 30/60/90 dk.)
-- Görsel tarz: piksel sanat mı, sade/minimal mi?
-- Para kazanma düşünüyor muyuz, yoksa tamamen kişisel mi?
+Kararlar ve açık sorular: `KARARLAR.md`.
