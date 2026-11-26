@@ -224,7 +224,7 @@ img.av.kucuk { width: 34px; height: 34px; }
 .yukari { color: #8fe0a0; } .asagi { color: #ff8a8a; } .sabit { color: #6f6575; }
 #panel ul { margin: 2px 0 8px; padding-left: 18px; font-size: 13.5px; color: #e2d6df; }
 #panel-kapat { width: 100%; padding: 10px; color: var(--soluk); font-size: 13px; }
-.iz { position: absolute; left: 0; right: 0; bottom: 170px; display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; z-index: 8; pointer-events: none; animation: gel .25s; transition: opacity .4s; }
+.iz { position: absolute; left: 0; right: 0; top: 92px; display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; z-index: 8; pointer-events: none; animation: gel .25s; transition: opacity .4s; }
 .iz.git { opacity: 0; }
 .iz span { background: rgba(33, 26, 39, .95); border: 1px solid #4a3f50; border-radius: 14px; padding: 5px 10px; font-size: 13px; font-weight: 650; }
 .iz .iz-aksam, .iz .not { color: var(--vurgu); font-weight: 500; }

@@ -64,3 +64,28 @@ Bağlı kararlar: #34 (MVP-0 beğenilmedi), #35 (telefon/mesajlaşma yönü, tek
 **Denge (otomatik, 10'ar tohum):** hep ders 484-536 (yüksek), hep arkadaş 282-337 (düşük, ama herkes yanında ve sevgili var), karışık 343-469 (orta/yüksek). Artık doğal oynayan herkes sınavı kaybetmiyor.
 
 **Kalanlar / Atakan'a:** Karar 38 için kaynaklı taban sıralaması verisi (Veri). Tekrar oynanabilirlik hâlâ sınırlı: iki varyant var, üç değil. Etüt arkadaşının küsmesi hep ders oyununda hâlâ kesin.
+
+## Tur 3 · Cila ve denge incelemesi
+
+**Cila (yapıldı)**
+- Durum paneli: ilk denemeden (Kasım) önce hedef kartında ihtimal yerine "ilk denemeden sonra" yazıyor.
+- Cevap izi ("Annen ↑ · ½ akşam") artık sohbet başlığının hemen altında çıkıyor; en alttaki kendi mesaj balonunu örtmüyor.
+- Sonuç ayı (Temmuz): ay başında eski okunmamışlar okunmuş sayılıyor (sınavdan sonra telefona bakılmış). O ayın sınıf grubu zaten kısa (3 mesaj).
+
+**Denge incelemesi (değişiklik yapılmadı, öneri)**
+Otomatik deneme: her soruya cevap veren iki oyuncu, 20'şer yıl. Biri hep en ucuz (kısa) cevabı, öbürü hep en pahalı (sıcak/uzun) cevabı seçiyor.
+
+| Tarz | Küs/oyun | Sevgili | Ort. puan | Cevap/yıl |
+|---|---|---|---|---|
+| Kısa | 0,00 | 20/20 | 319 | 47 |
+| Sıcak | 0,00 | 20/20 | 269 | 47 |
+
+Bulgu doğrulandı: yarım bardakla iki tarz da **herkese yetişiyor**. Kısa cevap veren aynı ilişkileri koruyup üstüne yaklaşık 50 puan kazanıyor. "Herkese yetişemezsin" teması zayıfladı. Bu yalnız otomatik oyuncunun bir yıldaki ~47 soruyu bütçe izin verdikçe cevapladığı denemede görülüyor. İnsan oyuncu daha az cevaplıyor olabilir, ama ekonomi kısa cevabı ödüllendiriyor.
+
+Öneri (küçük, içerik verisiyle yapılır):
+1. **"Derin" anlar:** Sevgili (aşama 3), kriz beatleri (`kriz: true`) ve sonuç akşamı için `ask.derin = true`. Bu sorularda yarım bardaklık cevap bağın yalnız üçte birini versin. Karşı taraf da kısa, soğuk bir satırla dönsün ("hm. tamam", "👍"). Böylece kısa cevap orada "yetmiyor" ve bu sohbette okunuyor.
+2. **İz bunu göstersin:** Derin anda kısa cevap verilince iz "Kübra ↑ (az)" olsun. Oyuncu bir sonraki krizde öğrenir.
+3. **Kümülatif kısalık:** Aynı kişiye üst üste 3 kısa cevap verilirse o kişiden bir satır gelsin ("son zamanlarda hep tek kelime yazıyosun"), bağ küçük düşsün (−4). Rutin aile mesajları (cuma kartı, "tamam anne") bundan muaf.
+4. Gerekirse açık akşamı 3'ten 2,5'e indir. Kilitli akşam kalsın.
+
+Beklenen etki: kısa cevapçı rutinleri ucuza geçer ama sevgili ve kankada kayıp yaşar. Sıcak cevapçı ilişkileri tutar ama derse daha az akşam kalır. Hedef: iki tarz arasında puan farkı korunurken ilişki farkı da açılsın.

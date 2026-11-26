@@ -224,6 +224,8 @@ export class Game {
     s.budget = this.budgetMax - 1;
     s.yedek = 1;
     s.snap = { bond: { ...s.bond }, study: s.study };
+    // Sonuç ayı: sınavdan sonra telefona bakılmış sayılır; eski okunmamışlar sıfırlanır
+    if (s.month === 10) for (const m of s.msgs) m.read = true;
     MONTH_START[s.month]?.(s);
     const beats = BEATS.filter((b) => b.m === s.month && !b.after && this.eligible(b)).sort((a, b) => a.at - b.at);
     this.waiting = BEATS.filter((b) => b.m === s.month && b.after);

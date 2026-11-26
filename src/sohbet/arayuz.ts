@@ -269,9 +269,9 @@ function panelAc(): void {
       </div>
       <div class="p-hedef">
         <small>Hedef · ${esc(d.hedef)}</small>
-        <div class="p-hedef-ust"><b>%${d.ihtimal}</b><span>${d.ihtimalAnlam}</span></div>
+        ${d.net ? `<div class="p-hedef-ust"><b>%${d.ihtimal}</b><span>${d.ihtimalAnlam}</span></div>
         <div class="p-bar"><i style="width:${d.ihtimal}%"></i></div>
-        <p>Tahmini puan ${d.puan.alt}–${d.puan.ust}. Sınav günü stres, uyku ve şans da etkiler.</p>
+        <p>Tahmini puan ${d.puan.alt}–${d.puan.ust}. Sınav günü stres, uyku ve şans da etkiler.</p>` : `<div class="p-hedef-ust"><b>—</b><span>ilk denemeden sonra (Kasım)</span></div><p>Henüz elinde bir sonuç yok. İhtimal ilk denemeyle birlikte görünecek.</p>`}
         <p class="p-not">Tahmini, oyun içi: kurgu puan sistemi. Gerçek ÖSYM taban sıralamaları bu demoda kullanılmıyor.</p>
       </div>
       <small class="p-baslik">En yakın 5 kişi (bu ay)</small>
