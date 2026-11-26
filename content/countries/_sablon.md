@@ -66,7 +66,8 @@ Eğitim, askerlik, emeklilik, evlilik yaşı ve sağlık sistemi dönem listesi 
 - **Yedek havuz (`topluluklar[].yedekHavuz`):** Bazı topluluklar gündelik hayatta genel havuzdaki isimleri de yaygın kullanır. Bu durumda `yedekHavuz.havuz: "genel"` yazılır ve topluluk, genel havuzlar dolu olduğu sürece çekilişe hazır olabilir. Bu "sessiz düşürme" değildir: açıkça ve gerekçeyle (`gerekce`, `kaynak`, `durum`) beyan edilir.
   - **Varsayılan `null`'dır (yedek yok).** Gerekçe: Yanlışlıkla `genel` yapılan bir yedek, o topluluğun kendine özgü isimlerini oyundan sessizce siler. Bu, Kalite'nin uyardığı "tek hikâye" hatasının ta kendisi. Bir topluluğun çekilişe geç girmesi, yanlış isimle girmesinden daha az zararlı. Bu yüzden `genel` yazmak gerekçe ister, `null` istemez.
   - Kendi havuzu dolunca yedek kaldırılabilir ya da iki havuz oranla karıştırılır (oran: Anlatı/Simülasyon kararı).
-  - Doğrulama scripti: `havuzHazir: true` ancak kendi havuzları doludur **ya da** yedek `genel`dir ve bütün genel havuzlar doludur (kural K6).
+  - Doğrulama scripti: `havuzHazir: true` ancak kendi havuzları doludur **ya da** yedek `genel`dir ve bütün genel havuzlar (`topluluk: genel`, `din: null`) doludur (kural K6). Dine özgü EK havuzlar (ör. `din: alevi`) genel havuz sayılmaz; boş kalmaları yedeği engellemez.
+  - Yedek `genel` için kanıt örneği (Türkiye): NVİ'nin il bazında en çok kullanılan adlar listesi. Bir topluluğun yoğun yaşadığı illerde en sık adlar genel havuzdaysa yedek kaynaklı sayılır; ama bu il düzeyinde bir kanıttır, notta sınırı yazılır.
 - Bir havuzda en az 30 isim olmalı (orijinal oyundaki "herkesin adı Raif" sorunu). Örnek dosyada ilk 10'lar var; Anlatı ve İçerik ile birlikte genişletilecek. Doğrulama scripti 30'un altını uyarı olarak gösterir.
 - Topluluklar ülkenin gerçek çeşitliliğine göre açılır, karikatür olmadan. Topluluğun ağırlığı `topluluklar[].agirlik` içindedir; resmî veri yoksa `durum: tahmin`.
 - **Kaynak sırası:**
@@ -88,6 +89,15 @@ Her olay:
 - `tur` seçenekleri sabittir; bir olayın türü tartışmalıysa `atakan_karari_bekliyor` ile işaretlenir.
 - `hassasiyet`: varsa
 - Olaylar Veri departmanının kaynaklarıyla eşleşmeli (departman kuralı). Ekonomik krizlerin oyundaki gerçek etkisi (enflasyon, işsizlik) Veri'nin yıllık serilerinden gelir; burada sadece olayın adı, yılı ve niteliği yazılır.
+
+### İsteğe bağlı alanlar (2026-11-26 eklendi)
+Bu alanlar zorunlu değildir; eski profiller bunlar olmadan da şemadan geçer.
+- **`tarihselOlaylar[].adlandirma`** (KARAR 17): Adı tartışmalı olaylarda doldurulur. `oyunMetni`: oyunda gösterilen tarafsız "yıl + ne oldu" cümlesi. `tarafAdlari`: her tarafın kullandığı ad ve kimin kullandığı (en az bir kayıt). Kendi `kaynak`, `durum`, `oyunda_kullanilabilir` alanı var; olayın durumu bundan güçlü olamaz. Oyun hiçbir adı kendi sesiyle benimsemez; adlar ayrıntı sayfasında birlikte gösterilir.
+- **`din.dagilim[].tanimlamaSecenekleri`** (KARAR 18): Bu kayıttaki bir karakterin kendini nasıl tanımlayabileceği (ör. Türkiye'de Alevi kaydı: "Alevi", "Müslüman", "Alevi ve Müslüman"). Kayıt tek kalır, çift sayım olmaz; oyunda karakterin kendi tanımı gösterilir.
+- **`evlilikAile.kadinHayati`**: Kadın hayatına dair kaynaklı doku (çalışma, ev içi iş bölümü, şiddet; şiddet sahnesi gösterilmez). Rakamlar ayrıca `yerelSayilar`'a yazılır.
+- **`gunlukHayat.toplulukKulturu`**: Bir topluluğun gündelik kültürü (müzik, sözlü gelenek, medya...). `topluluk` alanı `topluluklar[].id` olmalı (script denetler). Amaç: bir topluluğu yalnızca yasak, çatışma ya da göç üzerinden anlatmamak.
+- **`askerlik`, `emeklilik`, `egitim` dönemlerinde `not`**: Hangi kaynağın neyi doğruladığı ve dönemin sınırları.
+- **Olayların yıl sınırı:** Olaylarda `yilSon` olayın son yılıdır (dahil; ör. 1974-1974). Dönemli alanlardaki "yilSon hariç" kuralı olaylara uygulanmaz.
 
 ### Askerlik süre türleri (`askerlik.donemler[].sure`, ay cinsinden)
 - `er`: standart süre (o dönemde lise ve altı mezunlar ya da genel durum).

@@ -61,3 +61,48 @@ Kalite: **şartlı geçti**, tek şart Y1. Uygulananlar:
 8. **1915'e** (gayrimüslim aile hafızasında geçerse) hangi tarafsız ifadeyle değinilsin? Kalite önerisi: "1915'te Ermenilerin sürgünü ve toplu ölümleri" + adlandırmanın tartışmalı olduğu notu.
 9. **1974 Kıbrıs** olayının adı ne olsun? Şu an "Kıbrıs harekâtı"; Kalite önerisi: "1974 Kıbrıs savaşı (Türkiye'nin askerî müdahalesi)".
 10. **28 Şubat** sürecinin türü `darbe` mi `siyasi` mi?
+
+---
+
+## Türkiye profilini oynanabilir yapma turu (aynı gün, v0.2 içinde)
+Görev: denetimin 8-11. ve 15. maddeleri + KARAR 17-18. Commit yapılmadı.
+
+### Ne yapıldı
+**Sayılar (TUR.json):** `oyunda_kullanilabilir: true` kayıt **26 → 65** (toplam kayıt 396 → 424). `kaynaksiz` taşıyan kayıt 220 → 198. Kaynak 26 → 77. Çekilişe hazır (`havuzHazir: true`) topluluk **0 → 4 / 13**: Türk, Zaza, Arap, Laz-Hemşinli-Gürcü. Doğrulama: `python3 -I scripts/validate_countries.py` → **0 hata**, 6 uyarı (havuzlar 30'un altında: 1950'ler 20, 2010'lar 29/28, 2020'ler 16/16).
+
+1. **İsim havuzları**
+   - NVİ on yıllık PDF'leri (50'şer ad) açılıp okundu; 1940, 1960, 1970, 1980, 1990 havuzları **ilk 30** ile dolduruldu. Yeni **1930** havuzu eklendi (1931-1940, büyükanne-büyükbaba kuşağı).
+   - **1951-1960:** NVİ sitesinde PDF yok (aranan bütün adresler ve arama sonuçları 1941-1950'den 1961-1970'e atlıyor). NVİ verisini kullanan akademik makaleden (Yıldırım 2016, Tablo 1-2) **ilk 20** alındı. 30'a tamamlanmadı.
+   - **2001-2010:** aynı makalenin on yıllık ilk 20'si + NVİ 2004 listesinden sıradaki 10 ad (30).
+   - **2010-2019:** on yıllık resmî liste yok. 2012-2019 yıllık TÜİK/NVİ listelerinin (haber aktarımları) birleşimi: kız 29, erkek 28. 2010 ve 2011 listesi bulunamadı.
+   - **2020-2029:** 2020, 2022, 2023, 2024 listelerinin birleşimi (16+16).
+   - **Soyadları:** NVİ'nin en çok kullanılan 50 soyadı (birincil) ile değiştirildi, doğrulandı.
+   - **Boş bırakılanlar (uydurma yok, nedeni her havuzun `not` alanında):** Kürtçe, Alevi (ek havuz), Ermeni, Rum, Yahudi, Süryani, Suriyeli. Bakılan ve kullanılmayan kaynaklar: Nişanyan'ın Kürt adları listesi (sıklık yok, veri kökeni belirsiz), Canatan 2013 (Alevilere özgü liste yok), 1455 tahrir defteri çalışması (çok eski), Brink-Danan 2010 (sadece özet), isim siteleri ve sözlükler (sıklık verisi değil). sigpwned'de Suriye yok.
+   - **Yedek havuz kanıtı:** NVİ'nin il bazında en çok kullanılan 5 ad listesi (birincil). Tunceli/Bingöl, Hatay/Mardin/Siirt/Şanlıurfa, Rize/Artvin'de en sık adların hepsi genel havuzda → Zaza, Arap, Laz-Hemşinli-Gürcü için yedek `genel` **doğrulandı** (sınırı notta: il düzeyi, topluluk düzeyi değil). Kafkas, Balkan, Roman için çoğunluk oldukları il yok, kanıt sayılmadı; `havuzHazir: false` kaldı. Kürt için yedek bilerek `null` (Atakan'a soru).
+2. **Doğrulanan dönemli kurallar**
+   - **Askerlik:** 1950-2019 dokuz döneme ayrıldı. 1985-1992 (18 ay; 1111 m.5, 2973 s.K.), 1995-2003 (18/16/8), 2003-2014 (15/12/6; Genelkurmay açıklaması), 2014-2019 (12/12/6), 2019- (7179) **doğrulandı**. 1950-1963 (24), 1963-1970 (24), 1970-1985 (20), 1992-1995 (15) tek ikincil kaynakta, `dogrulanmali`. **Düzeltme:** 2013-2019 dönemi 2014'te başlıyor (1 Ocak 2014); eski kayıttaki "2016 bedellisi" kaynaklarda yok, çıkarıldı. Bedelli yılları (1987, 1992, 1999, 2011, 2014, 2018) iki kaynakla doğrulandı. Vicdani ret kaydı doğrulandı.
+   - **Emeklilik:** 1999-2008 (58/60) ve 2008- (58/60, 2036-2048 kademeli 65; tablo yazıldı) **doğrulandı**. 1950-1999 dönemi kaynaklı yazıldı (1965, 1969, 1976, 1986, 1992, 1999, 2023 EYT) ama yıl yıl kurallar tek kaynakta → `dogrulanmali`. EYT olayı doğrulandı (7438, RG 3.3.2023, sayı 32121).
+   - **Evlilik yaşı:** iki dönem doğrulandı. **Düzeltme:** 2002 sonrası yasal yaş 18 değil **17** (TMK m.124); 18 ergin olma yaşı, 17'de yasal temsilci izni, 16'da hakim kararı. 1950-2002: kadın 15, erkek 17; hakim kararıyla 14/15.
+   - **Eğitim:** 1961-1997 (222 s.K., ilkokul en az 5 yıl), 1997-2012 (4306), 2012- (6287) **doğrulandı**. 1950-1961 ayrı dönem, kaynak bulunamadı (`dogrulanmali`). Üniversite sınavları (ÜSS, ÖSS+ÖYS, ÖSS, YGS+LYS, YKS) doğrulandı; **düzeltme:** `yilSon` değerleri "hariç" kuralına çevrildi (ör. ÜSS 1974-1981). Liselere giriş sınavları kontrol edilmedi.
+3. **KARAR 17:** Olaylara isteğe bağlı `adlandirma` alanı (oyunMetni + tarafAdlari + kaynak). Kıbrıs 1974 ("1974'te Kıbrıs'ta savaş"; Barış Harekâtı / işgal / Kıbrıs Savaşı), 28 Şubat (tür `darbe` → `siyasi`; 28 Şubat / postmodern darbe / MGK kararlarının kendi ifadesi), yeni `aile-hafizasi-1915` olayı (Ermeni Soykırımı / Medz Yeghern-Aghet / 1915 olayları / Sevk ve İskân; ölü sayısı oyunda kullanılmaz). `atakan_karari_bekliyor` işaretlerinin hepsi kaldırıldı (dosyada 0).
+4. **KARAR 18:** Alevi kaydı tek; yeni `tanimlamaSecenekleri`: Alevi / Müslüman / Alevi ve Müslüman. Hassasiyet önerisi güncellendi.
+5. **Denge eksikleri (madde 15):** yeni olaylar `faili-mechul-1990` (zorla kaybetme 1993: 103, 1994: 518; Hafıza Merkezi; `dogrulanmali`) ve `gazi-1995` (22 ölü, bianet; Wikipedia 23; `dogrulanmali`). 15 Temmuz'a siviller ve 250 ölü (iddianame, doğrulandı), 2.193 yaralı (`dogrulanmali`). Kadın hayatı: yeni `evlilikAile.kadinHayati` + 4 `yerelSayilar` (2024 kadın istihdamı %32,5, katılım %36,8, ev işi 211 dk/gün doğrulandı; şiddet %38 `dogrulanmali`). Kürt gündelik kültürü: yeni `gunlukHayat.toplulukKulturu` (dengbêjlik; Kürtçe yayın 1983-1991-2009, TRT 6), doğrulandı.
+6. **Şema ve script** (`_sablon.schema.json`, `_sablon.json`, `_sablon.md`, `scripts/validate_countries.py`): yukarıdaki isteğe bağlı alanlar + dönemlerde `not`. **Script hatası düzeltildi:** K6 "genel havuzlar dolu mu" kontrolü dine özgü EK havuzları (boş Alevi havuzu) da sayıyordu, bu yüzden hiçbir yedekli topluluk hazır olamıyordu. Artık `topluluk: genel` ve `din: null` havuzlara bakıyor. Yeni kontrol: `toplulukKulturu[].topluluk` tanımlı olmalı. 4 bozuk kopyayla test edildi (hepsini yakaladı). Kalite bu değişikliği ayrıca görmeli.
+
+### Ne kaldı
+- Topluluk ağırlıkları (`topluluklar[].agirlik`) ve din payları hâlâ `tahmin`/boş (Veri'nin işi). Bu yüzden topluluk kayıtlarının kendisi `oyunda_kullanilabilir: false`; motor ağırlık gelene kadar aileyi çekemez. **"Havuzu hazır" ≠ "çekilebilir".**
+- Kalan 197 `dogrulanmali` kayıt: meslek, konut, ulaşım, sağlık, göç, tarihsel olayların çoğu, günlük hayat, din-devlet ilişkisi, dil.
+- Askerlik 1950-1985 ve 1992-1995 için MSB / Resmî Gazete kaynağı. Emeklilik 1950-1999 için ikinci kaynak. Lise 3→4 yıl (2005), liselere giriş sınavları, 1950-1961 eğitim.
+- 1950'ler havuzu 20, 2010'lar 28-29, 2020'ler 16 ad: 2010, 2011, 2021, 2025 yıllık listeleri ve TÜİK il bazlı bebek adı tabloları aranmalı.
+- Kıbrıs Türklerinin kullandığı adlar kaynakla eklenmeli. 15 Temmuz ölülerinin sivil/polis/asker dağılımı iddianame listesinden sayılmalı.
+- `birincilAdres` notları: ÖSYM, Resmî Gazete ve mevzuat.gov.tr otomatik erişime kapalı; bu kayıtlar Lexpera, ÇSGB ve Alomaliye metin aktarımlarıyla doğrulandı.
+- Kalite'nin bu turu denetlemesi (meta.denetim `bekliyor` yapıldı), özellikle 1915, Kıbrıs, 28 Şubat, faili meçhul, Gazi ve şiddet kayıtları.
+
+### Atakan'a sorulacaklar (bu turdan)
+1. **Kürt topluluğu** için de NVİ il kanıtıyla yedek genel havuz açılsın mı? Açılmazsa Kürt aileler Kürtçe ad listesi bulunana kadar oyunda hiç çıkmaz; açılırsa çıkar ama sadece genel adlarla.
+2. **Suriyeli** aileler için Arap bölgesi havuzu ya da Ürdün/Lübnan listeleri "tahmin" olarak vekil kullanılsın mı?
+3. **Gayrimüslim** isim havuzları için topluluk kurumlarına başvurulsun mu? İnternette kaynak yok.
+4. **28 Şubat**'ın türü KARAR 17 uygulanırken `siyasi` yapıldı (Kalite önerisi). Uygun mu?
+5. **1915** kaydı oyunda yalnızca Ermeni ailelerin aile hafızasında, "1915'te Osmanlı Devleti'ndeki Ermeniler sürgün edildi; sürgün yollarında ve öldürmelerde çok sayıda Ermeni hayatını kaybetti" cümlesiyle geçiyor; ayrıntı sayfasında dört ad birlikte. Uygun mu?
+
+Önceki listedeki 6, 8, 9, 10. sorular KARAR 17-18 ile kapandı.

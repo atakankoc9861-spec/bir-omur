@@ -7,7 +7,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "sahne:ornek": "vite-node scripts/render-samples.ts",
-    "sahne:onizleme": "node scripts/build-preview.mjs"
+    "sahne:onizleme": "node scripts/build-preview.mjs",
+    "oyna:derle": "vite-node scripts/oyna-veri.ts && node scripts/build-oyna.mjs",
+    "denge:rapor": "vite-node scripts/denge/rapor.ts"
   },
   "devDependencies": {
     "esbuild": "^0.21.5",

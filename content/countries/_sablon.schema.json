@@ -403,6 +403,13 @@
           },
           "not": {
             "type": "string"
+          },
+          "nitelik": {
+            "enum": [
+              "ansiklopedi",
+              "derleme"
+            ],
+            "description": "Kaynak politikası (Kalite tur-2 O3): Wikipedia/Wikiwand gibi ansiklopedi ya da galeri/liste tipi haber derlemesi. Bu nitelikteki kaynaklar tek başına (ya da yalnız birbirleriyle) 'dogrulandi' için yetmez (script K11)."
           }
         }
       }
@@ -459,6 +466,20 @@
           },
           "not": {
             "type": "string"
+          },
+          "kullanim": {
+            "enum": [
+              "oyun",
+              "kaynakSayfasi"
+            ],
+            "description": "KARAR 16: 'kaynakSayfasi' = yalnız kaynak/bilgi sayfasında gösterilir, motor hesapta kullanmaz. 'oyun' = BM/Veri'de karşılığı olmayan ulusal rakam; oyun metninde ve hesapta kullanılabilir. bmKarsiligi doluysa 'kaynakSayfasi' zorunlu (script K10)."
+          },
+          "bmKarsiligi": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Aynı ölçünün Veri departmanı serisindeki yeri (dosya#yol), ör. 'data/processed/v1/mvp/TUR.json#seriler.tfr'. Motor bu ölçüyü buradan alır."
           }
         }
       }
@@ -624,6 +645,14 @@
               },
               "atakan_karari_bekliyor": {
                 "type": "string"
+              },
+              "tanimlamaSecenekleri": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true,
+                "description": "KARAR 18: Bu kayıttaki karakterin kendini nasıl tanımlayabileceği (ör. Alevi / Müslüman / Alevi ve Müslüman). Oyunda karakterin kendi tanımı gösterilir; kayıt tek kalır."
               }
             }
           }
@@ -726,6 +755,11 @@
               },
               "oyunda_kullanilabilir": {
                 "type": "boolean"
+              },
+              "kararNo": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Bu kaydı 'tahmin' durumunda oyunda kullanılabilir kılan KARARLAR.md karar numarası (script K2 istisnası)."
               }
             }
           },
@@ -842,6 +876,10 @@
               },
               "oyunda_kullanilabilir": {
                 "type": "boolean"
+              },
+              "not": {
+                "type": "string",
+                "description": "Dönemin kaynak ayrıntısı ve sınırları (hangi kaynak neyi doğruluyor)."
               }
             }
           }
@@ -1085,6 +1123,10 @@
               },
               "oyunda_kullanilabilir": {
                 "type": "boolean"
+              },
+              "not": {
+                "type": "string",
+                "description": "Dönemin kaynak ayrıntısı ve sınırları (hangi kaynak neyi doğruluyor)."
               }
             }
           }
@@ -1154,6 +1196,10 @@
               },
               "oyunda_kullanilabilir": {
                 "type": "boolean"
+              },
+              "not": {
+                "type": "string",
+                "description": "Dönemin kaynak ayrıntısı ve sınırları (hangi kaynak neyi doğruluyor)."
               }
             }
           }
@@ -1431,6 +1477,13 @@
               }
             }
           }
+        },
+        "kadinHayati": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kayit"
+          },
+          "description": "Kadın hayatına dair kaynaklı doku: çalışma, ev içi iş bölümü, şiddet (sahne göstermeden). Rakamlar yerelSayilar'da."
         }
       }
     },
@@ -1549,6 +1602,11 @@
               },
               "not": {
                 "type": "string"
+              },
+              "kararNo": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Bu kaydı 'tahmin' durumunda oyunda kullanılabilir kılan KARARLAR.md karar numarası (script K2 istisnası)."
               }
             }
           }
@@ -2020,6 +2078,60 @@
           },
           "atakan_karari_bekliyor": {
             "type": "string"
+          },
+          "adlandirma": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "KARAR 17: Tartışmalı olaylarda oyunda yargılayan bir ad yerine 'yıl + ne oldu' metni (oyunMetni) gösterilir; ayrıntı sayfasında tarafların kullandığı adlar birlikte verilir.",
+            "required": [
+              "oyunMetni",
+              "tarafAdlari",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "oyunMetni": {
+                "type": "string",
+                "description": "Oyunda gösterilen tarafsız 'yıl + ne oldu' cümlesi"
+              },
+              "tarafAdlari": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "ad",
+                    "kullananlar"
+                  ],
+                  "properties": {
+                    "ad": {
+                      "type": "string"
+                    },
+                    "kullananlar": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "not": {
+                "type": "string"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          },
+          "tartismali": {
+            "type": "boolean",
+            "description": "KARAR 17: true ise adlandirma zorunlu, oyunMetni boş olamaz, en az iki taraf adı (script K9)."
           }
         }
       }
@@ -2199,6 +2311,49 @@
         },
         "evcilHayvan": {
           "type": "string"
+        },
+        "toplulukKulturu": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "topluluk",
+              "ad",
+              "ozet",
+              "kaynak",
+              "durum",
+              "oyunda_kullanilabilir"
+            ],
+            "properties": {
+              "topluluk": {
+                "type": "string",
+                "description": "topluluklar[].id"
+              },
+              "ad": {
+                "type": "string"
+              },
+              "ozet": {
+                "type": "string"
+              },
+              "yilBas": {
+                "$ref": "#/$defs/yil"
+              },
+              "yilSon": {
+                "$ref": "#/$defs/yil"
+              },
+              "kaynak": {
+                "$ref": "#/$defs/kaynakListesi"
+              },
+              "durum": {
+                "$ref": "#/$defs/durum"
+              },
+              "oyunda_kullanilabilir": {
+                "type": "boolean"
+              }
+            }
+          },
+          "description": "Bir topluluğun gündelik kültürü (müzik, sözlü gelenek, medya, düğün...). Topluluk tek bir mağduriyet ya da çatışma hikâyesine indirgenmesin diye."
         }
       }
     },

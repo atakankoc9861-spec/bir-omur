@@ -14,9 +14,17 @@ Ek kurallar (şemanın kendi başına denetleyemedikleri):
       BOŞLUK (sonraki.yilBas > önceki.yilSon) uyarı (veri eksikliği olabilir). yilSon hariç tutulur.
   K5  İsim havuzu 'topluluk' alanı 'genel' ya da topluluklar[].id; 'din' alanı null ya da din.dagilim[].id.
   K6  topluluklar[].isimHavuzlari tanımlı havuzlara işaret eder. havuzHazir true ancak: kendi havuzları var ve hepsi
-      dolu, YA DA yedekHavuz.havuz == 'genel' ve topluluk='genel' olan bütün havuzlar dolu. yedekHavuz 'genel' ise gerekçe zorunlu.
+      dolu, YA DA yedekHavuz.havuz == 'genel' ve topluluk='genel' VE din=null olan bütün havuzlar dolu (dine özgü EK
+      havuzlar, ör. din='alevi', genel havuz sayılmaz; boş olmaları yedeği engellemez). yedekHavuz 'genel' ise gerekçe zorunlu.
+      gunlukHayat.toplulukKulturu[].topluluk tanımlı bir topluluk id'si olmalı.
   K7  din.dagilim[].ustGrup tanımlı bir kayda işaret eder; aynı altGrup adı iki kayıtta geçemez (çift sayım).
   K8  durum == 'dogrulandi' olan kaydın kaynak listesi boş olamaz ve 'kaynaksiz' içeremez (oyunda_kullanilabilir'den bağımsız).
+  K9  (KARAR 17) tarihselOlaylar[].tartismali == true ise adlandirma zorunlu, oyunMetni boş olamaz, en az 2 taraf adı.
+  K10 (KARAR 16) yerelSayilar[].bmKarsiligi doluysa kullanim == 'kaynakSayfasi' olmalı. kullanim yoksa uyarı.
+  K11 (kaynak politikası) 'dogrulandi' kaydın kaynaklarının hepsi nitelik ansiklopedi/derleme olan kaynaklarsa hata.
+  K12 (KARAR 18) din.dagilim[].tanimlamaSecenekleri doluysa kaydın kendi 'grup' adını içermeli.
+  K2 istisnası: durum == 'tahmin' VE kararNo (KARARLAR.md'de var olan bir karar) VE en az bir gerçek kaynak (kaynaksiz yok)
+      ise oyunda_kullanilabilir true olabilir; motor bu bilgiyi 'tahmin' etiketiyle gösterir.
   U1  (uyarı) Dolu havuzda 30'dan az isim.
 """
 import json, sys, glob, os
@@ -27,6 +35,18 @@ except ImportError:
     sys.exit("jsonschema paketi gerekli: pip install jsonschema")
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def karar_numaralari():
+    import re
+    try:
+        metin = open(os.path.join(KOK, "KARARLAR.md"), encoding="utf-8").read()
+    except OSError:
+        return set()
+    return {int(m) for m in re.findall(r"^\|\s*(\d+)\s*\|", metin, flags=re.M)}
+
+
+KARARLAR = karar_numaralari()
 SEMA = os.path.join(KOK, "content", "countries", "_sablon.schema.json")
 GUC = {"dogrulandi": 3, "dogrulanmali": 2, "tahmin": 1}
 
@@ -80,6 +100,7 @@ def denetle(yol, sema):
         return hatalar, uyarilar  # yapı bozuksa ek kurallar anlamsız
 
     kaynaklar = {k["id"]: k["tur"] for k in d["kaynaklar"]}
+    nitelik = {k["id"]: k.get("nitelik") for k in d["kaynaklar"]}
     for p, x in gez(d):
         if "kaynak" in x and isinstance(x["kaynak"], list):
             for s in x["kaynak"]:
@@ -87,7 +108,11 @@ def denetle(yol, sema):
                     hatalar.append(f"K1 {p}: tanımsız kaynak '{s}'")
         if "oyunda_kullanilabilir" in x:
             ks = x.get("kaynak", [])
-            olmali = x.get("durum") == "dogrulandi" and bool(ks) and all(kaynaklar.get(s) != "kaynaksiz" for s in ks)
+            gercek = bool(ks) and all(kaynaklar.get(s) != "kaynaksiz" for s in ks)
+            olmali = (x.get("durum") == "dogrulandi" and gercek) or (
+                x.get("durum") == "tahmin" and gercek and x.get("kararNo") in KARARLAR)
+            if "kararNo" in x and x["kararNo"] not in KARARLAR:
+                hatalar.append(f"K2 {p}: kararNo {x['kararNo']} KARARLAR.md'de yok")
             if x["oyunda_kullanilabilir"] and not olmali:
                 hatalar.append(f"K2 {p}: oyunda_kullanilabilir true olamaz (durum={x.get('durum')}, kaynak={ks})")
         if x.get("durum") == "dogrulandi" and isinstance(x.get("kaynak"), list):
@@ -95,6 +120,8 @@ def denetle(yol, sema):
                 hatalar.append(f"K8 {p}: 'dogrulandi' ama kaynak yok")
             elif any(kaynaklar.get(s) == "kaynaksiz" for s in x["kaynak"]):
                 hatalar.append(f"K8 {p}: 'dogrulandi' kayıtta kaynaksız kaynak var")
+            elif all(nitelik.get(s) in ("ansiklopedi", "derleme") for s in x["kaynak"]):
+                hatalar.append(f"K11 {p}: 'dogrulandi' ama kaynakların hepsi ansiklopedi/derleme ({x['kaynak']})")
         if x.get("durum") in GUC:
             g = alt_gucler(x)
             if g and GUC[x["durum"]] > min(g):
@@ -123,7 +150,10 @@ def denetle(yol, sema):
             hatalar.append(f"K5 havuz {h['id']}: tanımsız din '{h['din']}'")
         if h["isimler"] and len(h["isimler"]) < 30:
             uyarilar.append(f"U1 havuz {h['id']}: {len(h['isimler'])} isim (hedef en az 30)")
-    genelDolu = all(h["isimler"] for h in havuzlar.values() if h["topluluk"] == "genel")
+    genelDolu = all(h["isimler"] for h in havuzlar.values() if h["topluluk"] == "genel" and h["din"] is None)
+    for i, k in enumerate(d.get("gunlukHayat", {}).get("toplulukKulturu", [])):
+        if k["topluluk"] not in toplulukIds:
+            hatalar.append(f"K6 gunlukHayat.toplulukKulturu[{i}]: tanımsız topluluk '{k['topluluk']}'")
     for t in d["topluluklar"]:
         for hid in t["isimHavuzlari"]:
             if hid not in havuzlar:
@@ -145,6 +175,25 @@ def denetle(yol, sema):
             if a in gorulen and gorulen[a] != r["id"]:
                 hatalar.append(f"K7 din: '{a}' hem {gorulen[a]} hem {r['id']} kaydında (çift sayım)")
             gorulen[a] = r["id"]
+    for i, o in enumerate(d["tarihselOlaylar"]):
+        if o.get("tartismali"):
+            a = o.get("adlandirma")
+            if not a:
+                hatalar.append(f"K9 olay {o['id']}: tartismali ama adlandirma yok")
+            else:
+                if not a["oyunMetni"].strip():
+                    hatalar.append(f"K9 olay {o['id']}: adlandirma.oyunMetni boş")
+                if len(a["tarafAdlari"]) < 2:
+                    hatalar.append(f"K9 olay {o['id']}: en az 2 taraf adı gerekli")
+    for i, y in enumerate(d["yerelSayilar"]):
+        if "kullanim" not in y:
+            uyarilar.append(f"K10 yerelSayilar[{i}] ({y['ad']}): kullanim alanı yok")
+        elif y.get("bmKarsiligi") and y["kullanim"] != "kaynakSayfasi":
+            hatalar.append(f"K10 yerelSayilar[{i}] ({y['ad']}): BM karşılığı var, kullanim 'kaynakSayfasi' olmalı (KARAR 16)")
+    for r in d["din"]["dagilim"]:
+        ts = r.get("tanimlamaSecenekleri")
+        if ts and r["grup"] not in ts:
+            hatalar.append(f"K12 din {r['id']}: tanimlamaSecenekleri kaydın kendi adını ('{r['grup']}') içermiyor")
     return hatalar, uyarilar
 
 

@@ -5,11 +5,15 @@
   "eslemeler": [
     {
       "oyunKodu": "XKX",
-      "veriKodu": { "owid": "OWID_KOS", "bmWpp": null, "dunyaBankasi": "XKX" },
+      "veriKodu": {
+        "owid": "OWID_KOS",
+        "bmWpp": "XKX",
+        "dunyaBankasi": "XKX"
+      },
       "adTr": "Kosova",
       "bolge": "R13",
-      "not": "XKX resmî ISO 3166-1 kodu değil; Avrupa Birliği ve Dünya Bankası'nın kullandığı geçici koddur. OWID dosyasında Kosova ayrı satır (OWID_KOS, 2023: 20.514 doğum) ve Sırbistan'ın içinde sayılmıyor. BM WPP'nin kendi CSV'sinde Kosova'nın nasıl yer aldığı (ayrı satır mı, Sırbistan içinde mi) Veri tarafından kontrol edilmeli; bmWpp bu yüzden null. Dünya Bankası kodu doğrulanmalı.",
-      "durum": "dogrulanmali"
+      "not": "XKX resmî ISO 3166-1 kodu değil; Avrupa Birliği ve Dünya Bankası'nın kullandığı geçici koddur. OWID dosyasında Kosova ayrı satır (OWID_KOS, 2023: 20.514 doğum) ve Sırbistan'ın içinde sayılmıyor. BM WPP'nin kendi CSV'sinde Kosova'nın nasıl yer aldığı (ayrı satır mı, Sırbistan içinde mi) Veri tarafından kontrol edilmeli; bmWpp bu yüzden null. Dünya Bankası kodu doğrulanmalı. | Veri (2026-11-26): BM WPP 2024 CSV'sinde Kosova ayrı satır: 'Kosovo (under UNSC res. 1244)', LocID 412, ISO3_code XKX; Sırbistan (SRB) satırına dahil değil (237 ülke satırının toplamı BM dünya toplamına 3 doğum farkla eşit). Dünya Bankası API'sinde de XKX (2023 kişi başı GSYH verisi var). Ülke kodu tablosu: data/processed/v1/ulke-kodlari.json.",
+      "durum": "dogrulandi"
     }
   ]
 }

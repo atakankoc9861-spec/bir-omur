@@ -108,7 +108,8 @@
         "durum": "bos",
         "oyunda_kullanilabilir": false,
         "not": "Bir topluluk yalnızca BİR kayıtta yer alır (çift sayım yasak). Alt grup ilişkisi ustGrup ile kurulur.",
-        "kendiniTanimlama": ""
+        "kendiniTanimlama": "",
+        "tanimlamaSecenekleri": []
       }
     ],
     "devletDinIliskisi": {
@@ -370,6 +371,14 @@
         "durum": "bos",
         "oyunda_kullanilabilir": false
       }
+    ],
+    "kadinHayati": [
+      {
+        "ozet": "",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
     ]
   },
   "isimler": {
@@ -595,7 +604,20 @@
       "hassasiyet": "",
       "kaynak": [],
       "durum": "bos",
-      "oyunda_kullanilabilir": false
+      "oyunda_kullanilabilir": false,
+      "adlandirma": {
+        "oyunMetni": "",
+        "tarafAdlari": [
+          {
+            "ad": "",
+            "kullananlar": ""
+          }
+        ],
+        "not": "İSTEĞE BAĞLI; sadece tartışmalı adlı olaylarda (KARAR 17).",
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
     }
   ],
   "icBolgeler": [
@@ -647,7 +669,19 @@
         "oyunda_kullanilabilir": false
       }
     ],
-    "evcilHayvan": ""
+    "evcilHayvan": "",
+    "toplulukKulturu": [
+      {
+        "topluluk": "topluluk-kimligi",
+        "ad": "",
+        "ozet": "",
+        "yilBas": null,
+        "yilSon": null,
+        "kaynak": [],
+        "durum": "bos",
+        "oyunda_kullanilabilir": false
+      }
+    ]
   },
   "hassasiyet": [
     {

@@ -1,5 +1,5 @@
 {
-  "_aciklama": "Türkiye K1 profili, şablonun tam doldurulmuş örneği (v0.2, Kalite denetimi sonrası). 'dogrulanmali' işaretli her bilgi oyuna girmeden önce birincil kaynakta kontrol edilmeli. oyunda_kullanilabilir: false olan hiçbir bilgi motor tarafından kullanılmaz.",
+  "_aciklama": "Türkiye K1 profili (v0.2, 2026-11-26 doldurma turu: isim havuzları, dönemli kurallar, KARAR 17-18, denge eksikleri). 'dogrulanmali' işaretli her bilgi oyuna girmeden önce kontrol edilmeli. oyunda_kullanilabilir: false olan hiçbir bilgi motor tarafından kullanılmaz.",
   "meta": {
     "iso3": "TUR",
     "adTr": "Türkiye",
@@ -10,7 +10,7 @@
     "hazirlayan": "Dünya ve Kültür",
     "tarih": "2026-11-26",
     "denetim": {
-      "durum": "sartli_gecti",
+      "durum": "bekliyor",
       "belge": "docs/denetim/2026-11-26-dunya-kultur.md"
     }
   },
@@ -73,7 +73,7 @@
       "lisans": "",
       "not": "İkincil haber özeti. Kanun metni: msb.gov.tr ve mevzuat.gov.tr",
       "tur": "ikincil",
-      "birincilAdres": "mevzuat.gov.tr / Resmî Gazete 25 Haziran 2019 civarı, 7179 sayılı kanun metni (kontrol edilmedi); İngilizce metin msb.gov.tr"
+      "birincilAdres": "mevzuat.gov.tr 7179 sayılı Askeralma Kanunu (kontrol edilmedi; TBMM kabulü 25 Haziran 2019, Wikipedia/HDN aktarımı)"
     },
     {
       "id": "nvi-isim-1941",
@@ -217,7 +217,7 @@
       "yil": null,
       "erisim": "kontrol edilmedi",
       "lisans": "Kamu",
-      "not": "Kanun numara ve tarihleri buradan doğrulanacak: 222, 4306, 6287, 743, 4721, 2525, 506, 5434, 1479, 4447, 5510, 7438, 224, 6306",
+      "not": "Kanun numara ve tarihleri buradan doğrulanacak: 222, 4306, 6287, 743, 4721, 2525, 506, 5434, 1479, 4447, 5510, 7438, 224, 6306 Bu çalışmada 222, 4306, 6287, 4721, 1111, 7438 metinleri ayrı kaynak kimlikleriyle eklendi (kanun-222, kanun-4306, kanun-6287, tmk-4721, kanun-1111, kanun-7438).",
       "tur": "birincil"
     },
     {
@@ -229,6 +229,571 @@
       "erisim": "kontrol edilmedi",
       "lisans": "",
       "not": "Düzey 1: 12 bölge",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-1931",
+      "ad": "1931-1940 Tarihleri Arasında En Çok Verilen İsimler",
+      "kurum": "Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/1931_1940Tarihleri_Arasinda_En_cok_Verilen_isimler.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil. 50 kadın + 50 erkek adı, sıralı.",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-isim-2001",
+      "ad": "2001 Yılı En Çok Verilen İsimler",
+      "kurum": "Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/2001Yili_En_cok_Verilen_isimler.pdf",
+      "yil": 2001,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil. 50 + 50 ad, sıralı.",
+      "tur": "birincil"
+    },
+    {
+      "id": "nvi-il-ad",
+      "ad": "İllere Göre Nüfus Kütüklerine Kayıtlı En Çok Kullanılan 5 Kadın ve Erkek Adı",
+      "kurum": "NVİ Nüfus İstatistikleri Daire Başkanlığı",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/Illere-Gore-En-Cok-Kullanilan-Ad-Istatistigi.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil; tarih belgede yazmıyor. Doğum yılı boyutu yok, bütün kayıtlı nüfus. İl düzeyinde; topluluk düzeyinde değil.",
+      "tur": "birincil"
+    },
+    {
+      "id": "yildirim-2016",
+      "ad": "Çocuklara Verilen İsimler Üzerinden Türkiye'deki Sosyo-Kültürel Değişimin Analizi (İ. Esen Yıldırım)",
+      "kurum": "Atatürk Üniversitesi Sosyal Bilimler Enstitüsü Dergisi 20(3): 909-925",
+      "url": "https://dergipark.org.tr/tr/download/article-file/265490",
+      "yil": 2016,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Akademik; Tablo 1-2 NVİ verisinden on yıllara göre ilk 20 ad (1923-2010). NVİ sitesinde 1951-1960 ve 2001-2010 on yıllık PDF bulunamadı; bu iki dilim buradan.",
+      "tur": "ikincil",
+      "birincilAdres": "NVİ (makalenin kaynağı); NVİ sitesinde bu iki on yılın PDF'i bulunamadı"
+    },
+    {
+      "id": "isim-2012-2013",
+      "ad": "2013'ün En Çok Tercih Edilen İsimleri: Zeynep ve Yusuf (AA)",
+      "kurum": "TÜİK + NVİ verisi, Anadolu Ajansı aktarımı (haberler.com)",
+      "url": "https://www.haberler.com/kiza-zeynep-erkege-yusuf-6068923-haberi/",
+      "yil": 2014,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2013 ilk 5 kız + ilk 10 erkek sıralı, ardından sırasız 15+10 ad; 2012 ilk 10 kız ve erkek. Haberde 2012 listesinde 'Çanır' yazıyor; 2013 ve 2016 listelerindeki 'Çınar' ile aynı kabul edildi (yazım hatası).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2012-2016",
+      "ad": "TÜİK açıkladı: Son 17 yılda çocuklara en çok Zeynep ve Yusuf adı kondu (AA)",
+      "kurum": "TÜİK verisi, Karar aktarımı",
+      "url": "https://www.karar.com/tuik-acikladi-son-17-yilda-cocuklara-en-cok-zeynep-ve-yusuf-adi-kondu-399865",
+      "yil": 2017,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2012-2015 ilk 5'ler, 2016 ilk 20.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2016",
+      "ad": "En çok tercih edilen kız ve erkek bebek isimleri (2016)",
+      "kurum": "TÜİK + NVİ verisi, TRT Haber aktarımı",
+      "url": "https://www.trthaber.com/haber/yasam/en-cok-tercih-edilen-kiz-ve-erkek-bebek-isimleri-301078.html",
+      "yil": 2017,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2016 ilk 20 kız, ilk 19 erkek. Listede 'Raiba' yazımı doğrulanamadığı için alınmadı.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2017",
+      "ad": "2017'de en çok tercih edilen isimler (AA)",
+      "kurum": "TÜİK verisi, CNN Türk ve TRT Haber aktarımı",
+      "url": "https://www.trthaber.com/haber/yasam/2017de-en-cok-tercih-edilen-isimler-belli-oldu-361434.html",
+      "yil": 2018,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2017 ilk 10 kız ve erkek; CNN Türk aktarımı aynı liste: https://www.cnnturk.com/yasam/turkiyede-en-cok-tercih-edilen-isim-belli-oldu",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2018",
+      "ad": "TÜİK 2018 yılında doğan bebeklere en çok verilen isimleri açıkladı",
+      "kurum": "TÜİK verisi, Webtekno aktarımı",
+      "url": "https://www.webtekno.com/tuik-2018-yilinda-dogan-bebeklere-en-cok-verilen-isimleri-acikladi-h63000.html",
+      "yil": 2019,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2018 ilk 5 ülke geneli; İstanbul, Ankara, İzmir ilk 5'leri.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2019",
+      "ad": "2019 yılının en popüler bebek isimleri belli oldu",
+      "kurum": "TÜİK (ADNKS) verisi, Posta aktarımı",
+      "url": "https://www.posta.com.tr/anne-cocuk/bebeklik/2019-yilinin-en-populer-bebek-isimleri-belli-oldu-2240589",
+      "yil": 2020,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2019 ilk 5.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2022",
+      "ad": "2022 yılında bebeklere en çok verilen isimler",
+      "kurum": "NVİ verisi, Serbestiyet aktarımı",
+      "url": "https://serbestiyet.com/haberler/2022-yilinda-bebeklere-en-cok-verilen-isimler-kizlara-zeynep-erkeklere-alparslan-114309/",
+      "yil": 2023,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2022 ilk 10 kız ve erkek.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2023",
+      "ad": "2023'te en çok kullanılan kız ismi Asel, erkek ismi Alparslan",
+      "kurum": "TÜİK (ADNKS) verisi, Türkiye Gazetesi aktarımı",
+      "url": "https://www.turkiyegazetesi.com.tr/haberler/2023te-en-cok-kullanilan-kiz-ismi-asel-erkek-ismi-ise-alparslan-1028274",
+      "yil": 2024,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2023 ilk 15 kız ve erkek, sayılarıyla.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "isim-2024",
+      "ad": "TÜİK açıkladı: 2024 yılının en popüler isimleri",
+      "kurum": "TÜİK İstatistiklerle Çocuk 2024, Yeni Şafak aktarımı",
+      "url": "https://www.yenisafak.com/tuik-acikladi-2024-yilinin-en-populer-isimleri-neler-h-4696961",
+      "yil": 2025,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2024 ilk 3 (Alparslan, Göktuğ, Yusuf; Defne, Asel, Zeynep).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "askerlik-tarihce-ahaber",
+      "ad": "Askerlik eskiden kaç yıldı? Dünden bugüne askerlik süreleri",
+      "kurum": "A Haber (galeri)",
+      "url": "https://www.ahaber.com.tr/galeri/yasam/askerlik-eskiden-kac-yildi-iste-dunden-bugune-askerlik-sureleri",
+      "yil": 2018,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Tarihli değişiklik listesi; bazı maddelerde Bakanlar Kurulu karar numarası var (93/5098, 94/6102). Kaynak belirtmiyor.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "genelkurmay-2003",
+      "ad": "Genelkurmay Başkanlığının Açıklaması (22 Haziran 2003)",
+      "kurum": "Genelkurmay Başkanlığı, Bianet aktarımı",
+      "url": "https://bianet.org/haber/genelkurmay-baskanliginin-aciklamasi-20393",
+      "yil": 2003,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "18→15 ay (15 Temmuz 2003'ten itibaren), yedek subay 16→12, kısa dönem 8→6. Resmî açıklamanın tam metni.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "askerlik-2014-posta",
+      "ad": "Askerlik süresi 1 Ocak 2014'ten itibaren kısalıyor",
+      "kurum": "Posta",
+      "url": "https://www.posta.com.tr/gundem/askerlik-suresi-1-ocak-2014ten-itibaren-kisaliyor-201279",
+      "yil": 2013,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "15→12 ay, 1 Ocak 2014; kısa dönem 6 ay değişmedi; dayanak 1111 m.5 (Bakanlar Kurulu yetkisi).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "kanun-1111",
+      "ad": "1111 sayılı Askerlik Kanunu (mülga), madde 5 ve 10",
+      "kurum": "Lexpera mevzuat metni",
+      "url": "https://www.lexpera.com.tr/mevzuat/kanunlar/askerlik-kanunu-1111",
+      "yil": 1927,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Mevzuat metni (Lexpera yayını). m.5/1 (2973 s.K., 25.1.1984): 18 ay; barışta 15'e, sonra 12'ye indirilebilir. m.10 bedel hükmü 3358 (1987), 3802 (1992) ile değişti.",
+      "tur": "birincil"
+    },
+    {
+      "id": "bedelli-evrensel",
+      "ad": "Türkiye'de geçmişten günümüze bedelli askerlik uygulamaları",
+      "kurum": "Evrensel",
+      "url": "https://www.evrensel.net/haber/357591/turkiyede-gecmisten-gunumuze-bedelli-askerlik-uygulamalari",
+      "yil": 2018,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "1987, 1992, 1999, 2011, 2014, 2018 uygulamaları; yararlanan sayıları.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "bedelli-cnnturk",
+      "ad": "Geçmişten günümüze Türkiye'nin bedelli askerlik tarihi",
+      "kurum": "CNN Türk",
+      "url": "https://cnnturk.com/turkiye/gecmisten-gunumuze-turkiyenin-bedelli-askerlik-tarihi",
+      "yil": 2018,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "1987 (3358 geçici 20), 1992 (3802 geçici 33), 1999 (4459 geçici 37), 2011, 2014.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "vicdani-ret-wiki",
+      "ad": "Conscription in Turkey",
+      "kurum": "Wikipedia (İngilizce)",
+      "url": "https://en.wikipedia.org/wiki/Conscription_in_Turkey",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Vicdani ret için AB 2010 ilerleme raporu ve AİHM'e atıf yapıyor. Süre tarihçesi bu kaynaktan ALINMADI (diğer kaynaklarla çelişiyor).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "yaman-2020",
+      "ad": "Emeklilik Sisteminde Yapısal Dönüşümün Zorunluluğu: Kademeli Yaş Artışı (Y. Yaman)",
+      "kurum": "HAK-İŞ Uluslararası Emek ve Toplum Dergisi 9(25): 470-491",
+      "url": "https://dergipark.org.tr/tr/download/article-file/1198973",
+      "yil": 2020,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Akademik. 1999 öncesi yaş şartsız emeklilik (kadın 20, erkek 25 yıl + 5000 gün); 4447 ile 58/60; 5510 kademeli yaş tablosu (2036-2048, 65).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "emeklilik-tarihce-kivanc",
+      "ad": "Sosyal güvenlikte 26 yılda ne oldu? (Ahmet Kıvanç)",
+      "kurum": "Habertürk",
+      "url": "https://www.haberturk.com/sosyal-guvenlikte-26-yilda-ne-oldu-3820645-ekonomi",
+      "yil": 2025,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "SSK yaş şartlarının 1950'den bugüne tarihçesi (1965, 1969, 1976, 1986, 1992, 1999, 2023). Tek kaynak; 1999 öncesi ayrıntılar başka kaynakla teyit edilmedi.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "kanun-7438",
+      "ad": "7438 sayılı Sosyal Sigortalar ve Genel Sağlık Sigortası Kanunu ile Bazı Kanunlarda Değişiklik (EYT)",
+      "kurum": "Resmî Gazete 3 Mart 2023, sayı 32121 (Alomaliye metin aktarımı)",
+      "url": "https://www.alomaliye.com/2023/03/03/7438-sayili-eyt-kanunu/amp/",
+      "yil": 2023,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Kabul 1 Mart 2023. 5510'a geçici madde 95: eski mevzuattaki yaş dışındaki şartları taşıyanlar aylık alır.",
+      "tur": "ikincil",
+      "birincilAdres": "https://www.resmigazete.gov.tr/eskiler/2023/03/20230303-8.htm (otomatik erişime kapalı)"
+    },
+    {
+      "id": "tmk-4721",
+      "ad": "4721 sayılı Türk Medeni Kanunu",
+      "kurum": "Resmî Gazete 8.12.2001, sayı 24607 (ÇSGB PDF yayını)",
+      "url": "https://csgb.gov.tr/Media/jrpl5fqg/4721-sayılı-medeni-kanunu.pdf",
+      "yil": 2001,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Kabul 22.11.2001; yürürlük 1.1.2002. m.124: 17 yaş; olağanüstü durumda hakim kararıyla 16.",
+      "tur": "birincil"
+    },
+    {
+      "id": "medeni-kanun-bianet-2004",
+      "ad": "Yeni Türk Medeni Kanununda Evlenme",
+      "kurum": "Bianet",
+      "url": "https://bianet.org/haber/yeni-turk-medeni-kanununda-evlenme-47663",
+      "yil": 2004,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Eski kanun (743, yürürlükten kalkmadan önceki hâli): erkek 17, kadın 15; hakim kararıyla erkek 15, kız 14. Yeni kanun: 17; hakim kararıyla 16.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "evlenme-yasi-ceylan",
+      "ad": "Evlenme yaşı",
+      "kurum": "Av. Kazım Ceylan Hukuk Bürosu",
+      "url": "https://www.kazimceylan.av.tr/evlenme-yasi",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "743 m.88'in 1926'daki ilk metni (erkek 18, kadın 17; hakim izniyle 15) ve TMK m.124, 126 (küçüğün yasal temsilci izni).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "kanun-222",
+      "ad": "222 sayılı İlköğretim ve Eğitim Kanunu",
+      "kurum": "Resmî Gazete 12.01.1961, sayı 10705 (Lexpera mevzuat metni)",
+      "url": "https://www.lexpera.com.tr/mevzuat/kanunlar/ilkogretim-ve-egitim-kanunu-222",
+      "yil": 1961,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "m.8 ilk metni: ilkokulun öğretim süresi en az beş yıl (4306 ile mülga).",
+      "tur": "birincil"
+    },
+    {
+      "id": "kanun-4306",
+      "ad": "4306 sayılı kanun (8 yıllık kesintisiz ilköğretim)",
+      "kurum": "Resmî Gazete 18.08.1997, sayı 23084 (Lexpera metni)",
+      "url": "https://www.lexpera.com.tr/resmi-gazete/metin/ilkogretim-ve-egitim-kanunu-milli-egitim-temel-kanunu-ciraklik-ve-meslek-egitimi-kanunu-milli-egitim-1/1",
+      "yil": 1997,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İlköğretim kurumları sekiz yıllık, kesintisiz; 1997-1998 ders yılından itibaren ortaokul kısımlarına öğrenci alınmaz (geçici m.10).",
+      "tur": "birincil"
+    },
+    {
+      "id": "kanun-6287",
+      "ad": "6287 sayılı İlköğretim ve Eğitim Kanunu ile Bazı Kanunlarda Değişiklik (4+4+4)",
+      "kurum": "Resmî Gazete 11.04.2012, sayı 28261 (Lexpera metni)",
+      "url": "https://www.lexpera.com.tr/resmi-gazete/metin/ilkogretim-ve-egitim-kanunu-ile-bazi-kanunlarda-degisiklik-yapilmasina-dair-kanun-28261-6287-1",
+      "yil": 2012,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "4 yıl zorunlu ilkokul + 4 yıl zorunlu ortaokul + 4 yıl zorunlu ortaöğretim; zorunlu ortaöğretim 2012-2013'ten itibaren; çağ, çocuğun 5 yaşını bitirdiği yılın eylül sonunda başlar; imam-hatip ortaokulları.",
+      "tur": "birincil"
+    },
+    {
+      "id": "osys-wiki",
+      "ad": "Student Selection and Placement System",
+      "kurum": "Wikipedia (İngilizce)",
+      "url": "https://en.wikipedia.org/wiki/Student_Selection_and_Placement_System",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "ÜSS 1974; 1981'de ÖSS + ÖYS; 1999'da ÖYS kaldırıldı; 2010'dan YGS-LYS; YKS (TYT/AYT/YDT) 2018.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "sinav-onedio",
+      "ad": "1974 yılından bu yana üniversite giriş sınavları isimleri nasıl değişti?",
+      "kurum": "Onedio",
+      "url": "https://onedio.com/haber/1974-yilindan-bu-yana-universite-giris-sinavlari-isimleri-nasil-degisti-989751",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "ÜSS 1974-1980, ÖSS+ÖYS 1981-1998, ÖSS 1999-2009, YGS+LYS 2010-. (YKS'yi 2020 diye yazıyor; bu yanlış, kullanılmadı.)",
+      "tur": "ikincil"
+    },
+    {
+      "id": "ozer-2018",
+      "ad": "Ölçme, seçme ve yerleştirme merkezinin stratejik hedefleri ve yeni yönelimleri (M. Özer)",
+      "kurum": "Yükseköğretim ve Bilim Dergisi 8(2): 221-226",
+      "url": "https://dergipark.org.tr/en/download/article-file/1711660",
+      "yil": 2018,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "ÜSYM 19.11.1974'te Üniversitelerarası Kurul'ca kuruldu; 1981'de 2547 ile YÖK'e bağlı ÖSYM; 2011'de 6114 ile özerk ÖSYM.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "mfa-1915",
+      "ad": "1915 Olaylarına Dair Türk-Ermeni Uyuşmazlığının Tarihi Arka Planı",
+      "kurum": "T.C. Dışişleri Bakanlığı",
+      "url": "https://www.mfa.gov.tr/data/DISPOLITIKA/2016/1915-olaylarina-dair-turk_ermeni-uyusmazliginin-tarihi-arka-plani-_turkce.pdf",
+      "yil": 2016,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Türkiye'nin resmî görüşü ve kullandığı adlar ('1915 olayları', 'sevk ve iskân'); soykırım nitelendirmesini reddeder; 2005 ortak tarih komisyonu önerisi.",
+      "tur": "birincil"
+    },
+    {
+      "id": "ushmm-1915",
+      "ad": "Ermeni Soykırımı (1915-16): Ayrıntılı",
+      "kurum": "ABD Holokost Anıt Müzesi Ansiklopedisi (Türkçe)",
+      "url": "https://encyclopedia.ushmm.org/content/tr/article/the-armenian-genocide-1915-16-in-depth",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "1915 baharı-1916 sonbaharı; sürgünler ve toplu öldürmeler; en az 664.000, belki 1,2 milyona kadar ölü; Ermenicede Medz Yeghern / Aghet.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "kibris-wikiwand",
+      "ad": "Cyprus War (1974)",
+      "kurum": "Wikipedia (İngilizce), Wikiwand aktarımı",
+      "url": "https://www.wikiwand.com/en/articles/Cyprus_War",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "15 Temmuz 1974 darbesi, 20 Temmuz ilk çıkarma (Garanti Antlaşması'na dayanarak), 14 Ağustos ikinci aşama ('İkinci Barış Harekâtı'); Rum tarafı ve eleştirenler 'işgal' (invasion) der.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "28subat-bianet",
+      "ad": "1997 'postmodern coup' case: Retired generals sent behind bars after life sentences",
+      "kurum": "Bianet English",
+      "url": "https://bianet.org/english/law/249038-1997-postmodern-coup-case-retired-generals-sent-behind-bars-after-life-sentences",
+      "yil": 2021,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "28.2.1997 MGK'nın 18 maddelik kararları; 18.6.1997 başbakanın istifası; Nisan 2018'de 21 sanığa ağırlaştırılmış müebbet; Yargıtay 14 sanık için onadı (2021).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "28subat-duvar",
+      "ad": "Turkey's top appeals court upholds convictions in 'post-modern coup' case",
+      "kurum": "Duvar English",
+      "url": "https://www.duvarenglish.com/turkeys-top-appeals-court-upholds-convictions-in-post-modern-coup-case-news-58126",
+      "yil": 2021,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Yargıtay 14 sanığın müebbetini onadı.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "gazi-bianet",
+      "ad": "Videolarla Gazi Katliamı ve Dava Süreci",
+      "kurum": "Bianet",
+      "url": "https://bianet.org/haber/videolarla-gazi-katliami-ve-dava-sureci-162977",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Gazi'de 17, Ümraniye 1 Mayıs Mahallesi'nde 5, toplam 22 ölü; 20 polis yargılandı, 2'si mahkûm, 18'i beraat; AİHM ihlal kararı.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "gazi-wiki",
+      "ad": "Gazi Quarter riots",
+      "kurum": "Wikipedia (İngilizce)",
+      "url": "https://en.wikipedia.org/wiki/Gazi_Quarter_riots",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "12-15 Mart 1995; kahvehanelere taksiden ateş açılması; 23 ölü; çoğunlukla Alevilerin yaşadığı mahalle; AİHM 2005 kararı.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "15temmuz-iddianame",
+      "ad": "15 Temmuz şehitlerinin isimleri tek tek iddianameye girdi",
+      "kurum": "Ankara Cumhuriyet Başsavcılığı iddianamesi, Karar aktarımı",
+      "url": "https://www.karar.com/15-temmuz-sehitlerinin-isimleri-tek-tek-iddianameye-girdi-406318",
+      "yil": 2017,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İddianamede 250 kişinin adı; sivil, polis, asker başlıkları altında.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "15temmuz-gzt",
+      "ad": "15 Temmuz'da ne oldu? Kaç kişi şehit oldu, kaç kişi gazi oldu?",
+      "kurum": "GZT",
+      "url": "https://www.gzt.com/gundem/15-temmuzda-ne-oldu-15-temmuzda-kac-kisi-sehit-oldu-4241457",
+      "yil": 2026,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "250 ölü, 2.193 yaralı; ölenler arasında polis, asker ve siviller.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "15temmuz-haberturk",
+      "ad": "15 Temmuz'da neler oldu? Kaç kişi şehit oldu?",
+      "kurum": "Habertürk",
+      "url": "https://www.haberturk.com/bilgi/foto/15-temmuz-da-neler-oldu-demokrasi-destaninin-10-yili-15-temmuz-da-kac-kisi-sehit-oldu-3898133",
+      "yil": 2026,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Toplam 253 diyor (kaynaklar arasında 250-253 farkı var).",
+      "tur": "ikincil"
+    },
+    {
+      "id": "hafiza-merkezi-1990",
+      "ad": "90'larda ne oldu, yargıya nasıl yansıdı? (Hakikat Adalet Hafıza Merkezi raporu özeti)",
+      "kurum": "Bianet",
+      "url": "https://bianet.org/haber/90-larda-ne-oldu-yargiya-nasil-yansidi-253344",
+      "yil": 2021,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Sivil toplum kuruluşu raporu. Zorla kaybetme: 1993'te 103, 1994'te 518; çoğu OHAL bölgesindeki 13 ilde. Resmî rakam değil.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "tuik-isgucu-2024",
+      "ad": "İşgücü İstatistikleri, 2024",
+      "kurum": "TÜİK bülteni, Alomaliye aktarımı",
+      "url": "https://www.alomaliye.com/2025/03/20/isgucu-istatistikleri-2024/",
+      "yil": 2025,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "İstihdam oranı %49,5 (erkek %66,9, kadın %32,5); işgücüne katılma %54,2 (erkek %72,0, kadın %36,8).",
+      "tur": "ikincil",
+      "birincilAdres": "data.tuik.gov.tr (İşgücü İstatistikleri 2024 bülteni)"
+    },
+    {
+      "id": "tuik-zaman-2015",
+      "ad": "Zaman Kullanım Araştırması, 2014-2015",
+      "kurum": "TÜİK bülteni, Alomaliye aktarımı",
+      "url": "https://www.alomaliye.com/2015/12/04/zaman-kullanim-arastirmasi-2014-2015/",
+      "yil": 2015,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Kadınlar günde ortalama 3 sa 31 dk hane ve aile bakımına; çalışan erkekler 46 dk. Çalışan erkek 6 sa 25 dk, çalışan kadın 4 sa 32 dk istihdam.",
+      "tur": "ikincil",
+      "birincilAdres": "data.tuik.gov.tr"
+    },
+    {
+      "id": "siddet-2014-ghdx",
+      "ad": "Türkiye'de Kadına Yönelik Aile İçi Şiddet Araştırması 2014",
+      "kurum": "Hacettepe Üniversitesi Nüfus Etütleri Enstitüsü + Aile ve Sosyal Politikalar Bakanlığı (GHDx kaydı)",
+      "url": "https://ghdx.healthdata.org/node/239733",
+      "yil": 2015,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Ülke temsilî, kent-kır; saha Nisan-Temmuz 2014. Kayıtta oran yok.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "siddet-2014-diken",
+      "ad": "Aile Bakanlığı raporu: 10 kadından dördü şiddet görüyor",
+      "kurum": "Diken (Zaman haberi aktarımı)",
+      "url": "https://www.diken.com.tr/?p=249082",
+      "yil": 2016,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Kadınların %38'i fiziksel ya da cinsel şiddet görmüş; şiddet görenlerin %11'i resmî kuruma başvurmuş. Tek haber kaynağı.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "trt6-merlin",
+      "ad": "TRT 6 Kürtçe yayın (IRIS 2009-2:1/33)",
+      "kurum": "Avrupa Konseyi, Avrupa Görsel-İşitsel Gözlemevi (IRIS Merlin)",
+      "url": "https://merlin.obs.coe.int/article/4810",
+      "yil": 2009,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "TRT 6, 1 Ocak 2009'da tam yayına başladı; dayanak 2954 sayılı kanunda 11.6.2008 değişikliği.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "dengbej-adiguzel",
+      "ad": "Diyarbakır ilindeki dengbêjlik geleneği ve dengbêjlerin müzikal pratikleri (A. Adıgüzel)",
+      "kurum": "İnönü Üniversitesi, yüksek lisans tezi",
+      "url": "https://abakus.inonu.edu.tr/items/41032577-547a-449b-ade0-2e840abe55aa/full",
+      "yil": 2019,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "Dengbêjlik: Kürt sözlü kültür geleneği; kilam ve stran; acı, aşk, özlem, kahramanlık temaları; Diyarbakır Dengbêj Evi.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "hrw-1999-dil",
+      "ad": "Violations of Free Expression in Turkey (1999), Kurdish language bölümü",
+      "kurum": "Human Rights Watch",
+      "url": "https://www.hrw.org/legacy/reports/1999/turkey/turkey993-08.htm",
+      "yil": 1999,
+      "erisim": "2026-11-26",
+      "lisans": "",
+      "not": "2932 sayılı kanun (1983) Kürtçe yayını yasakladı; 1991'de 3713 sayılı kanun (m.23/e) ile kaldırıldı; yayıncılık yasağı 1999'da sürüyordu.",
+      "tur": "ikincil"
+    },
+    {
+      "id": "nvi-soyad",
+      "ad": "Nüfus Kütüklerine Kayıtlı En Çok Kullanılan 50 Soyadı",
+      "kurum": "Nüfus ve Vatandaşlık İşleri Genel Müdürlüğü",
+      "url": "https://nvi.gov.tr/kurumlar/nvi.gov.tr/Genel_Mudurluk/istatistikler/En_cok_Kullanilan_Soyad_istatistigi.pdf",
+      "yil": null,
+      "erisim": "2026-11-26",
+      "lisans": "Kamu verisi",
+      "not": "Birincil; tarih belgede yok; sayı yok, sıralı.",
       "tur": "birincil"
     },
     {
@@ -366,6 +931,59 @@
       "not": "",
       "veriAnahtari": "tuik.dogum.anneYasi",
       "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Kadın istihdam oranı (15+ yaş)",
+      "yil": 2024,
+      "deger": 32.5,
+      "birim": "%",
+      "veriAnahtari": "tuik.isgucu.istihdamOrani.kadin",
+      "kaynak": [
+        "tuik-isgucu-2024"
+      ],
+      "durum": "dogrulandi",
+      "not": "Erkek %66,9; toplam %49,5.",
+      "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Kadın işgücüne katılma oranı (15+ yaş)",
+      "yil": 2024,
+      "deger": 36.8,
+      "birim": "%",
+      "veriAnahtari": "tuik.isgucu.katilimOrani.kadin",
+      "kaynak": [
+        "tuik-isgucu-2024"
+      ],
+      "durum": "dogrulandi",
+      "not": "Erkek %72,0; toplam %54,2.",
+      "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Kadınların hane ve aile bakımına ayırdığı günlük süre",
+      "yil": 2015,
+      "deger": 211,
+      "birim": "dakika/gün",
+      "veriAnahtari": "tuik.zamanKullanim.haneBakim.kadin",
+      "kaynak": [
+        "tuik-zaman-2015"
+      ],
+      "durum": "dogrulandi",
+      "not": "2014-2015 araştırması; 3 sa 31 dk. Çalışan erkekler 46 dk.",
+      "oyunda_kullanilabilir": true
+    },
+    {
+      "ad": "Fiziksel ya da cinsel şiddet görmüş kadınların oranı",
+      "yil": 2014,
+      "deger": 38,
+      "birim": "%",
+      "veriAnahtari": null,
+      "kaynak": [
+        "siddet-2014-ghdx",
+        "siddet-2014-diken"
+      ],
+      "durum": "dogrulanmali",
+      "not": "Tek haber kaynağı; rapordan doğrulanmalı. Sahne gösterilmez.",
+      "oyunda_kullanilabilir": false
     }
   ],
   "dil": {
@@ -665,10 +1283,14 @@
           "kaynaksiz"
         ],
         "durum": "tahmin",
-        "not": "Resmî veri yok; tahminler çok geniş aralıkta. Alevilik ayrı bir inanç topluluğu olarak da tanımlanır; cemevi, dede, muharrem orucu.",
-        "kendiniTanimlama": "Bir kısmı kendini \"Müslüman, Alevi\", bir kısmı \"Alevi\" (İslam dışı ya da İslam üstü bir inanç yolu) olarak tanımlar. Oyunda karakterin kendi tanımı ayrı bir alan olarak taşınmalı.",
-        "atakan_karari_bekliyor": "Alevilik din listesinde nasıl gösterilsin: Müslüman kaydının alt grubu (ustGrup: \"muslim\") mu, ayrı grup (ustGrup: null) mu? Şimdilik ayrı ve tek kayıt; karar yalnızca ustGrup alanını değiştirir, çift sayım oluşmaz.",
-        "oyunda_kullanilabilir": false
+        "not": "Resmî veri yok; tahminler çok geniş aralıkta. Cemevi, dede, muharrem orucu. Kayıt KARAR 18'e göre düzenlendi; Müslüman kaydının içinde sayılmaz (çift sayım önlemi).",
+        "kendiniTanimlama": "KARAR 18 (2026-11-26): Alevilik din listesinde tek kayıt. Oyunda karakter kendini nasıl tanımlıyorsa öyle gösterilir: 'Alevi', 'Müslüman' ya da 'Alevi ve Müslüman'. Motor bu kayıttan gelen karaktere tanimlamaSecenekleri'nden birini atar; kayıt tek olduğu için pay hesabında çift sayım olmaz. Seçeneklerin dağılımı için kaynaklı oran yok (Veri/Simülasyon); oran bulunana kadar hangi yöntemle seçileceği Simülasyon'un kararı. Aynı aile içinde kişiler farklı tanım seçebilir ve hayat boyunca değişebilir.",
+        "oyunda_kullanilabilir": false,
+        "tanimlamaSecenekleri": [
+          "Alevi",
+          "Müslüman",
+          "Alevi ve Müslüman"
+        ]
       },
       {
         "id": "hristiyan",
@@ -802,6 +1424,8 @@
         "tümü"
       ],
       "isimHavuzlari": [
+        "tr-k-1930",
+        "tr-e-1930",
         "tr-k-1940",
         "tr-e-1940",
         "tr-k-1950",
@@ -828,7 +1452,7 @@
         "durum": "bos",
         "oyunda_kullanilabilir": false
       },
-      "havuzHazir": false,
+      "havuzHazir": true,
       "agirlik": {
         "deger": null,
         "veriAnahtari": null,
@@ -841,7 +1465,7 @@
         "kaynaksiz"
       ],
       "durum": "tahmin",
-      "not": "Genel isim havuzlarını kullanır. havuzHazir şimdilik false: 1950-1959 ve 2010-2019 genel havuzları boş; NVİ listeleri eklenince true yapılır.",
+      "not": "Genel isim havuzlarını kullanır. havuzHazir true (2026-11-26): 1930-2020'ler genel havuzlarının hepsi dolu ve doğrulandı.",
       "oyunda_kullanilabilir": false
     },
     {
@@ -873,7 +1497,7 @@
       ],
       "yedekHavuz": {
         "havuz": null,
-        "gerekce": "Bilinçli olarak null: Kürtçe isimler bu topluluğun görünürlüğü için önemli (Kalite bulgusu 2.1). Kürtçe havuz dolana kadar topluluk çekilişe girmez. Atakan/Kalite isterse 'genel' yapılabilir.",
+        "gerekce": "Bilinçli olarak null (Kalite bulgusu 2.1): Kürtçe havuz dolana kadar topluluk çekilişe girmez. Not (2026-11-26): NVİ il listesi Kürt nüfusun yoğun olduğu illerde de en sık adların genel havuzdaki adlar olduğunu gösteriyor (nvi-il-ad); yani Zaza/Arap/Laz için kullanılan kanıtın aynısı burada da var. Yedeğin açılıp açılmayacağı Atakan'a soruldu.",
         "kaynak": [],
         "durum": "bos",
         "oyunda_kullanilabilir": false
@@ -915,14 +1539,14 @@
       "isimHavuzlari": [],
       "yedekHavuz": {
         "havuz": "genel",
-        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Kendi (Zazaca/Kürtçe) ek havuzu eklenince yedek kaldırılmalı ya da oranla karıştırılmalı.",
+        "gerekce": "NVİ il istatistiğine göre bu topluluğun yoğun yaşadığı Tunceli ve Bingöl illerinde nüfus kütüğündeki en sık 5 kadın ve 5 erkek adının hepsi genel havuzda da var (Tunceli: Fatma, Elif, Emine, Sultan, Zeynep / Hüseyin, Ali, Hasan, Mehmet, Hıdır; Bingöl: Fatma, Zeynep, Emine, Ayşe, Elif / Mehmet, Ahmet, Ali, Hasan, Hüseyin). Bu, genel adların bu ailelerde yaygın olduğunu gösterir. Sınır: il düzeyinde veri, topluluk düzeyinde ölçüm değil; ilde başka topluluklar da yaşıyor. Topluluğa özgü ek havuz bulunursa iki havuz oranla karıştırılmalı.",
         "kaynak": [
-          "kaynaksiz"
+          "nvi-il-ad"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       },
-      "havuzHazir": false,
+      "havuzHazir": true,
       "agirlik": {
         "deger": null,
         "veriAnahtari": null,
@@ -935,7 +1559,7 @@
         "kaynaksiz"
       ],
       "durum": "tahmin",
-      "not": "Kendini Kürt ya da ayrı topluluk olarak tanımlayanlar var; kişinin tanımı esas",
+      "not": "Kendini Kürt ya da ayrı topluluk olarak tanımlayanlar var; kişinin tanımı esas havuzHazir 2026-11-26'da true yapıldı: genel havuzlar dolu ve yedek kaynaklı (nvi-il-ad).",
       "hassasiyet": "Kimlik tanımı tartışmalı; dayatma yok",
       "oyunda_kullanilabilir": false
     },
@@ -957,14 +1581,14 @@
       "isimHavuzlari": [],
       "yedekHavuz": {
         "havuz": "genel",
-        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Arapça isimlerin bir kısmı genel havuzla örtüşür; kendi ek havuzu eklenmeli.",
+        "gerekce": "NVİ il istatistiğine göre bu topluluğun yoğun yaşadığı Hatay, Mardin, Siirt ve Şanlıurfa illerinde nüfus kütüğündeki en sık 5 kadın ve 5 erkek adının hepsi genel havuzda da var (Hatay: Fatma, Hatice, Emine, Meryem, Ayşe / Mehmet, Ali, Ahmet, Mustafa, Hasan; Mardin: Emine, Fatma, Zeynep, Ayşe, Meryem / Mehmet, Ahmet, Yusuf, İbrahim, Hasan). Bu, genel adların bu ailelerde yaygın olduğunu gösterir. Sınır: il düzeyinde veri, topluluk düzeyinde ölçüm değil; ilde başka topluluklar da yaşıyor. Topluluğa özgü ek havuz bulunursa iki havuz oranla karıştırılmalı.",
         "kaynak": [
-          "kaynaksiz"
+          "nvi-il-ad"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       },
-      "havuzHazir": false,
+      "havuzHazir": true,
       "agirlik": {
         "deger": null,
         "veriAnahtari": null,
@@ -977,7 +1601,7 @@
         "kaynaksiz"
       ],
       "durum": "tahmin",
-      "not": "Hatay, Mardin, Siirt, Şanlıurfa; Arap Alevileri (Nusayri) bu topluluk içindedir, din kaydında muslim altında",
+      "not": "Hatay, Mardin, Siirt, Şanlıurfa; Arap Alevileri (Nusayri) bu topluluk içindedir, din kaydında muslim altında havuzHazir 2026-11-26'da true yapıldı: genel havuzlar dolu ve yedek kaynaklı (nvi-il-ad).",
       "oyunda_kullanilabilir": false
     },
     {
@@ -997,14 +1621,14 @@
       "isimHavuzlari": [],
       "yedekHavuz": {
         "havuz": "genel",
-        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı).",
+        "gerekce": "NVİ il istatistiğine göre bu topluluğun yoğun yaşadığı Rize ve Artvin illerinde nüfus kütüğündeki en sık 5 kadın ve 5 erkek adının hepsi genel havuzda da var (Rize: Fatma, Emine, Ayşe, Hatice, Havva / Mustafa, Mehmet, Ahmet, Ali, Hasan; Artvin: Fatma, Ayşe, Emine, Hatice, Meryem / Mehmet, Mustafa, Ahmet, Ali, Hasan). Bu, genel adların bu ailelerde yaygın olduğunu gösterir. Sınır: il düzeyinde veri, topluluk düzeyinde ölçüm değil; ilde başka topluluklar da yaşıyor. Topluluğa özgü ek havuz bulunursa iki havuz oranla karıştırılmalı.",
         "kaynak": [
-          "kaynaksiz"
+          "nvi-il-ad"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       },
-      "havuzHazir": false,
+      "havuzHazir": true,
       "agirlik": {
         "deger": null,
         "veriAnahtari": null,
@@ -1017,7 +1641,7 @@
         "kaynaksiz"
       ],
       "durum": "tahmin",
-      "not": "Genel havuzu kullanıp kullanmadıkları kaynakla doğrulanmalı; o zamana kadar ayrı topluluk olarak çekilmez",
+      "not": "Genel havuzu kullanıp kullanmadıkları kaynakla doğrulanmalı; o zamana kadar ayrı topluluk olarak çekilmez havuzHazir 2026-11-26'da true yapıldı: genel havuzlar dolu ve yedek kaynaklı (nvi-il-ad).",
       "oyunda_kullanilabilir": false
     },
     {
@@ -1039,7 +1663,7 @@
       "isimHavuzlari": [],
       "yedekHavuz": {
         "havuz": "genel",
-        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Kafkas kökenli isimler (ek havuz) ileride eklenebilir.",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Kafkas kökenli isimler (ek havuz) ileride eklenebilir. (2026-11-26) Bu topluluk için çoğunluğu oluşturduğu bir il yok; NVİ il listesi kanıt olarak kullanılamadı. Kaynak bulunana kadar havuzHazir false.",
         "kaynak": [
           "kaynaksiz"
         ],
@@ -1082,7 +1706,7 @@
       "isimHavuzlari": [],
       "yedekHavuz": {
         "havuz": "genel",
-        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Bu topluluk önceden genel havuzlara doğrudan bağlıydı; artık yedek üzerinden bağlı.",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). Bu topluluk önceden genel havuzlara doğrudan bağlıydı; artık yedek üzerinden bağlı. (2026-11-26) Bu topluluk için çoğunluğu oluşturduğu bir il yok; NVİ il listesi kanıt olarak kullanılamadı. Kaynak bulunana kadar havuzHazir false.",
         "kaynak": [
           "kaynaksiz"
         ],
@@ -1124,7 +1748,7 @@
       "isimHavuzlari": [],
       "yedekHavuz": {
         "havuz": "genel",
-        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı).",
+        "gerekce": "Genel havuz yedek olarak kullanılabilir: bu topluluktaki ailelerin önemli bir kısmının genel Türkçe/İslami isimleri de kullandığı bilinir (kaynaksız, doğrulanmalı). (2026-11-26) Bu topluluk için çoğunluğu oluşturduğu bir il yok; NVİ il listesi kanıt olarak kullanılamadı. Kaynak bulunana kadar havuzHazir false.",
         "kaynak": [
           "kaynaksiz"
         ],
@@ -1363,11 +1987,42 @@
     }
   ],
   "egitim": {
-    "_egitimNot": "1997: 4306 sayılı kanun. 2012: 6287 sayılı kanun (4+4+4), ilkokula başlama yaşı ayla belirlenir (66-69 ay civarı, doğrulanmalı). 1961 tarihli 222 sayılı İlköğretim Kanunu 5 yıllık zorunluluğu düzenler.",
+    "_egitimNot": "1961: 222 s.K. (ilkokul en az 5 yıl). 1997: 4306 s.K. (8 yıl kesintisiz, 1997-98'den). 2012: 6287 s.K. (4+4+4, 12 yıl; çağ, çocuğun 5 yaşını bitirdiği yılın eylül sonunda başlar, yani yaklaşık 66-69 ay).",
     "donemSecimi": "Kişinin o kademeye başladığı yıl. Sınavlar için sınava girdiği yıl.",
     "donemler": [
       {
         "yilBas": 1950,
+        "yilSon": 1961,
+        "zorunluYil": 5,
+        "kademeler": [
+          {
+            "ad": "İlkokul",
+            "yasBas": 7,
+            "yasSon": 12,
+            "zorunlu": true
+          },
+          {
+            "ad": "Ortaokul",
+            "yasBas": 12,
+            "yasSon": 15,
+            "zorunlu": false
+          },
+          {
+            "ad": "Lise",
+            "yasBas": 15,
+            "yasSon": 18,
+            "zorunlu": false
+          }
+        ],
+        "kaynak": [
+          "kaynaksiz"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false,
+        "not": "222 öncesi dönem: ilköğretim zorunluydu (1924 Anayasası) ama köylerde 3 yıllık okullar vardı (doğrulanmalı, kaynak bulunamadı)."
+      },
+      {
+        "yilBas": 1961,
         "yilSon": 1997,
         "zorunluYil": 5,
         "kademeler": [
@@ -1391,11 +2046,11 @@
           }
         ],
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "kanun-222"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "222 s.K. m.8: ilkokulun öğretim süresi en az beş yıl. Kademe yaşları yaklaşık (başlama 7 yaş)."
       },
       {
         "yilBas": 1997,
@@ -1416,11 +2071,11 @@
           }
         ],
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "kanun-4306"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "4306: ilköğretim kurumları 8 yıllık ve kesintisiz; 1997-1998 ders yılından itibaren. Lisenin 2005'te 4 yıla çıkması kaynakla doğrulanmadı (ad metninde duruyor)."
       },
       {
         "yilBas": 2012,
@@ -1447,11 +2102,11 @@
           }
         ],
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "kanun-6287"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "6287: 4 yıl ilkokul + 4 yıl ortaokul (imam-hatip ortaokulu dahil) + 4 yıl zorunlu ortaöğretim (2012-2013'ten). Okula başlama: 5 yaşını bitirdiği yılın eylül sonu; tabloda yaklaşık 6."
       }
     ],
     "sinavlar": [
@@ -1465,7 +2120,7 @@
           "kaynaksiz"
         ],
         "durum": "dogrulanmali",
-        "not": "Yıllar doğrulanmalı",
+        "not": "Yıllar doğrulanmalı (liselere giriş sınavları bu çalışmada kontrol edilmedi).",
         "oyunda_kullanilabilir": false
       },
       {
@@ -1538,52 +2193,57 @@
         "gecis": "yuksekogretim",
         "yas": 17,
         "yilBas": 1974,
-        "yilSon": 1980,
+        "yilSon": 1981,
         "kaynak": [
-          "kaynaksiz"
+          "osys-wiki",
+          "sinav-onedio",
+          "ozer-2018"
         ],
-        "durum": "dogrulanmali",
-        "not": "",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "not": "İlk merkezî sınav 1974 (ÜSYM, 19.11.1974'te kuruldu). yilSon hariç: son ÜSS 1980.",
+        "oyunda_kullanilabilir": true
       },
       {
         "ad": "ÖSS + ÖYS (iki aşamalı)",
         "gecis": "yuksekogretim",
         "yas": 17,
         "yilBas": 1981,
-        "yilSon": 1998,
+        "yilSon": 1999,
         "kaynak": [
-          "kaynaksiz"
+          "osys-wiki",
+          "sinav-onedio"
         ],
-        "durum": "dogrulanmali",
-        "not": "",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "not": "1981-1998 sınavları. yilSon hariç.",
+        "oyunda_kullanilabilir": true
       },
       {
         "ad": "ÖSS (tek aşama)",
         "gecis": "yuksekogretim",
         "yas": 17,
         "yilBas": 1999,
-        "yilSon": 2009,
+        "yilSon": 2010,
         "kaynak": [
-          "kaynaksiz"
+          "osys-wiki",
+          "sinav-onedio"
         ],
-        "durum": "dogrulanmali",
-        "not": "1999-2011 arası meslek lisesi mezunlarına düşük katsayı uygulaması (doğrulanmalı)",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "not": "1999-2009 sınavları; 2006'da biçim değişti. Meslek lisesi katsayı uygulaması doğrulanmadı, notta yer almıyor.",
+        "oyunda_kullanilabilir": true
       },
       {
         "ad": "YGS + LYS",
         "gecis": "yuksekogretim",
         "yas": 17,
         "yilBas": 2010,
-        "yilSon": 2017,
+        "yilSon": 2018,
         "kaynak": [
-          "kaynaksiz"
+          "osys-wiki",
+          "sinav-onedio"
         ],
-        "durum": "dogrulanmali",
-        "not": "",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "not": "2010-2017 sınavları. yilSon hariç.",
+        "oyunda_kullanilabilir": true
       },
       {
         "ad": "YKS (TYT + AYT + YDT)",
@@ -1592,11 +2252,11 @@
         "yilBas": 2018,
         "yilSon": null,
         "kaynak": [
-          "kaynaksiz"
+          "osys-wiki"
         ],
-        "durum": "dogrulanmali",
-        "not": "Tekrar tekrar girilebilir; 'mezuna kalmak' yaygın",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "not": "Üç oturum. Tekrar tekrar girilebilir; 'mezuna kalmak' yaygın.",
+        "oyunda_kullanilabilir": true
       },
       {
         "ad": "KPSS (Kamu Personeli Seçme Sınavı)",
@@ -1825,7 +2485,7 @@
     "donemler": [
       {
         "yilBas": 1950,
-        "yilSon": 1990,
+        "yilSon": 1963,
         "zorunlu": true,
         "kimler": "erkek",
         "yasAraligi": [
@@ -1833,49 +2493,153 @@
           null
         ],
         "sure": {
-          "er": null
+          "er": 24
         },
         "bedelli": {
           "var": false,
-          "not": "Tek seferlik bedelli uygulamaları bazı yıllarda çıktı (1987 dahil, doğrulanmalı)"
+          "not": "Bedelli yok."
         },
         "kaynak": [
-          "kaynaksiz"
+          "askerlik-tarihce-ahaber"
         ],
-        "durum": "bos",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false,
+        "not": "14 Temmuz 1950: deniz 3 yıl, jandarma ve gümrük 30 ay, diğerleri 2 yıl (24 ay). Tek ikincil kaynak; birincil (1111 m.5'in o tarihli metni) bulunamadı."
       },
       {
-        "yilBas": 1990,
+        "yilBas": 1963,
+        "yilSon": 1970,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          null
+        ],
+        "sure": {
+          "er": 24
+        },
+        "bedelli": {
+          "var": false,
+          "not": "Bedelli yok."
+        },
+        "kaynak": [
+          "askerlik-tarihce-ahaber"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false,
+        "not": "1 Şubat 1963: süre 24 aya düşürüldü (deniz ve jandarmanın uzun süreleri kalktı). Tek ikincil kaynak."
+      },
+      {
+        "yilBas": 1970,
+        "yilSon": 1985,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          null
+        ],
+        "sure": {
+          "er": 20
+        },
+        "bedelli": {
+          "var": false,
+          "not": "Bedelli yok."
+        },
+        "kaynak": [
+          "askerlik-tarihce-ahaber"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false,
+        "not": "27 Temmuz 1970: 24 aydan 20 aya. 1985'teki değişiklik '19 aydan 18 aya' diye geçiyor; 20→19 ayın ne zaman olduğu bulunamadı. Tek ikincil kaynak."
+      },
+      {
+        "yilBas": 1985,
+        "yilSon": 1992,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          null
+        ],
+        "sure": {
+          "er": 18
+        },
+        "bedelli": {
+          "var": false,
+          "not": "1987'de tek seferlik bedelli (3358 s.K. geçici 20; 18.433 kişi yararlandı)."
+        },
+        "kaynak": [
+          "kanun-1111",
+          "askerlik-tarihce-ahaber",
+          "bedelli-evrensel",
+          "bedelli-cnnturk"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "1111 m.5/1, 2973 s.K. (25.1.1984) ile 18 ay; uygulamada 1 Mart 1985'ten itibaren 18 ay. Yaş aralığının üst sınırı bu dönem için doğrulanmadı (null)."
+      },
+      {
+        "yilBas": 1992,
+        "yilSon": 1995,
+        "zorunlu": true,
+        "kimler": "erkek",
+        "yasAraligi": [
+          20,
+          null
+        ],
+        "sure": {
+          "er": 15
+        },
+        "bedelli": {
+          "var": false,
+          "not": "1992'de tek seferlik bedelli (3802 s.K. geçici 33; 35.111 kişi)."
+        },
+        "kaynak": [
+          "askerlik-tarihce-ahaber",
+          "bedelli-evrensel",
+          "bedelli-cnnturk"
+        ],
+        "durum": "dogrulanmali",
+        "oyunda_kullanilabilir": false,
+        "not": "11 Temmuz 1992: 18→15 ay; 1993 (BK 93/5098) ve 1994 (BK 94/6102) kararlarıyla bazı tertiplerin terhisi 3-4 ay ertelendi; 26 Aralık 1994: tekrar 18 aya çıkarıldı. Süre tek ikincil kaynaktan."
+      },
+      {
+        "yilBas": 1995,
         "yilSon": 2003,
         "zorunlu": true,
         "kimler": "erkek",
         "yasAraligi": [
           20,
-          41
+          null
         ],
         "sure": {
           "er": 18,
+          "yedekSubay": 16,
           "kisaDonem": 8
         },
         "bedelli": {
           "var": false,
-          "not": "1992 ve 1999'da tek seferlik bedelli (doğrulanmalı)"
+          "not": "1999'da (Marmara depremi sonrası) tek seferlik bedelli (4459 s.K. geçici 37; 1 Ocak 1973'ten önce doğanlar, 15.000 mark; 72.290 kişi)."
         },
         "kaynak": [
-          "kaynaksiz"
+          "kanun-1111",
+          "askerlik-tarihce-ahaber",
+          "genelkurmay-2003",
+          "bedelli-evrensel",
+          "bedelli-cnnturk"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "Er 18 ay (1111 m.5/1 + Genelkurmay 2003 açıklamasındaki 'eski' süreler), yedek subay 16, kısa dönem 8 ay (Genelkurmay 2003)."
       },
       {
         "yilBas": 2003,
-        "yilSon": 2013,
+        "yilSon": 2014,
         "zorunlu": true,
         "kimler": "erkek",
         "yasAraligi": [
           20,
-          41
+          null
         ],
         "sure": {
           "er": 15,
@@ -1884,22 +2648,27 @@
         },
         "bedelli": {
           "var": false,
-          "not": "2011'de tek seferlik bedelli (doğrulanmalı)"
+          "not": "2011'de tek seferlik bedelli (30.000 TL, 30 yaşından gün almış olanlar; 21 günlük temel eğitimden muaf)."
         },
         "kaynak": [
-          "kaynaksiz"
+          "genelkurmay-2003",
+          "askerlik-2014-posta",
+          "askerlik-tarihce-ahaber",
+          "bedelli-evrensel",
+          "bedelli-cnnturk"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "15 Temmuz 2003'ten itibaren er 15 ay, yedek subay 12, kısa dönem 6 ay (Genelkurmay açıklaması). 2014 başına kadar sürdü (Posta 2013)."
       },
       {
-        "yilBas": 2013,
+        "yilBas": 2014,
         "yilSon": 2019,
         "zorunlu": true,
         "kimler": "erkek",
         "yasAraligi": [
           20,
-          41
+          null
         ],
         "sure": {
           "er": 12,
@@ -1908,13 +2677,17 @@
         },
         "bedelli": {
           "var": false,
-          "not": "2014, 2016, 2018'de tek seferlik bedelli (doğrulanmalı)"
+          "not": "Tek seferlik bedelli 2014 (18.000 TL; 203.905 kişi) ve 2018 (15.000 TL, 1 Ocak 1994 ve öncesi doğanlar, 21 gün temel eğitim). Eski kayıtta yazan '2016' bedellisi kaynaklarda yok, çıkarıldı."
         },
         "kaynak": [
-          "kaynaksiz"
+          "askerlik-2014-posta",
+          "askerlik-tarihce-ahaber",
+          "bedelli-evrensel",
+          "bedelli-cnnturk"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true,
+        "not": "1 Ocak 2014'ten itibaren er 12 ay; kısa dönem 6 ay değişmedi; yedek subaylık sürdü (süre 12 ay, Genelkurmay 2003'ten devam; 2014'te değiştiğine dair kaynak yok)."
       },
       {
         "yilBas": 2019,
@@ -1944,14 +2717,14 @@
     ],
     "vicdaniRet": {
       "taniniyor": false,
-      "not": "Vicdani ret yasal olarak tanınmıyor (doğrulanmalı). Yurt dışında yaşayanlar için dövizle askerlik seçeneği var.",
+      "not": "Vicdani ret yasal olarak tanınmıyor; alternatif sivil hizmet yok (AB 2010 ilerleme raporu ve AİHM kararlarına atıfla). Yurt dışında yaşayanlar için dövizle askerlik seçeneği var.",
       "kaynak": [
-        "kaynaksiz"
+        "vicdani-ret-wiki"
       ],
-      "durum": "dogrulanmali",
-      "oyunda_kullanilabilir": false
+      "durum": "dogrulandi",
+      "oyunda_kullanilabilir": true
     },
-    "notlar": "Kadınlar zorunlu askerlikle yükümlü değil (doğrulanmalı). Askerlik erkek hayatında büyük geçiş anıdır: asker uğurlaması, iş/evlilik planlarının ertelenmesi, 'askerliğini yapmadan iş bulamamak'. 1984 sonrası Doğu ve Güneydoğu'da görev yapan erlerde çatışma riski vardı (bkz. olay: pkk-catisma). Üniversite öğrencilerine erteleme hakkı."
+    "notlar": "Kadınlar zorunlu askerlikle yükümlü değil (1111 ve 7179 erkek nüfusu yükümlü tutar). Askerlik erkek hayatında büyük geçiş anıdır: asker uğurlaması, iş/evlilik planlarının ertelenmesi, 'askerliğini yapmadan iş bulamamak'. 1984 sonrası Doğu ve Güneydoğu'da görev yapan erlerde çatışma riski vardı (bkz. olay: pkk-catisma). Üniversite öğrencilerine erteleme hakkı. Yaş aralığının üst sınırı (41) 7179 için doğrulandı; önceki dönemler için null bırakıldı."
   },
   "emeklilik": {
     "donemSecimi": "Kişinin İLK sigortalı olduğu yıl (geçiş hükümleri ilk giriş tarihine bağlı). Sonradan gelen düzenlemeler (ör. EYT) tarihsel olay olarak işlenir.",
@@ -1960,19 +2733,21 @@
         "yilBas": 1950,
         "yilSon": 1999,
         "sistemler": [
-          "SSK (işçiler)",
-          "Emekli Sandığı (memurlar, 1949)",
-          "Bağ-Kur (esnaf ve serbest çalışanlar, 1971)"
+          "SSK (işçiler; 506 s.K. 1964)",
+          "Emekli Sandığı (memurlar; 5434 s.K. 1949)",
+          "Bağ-Kur (esnaf ve serbest çalışanlar; 1479 s.K. 1971)"
         ],
         "yasKadin": null,
         "yasErkek": null,
-        "baskaSart": "Uzun dönemler boyunca yaş şartı aranmadan hizmet yılıyla emeklilik (kadın ~20, erkek ~25 yıl); 1986-1992 arasında yaş şartı vardı, 1992'de kaldırıldı (doğrulanmalı). Sonuç: 38-45 yaşında emekli olanlar yaygındı.",
+        "baskaSart": "İlk sigortalılığı 8 Eylül 1999'dan önce olanlar. SSK için yaş kuralı emekliye ayrılınan yıla göre değişti: 1950-1965 kadın ve erkek 60; 1965-1969 kadın 55, erkek 60; 1969'da yaş şartı kalktı (25 yıl + 5000 gün), 1976'da kadınlarda 20 yıla indi; 1986'da yaş şartı geldi (kadın 55, erkek 60), 1992'de tekrar kalktı; 1999'da 4447 ile bu kişilere kademeli yaş getirildi (kadında 40'tan, erkekte 44'ten başlayıp yükselen); 3 Mart 2023'te 7438 s.K. (EYT, 5510 geçici m.95) ile yaş dışındaki şartları tamamlayanlar yaş beklemeden emekli olabildi. Sonuç: kadın 20, erkek 25 yıl + 5000 gün ile 38-45 yaşında emekli olanlar yaygındı. Memur ve Bağ-Kur kuralları ayrıntılı yazılmadı.",
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "emeklilik-tarihce-kivanc",
+          "yaman-2020",
+          "kanun-7438"
         ],
         "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "oyunda_kullanilabilir": false,
+        "not": "1999 öncesi yaşsız emeklilik (20/25 yıl + 5000 gün) ve 2023 EYT iki kaynakla doğrulandı; yıl yıl yaş kuralları (1950-1999) tek kaynaktan (Kıvanç 2025), bu yüzden dönem 'dogrulanmali'. Motor için uyarı: bu dönemde kural ilk giriş yılına değil, emekli olunan yıla bağlı değişiyor (Simülasyon'a not)."
       },
       {
         "yilBas": 1999,
@@ -1984,13 +2759,13 @@
         ],
         "yasKadin": 58,
         "yasErkek": 60,
-        "baskaSart": "4447 sayılı kanunla yeni girenlere yaş şartı; eski sigortalılara kademeli geçiş.",
+        "baskaSart": "8 Eylül 1999'dan itibaren ilk kez sigortalı olanlara 4447 sayılı kanunla yaş şartı (kadın 58, erkek 60). Prim günü şartı yazılmadı (kaynakla doğrulanmadı).",
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "yaman-2020",
+          "emeklilik-tarihce-kivanc"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       },
       {
         "yilBas": 2008,
@@ -2000,13 +2775,12 @@
         ],
         "yasKadin": 58,
         "yasErkek": 60,
-        "baskaSart": "Emeklilik yaşı 2036'dan itibaren kademeli artarak 2048'de 65'e çıkacak (doğrulanmalı). 2023'te EYT düzenlemesi (7438 sayılı kanun): 8 Eylül 1999'dan önce sigortalı olanlar yaş şartı olmadan emekli olabildi.",
+        "baskaSart": "1 Mayıs 2008 sonrası ilk sigortalılar: 7200 gün prim; yaş 2035'e kadar 58/60, sonra kademeli: 2036-2037 59/61, 2038-2039 60/62, 2040-2041 61/63, 2042-2043 62/64, 2044-2045 63/65, 2046-2047 64/65, 2048'den itibaren 65/65 (yaş, şartların tamamlandığı yıla göre).",
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "yaman-2020"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       }
     ],
     "kayitDisi": {
@@ -2026,26 +2800,27 @@
         "yilSon": 2002,
         "kadin": 15,
         "erkek": 17,
-        "istisna": "Hakim izniyle daha erken (743 sayılı Medeni Kanun)",
+        "istisna": "Hakim kararıyla erkek 15, kız 14 yaşında; ana-baba ya da vasi dinlenir (743 sayılı Türk Kanunu Medenisi m.88, 1926'daki ilk metinde 18/17 ve hakim izniyle 15 idi; 1950'de yürürlükteki hâli 17/15).",
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "medeni-kanun-bianet-2004",
+          "evlenme-yasi-ceylan"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       },
       {
         "yilBas": 2002,
         "yilSon": null,
-        "kadin": 18,
-        "erkek": 18,
-        "istisna": "17 yaşında veli izniyle, olağanüstü durumda 16 yaşında hakim kararıyla (4721 sayılı Türk Medeni Kanunu)",
+        "kadin": 17,
+        "erkek": 17,
+        "istisna": "17 yaşını doldurmayan evlenemez (4721 s. TMK m.124, yürürlük 1.1.2002). 18 yaşından küçükler yasal temsilcinin (ana-baba/vasi) izniyle evlenir (m.126). Olağanüstü durumda ve pek önemli bir sebeple hakim kararıyla 16 yaşında. Eski kayıttaki '18' ergin olma (izinsiz evlenme) yaşıydı, düzeltildi.",
         "kaynak": [
-          "mevzuat",
-          "kaynaksiz"
+          "tmk-4721",
+          "medeni-kanun-bianet-2004",
+          "evlenme-yasi-ceylan"
         ],
-        "durum": "dogrulanmali",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
       }
     ],
     "ilkEvlilikYasOrt": [
@@ -2297,6 +3072,34 @@
         "durum": "dogrulanmali",
         "oyunda_kullanilabilir": false
       }
+    ],
+    "kadinHayati": [
+      {
+        "ozet": "Çalışma: 2024'te 15 yaş ve üstü kadınların istihdam oranı %32,5, erkeklerin %66,9; işgücüne katılma kadınlarda %36,8, erkeklerde %72,0. Kadınların üçte ikiden fazlası işgücü dışında: ev işi, bakım, kayıt dışı ya da ücretsiz aile işçiliği oyunda bir kadının 'işi' olarak görünmez olmamalı.",
+        "kaynak": [
+          "tuik-isgucu-2024"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "ozet": "Ev içi iş bölümü: 2014-2015'te kadınlar günde ortalama 3 saat 31 dakika hane ve aile bakımına ayırdı; çalışan erkekler 46 dakika. Çalışan kadınlar günde 4 saat 32 dakika, çalışan erkekler 6 saat 25 dakika istihdama ayırdı.",
+        "kaynak": [
+          "tuik-zaman-2015"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "ozet": "Kadına yönelik şiddet: 2014 ülke araştırmasına (Hacettepe Nüfus Etütleri Enstitüsü ve Aile ve Sosyal Politikalar Bakanlığı) göre kadınların %38'i fiziksel ya da cinsel şiddet görmüş; şiddet görenlerin yalnızca %11'i resmî bir kuruma başvurmuş. Oyunda sahne gösterilmez; yalnızca sonuçları (ayrılma, aileye sığınma, destek arama, sessiz kalma) yargısız ve Kalite denetimiyle işlenir.",
+        "kaynak": [
+          "siddet-2014-ghdx",
+          "siddet-2014-diken"
+        ],
+        "durum": "dogrulanmali",
+        "not": "Oranlar tek haber kaynağından; araştırma raporunun kendisinden doğrulanmalı.",
+        "oyunda_kullanilabilir": false
+      }
     ]
   },
   "isimler": {
@@ -2311,8 +3114,116 @@
       "durum": "dogrulanmali",
       "oyunda_kullanilabilir": false
     },
-    "kaynakKurallari": "Doğum on yılı boyutu NVİ'nin on yıllık 'en çok verilen isimler' listelerinden ve TÜİK/NVİ yıllık bebek ismi açıklamalarından gelir. sigpwned/popular-names-by-country-dataset (CC0) sadece tamamlayıcı olarak kullanılabilir (doğum yılı boyutu yok). philipperemy/name-dataset KULLANILMAZ (Facebook sızıntısından üretilmiş). Aşağıdaki listeler ilk 10; her havuz en az 30 isme genişletilmeli. NVİ listeleri o yıllarda verilen adları sayar; ikinci adlar ayrıca sayılmış olabilir (doğrulanmalı). Havuz doğum yılı aralığı: yilBas dahil, yilSon hariç. Boş havuzlu topluluk çekilişte kullanılmaz (topluluklar[].havuzHazir).",
+    "kaynakKurallari": "Doğum on yılı boyutu NVİ'nin on yıllık 'en çok verilen isimler' listelerinden ve TÜİK/NVİ yıllık bebek ismi açıklamalarından gelir. sigpwned/popular-names-by-country-dataset (CC0) sadece tamamlayıcı olarak kullanılabilir (doğum yılı boyutu yok). philipperemy/name-dataset KULLANILMAZ (Facebook sızıntısından üretilmiş). Genel havuzlar 2026-11-26'da NVİ on yıllık listelerinin ilk 30'u ile dolduruldu; 1950'ler (20 ad) ve 2010-2020'ler yıllık listelerin birleşimi (bkz. her havuzun notu). NVİ listeleri o yıllarda verilen adları sayar; ikinci adlar ayrıca sayılmış olabilir (doğrulanmalı). Havuz doğum yılı aralığı: yilBas dahil, yilSon hariç. Boş havuzlu topluluk çekilişte kullanılmaz (topluluklar[].havuzHazir).",
     "havuzlar": [
+      {
+        "id": "tr-k-1930",
+        "cinsiyet": "kadin",
+        "yilBas": 1930,
+        "yilSon": 1940,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Fatma",
+          "Ayşe",
+          "Emine",
+          "Hatice",
+          "Zeynep",
+          "Şerife",
+          "Hanife",
+          "Meryem",
+          "Sultan",
+          "Cemile",
+          "Sevim",
+          "Hayriye",
+          "Fadime",
+          "Zeliha",
+          "Havva",
+          "Zehra",
+          "Elif",
+          "Naciye",
+          "Nazmiye",
+          "Döndü",
+          "Gülsüm",
+          "Kadriye",
+          "Makbule",
+          "Hacer",
+          "Nuriye",
+          "Zekiye",
+          "Hava",
+          "Saniye",
+          "Hanım",
+          "Keziban"
+        ],
+        "kaynak": [
+          "nvi-isim-1931"
+        ],
+        "durum": "dogrulandi",
+        "not": "1931-1940 doğumlular (1950'lerde doğan oyuncunun büyükanne-büyükbaba kuşağı). NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "id": "tr-e-1930",
+        "cinsiyet": "erkek",
+        "yilBas": 1930,
+        "yilSon": 1940,
+        "topluluk": "genel",
+        "din": null,
+        "agirlik": {
+          "deger": null,
+          "veriAnahtari": null,
+          "kaynak": [],
+          "durum": "bos",
+          "oyunda_kullanilabilir": false,
+          "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
+        },
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Ali",
+          "Ahmet",
+          "Hüseyin",
+          "Hasan",
+          "İbrahim",
+          "İsmail",
+          "Osman",
+          "Halil",
+          "Süleyman",
+          "Yusuf",
+          "Ömer",
+          "Abdullah",
+          "Kemal",
+          "Ramazan",
+          "Mahmut",
+          "Salih",
+          "Yaşar",
+          "Bekir",
+          "Recep",
+          "Mehmet Ali",
+          "Şükrü",
+          "Cemal",
+          "İsmet",
+          "Kadir",
+          "Memet",
+          "Dursun",
+          "Bayram",
+          "Sabri"
+        ],
+        "kaynak": [
+          "nvi-isim-1931"
+        ],
+        "durum": "dogrulandi",
+        "not": "1931-1940 doğumlular (1950'lerde doğan oyuncunun büyükanne-büyükbaba kuşağı). NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
+        "oyunda_kullanilabilir": true
+      },
       {
         "id": "tr-k-1940",
         "cinsiyet": "kadin",
@@ -2338,13 +3249,33 @@
           "Meryem",
           "Hanife",
           "Sultan",
-          "Sevim"
+          "Sevim",
+          "Fadime",
+          "Cemile",
+          "Zeliha",
+          "Havva",
+          "Hayriye",
+          "Elif",
+          "Zehra",
+          "Hacer",
+          "Kadriye",
+          "Döndü",
+          "Naciye",
+          "Nazmiye",
+          "Gülsüm",
+          "Nuriye",
+          "Hava",
+          "Makbule",
+          "Zekiye",
+          "Aysel",
+          "Asiye",
+          "Hanım"
         ],
         "kaynak": [
           "nvi-isim-1941"
         ],
         "durum": "dogrulandi",
-        "not": "1941-1950; büyükanne kuşağı için",
+        "not": "1941-1950 doğumlular. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2372,13 +3303,33 @@
           "İsmail",
           "İbrahim",
           "Osman",
-          "Halil"
+          "Halil",
+          "Süleyman",
+          "Yusuf",
+          "Ömer",
+          "Abdullah",
+          "Ramazan",
+          "Kemal",
+          "Yaşar",
+          "İsmet",
+          "Mahmut",
+          "Salih",
+          "Recep",
+          "Mehmet Ali",
+          "Muzaffer",
+          "Bekir",
+          "Cemal",
+          "Şükrü",
+          "Kadir",
+          "Necati",
+          "Selahattin",
+          "Celal"
         ],
         "kaynak": [
           "nvi-isim-1941"
         ],
         "durum": "dogrulandi",
-        "not": "1941-1950",
+        "not": "1941-1950 doğumlular. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2396,11 +3347,34 @@
           "oyunda_kullanilabilir": false,
           "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
         },
-        "isimler": [],
-        "kaynak": [],
-        "durum": "bos",
-        "not": "NVİ 1951-1960 listesi bulunup eklenmeli",
-        "oyunda_kullanilabilir": false
+        "isimler": [
+          "Fatma",
+          "Ayşe",
+          "Emine",
+          "Hatice",
+          "Zeynep",
+          "Sevim",
+          "Meryem",
+          "Fadime",
+          "Sultan",
+          "Şerife",
+          "Hanife",
+          "Aysel",
+          "Havva",
+          "Cemile",
+          "Kadriye",
+          "Zeliha",
+          "Hacer",
+          "Ayten",
+          "Zehra",
+          "Hayriye"
+        ],
+        "kaynak": [
+          "yildirim-2016"
+        ],
+        "durum": "dogrulandi",
+        "not": "1951-1960 doğumlular, ilk 20 (sıralı). NVİ verisi, akademik aktarım (Yıldırım 2016, Tablo 2). NVİ sitesinde bu on yılın PDF'i bulunamadı; 30'a tamamlayacak kaynak yok, uydurulmadı.",
+        "oyunda_kullanilabilir": true
       },
       {
         "id": "tr-e-1950",
@@ -2417,11 +3391,34 @@
           "oyunda_kullanilabilir": false,
           "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
         },
-        "isimler": [],
-        "kaynak": [],
-        "durum": "bos",
-        "not": "NVİ 1951-1960 listesi bulunup eklenmeli",
-        "oyunda_kullanilabilir": false
+        "isimler": [
+          "Mehmet",
+          "Mustafa",
+          "Ahmet",
+          "Ali",
+          "Hüseyin",
+          "Hasan",
+          "İsmail",
+          "İbrahim",
+          "Osman",
+          "Ramazan",
+          "Halil",
+          "Yusuf",
+          "Süleyman",
+          "Ömer",
+          "Recep",
+          "Yaşar",
+          "Abdullah",
+          "Kemal",
+          "Mahmut",
+          "Salih"
+        ],
+        "kaynak": [
+          "yildirim-2016"
+        ],
+        "durum": "dogrulandi",
+        "not": "1951-1960 doğumlular, ilk 20 (sıralı). NVİ verisi, akademik aktarım (Yıldırım 2016, Tablo 1). 30'a tamamlayacak kaynak yok.",
+        "oyunda_kullanilabilir": true
       },
       {
         "id": "tr-k-1960",
@@ -2448,13 +3445,33 @@
           "Aysel",
           "Meryem",
           "Hülya",
-          "Aynur"
+          "Aynur",
+          "Fadime",
+          "Sultan",
+          "Ayten",
+          "Leyla",
+          "Hanife",
+          "Şerife",
+          "Hacer",
+          "Havva",
+          "Sevgi",
+          "Kadriye",
+          "Türkan",
+          "Selma",
+          "Nurten",
+          "Zeliha",
+          "Nuray",
+          "Cemile",
+          "Filiz",
+          "Elif",
+          "Songül",
+          "Nuran"
         ],
         "kaynak": [
           "nvi-isim-1961"
         ],
         "durum": "dogrulandi",
-        "not": "1961-1970",
+        "not": "1961-1970. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2482,13 +3499,33 @@
           "İbrahim",
           "İsmail",
           "Ramazan",
-          "Osman"
+          "Osman",
+          "Murat",
+          "Metin",
+          "Yusuf",
+          "Ömer",
+          "Süleyman",
+          "Yaşar",
+          "Halil",
+          "Abdullah",
+          "Recep",
+          "Kemal",
+          "Ayhan",
+          "Orhan",
+          "Mahmut",
+          "Erol",
+          "Cengiz",
+          "Kadir",
+          "Adem",
+          "Yılmaz",
+          "Salih",
+          "Bayram"
         ],
         "kaynak": [
           "nvi-isim-1961"
         ],
         "durum": "dogrulandi",
-        "not": "1961-1970",
+        "not": "1961-1970. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2516,13 +3553,33 @@
           "Dilek",
           "Filiz",
           "Yasemin",
-          "Özlem"
+          "Özlem",
+          "Songül",
+          "Meryem",
+          "Arzu",
+          "Elif",
+          "Aynur",
+          "Sibel",
+          "Selma",
+          "Aysel",
+          "Leyla",
+          "Sevgi",
+          "Nuray",
+          "Sultan",
+          "Hacer",
+          "Serpil",
+          "Gülay",
+          "Fadime",
+          "Nurcan",
+          "Sevim",
+          "Havva",
+          "Ayten"
         ],
         "kaynak": [
           "nvi-isim-1971"
         ],
         "durum": "dogrulandi",
-        "not": "1971-1980",
+        "not": "1971-1980. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2550,13 +3607,33 @@
           "Hasan",
           "İbrahim",
           "İsmail",
-          "Hakan"
+          "Hakan",
+          "Ramazan",
+          "Bülent",
+          "Osman",
+          "Ömer",
+          "Serkan",
+          "Yusuf",
+          "Fatih",
+          "Metin",
+          "Adem",
+          "Erkan",
+          "Süleyman",
+          "Abdullah",
+          "Halil",
+          "Ayhan",
+          "Orhan",
+          "Erdal",
+          "Ercan",
+          "Yılmaz",
+          "Mahmut",
+          "Cengiz"
         ],
         "kaynak": [
           "nvi-isim-1971"
         ],
         "durum": "dogrulandi",
-        "not": "1971-1980",
+        "not": "1971-1980. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2584,13 +3661,33 @@
           "Elif",
           "Yasemin",
           "Esra",
-          "Dilek"
+          "Dilek",
+          "Tuğba",
+          "Derya",
+          "Hülya",
+          "Pınar",
+          "Songül",
+          "Meryem",
+          "Sibel",
+          "Çiğdem",
+          "Semra",
+          "Merve",
+          "Ebru",
+          "Zehra",
+          "Filiz",
+          "Burcu",
+          "Leyla",
+          "Ayşegül",
+          "Melek",
+          "Arzu",
+          "Sultan",
+          "Neslihan"
         ],
         "kaynak": [
           "nvi-isim-1981"
         ],
         "durum": "dogrulandi",
-        "not": "1981-1990",
+        "not": "1981-1990. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2618,13 +3715,33 @@
           "Hüseyin",
           "İbrahim",
           "Hasan",
-          "Gökhan"
+          "Gökhan",
+          "İsmail",
+          "Ramazan",
+          "Ömer",
+          "Serkan",
+          "Hakan",
+          "Emrah",
+          "Yusuf",
+          "Osman",
+          "Uğur",
+          "Adem",
+          "Emre",
+          "Abdullah",
+          "Erkan",
+          "Yasin",
+          "Halil",
+          "Onur",
+          "Kadir",
+          "Sinan",
+          "Serdar",
+          "Süleyman"
         ],
         "kaynak": [
           "nvi-isim-1981"
         ],
         "durum": "dogrulandi",
-        "not": "1981-1990",
+        "not": "1981-1990. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2652,13 +3769,33 @@
           "Zeynep",
           "Ayşe",
           "Emine",
-          "Hatice"
+          "Hatice",
+          "Gamze",
+          "Tuğba",
+          "Ebru",
+          "Özlem",
+          "Gizem",
+          "Rabia",
+          "Yasemin",
+          "Betül",
+          "Sibel",
+          "Hilal",
+          "Seda",
+          "Özge",
+          "Zehra",
+          "Tuğçe",
+          "Meryem",
+          "Cansu",
+          "Derya",
+          "Melike",
+          "Ayşegül",
+          "Burcu"
         ],
         "kaynak": [
           "nvi-isim-1991"
         ],
         "durum": "dogrulandi",
-        "not": "1991-2000",
+        "not": "1991-2000. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2686,13 +3823,33 @@
           "İbrahim",
           "Ömer",
           "Burak",
-          "Hüseyin"
+          "Hüseyin",
+          "Yusuf",
+          "Furkan",
+          "Hasan",
+          "Fatih",
+          "Ramazan",
+          "Onur",
+          "İsmail",
+          "Hakan",
+          "Abdullah",
+          "Enes",
+          "Yasin",
+          "Oğuzhan",
+          "Muhammed",
+          "Mert",
+          "Gökhan",
+          "Uğur",
+          "Muhammet",
+          "Osman",
+          "Yunus",
+          "Kadir"
         ],
         "kaynak": [
           "nvi-isim-1991"
         ],
         "durum": "dogrulandi",
-        "not": "1991-2000",
+        "not": "1991-2000. NVİ listesinin ilk 30'u (sıralı; NVİ'de 50 ad var).",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2713,20 +3870,42 @@
         "isimler": [
           "Zeynep",
           "Elif",
-          "Sıla",
           "İrem",
           "Merve",
           "Fatma",
-          "Esra",
+          "Yağmur",
+          "Büşra",
+          "Zehra",
           "Rabia",
           "Ayşe",
-          "Hatice"
+          "Esra",
+          "Hatice",
+          "Emine",
+          "Sıla",
+          "Melike",
+          "Beyza",
+          "Aleyna",
+          "Kübra",
+          "İlayda",
+          "Meryem",
+          "Sude",
+          "Ceren",
+          "Berfin",
+          "Esma",
+          "Dilan",
+          "Dilara",
+          "Buse",
+          "Sudenaz",
+          "Melisa",
+          "Şevval"
         ],
         "kaynak": [
-          "nvi-isim-2004"
+          "yildirim-2016",
+          "nvi-isim-2004",
+          "nvi-isim-2001"
         ],
         "durum": "dogrulandi",
-        "not": "Sadece 2004 yılı listesi; on yıl için temsilî kabul edildi, diğer yıllarla genişletilmeli",
+        "not": "2001-2010: ilk 20 ad on yıllık NVİ sıralaması (Yıldırım 2016); 21-30 NVİ 2004 listesinde sıradaki yeni adlar (2001 listesi de bu adları içeriyor). İlk 20 sıralı, son 10 yıllık listeden.",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2748,19 +3927,41 @@
           "Yusuf",
           "Mehmet",
           "Mustafa",
-          "Furkan",
           "Ahmet",
-          "Emre",
+          "Furkan",
+          "Emirhan",
           "Enes",
+          "Arda",
+          "Emre",
           "Ali",
+          "Muhammed",
+          "Ömer",
+          "İbrahim",
           "Eren",
-          "Ömer"
+          "Hüseyin",
+          "Hasan",
+          "Mert",
+          "Burak",
+          "Berat",
+          "Yunus Emre",
+          "Caner",
+          "Umut",
+          "İsmail",
+          "Murat",
+          "Samet",
+          "Ramazan",
+          "Yasin",
+          "Abdullah",
+          "Batuhan",
+          "Kadir"
         ],
         "kaynak": [
-          "nvi-isim-2004"
+          "yildirim-2016",
+          "nvi-isim-2004",
+          "nvi-isim-2001"
         ],
         "durum": "dogrulandi",
-        "not": "Sadece 2004 yılı listesi",
+        "not": "2001-2010: ilk 20 on yıllık sıralama (Yıldırım 2016); 21-30 NVİ 2004 listesinden.",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2778,11 +3979,48 @@
           "oyunda_kullanilabilir": false,
           "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
         },
-        "isimler": [],
-        "kaynak": [],
-        "durum": "bos",
-        "not": "2010-2019 yıllık listeleri bulunmalı",
-        "oyunda_kullanilabilir": false
+        "isimler": [
+          "Zeynep",
+          "Elif",
+          "Ecrin",
+          "Yağmur",
+          "Azra",
+          "Nisanur",
+          "Zehra",
+          "Nehir",
+          "Ela",
+          "Belinay",
+          "Hiranur",
+          "Meryem",
+          "Irmak",
+          "Eylül",
+          "Cemre",
+          "Sümeyye",
+          "Rabia",
+          "Fatma",
+          "Ayşe",
+          "Hatice",
+          "Defne",
+          "Miray",
+          "Asya",
+          "Esila",
+          "Hira",
+          "Buğlem",
+          "Ebrar",
+          "Asel",
+          "Duru"
+        ],
+        "kaynak": [
+          "isim-2012-2013",
+          "isim-2012-2016",
+          "isim-2016",
+          "isim-2017",
+          "isim-2018",
+          "isim-2019"
+        ],
+        "durum": "dogrulandi",
+        "not": "2010-2019: yıllık TÜİK/NVİ listelerinin (2012-2019) birleşimi, ilk görüldüğü yıla göre sıralı; on yıllık resmî sıralama değil. 2010 ve 2011 yılları için liste bulunamadı. 'Duru' 2018 İstanbul/Ankara/İzmir ilk 5'inden. 29 ad; 30. için kaynaklı ad kalmadı.",
+        "oyunda_kullanilabilir": true
       },
       {
         "id": "tr-e-2010",
@@ -2799,11 +4037,47 @@
           "oyunda_kullanilabilir": false,
           "not": "Havuz içinde isim seçimi eşit olasılıklı ya da sıraya göre; ağırlık Anlatı/Simülasyon kararı"
         },
-        "isimler": [],
-        "kaynak": [],
-        "durum": "bos",
-        "not": "2010-2019 yıllık listeleri bulunmalı",
-        "oyunda_kullanilabilir": false
+        "isimler": [
+          "Berat",
+          "Yusuf",
+          "Emir",
+          "Mustafa",
+          "Mehmet",
+          "Ahmet",
+          "Muhammed",
+          "Ömer",
+          "Emirhan",
+          "Çınar",
+          "Eymen",
+          "Ali",
+          "Enes",
+          "Kerem",
+          "Miraç",
+          "Umut",
+          "Yunus Emre",
+          "Hüseyin",
+          "İbrahim",
+          "Furkan",
+          "Hamza",
+          "Muhammed Ali",
+          "Yiğit",
+          "Ayaz",
+          "Ertuğrul",
+          "Ömer Asaf",
+          "Ali Asaf",
+          "Aras"
+        ],
+        "kaynak": [
+          "isim-2012-2013",
+          "isim-2012-2016",
+          "isim-2016",
+          "isim-2017",
+          "isim-2018",
+          "isim-2019"
+        ],
+        "durum": "dogrulandi",
+        "not": "2010-2019: yıllık listelerin (2012-2019) birleşimi; 'Ali Asaf' ve 'Aras' 2018 il ilk 5'lerinden. 28 ad; 2010-2011 listesi bulunamadı.",
+        "oyunda_kullanilabilir": true
       },
       {
         "id": "tr-k-2020",
@@ -2829,13 +4103,23 @@
           "Eylül",
           "Nehir",
           "Eslem",
-          "Asya"
+          "Asya",
+          "Zümra",
+          "Ecrin",
+          "Elisa",
+          "Lina",
+          "Gökçe",
+          "Masal",
+          "Meryem"
         ],
         "kaynak": [
-          "nvi-isim-2020"
+          "nvi-isim-2020",
+          "isim-2022",
+          "isim-2023",
+          "isim-2024"
         ],
         "durum": "dogrulandi",
-        "not": "Sadece 2020 yılı; ilk 3 sıralı, diğerleri haberdeki sırayla. 2021-2025 yıllarıyla genişletilmeli",
+        "not": "2020, 2022, 2023, 2024 listelerinin birleşimi (ilk görüldüğü yıla göre). 2021 ve 2025 listeleri eklenmedi; 16 ad.",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2862,13 +4146,23 @@
           "Alparslan",
           "Mustafa",
           "Hamza",
-          "Ali Asaf"
+          "Ali Asaf",
+          "Göktuğ",
+          "Aras",
+          "Ömer",
+          "Metehan",
+          "Muhammed",
+          "Ali",
+          "Atlas"
         ],
         "kaynak": [
-          "nvi-isim-2020"
+          "nvi-isim-2020",
+          "isim-2022",
+          "isim-2023",
+          "isim-2024"
         ],
         "durum": "dogrulandi",
-        "not": "Sadece 2020 yılı",
+        "not": "2020, 2022, 2023, 2024 listelerinin birleşimi. 16 ad.",
         "oyunda_kullanilabilir": true
       },
       {
@@ -2888,7 +4182,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Kürt aileler hem genel havuzdaki hem Kürtçe isimleri kullanır. Kürtçe isim listesi kaynaklı olarak (akademik çalışma ya da il bazlı NVİ verisi) eklenmeli; uydurma örnek yazılmadı. 2013 öncesi q, w, x harfli isimler kayda geçemiyordu (doğrulanmalı).",
+        "not": "BOŞ, bilerek. Doğum yılına göre Kürtçe ad sıklığını veren resmî ya da akademik bir liste bulunamadı. Bakılanlar: NVİ il listesi (nvi-il-ad) Kürt nüfusun yoğun olduğu illerde de en sık 5 adın genel havuzdaki adlar olduğunu gösteriyor (ör. Hakkari: Fatma, Ayşe, Meryem, Emine, Zeynep / Mehmet, Ahmet, Yusuf, Abdullah, Ali); Kürtçe adları ayırmıyor. Nişanyan'ın Kürt adları listesi (nisanyan.substack.com, 2020) sıklık sırası vermiyor ve veri kökenini açıklamıyor; kullanılmadı. Ad sözlükleri ve isim siteleri sıklık verisi değil; kullanılmadı. Olası yol: TÜİK'in il bazında yıllık bebek adı tabloları (Diyarbakır, Hakkari, Şırnak, Van vb.) bültenlerden alınırsa en azından bölgesel sıklık elde edilir. 2013 öncesi q, w, x harfli adlar kayda geçemiyordu (doğrulanmalı).",
         "oyunda_kullanilabilir": false
       },
       {
@@ -2908,7 +4202,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Kürt aileler hem genel havuzdaki hem Kürtçe isimleri kullanır. Kürtçe isim listesi kaynaklı olarak (akademik çalışma ya da il bazlı NVİ verisi) eklenmeli; uydurma örnek yazılmadı. 2013 öncesi q, w, x harfli isimler kayda geçemiyordu (doğrulanmalı).",
+        "not": "BOŞ, bilerek. Doğum yılına göre Kürtçe ad sıklığını veren resmî ya da akademik bir liste bulunamadı. Bakılanlar: NVİ il listesi (nvi-il-ad) Kürt nüfusun yoğun olduğu illerde de en sık 5 adın genel havuzdaki adlar olduğunu gösteriyor (ör. Hakkari: Fatma, Ayşe, Meryem, Emine, Zeynep / Mehmet, Ahmet, Yusuf, Abdullah, Ali); Kürtçe adları ayırmıyor. Nişanyan'ın Kürt adları listesi (nisanyan.substack.com, 2020) sıklık sırası vermiyor ve veri kökenini açıklamıyor; kullanılmadı. Ad sözlükleri ve isim siteleri sıklık verisi değil; kullanılmadı. Olası yol: TÜİK'in il bazında yıllık bebek adı tabloları (Diyarbakır, Hakkari, Şırnak, Van vb.) bültenlerden alınırsa en azından bölgesel sıklık elde edilir. 2013 öncesi q, w, x harfli adlar kayda geçemiyordu (doğrulanmalı).",
         "oyunda_kullanilabilir": false
       },
       {
@@ -2928,7 +4222,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Alevi ailelerde Ali, Hüseyin, Hasan, Haydar, Zeynep gibi Ehl-i Beyt adlarının daha sık olduğu belirtilir; kaynakla doğrulanmalı. Ömer, Osman, Ebubekir gibi adların daha seyrek olduğu da söylenir, doğrulanmalı. Bu havuz topluluktan bağımsız, din: alevi olan ailelerde genel ya da topluluk havuzuna EK olarak kullanılır.",
+        "not": "BOŞ, bilerek. Alevi ailelerde hangi adların daha sık olduğunu ölçen kaynak bulunamadı. Canatan (2013, 'Türkiye'nin İsim Haritasının Temeli Olarak Ehl-i Beyt Sevgisi') en yaygın adların Sünni ve Alevi kesimler için ortak Ehl-i Beyt adları olduğunu savunuyor, Alevilere özgü sıklık listesi vermiyor. NVİ il listesinde Tunceli'de erkeklerde Hüseyin, Ali, Hasan, Mehmet, Hıdır ilk 5 (nvi-il-ad); bu il düzeyinde bir gözlem, Alevi topluluk listesi yerine kullanılmadı. Bu ek havuz boş kalınca motor Alevi ailelere genel/topluluk havuzundan ad verir; bu bir kimlik silme değildir çünkü havuz EK havuzdur.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -2948,7 +4242,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Alevi ailelerde Ali, Hüseyin, Hasan, Haydar, Zeynep gibi Ehl-i Beyt adlarının daha sık olduğu belirtilir; kaynakla doğrulanmalı. Ömer, Osman, Ebubekir gibi adların daha seyrek olduğu da söylenir, doğrulanmalı. Bu havuz topluluktan bağımsız, din: alevi olan ailelerde genel ya da topluluk havuzuna EK olarak kullanılır.",
+        "not": "BOŞ, bilerek. Alevi ailelerde hangi adların daha sık olduğunu ölçen kaynak bulunamadı. Canatan (2013, 'Türkiye'nin İsim Haritasının Temeli Olarak Ehl-i Beyt Sevgisi') en yaygın adların Sünni ve Alevi kesimler için ortak Ehl-i Beyt adları olduğunu savunuyor, Alevilere özgü sıklık listesi vermiyor. NVİ il listesinde Tunceli'de erkeklerde Hüseyin, Ali, Hasan, Mehmet, Hıdır ilk 5 (nvi-il-ad); bu il düzeyinde bir gözlem, Alevi topluluk listesi yerine kullanılmadı. Bu ek havuz boş kalınca motor Alevi ailelere genel/topluluk havuzundan ad verir; bu bir kimlik silme değildir çünkü havuz EK havuzdur.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -2968,7 +4262,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Ermeni toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Komşu ülke listeleri (Ermenistan) Türkiye'deki topluluğun adları değildir; vekil olarak kullanılırsa durum 'tahmin' olur. Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -2988,7 +4282,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Ermeni toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Komşu ülke listeleri (Ermenistan) Türkiye'deki topluluğun adları değildir; vekil olarak kullanılırsa durum 'tahmin' olur. Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3008,7 +4302,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Rum toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Komşu ülke listeleri (Yunanistan) Türkiye'deki topluluğun adları değildir; vekil olarak kullanılırsa durum 'tahmin' olur. Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3028,7 +4322,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Rum toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Komşu ülke listeleri (Yunanistan) Türkiye'deki topluluğun adları değildir; vekil olarak kullanılırsa durum 'tahmin' olur. Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3048,7 +4342,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Yahudi toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Komşu ülke listeleri (İsrail) Türkiye'deki topluluğun adları değildir; vekil olarak kullanılırsa durum 'tahmin' olur. Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3068,7 +4362,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Yahudi toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Komşu ülke listeleri (İsrail) Türkiye'deki topluluğun adları değildir; vekil olarak kullanılırsa durum 'tahmin' olur. Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3088,7 +4382,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Süryani toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3108,7 +4402,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "Topluluk kaynaklarından eklenmeli",
+        "not": "BOŞ, bilerek. Türkiye'deki Süryani toplumunda 1950 sonrası doğanlara verilen adların sıklığını veren resmî, akademik ya da topluluk kaynağı bulunamadı. Bulunanlar kullanılamaz: Ermeni adları için 1455 İstanbul tahrir defteri çalışması (çok eski), Yahudi ad pratikleri için Brink-Danan 2010 (sadece özet erişilebilir, liste yok). Topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, Agos/Şalom/IHO gazeteleri) doğrudan başvuru gerekiyor.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3128,7 +4422,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "R06 Arap isim havuzundan (Suriye) alınabilir",
+        "not": "BOŞ, bilerek. Türkiye'de doğan Suriyeli çocuklara verilen adları sayan resmî liste bulunamadı (NVİ/TÜİK listeleri yabancıları ayrı vermiyor). sigpwned veri setinde Suriye yok; Ürdün (JO) ve Lübnan (LB) var. Seçenek: R06 Arap bölgesi havuzu (Suriye) ya da Ürdün/Lübnan listeleri 'tahmin' olarak vekil kullanılır. Karar Atakan'a soruldu.",
         "oyunda_kullanilabilir": false
       },
       {
@@ -3148,7 +4442,7 @@
         "isimler": [],
         "kaynak": [],
         "durum": "bos",
-        "not": "R06 Arap isim havuzundan (Suriye) alınabilir",
+        "not": "BOŞ, bilerek. Türkiye'de doğan Suriyeli çocuklara verilen adları sayan resmî liste bulunamadı (NVİ/TÜİK listeleri yabancıları ayrı vermiyor). sigpwned veri setinde Suriye yok; Ürdün (JO) ve Lübnan (LB) var. Seçenek: R06 Arap bölgesi havuzu (Suriye) ya da Ürdün/Lübnan listeleri 'tahmin' olarak vekil kullanılır. Karar Atakan'a soruldu.",
         "oyunda_kullanilabilir": false
       }
     ],
@@ -3157,34 +4451,63 @@
         "id": "tr-soyad-1",
         "topluluk": "genel",
         "isimler": [
-          "Yılmaz"
-        ],
-        "kaynak": [
-          "trt-isim-2025"
-        ],
-        "durum": "dogrulandi",
-        "oyunda_kullanilabilir": true
-      },
-      {
-        "id": "tr-soyad-2",
-        "topluluk": "genel",
-        "isimler": [
+          "Yılmaz",
           "Kaya",
           "Demir",
-          "Şahin",
           "Çelik",
+          "Şahin",
           "Yıldız",
           "Yıldırım",
           "Öztürk",
           "Aydın",
-          "Özdemir"
+          "Özdemir",
+          "Arslan",
+          "Doğan",
+          "Kılıç",
+          "Aslan",
+          "Çetin",
+          "Kara",
+          "Koç",
+          "Kurt",
+          "Özkan",
+          "Şimşek",
+          "Polat",
+          "Özcan",
+          "Korkmaz",
+          "Çakır",
+          "Erdoğan",
+          "Yavuz",
+          "Can",
+          "Acar",
+          "Şen",
+          "Aktaş",
+          "Güler",
+          "Yalçın",
+          "Güneş",
+          "Bozkurt",
+          "Bulut",
+          "Keskin",
+          "Ünal",
+          "Turan",
+          "Gül",
+          "Özer",
+          "Işık",
+          "Kaplan",
+          "Avcı",
+          "Sarı",
+          "Tekin",
+          "Taş",
+          "Köse",
+          "Yüksel",
+          "Ateş",
+          "Aksoy"
         ],
         "kaynak": [
-          "kaynaksiz"
+          "nvi-soyad"
         ],
-        "durum": "dogrulanmali",
-        "not": "sigpwned-names (CC0) ya da NVİ soyadı istatistiğiyle doğrulanmalı",
-        "oyunda_kullanilabilir": false
+        "durum": "dogrulandi",
+        "not": "NVİ'nin en çok kullanılan 50 soyadı, sıralı. Soyadı 1934'ten beri babadan geçer; topluluklara özgü soyadı havuzu yok (Ermeni, Rum, Süryani, Yahudi ailelerin soyadları bu listede temsil edilmez).",
+        "oyunda_kullanilabilir": true
       }
     ]
   },
@@ -4756,6 +6079,62 @@
   ],
   "tarihselOlaylar": [
     {
+      "id": "aile-hafizasi-1915",
+      "ad": "1915'te Osmanlı Ermenilerinin sürgünü ve toplu ölümleri",
+      "yilBas": 1915,
+      "yilSon": 1916,
+      "tur": "toplumsal",
+      "kapsam": "ulusal",
+      "etkilenenGruplar": [
+        "Ermeni aileler (aile hafızası)"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "",
+        "gundelik": "Oyun 1950'de başlar; bu olay yalnızca Ermeni ailelerde büyükanne-büyükbaba anlatıları olarak geçebilir."
+      },
+      "olcek": [],
+      "oyunNotu": "Sadece aile hafızası (anı kartı). Ayrıntı sayfasında tarafların adları birlikte, kaynaklarıyla gösterilir. Ölü sayısı oyunda verilmez (kaynaklar arasında çok farklı; bkz. adlandirma.not).",
+      "hassasiyet": "Çok yüksek: uluslararası ve iç siyasette tartışmalı. Kalite özel denetimi; oyunun sesi hiçbir adlandırmayı benimsemez.",
+      "adlandirma": {
+        "oyunMetni": "1915'te Osmanlı Devleti'ndeki Ermeniler sürgün edildi; sürgün yollarında ve öldürmelerde çok sayıda Ermeni hayatını kaybetti.",
+        "tarafAdlari": [
+          {
+            "ad": "Ermeni Soykırımı",
+            "kullananlar": "Ermeni tarafı ve olayı soykırım olarak tanıyan kurumlar (ör. ABD Holokost Anıt Müzesi ansiklopedisi)"
+          },
+          {
+            "ad": "Medz Yeghern ('büyük cinayet') ya da Aghet ('felaket')",
+            "kullananlar": "Ermenicede"
+          },
+          {
+            "ad": "1915 olayları",
+            "kullananlar": "Türkiye Cumhuriyeti'nin resmî adı (Dışişleri Bakanlığı)"
+          },
+          {
+            "ad": "Sevk ve İskân (27 Mayıs 1915 kararı)",
+            "kullananlar": "Türkiye'nin resmî metinlerinde sürgün kararının adı"
+          }
+        ],
+        "not": "KARAR 17 uygulandı (2026-11-26). Türkiye 'soykırım' nitelendirmesini hukuken ve tarihsel olarak temelsiz bulur, Ermenilerin büyük acılar çektiğini ve birçoğunun öldüğünü kabul eder, 2005'te ortak tarih komisyonu önermiştir (mfa-1915). USHMM ansiklopedisi en az 664.000, belki 1,2 milyona kadar ölü yazar (ushmm-1915). Bu rakamlar oyunda kullanılmaz. Tür ('toplumsal') 6-7 Eylül ve 1964 kayıtlarıyla aynı seçildi; Kalite bakmalı.",
+        "kaynak": [
+          "ushmm-1915",
+          "mfa-1915"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      },
+      "kaynak": [
+        "ushmm-1915",
+        "mfa-1915"
+      ],
+      "durum": "dogrulandi",
+      "oyunda_kullanilabilir": true
+    },
+    {
       "id": "aile-hafizasi-1939-1945",
       "ad": "Erzincan depremi (1939) ve İkinci Dünya Savaşı yokluk yılları",
       "yilBas": 1939,
@@ -4925,7 +6304,7 @@
     },
     {
       "id": "kibris-1974",
-      "ad": "Kıbrıs harekâtı",
+      "ad": "1974'te Kıbrıs'ta savaş",
       "yilBas": 1974,
       "yilSon": 1974,
       "tur": "savas",
@@ -4944,13 +6323,35 @@
       },
       "olcek": [],
       "oyunNotu": "1950-1954 doğumlu erkeklerin askerliğine denk gelebilir",
-      "hassasiyet": "Taraflara göre adı farklı anılır; tarafsız ad kullanılmalı",
+      "hassasiyet": "Yüksek: taraflara göre adı farklı; KARAR 17'ye göre oyunda yalnızca oyunMetni kullanılır.",
       "kaynak": [
         "kaynaksiz"
       ],
       "durum": "dogrulanmali",
-      "atakan_karari_bekliyor": "Olayın adı. Şu anki 'Kıbrıs harekâtı' Türkiye tarafının adı. Kalite önerisi: '1974 Kıbrıs savaşı (Türkiye'nin askerî müdahalesi)'. Karar verilene kadar ad değiştirilmedi.",
-      "oyunda_kullanilabilir": false
+      "oyunda_kullanilabilir": false,
+      "adlandirma": {
+        "oyunMetni": "1974'te Kıbrıs'ta savaş çıktı: 15 Temmuz'daki darbenin ardından Türkiye 20 Temmuz'da adaya asker çıkardı, 14 Ağustos'ta ikinci harekât başladı.",
+        "tarafAdlari": [
+          {
+            "ad": "Kıbrıs Barış Harekâtı (ikinci aşama: İkinci Barış Harekâtı)",
+            "kullananlar": "Türkiye'nin resmî adı; Türkiye Garanti Antlaşması'ndan doğan hakkına dayandığını belirtir"
+          },
+          {
+            "ad": "Türk işgali / Türk istilası (İngilizce kaynaklarda 'Turkish invasion of Cyprus')",
+            "kullananlar": "Kıbrıs Rum tarafı, Yunanistan ve Türkiye'nin müdahalesini eleştirenler"
+          },
+          {
+            "ad": "Kıbrıs Savaşı (1974)",
+            "kullananlar": "Bazı uluslararası kaynaklarda betimleyici ad"
+          }
+        ],
+        "not": "KARAR 17 uygulandı (2026-11-26). Oyun hiçbir adı kendi sesiyle benimsemez; oyunda oyunMetni, ayrıntı sayfasında üç ad birlikte gösterilir. Kıbrıs Türklerinin kullandığı adlar ayrıca kaynakla eklenmeli.",
+        "kaynak": [
+          "kibris-wikiwand"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      }
     },
     {
       "id": "kriz-1977-1980",
@@ -5100,6 +6501,61 @@
       "oyunda_kullanilabilir": false
     },
     {
+      "id": "faili-mechul-1990",
+      "ad": "1990'larda Doğu ve Güneydoğu'da faili meçhul cinayetler ve zorla kaybetmeler",
+      "yilBas": 1990,
+      "yilSon": 1999,
+      "tur": "catisma",
+      "kapsam": [
+        "TRB",
+        "TRC",
+        "TRA"
+      ],
+      "etkilenenGruplar": [
+        "OHAL kapsamındaki 13 ilde yaşayan siviller",
+        "Kaybedilenlerin ve öldürülenlerin aileleri"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "Hakikat Adalet Hafıza Merkezi'nin raporuna göre zorla kaybetmeler 1993'te 103, 1994'te 518 kişiye çıktı; çoğu OHAL kapsamındaki 13 ilde (Bingöl, Diyarbakır, Elazığ, Hakkari, Mardin, Siirt, Tunceli, Van, Adıyaman, Bitlis, Muş, Batman, Şırnak). Rapor bu ihlallerde cezasızlığı inceliyor.",
+        "gundelik": "Yakınını kaybeden ya da kayıp yakınını arayan aileler"
+      },
+      "olcek": [
+        {
+          "deger": 103,
+          "birim": "zorla kaybedilen kişi",
+          "yil": 1993,
+          "kaynak": [
+            "hafiza-merkezi-1990"
+          ],
+          "durum": "dogrulanmali",
+          "not": "Sivil toplum kuruluşu raporu (bianet özeti); resmî rakam yok. Kalite özel denetimi gerekli.",
+          "oyunda_kullanilabilir": false
+        },
+        {
+          "deger": 518,
+          "birim": "zorla kaybedilen kişi",
+          "yil": 1994,
+          "kaynak": [
+            "hafiza-merkezi-1990"
+          ],
+          "durum": "dogrulanmali",
+          "not": "Aynı rapor.",
+          "oyunda_kullanilabilir": false
+        }
+      ],
+      "oyunNotu": "Bölgede yaşayan bir ailede yakınını kaybetme ya da kayıp arama hafızası. Sahne gösterilmez; fail ima edilmez, oyun sorumluluk hakkında hüküm vermez. pkk-catisma ve goc.zorunlu-goc-1990 ile bağlantılı.",
+      "hassasiyet": "Çok yüksek: sorumluluk ve sayılar tartışmalı; resmî ve bağımsız kaynaklar farklı. Kalite özel denetimi.",
+      "kaynak": [
+        "hafiza-merkezi-1990"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
       "id": "bulgaristan-gocu-1989",
       "ad": "Bulgaristan'dan zorunlu göç",
       "yilBas": 1989,
@@ -5161,6 +6617,50 @@
       "oyunda_kullanilabilir": false
     },
     {
+      "id": "gazi-1995",
+      "ad": "1995'te İstanbul Gazi Mahallesi ve Ümraniye'de yaşanan olaylar",
+      "yilBas": 1995,
+      "yilSon": 1995,
+      "tur": "toplumsal",
+      "kapsam": [
+        "TR1"
+      ],
+      "etkilenenGruplar": [
+        "Gazi Mahallesi ve Ümraniye 1 Mayıs Mahallesi sakinleri (Gazi'de çoğunluk Alevi)",
+        "Hayatını kaybedenlerin aileleri"
+      ],
+      "etki": {
+        "ekonomi": "",
+        "saglik": "",
+        "egitim": "",
+        "goc": "",
+        "guvenlik": "12 Mart 1995'te Gazi Mahallesi'nde kahvehanelere bir taksiden ateş açıldı, bir Alevi dedesi öldü, çok sayıda kişi yaralandı. Ardından günlerce süren protestolarda polisin ateş açmasıyla Gazi'de 17, Ümraniye'de 5 kişi öldü. 20 polis yargılandı; 2'si mahkûm, 18'i beraat etti. AİHM 2005'te yaşam hakkı ve etkili başvuru hakkı ihlali buldu.",
+        "gundelik": ""
+      },
+      "olcek": [
+        {
+          "deger": 22,
+          "birim": "ölü (protestolarda)",
+          "yil": 1995,
+          "kaynak": [
+            "gazi-bianet",
+            "gazi-wiki"
+          ],
+          "durum": "dogrulanmali",
+          "not": "Bianet: 22 (Gazi 17 + Ümraniye 5); Wikipedia: 23. Fark ilk saldırıda ölenin sayılıp sayılmamasından olabilir; doğrulanmalı.",
+          "oyunda_kullanilabilir": false
+        }
+      ],
+      "oyunNotu": "İstanbul'da yaşayan Alevi bir ailenin ya da mahalle sakinlerinin hafızası. Sahne gösterilmez; gerçek kişi adı kullanılmaz.",
+      "hassasiyet": "Yüksek: sorumluluk mahkeme ve AİHM kararlarıyla sınırlı anlatılır; taraf tutulmaz.",
+      "kaynak": [
+        "gazi-bianet",
+        "gazi-wiki"
+      ],
+      "durum": "dogrulanmali",
+      "oyunda_kullanilabilir": false
+    },
+    {
       "id": "kriz-1994",
       "ad": "1994 ekonomik krizi (5 Nisan kararları)",
       "yilBas": 1994,
@@ -5189,10 +6689,10 @@
     },
     {
       "id": "28-subat-1997",
-      "ad": "28 Şubat süreci",
+      "ad": "1997'de 28 Şubat kararları ve ardından gelen dönem",
       "yilBas": 1997,
       "yilSon": 2002,
-      "tur": "darbe",
+      "tur": "siyasi",
       "kapsam": "ulusal",
       "etkilenenGruplar": [
         "Başörtülü öğrenciler ve kamu çalışanları",
@@ -5214,8 +6714,31 @@
         "kaynaksiz"
       ],
       "durum": "dogrulanmali",
-      "atakan_karari_bekliyor": "Olayın türü. Şu an 'darbe'; Kalite önerisi 'siyasi' (sınıflandırma tartışmalı). Karar verilene kadar değiştirilmedi.",
-      "oyunda_kullanilabilir": false
+      "oyunda_kullanilabilir": false,
+      "adlandirma": {
+        "oyunMetni": "28 Şubat 1997'de Millî Güvenlik Kurulu, laik düzene karşı gördüğü faaliyetlere karşı 18 maddelik kararlar aldı; Haziran 1997'de başbakan istifa etti ve yeni hükümet kuruldu.",
+        "tarafAdlari": [
+          {
+            "ad": "28 Şubat (28 Şubat süreci)",
+            "kullananlar": "Türkiye'de genel kullanım"
+          },
+          {
+            "ad": "Postmodern darbe",
+            "kullananlar": "Süreci eleştirenler ve bu adla açılan dava; Nisan 2018'de 21 sanığa ağırlaştırılmış müebbet verildi, Yargıtay 2021'de 14 sanık için onadı"
+          },
+          {
+            "ad": "İrticai faaliyetlere karşı alınan MGK kararları",
+            "kullananlar": "MGK'nın 28 Şubat 1997 kararlarının kendi ifadesi"
+          }
+        ],
+        "not": "KARAR 17 uygulandı (2026-11-26). Tür 'darbe' yerine 'siyasi' yapıldı (Kalite önerisi): yönetime doğrudan el konulmadı ama 2018 mahkeme kararı olayı hükümeti cebren düşürme olarak nitelendirdi; bu yüzden 'darbe' diyenler de var. Tür, motorda olayın etkisini değiştirmez. Atakan isterse 'darbe'ye geri alınabilir.",
+        "kaynak": [
+          "28subat-bianet",
+          "28subat-duvar"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      }
     },
     {
       "id": "marmara-depremi-1999",
@@ -5508,14 +7031,15 @@
     },
     {
       "id": "darbe-girisimi-2016",
-      "ad": "15 Temmuz 2016 darbe girişimi, OHAL ve kamu ihraçları",
+      "ad": "2016'da 15 Temmuz darbe girişimi, ardından OHAL ve kamu ihraçları",
       "yilBas": 2016,
       "yilSon": 2018,
       "tur": "darbe",
       "kapsam": "ulusal",
       "etkilenenGruplar": [
-        "Kamu çalışanları, askerler, öğretmenler, akademisyenler",
-        "O gece sokağa çıkanlar"
+        "O gece hayatını kaybeden ve yaralanan siviller, polisler, askerler ve aileleri",
+        "O gece sokağa çıkanlar",
+        "Kamu çalışanları, askerler, öğretmenler, akademisyenler"
       ],
       "etki": {
         "ekonomi": "",
@@ -5525,8 +7049,32 @@
         "guvenlik": "OHAL (2016-2018)",
         "gundelik": ""
       },
-      "olcek": [],
-      "oyunNotu": "Memur hayatlarında iş kaybı riski; rakamlar kaynaklı olmalı",
+      "olcek": [
+        {
+          "deger": 250,
+          "birim": "ölü (darbe girişimine karşı koyanlar ve görevliler)",
+          "yil": 2016,
+          "kaynak": [
+            "15temmuz-iddianame",
+            "15temmuz-gzt"
+          ],
+          "durum": "dogrulandi",
+          "not": "Ankara Cumhuriyet Başsavcılığı iddianamesinde 250 kişinin adı siviller, polisler ve askerler başlıklarında listeleniyor; bazı kaynaklar 251-253 diyor (15temmuz-haberturk). Sivil/polis/asker dağılımı kaynaklarda rakamla verilmiyor, iddianame listesinden sayılmalı.",
+          "oyunda_kullanilabilir": true
+        },
+        {
+          "deger": 2193,
+          "birim": "yaralı",
+          "yil": 2016,
+          "kaynak": [
+            "15temmuz-gzt"
+          ],
+          "durum": "dogrulanmali",
+          "not": "Tek kaynak.",
+          "oyunda_kullanilabilir": false
+        }
+      ],
+      "oyunNotu": "O gece yakınını kaybeden sivil bir aile, yaralanan bir polis ya da asker; ertesi yıllarda memur hayatlarında ihraç riski. Sahne gösterilmez; rakamlar kaynaklı.",
       "hassasiyet": "Çok yüksek; siyasi taraf tutulmamalı",
       "kaynak": [
         "kaynaksiz"
@@ -5730,7 +7278,7 @@
         "8 Eylül 1999 öncesi sigortalı olanlar"
       ],
       "etki": {
-        "ekonomi": "Milyonlarca kişinin erken emekliliği (sayı doğrulanmalı)",
+        "ekonomi": "8 Eylül 1999'dan önce sigortalı olup yaş dışındaki şartları tamamlayanlar yaş beklemeden emekli olabildi (7438 s.K., RG 3 Mart 2023, 5510 geçici m.95). Yararlanan sayısı kaynakla eklenmedi.",
         "saglik": "",
         "egitim": "",
         "goc": "",
@@ -5741,11 +7289,11 @@
       "oyunNotu": "Bkz. emeklilik.donemler",
       "hassasiyet": "",
       "kaynak": [
-        "mevzuat",
-        "kaynaksiz"
+        "kanun-7438",
+        "emeklilik-tarihce-kivanc"
       ],
-      "durum": "dogrulanmali",
-      "oyunda_kullanilabilir": false
+      "durum": "dogrulandi",
+      "oyunda_kullanilabilir": true
     }
   ],
   "icBolgeler": [
@@ -6185,7 +7733,34 @@
         "oyunda_kullanilabilir": false
       }
     ],
-    "evcilHayvan": "Sokak kedileri ve köpekleri kentin parçası; mahalle kedisini besleme çok yaygın. Kırsalda çoban köpeği, tavuk, inek. Evde kedi ve muhabbet kuşu yaygın; ev köpeği daha çok kentli orta-üst gelirde."
+    "evcilHayvan": "Sokak kedileri ve köpekleri kentin parçası; mahalle kedisini besleme çok yaygın. Kırsalda çoban köpeği, tavuk, inek. Evde kedi ve muhabbet kuşu yaygın; ev köpeği daha çok kentli orta-üst gelirde.",
+    "toplulukKulturu": [
+      {
+        "topluluk": "kurt",
+        "ad": "Dengbêjlik",
+        "ozet": "Kürt sözlü kültür geleneği: dengbêjler kilam ve stran denen ezgili anlatılarla acı, aşk, özlem ve kahramanlık hikâyelerini aktarır. Okuryazarlığın düşük olduğu dönemlerde hafızanın taşıyıcısıydı; Diyarbakır'daki Dengbêj Evi'nde bugün de sürüyor. Bir dede ya da komşunun kış akşamı anlattıkları gibi anı kartlarına uygun.",
+        "yilBas": null,
+        "yilSon": null,
+        "kaynak": [
+          "dengbej-adiguzel"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      },
+      {
+        "topluluk": "kurt",
+        "ad": "Kürtçe yayın ve medya",
+        "ozet": "1983'te 2932 sayılı kanun Kürtçe yayını yasakladı; 1991'de 3713 sayılı kanunla bu kanun kaldırıldı, Kürtçe kitap ve gazete yayımlanabilir oldu, radyo-televizyon kısıtı bir süre daha sürdü. 2008'de 2954 sayılı kanunda yapılan değişiklikle TRT 6 (Kürtçe) 1 Ocak 2009'da tam yayına başladı. Bir aile için: evde Kürtçe kaset ve kitap, sonra Kürtçe kanal izlemek.",
+        "yilBas": 1983,
+        "yilSon": null,
+        "kaynak": [
+          "hrw-1999-dil",
+          "trt6-merlin"
+        ],
+        "durum": "dogrulandi",
+        "oyunda_kullanilabilir": true
+      }
+    ]
   },
   "hassasiyet": [
     {
@@ -6196,13 +7771,12 @@
     {
       "konu": "Alevilik",
       "neden": "Tanımı (İslam içinde mi ayrı mı) topluluk içinde de tartışmalı; tarihsel acılar (Maraş, Çorum, Sivas)",
-      "oneri": "Kişi kendi kimliğini nasıl tanımlıyorsa öyle; tek bir tanım dayatılmaz"
+      "oneri": "KARAR 18: din listesinde tek kayıt; karakter kendini nasıl tanımlıyorsa öyle gösterilir (Alevi / Müslüman / Alevi ve Müslüman). Tek bir tanım dayatılmaz. Tarihsel acılar (Maraş, Çorum, Sivas, Gazi) Alevi kimliğinin tamamı değildir."
     },
     {
       "konu": "Gayrimüslim topluluklar",
-      "neden": "1915 olayları, 1942, 1955, 1964 gibi konular uluslararası ve iç siyasette hassas",
-      "oneri": "Oyun 1950 sonrası; geçmiş sadece aile hafızası olarak ve Kalite denetimiyle",
-      "atakan_karari_bekliyor": "'1915 olayları' ifadesi bir tarafın tercih ettiği ad. Kalite önerisi: betimleyici bir ifade (ör. '1915'te Ermenilerin sürgünü ve toplu ölümleri') ve adlandırmanın tartışmalı olduğu notu. Karar verilene kadar metin değiştirilmedi."
+      "neden": "1915'te Osmanlı Ermenilerinin sürgünü ve toplu ölümleri (bkz. olay aile-hafizasi-1915), 1942 Varlık Vergisi, 1955 6-7 Eylül, 1964 sınır dışı etmeler gibi konular uluslararası ve iç siyasette hassas",
+      "oneri": "Oyun 1950 sonrası; geçmiş sadece aile hafızası olarak ve Kalite denetimiyle. KARAR 17: oyunda 'yıl + ne oldu', ayrıntı sayfasında tarafların adları birlikte (adlandirma alanı)."
     },
     {
       "konu": "Darbeler ve siyasi dönemler",
@@ -6226,10 +7800,13 @@
     }
   ],
   "acikSorular": [
-    "Alevilik din dağılımında Müslüman alt grubu olarak mı ayrı grup olarak mı gösterilsin?",
     "BM doğum sayısı ile TÜİK sayısı arasındaki fark oyunda kullanıcıya gösterilsin mi?",
-    "Kürtçe, Arapça ve azınlık isim havuzları için hangi kaynak kullanılacak (NVİ il bazlı veri mümkün mü, akademik çalışma mı)?",
-    "1950 öncesi askerlik süreleri ve 1950-1990 dönemi askerlik süreleri birincil kaynaktan bulunmalı.",
-    "Oyun 'Geçmiş' modunda hangi en erken doğum yılına kadar gidecek? (1950 varsayıldı.)"
+    "Kürt topluluğu için yedek genel havuz açılsın mı? NVİ il listesi (nvi-il-ad) Kürt nüfusun yoğun olduğu illerde en sık adların genel havuzdaki adlar olduğunu gösteriyor; Zaza, Arap ve Laz-Hemşinli-Gürcü için aynı kanıtla yedek açıldı. Açılmazsa Kürt topluluğu Kürtçe ad listesi bulunana kadar çekilişe girmez.",
+    "Suriyeli topluluk için isim: R06 Arap bölgesi havuzu ya da sigpwned Ürdün/Lübnan listeleri 'tahmin' olarak vekil kullanılsın mı? (Türkiye'de doğan Suriyeli çocukların adları için kaynak yok.)",
+    "Ermeni, Rum, Yahudi, Süryani isim havuzları için topluluk kurumlarına (patrikhane, hahambaşılık, metropolitlik, topluluk gazeteleri) başvurulsun mu? Bulunan kaynakların hiçbiri 1950 sonrası ad sıklığı vermiyor.",
+    "Alevi kaydındaki üç tanımlama seçeneğinin (Alevi / Müslüman / Alevi ve Müslüman) dağılımı için kaynaklı oran yok; Simülasyon hangi yöntemle seçecek?",
+    "Askerlik: 1950-1985 ve 1992-1995 süreleri tek ikincil kaynakta; MSB ya da Resmî Gazete (Bakanlar Kurulu kararları) kaynağı bulunmalı. 1970-1985 arasında 20→19 ay geçişinin yılı bilinmiyor.",
+    "Emeklilik 1950-1999: yaş kuralı ilk giriş yılına değil emekli olunan yıla bağlı; şablonun 'donemSecimi = ilk sigortalılık yılı' kuralı bu dönem için yetmiyor (Simülasyon ile konuşulmalı).",
+    "Oyun 'Geçmiş' modunda hangi en erken doğum yılına kadar gidecek? (KARAR 15: 1950.)"
   ]
 }
