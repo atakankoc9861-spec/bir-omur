@@ -15,6 +15,9 @@ Tek doğruluk kaynağı. Her departman işe başlamadan bunu okur. Yeni karar en
 | 9 | 2026-11-26 | 7 departman: Yapımcı, Veri, Dünya ve Kültür, Simülasyon ve Denge, Anlatı ve İçerik, Görsel ve Arayüz, Kalite ve Hassasiyet. Teknik işler Yapımcıda. |
 | 10 | 2026-11-26 | Çizimler kodla üretilir. Yöntemin ayrıntısına Görsel ve Arayüz departmanı kendi karar verir. Yapımcı uygulama işine girmez, departmanları yönetir. |
 
+| 11 | 2026-11-26 | 8. departman: Oyun Testi ve Ar-Ge. Sanal oyuncu panelleriyle deneyim testi + kısa keşif deneyleri. Sürekli değil, dönemsel çalışır. |
+| 12 | 2026-11-26 | Ses (ortam sesi, küçük efektler) ileride Ar-Ge deneyi olarak denenir; işe yararsa Görsel ve Arayüz'e eklenir. |
+
 ## Açık sorular
 - Kesin oyun adı
 - Bir hayatın toplam süresi

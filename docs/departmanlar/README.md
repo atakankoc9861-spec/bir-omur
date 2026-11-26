@@ -9,9 +9,12 @@
 | [Anlatı ve İçerik](anlati.md) | Editoryal | Olaylar, karakter şablonları |
 | [Görsel ve Arayüz](gorsel.md) | Stil rehberi | Sahne katmanları, ekranlar |
 | [Kalite ve Hassasiyet](kalite.md) | Bağımsız denetim, veto | Test raporları, onay/red |
+| [Oyun Testi ve Ar-Ge](oyun-testi-arge.md) | Deneyim odaklı, dönemsel | Sanal oyuncu raporları, deney raporları |
 
 ## Akış
 Veri → Dünya ve Kültür → Anlatı ve İçerik → Simülasyon ve Denge → Görsel ve Arayüz → Kalite ve Hassasiyet → Atakan'ın onayı
+
+Her sürümden sonra: Oyun Testi ve Ar-Ge → bulgular Yapımcıya → yeni işler.
 
 ## Her yönergede aynı başlıklar
 Sorumluluk · Kurallar · Girdi · Çıktı · Bitti sayılma ölçütü · Alt ajan kullanımı
