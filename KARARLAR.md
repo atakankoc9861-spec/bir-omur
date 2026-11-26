@@ -26,6 +26,9 @@ Tek doğruluk kaynağı. Her departman işe başlamadan bunu okur. Yeni karar en
 | 18 | 2026-11-26 | Alevilik din listesinde tek kayıt; karakter kendini nasıl tanımlıyorsa öyle gösterilir (Alevi / Müslüman / ikisi). |
 | 19 | 2026-11-26 | Görsel yön (yaşayan sahne prototipi) şimdilik onaylandı; Kalite düzeltmeleriyle devam. |
 
+| 20 | 2026-11-26 | Sahnede oyuncu işareti varsayılan olarak kapalı; ayarlardan açılabilir. |
+| 21 | 2026-11-26 | Güney Avrupa şimdilik ayrı kit değil, Akdeniz kitinde ayrı görsel profil. |
+
 ## Açık sorular
 - Kesin oyun adı
 - Bir hayatın toplam süresi
