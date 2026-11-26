@@ -42,6 +42,9 @@ Tek doğruluk kaynağı. Her departman işe başlamadan bunu okur. Yeni karar en
 | 32 | 2026-11-26 | 1915 cümlesi onaylandı: "1915'te Osmanlı Devleti'ndeki Ermeniler sürgün edildi; sürgün yollarında ve öldürmelerde çok sayıda Ermeni hayatını kaybetti." |
 | 33 | 2026-11-26 | Öncelik: en kısa sürede oynanabilir sürüm. Önce telefonda tarayıcıda açılan sürüm, ardından APK. Departmanlar limit nedeniyle mümkünse sırayla çalışır. |
 
+| 34 | 2026-11-26 | MVP-0 (metin akışı + üstte sahne) Atakan tarafından beğenilmedi: kötü bir kopya, anlam yok. Altyapı (veri, doğum çekilişi, yaşam tabloları, çizim motoru) korunur; oyunun yüzü yeniden tasarlanır. |
+| 35 | 2026-11-26 | Yeni yön adayı: oyun bir telefon/mesajlaşma arayüzü üzerinden yaşanır (aile grubu, sınıf grubu, iş grubu, emlakçı, sevgili...). WhatsApp adı/görünüşü kopyalanmaz, kendi uygulamamız. Önce tek yıllık demo: Türkiye, 18 yaş, YKS yılı. Demo, Atakan'a gitmeden önce Oyun Testi departmanınca "eğlenceli mi" diye oynanır. |
+
 ## Açık sorular
 - Kesin oyun adı
 - Bir hayatın toplam süresi
