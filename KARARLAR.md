@@ -13,8 +13,8 @@ Tek doğruluk kaynağı. Her departman işe başlamadan bunu okur. Yeni karar en
 | 7 | 2026-11-26 | Teknik: TypeScript + Vite, Android için Capacitor. Motor arayüzden bağımsız, saf TypeScript. |
 | 8 | 2026-11-26 | Puan, sıralama, rozet yok. Doğum yeri ve cinsiyet seçilemez. Suçla zenginleşme yolu yok. |
 | 9 | 2026-11-26 | 7 departman: Yapımcı, Veri, Dünya ve Kültür, Simülasyon ve Denge, Anlatı ve İçerik, Görsel ve Arayüz, Kalite ve Hassasiyet. Teknik işler Yapımcıda. |
+| 10 | 2026-11-26 | Çizimler kodla üretilir. Yöntemin ayrıntısına Görsel ve Arayüz departmanı kendi karar verir. Yapımcı uygulama işine girmez, departmanları yönetir. |
 
 ## Açık sorular
 - Kesin oyun adı
 - Bir hayatın toplam süresi
-- Çizim yöntemi
