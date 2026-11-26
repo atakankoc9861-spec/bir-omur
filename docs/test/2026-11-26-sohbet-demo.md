@@ -130,3 +130,52 @@ Gerekçe: Duygu ve yazı Atakan'ı etkileyecek düzeyde; "anlam yok" eleştirisi
 - **Yapılan:** 3 tam yıl + ilk 30 sn testi, hassasiyet taraması, bu rapor. Hiçbir oyun dosyası değiştirilmedi.
 - **Kalan:** kız oyuncu ile bir yıl, "hep ders" oyuncusunun gözüyle bir yıl (devir notundaki 450-510 puanı oyuncu hissiyle doğrulamak), gerçek hızda (hiz=1) tam bir ay süresi.
 - **Atakan'a sorulacak:** (1) Küçük cevaplar bedava olsun mu, yoksa "her cevap bir akşam" sertliği isteniyor mu? (2) Durum paneli demoya girsin mi, yoksa sonraki sürüme mi kalsın? (3) Demo, Atakan'a varyantsız (her oyunda aynı olaylar) gidebilir mi?
+
+## Tur 2
+
+Sürüm: demo ekibinin "Tur 2" düzeltmeleri (`docs/devir/2026-11-26-sohbet-demo.md`). Betik: `docs/test/2026-11-26-sohbet-betik/oyna2.py` (Tur 1 betiği + paneli açma ve cevap izi görüntüsü).
+
+### Ne oynandı
+| Oyun | Tarz | Tohum | Puan (Tur 1 → Tur 2) | Sonuç | Aile / kriz | Sevgili | Küs |
+|---|---|---|---|---|---|---|---|
+| A | sabırsız | 41 | 152 → **289** | İstanbul, Bilgisayar Programcılığı | muhafazakâr, baba ayrı / taşınma | var | yok |
+| B | duygusal | 41 | 265 → **336** | seneye tekrar (kendi seçimi) | muhafazakâr, baba ayrı / taşınma | yok | etüt |
+| C | duygusal | 9001 | 297 → **352** | Trabzon, Endüstri Müh. | muhafazakâr / taşınma | yok | etüt |
+| D | sabırsız (yeni tohum) | 5555 | 277 | İstanbul, Bilgisayar Programcılığı | **laik**, baba ayrı / taşınma | var | yok |
+
+Panel her oyunda 4 kez açıldı (Eylül, Ocak, Mayıs, Temmuz). Konsol: 4 yılda **0 hata**, taşma yok.
+
+### Puanlar
+- **Eğlence: 7/10** (Tur 1'de 6). Yarım bardak "küçük nezaket bedava değil ama ucuz" hissini doğru veriyor. Kilitli akşamın krizde açılması ("Bir akşamı buna ayırmıştın.") güzel bir an. Panel orta aylara bir "neredeyim" duygusu getirdi: "Bilgi 61-73, iyi; istikrarlı", "Geçen ay 2 akşam masa başında geçti", en yakın 5 kişi ve oklar okunaklı.
+- **Duygu: 8,5/10** (Tur 1'de 8). Yıl sonu artık oyuncuya göre yazılıyor ve isabetli: "Ayrı evlerde, aynı telefonda. Sınav sabahı ilk o yazmıştı.", "Kayseri uzak. Mesajlar değil.", "Sudenaz ☀️ Ayrı şehirler. Her gece 'iyi geceler'. Şimdilik." Laik aile varyantı doğal ("Son sene!! Hadi bakalım yıldızım ⭐ teyzen arkanda", pazar günaydın kartları). Taşınma krizinde baba "okulu burada bitirsin" çözümü tutarlı.
+- Tur 1'deki sorunlardan çözülenler: aynı fiyatlı küçük ve büyük cevap, görünmeyen etki, ilişkinin gizli kapısı (nedeni yazılıyor), bildirim şeridinin başlığı örtmesi, 44 px geri düğmesi, sahte Mesaj kutusu, yıl sonu uyumsuz satırları, çeviri kokan cümleler.
+
+### Tekrar oranı (isimler soyutlanmış metin satırı)
+| Karşılaştırma | Tur 1 | Tur 2 |
+|---|---|---|
+| Aynı tarz, farklı tohum (duygusal 41 ve 9001) | %95 | **%92** |
+| Aynı tarz, farklı tohum (sabırsız 41 ve 5555, laik/muhafazakâr farklı) | – | **%89** |
+| Aynı tohum, farklı tarz (41: sabırsız ve duygusal) | %65 | %63 |
+
+Varyantlar var ama metnin çoğu ortak gövdede. 4 oyunun 4'ünde kriz "taşınma" çıktı, 3'ünde baba ayrı yaşıyordu (küçük örneklem, şans olabilir).
+
+### Kalan en önemli 3 sorun
+1. **Sabırsız taktik artık en iyi strateji gibi (orta).** "Her bekleyen sohbete ilk/kısa cevap" ile iki tohumda da kimse küsmedi, sevgili oldu, okula yerleşti (277-289). Duygusal oyuncu (uzun ve sıcak cevaplar) ise iki tohumda da etüt arkadaşını kaybetti ve ilişkiyi kuramadı. Yarım bardak ekonomisi "herkese kısa yaz, herkese yetiş" açığı açıyor; "herkese yetişemezsin" teması zayıflıyor. Öneri: kısa cevaplar kişiye daha az bağ versin ya da üst üste kısa cevaba karşı taraf tepki versin ("hep kısa yazıyosun bu ara").
+2. **Tekrar oynanabilirlik hâlâ düşük (orta).** Farklı tohumda %89-92 aynı metin. Atakan iki kez oynarsa ikincisinde olayların çoğunu tanır. Atakan'a "bilinen zayıflık" olarak söylenmeli.
+3. **Panel ve iz cilası (küçük).**
+   - Hedef kartı Eylül'de, daha hiç deneme yokken "%2 çok düşük ihtimal" diyor. İlk ay "henüz belli değil" demeli; yoksa oyuncu ilk dakikada umudunu kaybeder.
+   - Cevap izi ("Annen ↑ · ½ akşam") oyuncunun kendi balonunun üstüne biniyor ve yazıyı örtüyor (`docs/test/2026-11-26-sohbet-ekran/t2-cevap-izi-balonu-ortuyor.png`).
+   - Sonuç ayında sabırsız oyuncuda 24-25 okunmamış birikiyor.
+   - Karar 38 (kaynaklı ÖSYM verisi) karşılanmadı; panelde açıkça "kurgu" yazıyor, doğru davranış.
+
+Not: Sabırsız yıllarda görülen "Tercih akşamı sen yoktun; listeyi ailen doldurdu" bizim betiğin aile sohbetini ikinci kez açmamasından kaynaklanıyor; oyun hatası sayılmadı.
+
+### Hassasiyet (Tur 2 ekleri)
+- Laik aile varyantı saygılı, karikatür değil. Muhafazakâr satırlar Tur 1'deki gibi saygılı.
+- Ayrı yaşayan baba acındırılmadan, gerçekçi anlatılmış ("Yazdıkları hep kısa; cevapların da öyle").
+- İşsizlik yolunda arkadaşın babasının işi kendi bulabilmesi kurtarıcı aile klişesini kırıyor. Taşınma yolunda çözüm hâlâ oyuncunun babası; şimdilik kabul edilebilir.
+
+### Karar (Tur 2)
+**ATAKAN'A GİDEBİLİR.** Kritik iki sorun (haksız akşam ekonomisi, görünmeyen etki) çözüldü, konsol temiz, duygu güçlü. Atakan'a gönderirken iki bilinen zayıflık söylenmeli: tekrar oyunda olayların çoğu aynı, kısa cevap vermek fazla kârlı. Gönderimden önce birkaç dakikalık iki cila önerilir: ilk ayda hedef ihtimali gizlensin ve cevap izi balonun üstüne binmesin.
+
+Ek ekran görüntüleri: `docs/test/2026-11-26-sohbet-ekran/t2-durum-paneli.png`, `t2-son-laik-aile.png`, `t2-cevap-izi-balonu-ortuyor.png`.
