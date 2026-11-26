@@ -32,3 +32,35 @@ Bağlı kararlar: #34 (MVP-0 beğenilmedi), #35 (telefon/mesajlaşma yönü, tek
 1. Uygulama adı `dem` olsun mu?
 2. Akşam bütçesi (ayda 4) zorlayıcı mı, sinir bozucu mu?
 3. Bu yön onaylanırsa: sıradaki adım ikinci bir yıl mı (üniversite ilk yıl / askerlik / ilk iş), yoksa aynı yılı daha çeşitli hâle getirmek mi?
+
+---
+
+## Tur 2 · Oyun Testi raporu (docs/test/2026-11-26-sohbet-demo.md) ve Yapımcı kararları sonrası
+
+**Yapılanlar**
+1. **Akşam ekonomisi:** Kısa/rutin cevaplar (≤24 karakter, tek satır, zaman almayan) **yarım bardak**; fotoğraf, sesli anlatım, buluşma, uzun cevap **tam**; "yanına gitmek" 2. Ayda 4 akşamın 1'i **kilitli**: ayın ortasındaki kriz (arkadaşın krizi, etüt arkadaşının çöküşü, ilgi duyulan kişinin mesajı, tercih akşamı...) gelince açılıyor ("Bir akşamı buna ayırmıştın."). Krizsiz ayda bütün mesajlar gelince açılıyor. Kriz anları ayın sonuna (at ≈ 0,7) taşındı.
+2. **Durum paneli (karar 36-37):** Yukarıdan aşağı çekince (ya da üstteki tutamaca veya bardaklara dokununca) açılıyor. İçinde: akşamlar, ruh hâli (rakam ve kısa anlamı), uyku, bilgi (tahmini TYT net aralığı), cüzdan, hedef kartı (tahmini puan aralığı ve hedef bölüm için %), en yakın 5 kişi ve ↑/↓, "bu ay ne değişti". Hedef kartında açıkça yazıyor: "Tahmini, oyun içi: kurgu puan sistemi. Gerçek ÖSYM taban sıralamaları bu demoda kullanılmıyor." **Karar 38 (kaynaklı ÖSYM verisi) bu demoda karşılanmadı → Veri departmanına iş.** Ruh hâli düşükse sınav günü küçük bir stres cezası var (karar 37).
+3. **Cevap izi:** Her cevaptan sonra "Kübra ↑ · ½ akşam" gibi kısa bir iz çıkıyor.
+4. **İlişki için ikinci şans:** Mart'ta "çıkışta bi çay?", Nisan'da "biz neyiz?" sorusu. Kaybedilirse yıl sonunda nedeni tek cümleyle yazılıyor ("Şubat ayında 'sonra' demiştin. Sonra gelmedi." / "Mart ayında yazdı; okudun ama cevap vermedin.").
+5. **Varyantlar:**
+   - Aile tipi: muhafazakâr (cuma kartı, dua, iftar) ya da laik (pazar "günaydın" kartı, nazar boncuğu, mangal).
+   - Hane: %30 ihtimalle baba ayrı yaşıyor. O zaman aile grubunda olmuyor, onun satırları özel sohbetten geliyor ve tercih akşamını anne yönetiyor.
+   - Arkadaş krizi: babanın işsiz kalması ya da ailenin Kayseri'ye taşınması. İşsizlik yolunda arkadaşın babası işi kendisi de bulabiliyor (kurtarıcı aile klişesi kırıldı).
+   - Her doruk anın iki biçimi var: ilk tanışma, Şubat 14, sınav sabahı (annenin satırları), sonuç akşamı (4 puan düzeyi × 2), tercih akşamını kimin açtığı.
+   - "Saf soru" artık tek sınıf arkadaşında değil.
+6. **Yıl sonu metinleri oyuncunun davranışına göre yazılıyor:** anneye cevap/ihmal sayısı, ayrı yaşayan baba, barışma, krizde yanında olmak, taşınma, laik/muhafazakâr teyze. "Grubu sessize aldın" yerine "Grup sessizde". "Listeyi baban doldurdu + seneye tekrar" çelişkisi giderildi.
+7. **Arayüz:**
+   - Bildirim şeridi artık başlığın altında; logo, bardaklar ve geri düğmesi açıkta.
+   - Geri düğmesi 44×44.
+   - Sahte "Mesaj" kutusu kaldırıldı ("Şu an cevap bekleyen bir şey yok.").
+   - Aynı sohbete yeni soru gelince eskisi cezasız kapanıyor.
+   - Cevap seçenekleri açılınca sohbet artık en alttan kaymıyor.
+   - Çeviri kokan cümleler değişti: "kafana takma. bi yıl bu", "helal be kanka 👏".
+8. **Testler:** 63/63 geçiyor, typecheck temiz. Yeni testler: akşam ekonomisi ve kilitli akşam, varyant çeşitliliği.
+   - **Kız oyuncuyla tam yıl** (tohum 104729, arkadaş tarzı): puan 296,87, sevgili, kimse küsmedi, hitaplar doğru (abla/kızım).
+   - **Hep ders tam yıl** (tohum 314187): puan 500,80, en yakın arkadaş ve etüt arkadaşı küs, ilgi "cevap vermedin".
+   - İki yılda da konsolda hata yok.
+
+**Denge (otomatik, 10'ar tohum):** hep ders 484-536 (yüksek), hep arkadaş 282-337 (düşük, ama herkes yanında ve sevgili var), karışık 343-469 (orta/yüksek). Artık doğal oynayan herkes sınavı kaybetmiyor.
+
+**Kalanlar / Atakan'a:** Karar 38 için kaynaklı taban sıralaması verisi (Veri). Tekrar oynanabilirlik hâlâ sınırlı: iki varyant var, üç değil. Etüt arkadaşının küsmesi hep ders oyununda hâlâ kesin.

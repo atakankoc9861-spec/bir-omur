@@ -5,6 +5,14 @@
 import { icerikYukle, type Beat, type S, type Opt, type ChatId } from "./motor";
 
 /* ---------- yardımcılar ---------- */
+/** Bu yılın varyantı: aynı tohumda sabit, tohumdan tohuma değişir (0/1). */
+const vr = (s: S, key: string) => {
+  let h = (s.f.vr as number) | 0;
+  for (let i = 0; i < key.length; i++) h = Math.imul(h ^ key.charCodeAt(i), 16777619);
+  return ((h >>> 0) % 2) as 0 | 1;
+};
+const laik = (s: S) => s.f.aileTip === "laik";
+const tasinma = (s: S) => s.f.krizTip === "tasinma";
 const ilgiStage = (s: S) => (s.f.sevgili && !s.f.ayrildi ? 3 : s.f.yakin ? 2 : s.bond.ilgi >= 35 ? 1 : 0);
 const kankaIyi = (s: S) => !!(s.f.yaninda || s.f.notAt || s.f.babaSordu);
 const fmtNet = (n: number) => {
@@ -60,7 +68,9 @@ const MONTH_START: Record<number, (s: S) => void> = {
   10: (s) => {
     const sans = s.rng.int(-35, 35);
     s.f.sans = sans;
-    const puan = Math.max(150, Math.min(548, 150 + s.study * 6.5 + sans + s.rng.next()));
+    const stres = ruhHali(s).puan < 35 ? -12 : 0;
+    s.f.stres = stres;
+    const puan = Math.max(150, Math.min(548, 175 + s.study * 6.2 + sans + stres + s.rng.next()));
     s.f.puanSayi = puan;
     s.f.puan = puan.toFixed(2).replace(".", ",");
     s.f.tier = puan >= 420 ? "yuksek" : puan >= 340 ? "orta" : puan >= 265 ? "dusuk" : "yetersiz";
@@ -102,11 +112,11 @@ const add = (b: Beat) => B.push(b);
 /* ===== EYLÜL ===== */
 add({
   id: "e_aile", m: 0, chat: "aile", at: 0, saat: "07:12",
-  lines: [
+  lines: (s) => [
     "anne: Günaydın {oglum}. Kahvaltı hazır, yumurtan rafadan. Son sene, ilk gün. Yemeden çıkmak yok.",
     "anne: #foto:kahvalti",
-    "baba: 👍",
-    "teyze: Allah utandırmasın yavrum, bu sene senin senen 🌹🌹🌹",
+    "baba?: 👍",
+    laik(s) ? "teyze: Son sene!! Hadi bakalım yıldızım ⭐ teyzen arkanda" : "teyze: Allah utandırmasın yavrum, bu sene senin senen 🌹🌹🌹",
     "kardes: {hitap} benim pergeli sen mi aldın",
   ],
   ask: {
@@ -114,7 +124,7 @@ add({
     opts: [
       { say: "tamam anne 💛", fx: { b: { anne: 6 } }, then: ["anne: Afiyet olsun. Akşam köfte var 🙂"] },
       { say: "pergel bende değil. annemin çantasına bak", fx: { b: { kardes: 7, anne: 2 } }, then: ["kardes: buldum 🙄", "anne: Benim çantamda ne arıyor bu?", "kardes: sen koydun anne"] },
-      { say: "amin teyzecim 🌹", fx: { b: { teyze: 8, anne: 3 } }, then: ["teyze: Maşallah maşallah 🧿 kuzum benim", "anne: 🙂"] },
+      { say: "teşekkürler teyzecim 🌹", fx: { b: { teyze: 8, anne: 3 } }, then: ["teyze: Kuzum benim 🧿", "anne: 🙂"] },
     ],
   },
 });
@@ -165,11 +175,11 @@ add({
   },
 });
 add({
-  id: "e_ilgi", m: 0, chat: "ilgi", at: 0.65, saat: "21:48", fx: { set: { ilgiTanisti: 1 } },
-  lines: [
-    "ilgi: selam 🙂 ben {ilgi}, kursta arka sıradayım",
-    "ilgi: {etut} numaranı verdi. ilk dersin fizik notlarını sen tutmuşsun, fotoğrafını atabilir misin? ben yarıda geldim 🙈",
-  ],
+  id: "e_ilgi", m: 0, chat: "ilgi", at: 0.7, saat: "21:48", fx: { set: { ilgiTanisti: 1 } }, kriz: true,
+  lines: (s) =>
+    vr(s, "ilgi1")
+      ? ["ilgi: selam 🙂 ben {ilgi}, kurstan. dün çıkışta yağmurda şemsiyeni bana vermiştin", "ilgi: şemsiye bende, cuma getiriyorum. bi de fizik notlarını sen tutmuşsun diyolar, fotoğrafını atabilir misin? 🙈"]
+      : ["ilgi: selam 🙂 ben {ilgi}, kursta arka sıradayım", "ilgi: {etut} numaranı verdi. ilk dersin fizik notlarını sen tutmuşsun, fotoğrafını atabilir misin? ben yarıda geldim 🙈"],
   ask: {
     unread: -10, seen: -14, seenLine: "ilgi: tamam sorun değil, başkasından alırım 🙂",
     opts: [
@@ -211,13 +221,16 @@ add({
   },
 });
 add({
-  id: "ek_kanka", m: 1, chat: "kanka", at: 0.35, saat: "23:14",
-  lines: ["kanka: bişey diycem", "kanka: babam bugün öğlen eve geldi. hiç gelmez öğlen", "kanka: annemle mutfağa girdiler, kapıyı kapattılar. kimse bana bişey söylemiyo"],
+  id: "ek_kanka", m: 1, chat: "kanka", at: 0.75, saat: "23:14", kriz: true,
+  lines: (s) =>
+    tasinma(s)
+      ? ["kanka: bişey diycem", "kanka: annemle babam akşamları mutfakta fısıl fısıl konuşuyo", "kanka: bugün bana 'eski koliler nerde' diye sordular. hangi koliler"]
+      : ["kanka: bişey diycem", "kanka: babam bugün öğlen eve geldi. hiç gelmez öğlen", "kanka: annemle mutfağa girdiler, kapıyı kapattılar. kimse bana bişey söylemiyo"],
   ask: {
     seenLine: "kanka: neyse önemli değil",
     opts: [
       { say: "iyi misin? ne olmuş ki", fx: { b: { kanka: 10 }, set: { kankaBiliyor: 1 } }, then: ["kanka: bilmiyorum. iyiyim galiba", "kanka: belki boş bişeydir. sağol ya"] },
-      { say: "büyük ihtimal iş stresi, takma", fx: { b: { kanka: 3 } }, then: ["kanka: heh. öyledir"] },
+      { say: "takma, büyük ihtimal boş bi şey", fx: { b: { kanka: 3 } }, then: ["kanka: heh. öyledir"] },
     ],
   },
 });
@@ -297,7 +310,7 @@ add({
   },
 });
 add({
-  id: "k_ilgi", m: 2, chat: "ilgi", at: 0.6, if: (s) => !!s.f.cay,
+  id: "k_ilgi", m: 2, chat: "ilgi", at: 0.7, if: (s) => !!s.f.cay, kriz: true,
   lines: ["ilgi: cumartesi denemeden sonra o çay? 🙂", "ilgi: moda'da bi yer biliyorum, deniz görüyo. sınavı bi saat unuturuz"],
   ask: {
     unread: -12, seen: -15,
@@ -308,7 +321,7 @@ add({
   },
 });
 add({
-  id: "k_ilgi_b", m: 2, chat: "ilgi", at: 0.6, if: (s) => !s.f.cay && s.bond.ilgi >= 35,
+  id: "k_ilgi_b", m: 2, chat: "ilgi", at: 0.7, kriz: true, if: (s) => !s.f.cay && s.bond.ilgi >= 35,
   lines: ["ilgi: deneme kitabı aldım, fizik bölümü çok iyi. bitirince sana vereyim mi?"],
   ask: {
     unread: -10, seen: -12,
@@ -321,25 +334,25 @@ add({ id: "k_patron", m: 2, chat: "patron", at: 0.85, if: (s) => !!s.f.is, fx: {
 /* ===== ARALIK ===== */
 add({
   id: "a_cuma", m: 3, chat: "aile", at: 0, saat: "08:03",
-  lines: ["teyze: #kart:cuma|Hayırlı Cumalar", "teyze: 🌹🌹🌹", "anne: Amin 🤲", "baba: Amin"],
+  lines: (s) => (laik(s) ? ["teyze: #kart:gunaydin|Günaydın", "teyze: Pazar sabahınız güzel olsun canlarım ☕🌼", "anne: 😘", "baba?: 👍"] : ["teyze: #kart:cuma|Hayırlı Cumalar", "teyze: 🌹🌹🌹", "anne: Amin 🤲", "baba?: Amin"]),
   ask: {
     who: "teyze", unread: -2, seen: -3,
-    opts: [{ say: "amin teyzecim 🌹", fx: { b: { teyze: 8, anne: 2 } }, then: ["teyze: Kuzum 😘 sınavın ne zaman?", "anne: Haziranda, söyledim ya 🙂"] }],
+    opts: (s) => [{ say: laik(s) ? "günaydın teyzecim ☕" : "amin teyzecim 🌹", fx: { b: { teyze: 8, anne: 2 } }, then: ["teyze: Kuzum 😘 sınavın ne zaman?", "anne: Haziranda, söyledim ya 🙂"] }],
   },
 });
 add({
-  id: "a_kanka", m: 3, chat: "kanka", at: 0.2, saat: "22:51",
-  lines: (s) => [
-    s.f.kankaBiliyor ? "kanka: hatırlıyo musun babam öğlen eve gelmişti" : "kanka: müsait misin",
-    "kanka: babamın çalıştığı yer kapanmış. aylardır maaşları yatmıyomuş, bize söylememişler",
-    "kanka: annem mutfakta ağlıyo. ben odadayım. ne yapcağımı bilmiyorum",
-  ],
+  id: "a_kanka", m: 3, chat: "kanka", at: 0.7, saat: "22:51", kriz: true,
+  lines: (s) =>
+    tasinma(s)
+      ? [s.f.kankaBiliyor ? "kanka: o koliler var ya" : "kanka: müsait misin", "kanka: babamın tayini çıkmış. sömestrde Kayseri'ye taşınıyoruz", "kanka: son sene. yeni okul. orada kimseyi tanımıyorum"]
+      : [s.f.kankaBiliyor ? "kanka: hatırlıyo musun babam öğlen eve gelmişti" : "kanka: müsait misin", "kanka: babamın çalıştığı yer kapanmış. aylardır maaşları yatmıyomuş, bize söylememişler", "kanka: annem mutfakta ağlıyo. ben odadayım. ne yapcağımı bilmiyorum"],
   ask: {
     unread: -16, seen: -20, seenLine: "kanka: tamam. yoğunsundur",
     opts: [
       { say: "geliyorum. 15 dk", cost: 2, fx: { b: { kanka: 22 }, set: { yaninda: 1 } }, then: ["kanka: gelme ya gerek yok", "kanka: ...", "kanka: tamam gel. aşağıdayım"] },
       { say: "çok üzüldüm kanka. ne lazımsa buradayım", fx: { b: { kanka: 10 } }, then: ["kanka: biliyorum. sağol"] },
-      { say: "babam bi tanıdığa sorsun mu, iş için?", fx: { b: { kanka: 12, baba: 2 }, set: { babaSordu: 1 } }, then: ["kanka: sorabilir mi gerçekten", "kanka: babam kimseden bişey istemez ama... sor bi"] },
+      { say: "babam bi tanıdığa sorsun mu, iş için?", need: (s) => !tasinma(s), fx: { b: { kanka: 12, baba: 2 }, set: { babaSordu: 1 } }, then: ["kanka: sorabilir mi gerçekten", "kanka: babam kimseden bişey istemez ama... sor bi"] },
+      { say: "okulu burada bitiremez misin? babam annenlerle bi konuşsun", need: (s) => tasinma(s), fx: { b: { kanka: 12, baba: 2 }, set: { babaSordu: 1 } }, then: ["kanka: dayım burada ama...", "kanka: babam 'olmaz' der. yine de bi konuşsunlar"] },
     ],
   },
 });
@@ -405,7 +418,9 @@ add({
   id: "o_baba", m: 4, chat: "baba", at: 0.15, saat: "12:47",
   lines: (s) =>
     s.f.babaSordu
-      ? ["baba: Arkadaşın {kanka} var ya. Babası için sordum. Bizim depoda bir yer var, sigortalı. Numarasını verdim, yarın gidecek.", "baba: Sen iyi arkadaşsın {oglum}."]
+      ? tasinma(s)
+        ? ["baba: Arkadaşının ailesiyle konuştum. Dönem sonuna kadar dayısının yanında kalacak, okulu burada bitirecek.", "baba: Sen iyi arkadaşsın {oglum}."]
+        : ["baba: Arkadaşın {kanka} var ya. Babası için sordum. Bizim depoda bir yer var, sigortalı. Numarasını verdim, yarın gidecek.", "baba: Sen iyi arkadaşsın {oglum}."]
       : ["baba: Karne günü. Ne olursa olsun akşam künefe yiyoruz.", "baba: Annene söyleme, sürpriz 🤫"],
   ask: {
     unread: -4, seen: -5,
@@ -419,20 +434,24 @@ add({
   },
 });
 add({
-  id: "o_kanka", m: 4, chat: "kanka", at: 0.3, if: (s) => !s.f.babaSordu, saat: "21:33",
-  lines: ["kanka: kursu bıraktım", "kanka: dayımın dükkanında çalışcam akşamları. telefon tamiri", "kanka: sınava girerim yine de. belki"],
+  id: "o_kanka", m: 4, chat: "kanka", at: 0.7, if: (s) => !s.f.babaSordu, saat: "21:33", kriz: true,
+  lines: (s) =>
+    tasinma(s)
+      ? ["kanka: kayseri'deyim", "kanka: yeni sınıf, yeni kurs. hocalar iyi ama kimse esprilerime gülmüyo", "kanka: sınava girerim yine de. ama hevesim kalmadı"]
+      : ["kanka: kursu bıraktım", "kanka: dayımın dükkanında çalışcam akşamları. telefon tamiri", "kanka: sınava girerim yine de. belki"],
   ask: {
     unread: -12, seen: -15, seenLine: "kanka: ok",
     opts: [
       { say: "notlarımı her hafta atarım sana. bırakma", fx: { b: { kanka: 12 }, set: { notAt: 1 } }, then: ["kanka: atmazsın", "kanka: ...", "kanka: sağol {g:lan|kızım}. cidden"] },
-      { say: "bence yanlış yapıyosun", fx: { b: { kanka: -6 } }, then: ["kanka: senin baban maaş alıyo ama", "kanka: kusura bakma. öyle demek istemedim"] },
-      { say: "anlıyorum. dükkana uğrarım", fx: { b: { kanka: 8 } }, then: ["kanka: gel. ekran koruyucun bedava 😄"] },
+      { say: "bence yanlış yapıyosun", need: (s) => !tasinma(s), fx: { b: { kanka: -6 } }, then: ["kanka: senin baban maaş alıyo ama", "kanka: kusura bakma. öyle demek istemedim"] },
+      { say: "anlıyorum. dükkana uğrarım", need: (s) => !tasinma(s), fx: { b: { kanka: 8 } }, then: ["kanka: gel. ekran koruyucun bedava 😄"] },
+      { say: "orada da bi kanka bulursun", need: (s) => tasinma(s), fx: { b: { kanka: -4 } }, then: ["kanka: bulmak istemiyorum ki", "kanka: neyse. boşver"] },
     ],
   },
 });
 add({
   id: "o_kanka_b", m: 4, chat: "kanka", at: 0.3, if: (s) => !!s.f.babaSordu, saat: "21:33",
-  lines: ["kanka: babam depoda başladı 🙏 baban sağolsun", "kanka: annem 'gelsinler yemeğe' diyo. söylemedi deme", "kanka: ben de kursa devam. şimdilik"],
+  lines: (s) => (tasinma(s) ? ["kanka: dayımda kalıyorum! okul burada bitiyo 🙏", "kanka: baban sağolsun. annem 'gelsinler yemeğe' diyo, söylemedi deme"] : ["kanka: babam depoda başladı 🙏 baban sağolsun", "kanka: annem 'gelsinler yemeğe' diyo. söylemedi deme", "kanka: ben de kursa devam. şimdilik"]),
   ask: { opts: [{ say: "çok sevindim kanka 🤍", fx: { b: { kanka: 8 } }, then: ["kanka: ben de. çok"] }] },
 });
 add({
@@ -475,13 +494,13 @@ add({
 /* ===== ŞUBAT ===== */
 add({
   id: "s_ilgi", m: 5, chat: "ilgi", at: 0.1, if: (s) => !!s.f.yilbasi, saat: "08:14",
-  lines: ["ilgi: bugün ne günü biliyo musun 🙂", "ilgi: kutlamıyoruz tabi. sadece soruyorum."],
+  lines: (s) => (vr(s, "ilgi2") ? ["ilgi: bugün kursta herkes kırmızı bişey giymiş 🙄", "ilgi: ben de giydim ama tesadüf. sadece söylüyorum"] : ["ilgi: bugün ne günü biliyo musun 🙂", "ilgi: kutlamıyoruz tabi. sadece soruyorum."]),
   ask: {
     unread: -16, seen: -18, seenLine: "ilgi: tamam.",
     opts: [
       { say: "biliyorum. sana bi şey aldım", need: (s) => s.para >= 2, fx: { b: { ilgi: 20 }, pa: -2, set: { sevgili: 1 } }, then: ["ilgi: ne aldın", "ilgi: ...", "ilgi: kitap ayracı mı bu 😭 arkasına ne yazmışsın sen", "ilgi: tamam. resmen sevgiliyiz şu an. itiraz kabul etmiyorum"] },
       { say: "kutlamıyoruz ama... buna bi isim koyalım mı?", fx: { b: { ilgi: 18 }, set: { sevgili: 1 } }, then: ["ilgi: isim mi 😄", "ilgi: ...", "ilgi: tamam. koyalım 🙂"] },
-      { say: "cumartesi deneme var ya 😅", fx: { b: { ilgi: -8 } }, then: ["ilgi: evet biliyorum. hep var"] },
+      { say: "cumartesi deneme var ya 😅", fx: { b: { ilgi: -8 }, run: (s) => (s.f.ilgiRet = s.month) }, then: ["ilgi: evet biliyorum. hep var"] },
     ],
   },
 });
@@ -539,13 +558,13 @@ add({
   },
 });
 add({
-  id: "s_kanka", m: 5, chat: "kanka", at: 0.7, if: (s) => !!s.f.notAt,
-  lines: ["kanka: notlarını dükkanda tezgâhın altında okuyorum 😄 müşteri gelince saklıyorum", "kanka: dayım gördü, 'oku oku' dedi. herkes beni okutmaya çalışıyo"],
+  id: "s_kanka", m: 5, chat: "kanka", at: 0.7, if: (s) => !!s.f.notAt, kriz: true,
+  lines: (s) => (tasinma(s) ? ["kanka: notlarını yeni sınıfta okuyorum, herkes 'bu yazı kimin' diyo 😄", "kanka: 'istanbul'daki kankam' dedim. havam oldu"] : ["kanka: notlarını dükkanda tezgâhın altında okuyorum 😄 müşteri gelince saklıyorum", "kanka: dayım gördü, 'oku oku' dedi. herkes beni okutmaya çalışıyo"]),
   ask: { opts: [{ say: "dayına selam söyle 😄", fx: { b: { kanka: 6 } }, then: ["kanka: söyledim. 'o kim' dedi 😂"] }] },
 });
 add({
-  id: "s_kanka_b", m: 5, chat: "kanka", at: 0.7, if: (s) => !s.f.notAt,
-  lines: ["kanka: cumartesi akşam bizim mahallede maç var. gel be bi akşam", "kanka: aylardır doğru düzgün görmedim seni"],
+  id: "s_kanka_b", m: 5, chat: "kanka", at: 0.7, if: (s) => !s.f.notAt, kriz: true,
+  lines: (s) => (tasinma(s) && !s.f.babaSordu ? ["kanka: hafta sonu istanbul'a geliyorum, babaannemde kalcam", "kanka: cumartesi akşam bi saat? aylardır görmedim seni"] : ["kanka: cumartesi akşam bizim mahallede maç var. gel be bi akşam", "kanka: aylardır doğru düzgün görmedim seni"]),
   ask: {
     unread: -10, seen: -13, seenLine: "kanka: tamam. her ay aynı cevap zaten",
     opts: [
@@ -556,11 +575,11 @@ add({
 });
 add({
   id: "s_aile", m: 5, chat: "aile", at: 0.85, saat: "17:22",
-  lines: ["teyze: Cumartesi akşam iftara bekliyorum hepinizi, mazeret yok 🌙", "teyze: {ad} sen de geliyorsun, ders bir akşam bekler"],
+  lines: (s) => (laik(s) ? ["teyze: Cumartesi bizde mangal var, hepinizi bekliyorum, mazeret yok 🔥", "teyze: {ad} sen de geliyorsun, ders bir akşam bekler"] : ["teyze: Cumartesi akşam iftara bekliyorum hepinizi, mazeret yok 🌙", "teyze: {ad} sen de geliyorsun, ders bir akşam bekler"]),
   ask: {
     who: "teyze", unread: -3, seen: -4,
     opts: [
-      { say: "geliyoruz teyze 🌙", fx: { b: { teyze: 6, anne: 3 }, st: -1 }, then: ["teyze: Sarma yaptım, sırf senin için 🥰"] },
+      { say: "geliyoruz teyze", fx: { b: { teyze: 6, anne: 3 }, st: -1 }, then: ["teyze: Sarma yaptım, sırf senin için 🥰"] },
       { say: "teyzecim ben bu sefer gelemem, kusura bakma", fx: { b: { teyze: -1 } }, then: ["teyze: Annene tabak koyarım, sen de yersin 🙂"] },
     ],
   },
@@ -581,7 +600,7 @@ add({
   },
 });
 add({
-  id: "m_etut", m: 6, chat: "etut", at: 0.3, saat: "23:41",
+  id: "m_etut", m: 6, chat: "etut", at: 0.7, saat: "23:41", kriz: true,
   lines: ["etut: ben çöktüm", "etut: 3 denemedir düşüyorum. annem bugün 'o kadar para verdik' dedi. dememeliydi bence", "etut: bıraksam mı diyorum. tıp falan. bilmiyorum"],
   ask: {
     unread: -12, seen: -14, seenLine: "etut: neyse boşver, kafamda kuruyorum",
@@ -593,7 +612,7 @@ add({
 });
 add({
   id: "m_aile", m: 6, chat: "aile", at: 0.45, saat: "07:58",
-  lines: ["teyze: #kart:bayram|Bayramınız Mübarek Olsun", "teyze: Bayramınız mübarek olsun canlarım 🌷🌷", "anne: Seninkini de kardeşim 🌷 Kahvaltıya bekliyoruz", "anne: #foto:bayram", "kardes: harçlıklar nerde"],
+  lines: (s) => [laik(s) ? "teyze: #kart:bayram|İyi Bayramlar" : "teyze: #kart:bayram|Bayramınız Mübarek Olsun", laik(s) ? "teyze: İyi bayramlar canlarım 🌷 Kahvaltıya kim geliyor?" : "teyze: Bayramınız mübarek olsun canlarım 🌷🌷", "anne: Seninkini de kardeşim 🌷 Kahvaltıya bekliyoruz", "anne: #foto:bayram", "kardes: harçlıklar nerde"],
   ask: {
     who: "teyze", unread: -2, seen: -3,
     opts: [
@@ -618,12 +637,18 @@ add({
   lines: ["ilgi: denemede seni gördüm. selam verecektim ama çok dalgındın 🙂"],
   ask: {
     unread: -8, seen: -10,
-    opts: [{ say: "keşke verseydin. o deneme beni bitirdi", fx: { b: { ilgi: 10 } }, then: ["ilgi: herkesi bitirdi", "ilgi: bi dahakine dürterim"] }],
+    opts: [
+      { say: "keşke verseydin. çıkışta bi çay?", fx: { b: { ilgi: 12 }, st: -1, set: { yakin: 1, yilbasi: 1 } }, then: ["ilgi: cumartesi denemeden sonra. kapıda bekliyorum 🙂"] },
+      { say: "o deneme beni bitirdi", fx: { b: { ilgi: 4 } }, then: ["ilgi: herkesi bitirdi", "ilgi: bi dahakine dürterim"] },
+    ],
   },
 });
 add({
   id: "m_kanka", m: 6, chat: "kanka", at: 0.75, if: (s) => kankaIyi(s),
-  lines: ["kanka: bugün eski matematikçi geldi dükkana. 'sınava girmiyo musun' dedi", "kanka: giricem hocam dedim. sesli söyleyince gerçek oldu sanki"],
+  lines: (s) =>
+    tasinma(s)
+      ? [s.f.babaSordu ? "kanka: dayımın evinde masam pencereye bakıyo. ilk defa kendi masam var" : "kanka: kayseri'de kurs hocası 'sen istanbul'dan mı geldin' dedi. evet dedim. hâlâ öyle", "kanka: sınava giricem. sesli söyleyince gerçek oldu sanki"]
+      : [...(s.f.babaSordu ? [] : ["kanka: babam iş buldu bu arada. eski ustasının yanında. kimseden bişey istemedi, istemez de 🙂"]), "kanka: bugün eski matematikçi geldi dükkana. 'sınava girmiyo musun' dedi", "kanka: giricem hocam dedim. sesli söyleyince gerçek oldu sanki"],
   ask: { opts: [{ say: "girceksin. ben de yanındayım", fx: { b: { kanka: 8 } }, then: ["kanka: bunu bi kenara yazdım. unutmam"] }] },
 });
 add({
@@ -669,13 +694,24 @@ add({
 add({ id: "n_etut", m: 7, chat: "etut", at: 0.55, if: (s) => !!s.f.etutYurudu, lines: ["etut: bu deneme 9 net arttım", "etut: o yürüyüş işe yaradı galiba 😄"], ask: { opts: [{ say: "biliyordum 🙌", fx: { b: { etut: 5 } }, then: ["etut: sıradaki yürüyüş sınavdan sonra. uzun bi yürüyüş"] }] } });
 add({ id: "n_etut_b", m: 7, chat: "etut", at: 0.55, if: (s) => !s.f.etutYurudu, lines: ["etut: bu ayın deneme takvimi 📎", "etut: cumartesi 9.30, geç kalan içeri alınmıyomuş artık"] });
 add({
-  id: "n_ilgi", m: 7, chat: "ilgi", at: 0.7, if: (s) => ilgiStage(s) === 3,
+  id: "n_ilgi", m: 7, chat: "ilgi", at: 0.7, if: (s) => ilgiStage(s) === 3 && !s.f.cevap_n_ilgi_2,
   lines: ["ilgi: annemler {sehir} diyo. orada teyzem var, onda kalırım diyolar", "ilgi: ben de istiyorum aslında. ama sen?"],
   ask: {
     unread: -10, seen: -13,
     opts: [
       { say: "bakarız. daha puanlar belli değil", fx: { b: { ilgi: 1 } }, then: ["ilgi: evet. bakarız"] },
       { say: "ben de {sehirE} bakarım", fx: { b: { ilgi: 10 }, set: { ilgiSoz: 1 } }, then: ["ilgi: ciddi misin", "ilgi: söz ama bak 🤙"] },
+    ],
+  },
+});
+add({
+  id: "n_ilgi_2", m: 7, chat: "ilgi", at: 0.72, kriz: true, if: (s) => !!s.f.yilbasi && !s.f.sevgili,
+  lines: ["ilgi: bi şey sorcam, kızma", "ilgi: biz neyiz? arkadaş mı, başka bi şey mi?"],
+  ask: {
+    unread: -14, seen: -18, seenLine: "ilgi: tamam. cevabın bu sanırım",
+    opts: [
+      { say: "başka bi şey bence 🙂", fx: { b: { ilgi: 18 }, set: { sevgili: 1 } }, then: ["ilgi: bence de", "ilgi: tamam. sınava kadar kimseye söylemiyoruz 🤫"] },
+      { say: "bilmiyorum. sınavdan sonra konuşalım mı?", fx: { b: { ilgi: -2 }, run: (s) => (s.f.ilgiRet = s.month) }, then: ["ilgi: olur. sınavdan sonra"] },
     ],
   },
 });
@@ -705,7 +741,7 @@ add({
 });
 add({
   id: "my_kanka", m: 8, chat: "kanka", at: 0.45,
-  lines: (s) => (kankaIyi(s) ? ["kanka: sınava giriyorum kesin. rezil olursam gülmeyin", "kanka: dayım sınav haftası izin verdi. 'git oku' dedi. dayım bile inanıyo bana"] : ["kanka: sınava giricem galiba. bilmiyorum. sen nasılsın"]),
+  lines: (s) => (kankaIyi(s) ? (tasinma(s) ? ["kanka: sınava giriyorum kesin. rezil olursam gülmeyin", "kanka: annem 'istanbul'da gir, eski arkadaşlarının yanında' dedi. annem bile inanıyo bana"] : ["kanka: sınava giriyorum kesin. rezil olursam gülmeyin", "kanka: dayım sınav haftası izin verdi. 'git oku' dedi. dayım bile inanıyo bana"]) : ["kanka: sınava giricem galiba. bilmiyorum. sen nasılsın"]),
   ask: {
     unread: -8, seen: -10,
     opts: [
@@ -715,7 +751,7 @@ add({
   },
 });
 add({
-  id: "my_ilgi", m: 8, chat: "ilgi", at: 0.6, if: (s) => ilgiStage(s) === 3,
+  id: "my_ilgi", m: 8, chat: "ilgi", at: 0.6, kriz: true, if: (s) => ilgiStage(s) === 3,
   lines: ["ilgi: sınava 3 hafta var. 3 hafta görüşmeyelim mi diyorum", "ilgi: senin için değil, benim için. dağılıyorum"],
   ask: {
     unread: -8, seen: -10,
@@ -731,12 +767,10 @@ add({ id: "my_patron", m: 8, chat: "patron", at: 0.85, if: (s) => !!s.f.isOldu, 
 /* ===== HAZİRAN: sınav sabahı ===== */
 add({
   id: "h_aile", m: 9, chat: "aile", at: 0, saat: "06:41",
-  lines: [
-    "anne: Kalktın mı? Kimliğini koydun mu? Kalem, silgi?",
-    "anne: Bir de su al yanına",
+  lines: (s) => [
+    ...(vr(s, "sabah") ? ["anne: Uyandın mı? Ben hiç uyumadım zaten 😅", "anne: Kimlik çantanın ön gözünde, dün gece koydum. Yine de bak"] : ["anne: Kalktın mı? Kimliğini koydun mu? Kalem, silgi?", "anne: Bir de su al yanına"]),
     "baba: Hadi bakalım {aslanim}. Sen yaparsın.",
-    "teyze: #kart:sinav|Allah Yardımcın Olsun",
-    "teyze: Sabah namazında dua ettim yavrum 🤲🌹",
+    ...(laik(s) ? ["teyze: #kart:sinav|Başarılar", "teyze: Nazar boncuğunu çantana taktım, fark etmedin 🧿 başarılar canım"] : ["teyze: #kart:sinav|Allah Yardımcın Olsun", "teyze: Sabah namazında dua ettim yavrum 🤲🌹"]),
     "kardes: {hitap} kolay gelsin 💪",
     "kardes: annem yazdırdı ama ben de diyorum",
     "anne: #foto:sinavsabahi",
@@ -767,7 +801,7 @@ add({
   ask: { unread: -2, seen: -3, opts: [{ say: "sana da 🍀", fx: { b: { ilgi: 4 } } }] },
 });
 add({ id: "h_etut", m: 9, chat: "etut", at: 0.55, saat: "07:02", lines: ["etut: kalemimi unuttum diye rüya gördüm. 3 kere kontrol ettim", "etut: başarılar"] });
-add({ id: "h_sinif", m: 9, chat: "sinif", at: 0.7, saat: "07:15", lines: ["c0: BAŞARILAR 🦅🦅", "c1: Herkese başarılar arkadaşlar. Sınavdan sonra buluşalım mı?", "c2: bana bol bol dua edin", "c3: kimlik lazım mıydı"] });
+add({ id: "h_sinif", m: 9, chat: "sinif", at: 0.7, saat: "07:15", lines: ["c0: BAŞARILAR 🦅🦅", "c1: Herkese başarılar arkadaşlar. Sınavdan sonra buluşalım mı?", "c2: bana bol bol dua edin", "c0: KİMLİK LAZIM MIYDI", "c0: tamam buldum"] });
 add({ id: "h_rehber", m: 9, chat: "rehber", at: 0.85, saat: "07:05", if: (s) => s.bond.rehber >= 45, lines: ["rehber: Bugün sadece bugünü düşün. Başarılar {ad}."] });
 
 /* ===== TEMMUZ: sonuç ve tercih ===== */
@@ -781,26 +815,33 @@ add({ id: "t_sonuc", m: 10, chat: "sonuc", at: 0.3, saat: "10:00", lines: ["sys:
 add({
   id: "t_aile", m: 10, chat: "aile", at: 0.45, hemen: true, saat: "10:09",
   lines: (s): string[] =>
-    ({
-      yuksek: ["anne: {ad}!!!!", "anne: Babana gösterdim, ağladı. Sonra 'gözüme bir şey kaçtı' dedi", "baba: Kaçtı.", "teyze: #kart:tebrik|Tebrikler", "kardes: odam gidiyo galiba 😔"],
-      orta: ["anne: Puanı gördük. Seninle gurur duyuyoruz, bunu bil", "baba: Tercihleri beraber yaparız. Acele yok.", "kardes: {hitap} bu iyi mi? anlamadım ama tebrikler"],
-      dusuk: ["anne: Ne olursa olsun sen bizim {oglum}sun.", "baba: Akşam konuşuruz. Kendini yeme.", "kardes: {hitap} kapını çalsam açar mısın"],
-      yetersiz: ["anne: Kapındayım. Açmasan da buradayım.", "baba: Bir sene bir şey değil. Hiçbir şey değil."],
-    } as Record<string, string[]>)[s.f.tier as string],
+    ((vr(s, "sonuc")
+      ? {
+          yuksek: ["kardes: {hitap} annem çığlık attı", "anne: Atmadım. Biraz bağırdım.", "anne: Mutfakta oturmuş ağlıyorum şu an, haberin olsun 🥹", "baba?: Komşular duydu. Duysunlar.", "teyze: #kart:tebrik|Tebrikler"],
+          orta: ["baba: Gördüm. Bu senin emeğin, kimse elinden alamaz.", "anne: Akşam dışarıda yiyoruz. İtiraz yok.", "kardes: lahmacun 🙏"],
+          dusuk: ["anne: Telefonu biraz bırak istersen. Biz buradayız.", "baba: Ben de senin yaşındayken sınavı ilk seferde kaçırdım. Akşam anlatırım.", "kardes: {hitap} kapının önüne çikolata koydum"],
+          yetersiz: ["anne: Bugün yemek yapmadım. Sen ne istersen o.", "baba: Seneye bugün aklına bile gelmeyecek. Söz veriyorum.", "kardes: ..."],
+        }
+      : {
+          yuksek: ["anne: {ad}!!!!", "anne: Babana gösterdim, ağladı. Sonra 'gözüme bir şey kaçtı' dedi", "baba: Kaçtı.", "teyze: #kart:tebrik|Tebrikler", "kardes: odam gidiyo galiba 😔"],
+          orta: ["anne: Puanı gördük. Seninle gurur duyuyoruz, bunu bil", "baba: Tercihleri beraber yaparız. Acele yok.", "kardes: {hitap} bu iyi mi? anlamadım ama tebrikler"],
+          dusuk: ["anne: Ne olursa olsun sen bizim {oglum}sun.", "baba: Akşam konuşuruz. Kendini yeme.", "kardes: {hitap} kapını çalsam açar mısın"],
+          yetersiz: ["anne: Kapındayım. Açmasan da buradayım.", "baba: Bir sene bir şey değil. Hiçbir şey değil."],
+        }) as Record<string, string[]>)[s.f.tier as string],
   ask: {
     who: "anne", unread: -3, seen: -5,
     opts: (s): Opt[] =>
       s.f.tier === "yuksek" || s.f.tier === "orta"
         ? [{ say: "teşekkürler 🥹", fx: { b: { anne: 5, baba: 5 } }, then: ["anne: ❤️"] }, { say: "daha iyisi olabilirdi", fx: { b: { baba: 3 } }, then: ["baba: Olabilirdi. Ama bu da senin. Hakkını ver."] }]
-        : [{ say: "kapıyı açıyorum", fx: { b: { anne: 8, kardes: 6 } }, then: ["kardes: geldim", "anne: ❤️"] }, { say: "biraz yalnız kalmak istiyorum", fx: { b: { anne: 2 } }, then: ["anne: Tamam. Kapının önüne su bırakıyorum."] }],
+        : [{ say: "gelin. kapı açık", fx: { b: { anne: 8, kardes: 6 } }, then: ["kardes: geldim", "anne: ❤️"] }, { say: "biraz yalnız kalmak istiyorum", fx: { b: { anne: 2 } }, then: ["anne: Tamam. Kapının önüne su bırakıyorum."] }],
   },
 });
 add({
   id: "t_kanka2", m: 10, chat: "kanka", at: 0.55, hemen: true, if: (s) => !("kanka" in s.kus),
   lines: (s): string[] =>
     ({
-      iyi: ["kanka: kanka", "kanka: puanım geldi. 4 yıllık bi yer çıkar diyo dayım", "kanka: o notlar olmasa olmazdı bilmiş ol"],
-      orta: ["kanka: benimki 2 yıllık bi yere yeter galiba", "kanka: düşük ama benim. dükkandan çıka çıka girdim"],
+      iyi: ["kanka: kanka", "kanka: puanım geldi. 4 yıllık bi yer çıkar diyolar", "kanka: o notlar olmasa olmazdı bilmiş ol"],
+      orta: ["kanka: benimki 2 yıllık bi yere yeter galiba", tasinma(s) ? "kanka: düşük ama benim. yeni okulda tek başıma çalıştım" : "kanka: düşük ama benim. dükkandan çıka çıka girdim"],
       kotu: ["kanka: ben olmadı", "kanka: seneye tekrar. ya da girmem. bilmiyorum"],
     } as Record<string, string[]>)[s.f.kankaSonuc as string],
   ask: {
@@ -808,21 +849,26 @@ add({
     opts: (s) =>
       s.f.kankaSonuc === "kotu"
         ? [{ say: "seneye beraber çalışırız. ben neredeysem", fx: { b: { kanka: 10 } }, then: ["kanka: söz verme", "kanka: ...", "kanka: ver aslında. söz ver"] }]
-        : [{ say: "seninle gurur duyuyorum kanka", fx: { b: { kanka: 8 } }, then: ["kanka: kes ağlıcam 😭"] }],
+        : [{ say: "helal be kanka 👏", fx: { b: { kanka: 8 } }, then: ["kanka: kes ağlıcam 😭"] }],
   },
 });
 add({
   id: "t_etut", m: 10, chat: "etut", at: 0.62, if: (s) => !("etut" in s.kus),
   lines: (s) => (s.f.etutSonuc === "dis" ? ["etut: tıp çıkmıyo", "etut: diş hekimliği çıkıyo. 'olsun' diyorum ama bilmiyorum. galiba olsun"] : ["etut: tıp çıkmıyo. seneye tekrar giricem", "etut: annem bu sefer 'para' demedi. 'sen bilirsin' dedi. bu daha kötü bi his"]),
-  ask: { unread: -3, seen: -4, opts: [{ say: "kendine iyi davran. bi yıl bu", fx: { b: { etut: 6 } }, then: ["etut: sen de 🤍"] }] },
+  ask: { unread: -3, seen: -4, opts: [{ say: "kafana takma. bi yıl bu", fx: { b: { etut: 6 } }, then: ["etut: sen de takma 🤍"] }] },
 });
 add({
   id: "t_ilgi", m: 10, chat: "ilgi", at: 0.7, if: (s) => ilgiStage(s) === 3,
   lines: ["ilgi: puanımı gördün mü? {sehir} çıkıyo bence", "ilgi: senin? ne yazcaksın?"],
 });
 add({
-  id: "tercih", m: 10, chat: "aile", at: 0.85, saat: "21:30",
-  lines: ["baba: Bu akşam tercih listesine oturuyoruz.", "baba: Önce sen söyle {oglum}. Ne istiyorsun?"],
+  id: "tercih", m: 10, chat: "aile", at: 0.85, saat: "21:30", kriz: true,
+  lines: (s) =>
+    s.f.ayriBaba
+      ? ["anne: Bu akşam tercih listesine oturuyoruz. Baban da telefonla bağlanacak.", "anne: Önce sen söyle {oglum}. Ne istiyorsun?"]
+      : vr(s, "tercih")
+        ? ["anne: Baban geç gelecek, listeyi ikimiz başlatalım.", "anne: Ben karışmayacağım. Biraz karışacağım. Önce sen söyle: ne istiyorsun?"]
+        : ["baba?: Bu akşam tercih listesine oturuyoruz.", "baba?: Önce sen söyle {oglum}. Ne istiyorsun?"],
   ask: {
     who: "baba", unread: -6, seen: -8,
     // Cevap verilmezse listeyi baban doldurur: İstanbul, puana göre.
@@ -863,9 +909,9 @@ add({
   id: "tercih_tepki", m: 10, chat: "aile", at: 1, after: "tercih",
   lines: (s) => {
     const t = s.f.tercih.tip;
-    if (t === "ist") return ["anne: Ben sana söylemiştim. Söylememiştim ama içimden söylemiştim 😄", "baba: 👍", "kardes: odam gitmedi 😔"];
-    if (t === "uzak") return ["anne: ...", "anne: Tamam. Kışlık montunu alırız o zaman.", "baba: Uzağa gitmek de cesaret ister. Seninle gurur duyuyorum."];
-    if (t === "ilgi") return ["anne: {sehir} mi? Neden {sehir}?", "kardes: anne sen bilmiyo musun 😏", "anne: Neyi bilmiyorum?", "baba: Kendi kararı. Saygı duyarız. Sonra anlatır 🙂"];
+    if (t === "ist") return ["anne: Ben sana söylemiştim. Söylememiştim ama içimden söylemiştim 😄", "baba?: 👍", "kardes: odam gitmedi 😔"];
+    if (t === "uzak") return ["anne: ...", "anne: Tamam. Kışlık montunu alırız o zaman.", "baba: Uzağa gitmek de cesaret ister. Helal olsun."];
+    if (t === "ilgi") return ["anne: {sehir} mi? Neden {sehir}?", "kardes: anne sen bilmiyo musun 😏", "anne: Neyi bilmiyorum?", "baba?: Kendi kararı. Saygı duyarız. Sonra anlatır 🙂"];
     if (t === "tekrar") return ["baba: Bir sene bir şey değil.", "anne: Kurs parasını hallederiz. Sen kafana takma."];
     return ["anne: Çalışmak mı? Okul ne olacak?", "baba: Bir sene dinlensin. Sonra bakarız. Biz buradayız."];
   },
@@ -897,8 +943,8 @@ add({
   lines: (s) => {
     const t = s.f.tercih?.tip;
     if (t === "tekrar" || t === "is" || !s.f.yerProg) return ["anne: Bir yıl daha bizimlesin. Ben buna da şükrederim.", "kardes: odam yine gitmedi", "baba: Eylülde kursa beraber gideriz kayda."];
-    if (s.f.babaDoldurdu) return ["baba: Listeyi senin yerine ben doldurdum, sen kapını açmadın. İstanbul yazdım.", "anne: Gelmiş işte. Hayırlısı olsun.", "teyze: #kart:tebrik|Hayırlı Olsun"];
-    if (s.f.yerSehir === "İstanbul") return [s.f.kaydi ? "anne: Listede aşağıdakiydi ama olsun. Senin olan gelmiş." : "anne: Allah'ım şükürler olsun 🤲", "teyze: #kart:tebrik|Hayırlı Olsun", "baba: Okul yolunu ben gösteririm ilk gün. Sonra sen bilirsin 🙂"];
+    if (s.f.babaDoldurdu) return [s.f.ayriBaba ? "anne: Listeyi babanla telefonda ben doldurdum, sen kapını açmadın. İstanbul yazdık." : "baba?: Listeyi senin yerine ben doldurdum, sen kapını açmadın. İstanbul yazdım.", "anne: Gelmiş işte. Hayırlısı olsun.", "teyze: #kart:tebrik|Hayırlı Olsun"];
+    if (s.f.yerSehir === "İstanbul") return [s.f.kaydi ? "anne: Listede aşağıdakiydi ama olsun. Senin olan gelmiş." : laik(s) ? "anne: Oh be. Çok şükür 🥹" : "anne: Allah'ım şükürler olsun 🤲", "teyze: #kart:tebrik|Hayırlı Olsun", "baba: Okul yolunu ben gösteririm ilk gün. Sonra sen bilirsin 🙂"];
     return ["anne: Bavulu bugün çıkardım. Açmadım daha. Sadece çıkardım.", "baba: Yurt başvurusunu beraber yaparız.", "teyze: #kart:tebrik|Hayırlı Olsun", "kardes: odana hemen geçmicem. bi hafta beklicem. saygıdan"];
   },
   ask: {
@@ -907,7 +953,7 @@ add({
   },
 });
 add({
-  id: "ag_ilgi", m: 11, chat: "ilgi", at: 0.45, if: (s) => ilgiStage(s) === 3,
+  id: "ag_ilgi", m: 11, chat: "ilgi", at: 0.45, kriz: true, if: (s) => ilgiStage(s) === 3,
   lines: (s) => (s.f.ayni ? ["ilgi: AYNI ŞEHİR", "ilgi: aynı şehir aynı şehir", "ilgi: #foto:deniz", "ilgi: bunu oraya da götürücem bak"] : ["ilgi: ben {sehir}. sen {yerSehir}", "ilgi: ...", "ilgi: biz ne olcaz?"]),
   ask: {
     unread: -6, seen: -10,
@@ -922,14 +968,14 @@ add({
 });
 add({
   id: "ag_kanka", m: 11, chat: "kanka", at: 0.6, if: (s) => !("kanka" in s.kus),
-  lines: (s) => (s.f.yerSehir && s.f.yerSehir !== "İstanbul" ? ["kanka: gittiğin yerde bana da yer var mı 😄", "kanka: şaka. her ay geliyorum, haberin olsun", "kanka: otobüs paramı dükkandan çıkarırım"] : ["kanka: bi yere gitmiyosun di mi", "kanka: iyi. ben de bi yere gitmiyorum 🫡"]),
+  lines: (s) => (s.f.yerSehir && s.f.yerSehir !== "İstanbul" ? ["kanka: gittiğin yerde bana da yer var mı 😄", "kanka: şaka. her ay geliyorum, haberin olsun", tasinma(s) ? "kanka: kayseri'den otobüs var mı bakıyorum şu an" : "kanka: otobüs paramı dükkandan çıkarırım"] : ["kanka: bi yere gitmiyosun di mi", "kanka: iyi. ben de bi yere gitmiyorum 🫡"]),
   ask: { unread: -3, seen: -4, opts: [{ say: "kapı hep açık kanka", fx: { b: { kanka: 4 } }, then: ["kanka: 🤝"] }] },
 });
 add({ id: "ag_etut", m: 11, chat: "etut", at: 0.7, if: (s) => !("etut" in s.kus), lines: (s) => (s.f.etutSonuc === "dis" ? ["etut: diş hekimliği. kesinleşti", "etut: annem artık 'o kadar para' demiyo 😄"] : ["etut: kursa tekrar yazıldım. aynı sınıf, aynı sıra", "etut: sen de gelirsen yanım boş 🙂"]) });
 add({ id: "ag_patron", m: 11, chat: "patron", at: 0.8, if: (s) => !!s.f.isOldu, lines: ["patron: Eylülde gidiyorsan son bir cumartesi gel. Veda kahvesi benden.", "patron: Kalp yapmayı da o gün öğreteceğim, söz."] });
 add({
   id: "ag_sinif", m: 11, chat: "sinif", at: 0.9, saat: "22:30",
-  lines: ["c1: Arkadaşlar herkes nereye yerleşti, buraya yazalım 📍", "c0: TRABZON 🦅", "c2: açıktayım 🙂 seneye görüşürüz", "c4: Eskişehir. kimseyi tanımıyorum orada", "c3: biz hangi gün mezun olmuştuk"],
+  lines: ["c1: Arkadaşlar herkes nereye yerleşti, buraya yazalım 📍", "c0: TRABZON 🦅", "c2: açıktayım 🙂 seneye görüşürüz", "c4: Eskişehir. kimseyi tanımıyorum orada", "c3: ben de Eskişehir! {c4} tanıyosun işte 🙌"],
   ask: { unread: -1, seen: -1, opts: [{ say: "{yerKisa} 📍", fx: { b: { sinif: 3 } }, then: ["c1: 👏👏"] }] },
 });
 
@@ -1019,28 +1065,36 @@ export function kalanlar(s: S): Kalan[] {
     return m ? m : null;
   };
   const AY = ["Eylül", "Ekim", "Kasım", "Aralık", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos"];
-  out.push({ chat: "anne", ad: "Annem", canli: true, satir: s.bond.anne >= 60 ? "Her sabah hâlâ 'günaydın' yazıyor. Sen de artık cevap veriyorsun." : "Mesajları kısaldı. Ama her sabah yine yazıyor." });
-  out.push({ chat: "baba", ad: "Babam", canli: true, satir: s.f.cevap_o_baba ? "Hâlâ her mesaja 👍 atıyor. Künefe sözünü tuttu." : "Hâlâ her mesaja 👍 atıyor. Bir de sınav sabahı 'sen yaparsın' yazmıştı." });
+  const anneCevap = s.answeredBy.anne ?? 0, anneIhmal = s.ignored.anne ?? 0;
+  out.push({
+    chat: "anne", ad: "Annem", canli: true,
+    satir: anneIhmal === 0 ? "Her sabah 'günaydın' yazıyor. Sen de her sabah cevap veriyorsun." : anneCevap > anneIhmal ? "Her sabah 'günaydın' yazıyor. Arada bir cevap veriyorsun, ona yetiyor." : anneCevap === 0 ? "Bütün yıl yazdı. Sen pek yazmadın. Yine de her sabah 'günaydın' geliyor." : "Mesajları kısaldı. Ama her sabah yine yazıyor.",
+  });
+  out.push({
+    chat: "baba", ad: "Babam", canli: true,
+    satir: s.f.ayriBaba ? (s.answeredBy.baba ? "Ayrı evlerde, aynı telefonda. Sınav sabahı ilk o yazmıştı." : "Ayrı evde yaşıyor. Yazdıkları hep kısa; cevapların da öyle.") : s.f.babaSordu ? "Arkadaşının ailesi için bir telefon açmıştı. Hâlâ anlatmıyor." : s.f.cevap_o_baba ? "Hâlâ her mesaja 👍 atıyor. Künefe sözünü tuttu." : "Hâlâ her mesaja 👍 atıyor. Sınav sabahı 'sen yaparsın' yazmıştı.",
+  });
   // kanka
   if ("kanka" in s.kus) {
     const l = lastMonth("kanka", "kanka");
     out.push({ chat: "kanka", ad: k.kanka.ad, canli: false, satir: `Son mesaj ${AY[l?.month ?? 0]}: "${(l?.text ?? "").replace(/[.]$/, "")}". Sonra hiçbir şey.` });
-  } else if (s.bond.kanka >= 70) out.push({ chat: "kanka", ad: k.kanka.ad, canli: true, satir: s.f.baristi ? "Sınav sabahı barıştınız. O günden beri her gün." : "Bu yılın en uzun sohbeti. Hâlâ her gün." });
+  } else if (s.f.baristi) out.push({ chat: "kanka", ad: k.kanka.ad, canli: true, satir: "Sınav sabahı barıştınız. O günden beri yine her gün." });
+  else if (s.bond.kanka >= 70) out.push({ chat: "kanka", ad: k.kanka.ad, canli: true, satir: s.f.yaninda ? "O aralık gecesi on beş dakikada yanındaydın. Bunu hiç söylemedi, hiç unutmadı." : tasinma(s) && !s.f.babaSordu ? "Kayseri uzak. Mesajlar değil." : "Bu yılın en uzun sohbeti. Hâlâ her gün." });
   else out.push({ chat: "kanka", ad: k.kanka.ad, canli: true, satir: "Arada bir. Doğum gününde mutlaka." });
   // ilgi
   const st = ilgiStage(s);
   if (s.f.ayrildi) out.push({ chat: "ilgi", ad: k.ilgi.ad, canli: false, satir: `"Biraz ara verelim" demişti, ${AY[s.kus.ilgi ?? 0]} ayında. Ara hâlâ sürüyor.` });
   else if (st === 3) out.push({ chat: "ilgi", ad: `${k.ilgi.ad} ${k.ilgiEmoji}`, canli: true, satir: s.f.ayni ? "Aynı şehir. Çay borcu ömür boyu." : s.f.uzakIliski ? "Ayrı şehirler. Her gece 'iyi geceler'. Şimdilik." : "Ne olacağı belli değil. Ama bu yıl ikinizindi." });
-  else if (st >= 1) out.push({ chat: "ilgi", ad: k.ilgi.ad, canli: false, satir: "Bir şeyler olabilirdi. Olmadı. Arada bir hikâyesini görüyorsun." });
-  else if (s.f.ilgiTanisti) out.push({ chat: "ilgi", ad: `${k.ilgi.ad} (kurs)`, canli: false, satir: "Eylül'de bir fizik notu istemişti. O kadar." });
+  else if (st >= 1 || s.f.ilgiRet !== undefined) out.push({ chat: "ilgi", ad: k.ilgi.ad, canli: false, satir: `Bir şeyler olabilirdi. ${ilgiNeden(s)}` });
+  else if (s.f.ilgiTanisti) out.push({ chat: "ilgi", ad: `${k.ilgi.ad} (kurs)`, canli: false, satir: "Eylül'de bir fizik notu istemişti. Cevap vermedin. O kadar." });
   // etüt
   out.push("etut" in s.kus ? { chat: "etut", ad: k.etut.ad, canli: false, satir: "Ayrı çalışmaya karar vermişti. Sonucunu başkasından duydun." } : { chat: "etut", ad: k.etut.ad, canli: true, satir: s.f.etutYurudu ? "O mart gecesi yürüdünüz. Bunu ikiniz de unutmayacaksınız." : "Deneme netleri, kütüphane, lahmacun. Bir yıllık yol arkadaşı." });
   // kardeş
   if ("kardes" in s.kus) out.push({ chat: "kardes", ad: k.kardes.ad, canli: false, satir: "Sana yazmayı bıraktı. Kapını da artık çalmıyor." });
   else if (s.f.cevap_m_kardes) out.push({ chat: "kardes", ad: k.kardes.ad, canli: true, satir: "Kesirler bitti. Ama hâlâ 'ödev' bahanesiyle odana geliyor." });
-  out.push({ chat: "teyze", ad: `${k.teyze.ad} Teyze`, canli: true, satir: "Her cuma bir gül kartı. Bir yıl boyunca bir kez bile aksatmadı." });
+  out.push({ chat: "teyze", ad: `${k.teyze.ad} Teyze`, canli: true, satir: laik(s) ? "Her pazar sabahı bir 'günaydın' kartı. Bir kez bile aksatmadı." : "Her cuma bir gül kartı. Bir yıl boyunca bir kez bile aksatmadı." });
   // sınıf
-  out.push({ chat: "sinif", ad: "12-C 🦅", canli: s.bond.sinif >= 55, satir: s.bond.sinif >= 55 ? "Grup hâlâ yaşıyor. Biri her ay 'buluşalım mı' yazıyor." : "Grubu sessize aldın. Okunmamış mesajlar birikiyor." });
+  out.push({ chat: "sinif", ad: "12-C 🦅", canli: s.bond.sinif >= 55, satir: s.bond.sinif >= 55 ? "Grup hâlâ yaşıyor. Biri her ay 'buluşalım mı' yazıyor." : "Grup sessizde. Okunmamışlar birikiyor; arada bir fotoğraf açıyorsun." });
   if (s.f.isOldu) out.push({ chat: "patron", ad: `${k.patron.ad} Abi`, canli: !("patron" in s.kus), satir: "patron" in s.kus ? "Kafenin önünden geçerken başını çeviriyorsun." : "Kalp yapmayı sonunda öğrendin. Biraz yamuk." });
   return out;
 }
@@ -1049,7 +1103,8 @@ export function kalanlar(s: S): Kalan[] {
 export function neden(s: S): string {
   const t = s.f.tercih?.tip;
   const p = s.f.puan;
-  if (s.f.babaDoldurdu) return `Puanın ${p}. Tercih akşamı sen yoktun; listeyi baban doldurdu.`;
+  if (s.f.babaDoldurdu && s.f.yerProg) return `Puanın ${p}. Tercih akşamı sen yoktun; listeyi ailen doldurdu.`;
+  if (s.f.babaDoldurdu) return `Puanın ${p}. Tercih akşamı sen yoktun; puan da yazılacak bir yere yetmedi.`;
   if (t === "tekrar" && s.f.tier === "yetersiz") return `Puanın ${p}. Bu yıl istediğin yere yetmedi; seneye tekrar gireceksin.`;
   if (t === "tekrar") return `Puanın ${p}. Bir yere yerleşebilirdin; seneye tekrar girmeyi sen seçtin.`;
   if (t === "is") return `Puanın ${p}. Bir yıl çalışmayı, kafanı toplamayı seçtin.`;
@@ -1058,6 +1113,78 @@ export function neden(s: S): string {
   if (t === "ilgi") return `Puanın ${p}. ${s.k.ilgi.ad} yüzünden mi, bölüm yüzünden mi, ikisini de söylemedin.`;
   if (t === "uzak") return `Puanın ${p}. Evden uzağı seçtin.`;
   return `Puanın ${p}. Evde kalmayı seçtin.`;
+}
+
+function ilgiNeden(s: S): string {
+  const ih = s.f.ilgiIhmal as { m: number; seen: boolean } | undefined;
+  if (s.f.ilgiRet !== undefined && (!ih || s.f.ilgiRet >= ih.m)) return `${AYLAR_TR[s.f.ilgiRet]} ayında "sonra" demiştin. Sonra gelmedi.`;
+  if (ih) return `${AYLAR_TR[ih.m]} ayında yazdı; ${ih.seen ? "okudun ama cevap vermedin" : "mesajı hiç açmadın"}.`;
+  return "Kimse bir şey demedi. Öyle kaldı.";
+}
+const AYLAR_TR = ["Eylül", "Ekim", "Kasım", "Aralık", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos"];
+
+/* ---------- durum paneli (karar 36-37) ---------- */
+const YAKIN = ["anne", "baba", "kardes", "teyze", "kanka", "ilgi", "etut", "patron", "rehber"];
+export function ruhHali(s: S): { puan: number; anlam: string } {
+  const ana = ["anne", "kanka", "kardes"].concat(ilgiStage(s) >= 1 ? ["ilgi"] : []);
+  let p = ana.reduce((t, w) => t + (s.bond[w] ?? 50), 0) / ana.length - Object.keys(s.kus).length * 8;
+  if (s.lastLeftover >= 3) p -= 6;
+  p = Math.round(Math.max(0, Math.min(100, p)));
+  const anlam = p >= 70 ? "iyi; etrafın kalabalık" : p >= 50 ? "idare eder" : p >= 35 ? "yorgun, biraz yalnız" : "yalnız; sınav stresi artabilir";
+  return { puan: p, anlam };
+}
+export interface Durum {
+  ruh: { puan: number; anlam: string };
+  uyku: string;
+  net: { alt: number; ust: number; anlam: string } | null;
+  puan: { alt: number; ust: number };
+  hedef: string;
+  ihtimal: number;
+  ihtimalAnlam: string;
+  cuzdan: string;
+  yakinlar: { who: string; ad: string; bag: number; yon: -1 | 0 | 1; sustu: boolean }[];
+  degisen: string[];
+}
+export function durum(s: S, budget: number): Durum {
+  const kalanAy = Math.max(0, 9 - s.month);
+  const ort = s.month > 0 ? Math.max(1.5, s.study / s.month) : 3.5;
+  const tahminiCalisma = s.study + budget + kalanAy * ort;
+  const merkez = 175 + tahminiCalisma * 6.2;
+  const alt = Math.round(Math.max(150, merkez - 45)), ust = Math.round(Math.min(548, merkez + 45));
+  const esik = 420;
+  const ihtimal = Math.round(Math.max(2, Math.min(97, ((merkez + 35 - esik) / 70) * 100)));
+  const netM = 30 + s.study * 1.6;
+  const net = s.month >= 2 ? { alt: Math.round(netM - 6), ust: Math.round(Math.min(120, netM + 6)), anlam: netM >= 85 ? "çok iyi gidiyor" : netM >= 65 ? "iyi, istikrarlı" : netM >= 45 ? "orta; açıklar var" : "geride" } : null;
+  const ad = (w: string) => (w === "anne" ? "Annen" : w === "baba" ? "Baban" : senderName(s, w));
+  const yakinlar = YAKIN.filter((w) => w !== "patron" || s.f.isOldu).filter((w) => w !== "ilgi" || s.f.ilgiTanisti)
+    .map((w) => {
+      const d = s.bond[w] - (s.snap.bond[w] ?? s.bond[w]);
+      return { who: w, ad: ad(w), bag: Math.round(s.bond[w]), yon: (d >= 3 ? 1 : d <= -3 ? -1 : 0) as -1 | 0 | 1, sustu: w in s.kus };
+    })
+    .sort((a, b) => b.bag - a.bag)
+    .slice(0, 5);
+  const degisen: string[] = [];
+  for (const w of YAKIN) {
+    const d = (s.bond[w] ?? 0) - (s.snap.bond[w] ?? s.bond[w] ?? 0);
+    if (d >= 8) degisen.push(`${ad(w)} ile yakınlaştınız`);
+    else if (d <= -8) degisen.push(`${ad(w)} kırıldı`);
+  }
+  for (const w of Object.keys(s.kus)) if (s.kus[w] === s.month - 1) degisen.push(`${ad(w)} artık yazmıyor`);
+  if (s.month > 0) degisen.push(s.lastLeftover > 0 ? `Geçen ay ${String(s.lastLeftover).replace(".", ",")} akşam masa başında geçti` : "Geçen ay derse hiç akşam kalmadı");
+  if (degisen.length === 0) degisen.push("Henüz büyük bir şey değişmedi.");
+  const cuzdan = s.f.is ? `Kafe açık · ${s.para} haftalık birikim${s.para >= 2 ? " (hediyeye yeter)" : ""}` : s.para > 0 ? `${s.para} haftalık birikim · kafede çalışmıyorsun` : "Harçlık; birikim yok";
+  return {
+    ruh: ruhHali(s),
+    uyku: s.lastLeftover >= 3 ? "az; geceler masada geçiyor" : s.lastLeftover <= 0.5 ? "düzensiz; telefon geç saate kalıyor" : "fena değil",
+    net,
+    puan: { alt, ust },
+    hedef: (s.f.hedef as string) || "henüz seçilmedi",
+    ihtimal,
+    ihtimalAnlam: ihtimal >= 75 ? "yüksek ihtimal" : ihtimal >= 40 ? "orta ihtimal" : ihtimal >= 15 ? "düşük ihtimal" : "çok düşük ihtimal",
+    cuzdan,
+    yakinlar,
+    degisen: degisen.slice(0, 4),
+  };
 }
 
 export function yerKisa(s: S): string {

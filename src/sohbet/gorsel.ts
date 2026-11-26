@@ -163,6 +163,7 @@ function kart(r: Raster, id: string, seed: number): void {
     bayram: ["#f6c9d4", "#f9e1e6", "#eeb2c2"],
     sinav: ["#16224a", "#2a3d7a", "#121b3a"],
     tebrik: ["#5a2a0c", "#a0581e", "#3f1d08"],
+    gunaydin: ["#f7d79b", "#fbe9c6", "#f2c46d"],
   };
   const stops = (bg[id] ?? bg.cuma).map(hex);
   r.gradV(0, 0, W, H, stops, 10);
@@ -178,7 +179,7 @@ function kart(r: Raster, id: string, seed: number): void {
   r.rect(4, 4, W - 8, 1, gold); r.rect(4, H - 5, W - 8, 1, gold); r.rect(4, 4, 1, H - 8, gold); r.rect(W - 5, 4, 1, H - 8, gold);
   r.rect(6, 6, W - 12, 1, darker(gold, 0.3)); r.rect(6, H - 7, W - 12, 1, darker(gold, 0.3));
   // buket
-  const cols = id === "bayram" ? ["#e0567a", "#f08aa4", "#c93d63", "#ffb3c6"] : id === "sinav" ? ["#e8e8f4", "#d64561", "#f5f0e0"] : ["#d6283f", "#b51d33", "#ef4d62"];
+  const cols = id === "gunaydin" ? ["#ffd23f", "#f9a03f", "#fff1a8"] : id === "bayram" ? ["#e0567a", "#f08aa4", "#c93d63", "#ffb3c6"] : id === "sinav" ? ["#e8e8f4", "#d64561", "#f5f0e0"] : ["#d6283f", "#b51d33", "#ef4d62"];
   const cx = 80, cy = 96;
   for (let i = 0; i < 9; i++) {
     const a = (i / 8) * Math.PI;

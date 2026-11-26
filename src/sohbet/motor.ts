@@ -59,6 +59,8 @@ export interface Beat {
   evenIfKus?: boolean;
   /** Önceki beatin hemen ardından gelsin (tepkiler). */
   hemen?: boolean;
+  /** Ayın ortasındaki kriz: gelince ayrılmış son akşam açılır. */
+  kriz?: boolean;
 }
 
 export interface ActiveAsk {
@@ -67,7 +69,11 @@ export interface ActiveAsk {
   delivered: boolean;
   answered: boolean;
   seen: boolean;
+  /** Aynı sohbete yeni soru gelince eskisi cezasız kapanır. */
+  skipped?: boolean;
 }
+
+export interface Iz { ad: string; yon: 1 | -1 }
 
 interface QItem { due: number; chat: ChatId; from: string; kind: Kind; text: string; media?: string; time: string; beat?: Beat; last?: boolean }
 
@@ -96,6 +102,13 @@ export interface S {
   answered: number;
   ignored: Record<string, number>;
   monthLog: { ignoredWho: string[]; answeredWho: string[] };
+  /** Krize ayrılmış akşam (kilitli). */
+  yedek: number;
+  /** Ay başındaki bağlar ve ders: "bu ay ne değişti" için. */
+  snap: { bond: Record<string, number>; study: number };
+  /** Geçen ayın kalan akşamları (uyku/yorgunluk). */
+  lastLeftover: number;
+  answeredBy: Record<string, number>;
 }
 
 export interface MonthSummary { month: number; title: string; lines: string[]; kind: "ay" | "sinav" }
@@ -162,6 +175,9 @@ export class Game {
   private nextId = 1;
   private waiting: Beat[] = [];
   ended = false;
+  krizVar = false;
+  /** Arayüz için: son olay notu ("yedek akşam açıldı") */
+  not: string | null = null;
   /** Arayüz için: son eklenen mesajlar */
   onMsg: ((m: Msg) => void) | null = null;
 
@@ -171,7 +187,13 @@ export class Game {
       seed, rng, k: kadroKur(rng), month: 0, budget: 4, study: 0, para: 0,
       bond: { anne: 70, baba: 65, kardes: 60, teyze: 60, kanka: 68, ilgi: 30, etut: 45, patron: 50, rehber: 50, sinif: 50 },
       f: {}, kus: {}, msgs: [], used: new Set(), answered: 0, ignored: {}, monthLog: { ignoredWho: [], answeredWho: [] },
+      yedek: 0, snap: { bond: {}, study: 0 }, lastLeftover: 0, answeredBy: {},
     };
+    // aile tipi ve hane: tekrar oynanabilirlik için
+    this.s.f.aileTip = rng.chance(0.5) ? "muhafazakar" : "laik";
+    this.s.f.ayriBaba = rng.chance(0.3) ? 1 : 0;
+    this.s.f.krizTip = rng.chance(0.5) ? "is" : "tasinma";
+    this.s.f.vr = rng.int(0, 1 << 20);
   }
 
   get budgetMax(): number {
@@ -199,10 +221,13 @@ export class Game {
     this.waiting = [];
     s.monthLog = { ignoredWho: [], answeredWho: [] };
     this.clock = 0;
-    s.budget = this.budgetMax;
+    s.budget = this.budgetMax - 1;
+    s.yedek = 1;
+    s.snap = { bond: { ...s.bond }, study: s.study };
     MONTH_START[s.month]?.(s);
     const beats = BEATS.filter((b) => b.m === s.month && !b.after && this.eligible(b)).sort((a, b) => a.at - b.at);
     this.waiting = BEATS.filter((b) => b.m === s.month && b.after);
+    this.krizVar = beats.some((b) => b.kriz);
     let t = 700;
     let prevEnd = t;
     for (const b of beats) {
@@ -216,7 +241,15 @@ export class Game {
   private schedule(b: Beat, start: number): number {
     const s = this.s;
     if (b.fx) this.apply(b.fx);
-    const lines = (typeof b.lines === "function" ? b.lines(s) : b.lines).map((l) => this.parse(l));
+    let raw = typeof b.lines === "function" ? b.lines(s) : b.lines;
+    // "baba?:" yalnız aile grubunda; baba ayrı yaşıyorsa düşer. "baba:" ise özelden gelir.
+    if (b.chat === "aile" && s.f.ayriBaba) {
+      const ozel = raw.filter((l) => l.startsWith("baba: "));
+      raw = raw.filter((l) => !l.startsWith("baba: ") && !l.startsWith("baba?: "));
+      if (ozel.length) this.schedule({ id: b.id + "_babaozel", m: s.month, chat: "baba", at: b.at, lines: ozel, saat: b.saat }, start + 1500);
+    }
+    raw = raw.map((l) => (l.startsWith("baba?: ") ? "baba: " + l.slice(7) : l));
+    const lines = raw.map((l) => this.parse(l));
     let t = start;
     let [hh, mm] = (b.saat ?? this.randomSaat(b.chat)).split(":").map(Number);
     lines.forEach((l, i) => {
@@ -257,8 +290,16 @@ export class Game {
     return { from, kind: "text", text: x(this.s, body) };
   }
 
+  private yedekAc(not: string): void {
+    if (this.s.yedek <= 0) return;
+    this.s.budget += this.s.yedek;
+    this.s.yedek = 0;
+    this.not = not;
+  }
+
   private activate(b: Beat): void {
     if (!b.ask) return;
+    for (const o of this.asks) if (o.beat.chat === b.chat && !o.answered) { o.answered = true; o.skipped = true; }
     const opts = (typeof b.ask.opts === "function" ? b.ask.opts(this.s) : b.ask.opts).filter((o) => !o.need || o.need(this.s));
     if (opts.length === 0) return;
     this.asks.push({ beat: b, opts, delivered: true, answered: false, seen: false });
@@ -269,6 +310,8 @@ export class Game {
     this.clock += dt;
     const out: Msg[] = [];
     while (this.queue.length && this.queue[0].due <= this.clock) out.push(this.deliver(this.queue.shift()!));
+    // krizsiz ayda: bütün mesajlar gelince ayrılmış akşam açılır
+    if (!this.queue.length && this.s.yedek > 0 && !this.krizVar) this.yedekAc("Ay sakin geçti, bir akşamın daha var.");
     return out;
   }
 
@@ -279,6 +322,7 @@ export class Game {
     else for (const o of s.msgs) if (o.chat === q.chat && o.from === "me") o.tick = 3;
     s.msgs.push(m);
     if (q.last && q.beat && !q.beat.after) this.activate(q.beat);
+    if (q.last && q.beat?.kriz) this.yedekAc("Bir akşamı buna ayırmıştın.");
     this.onMsg?.(m);
     return m;
   }
@@ -303,19 +347,33 @@ export class Game {
     return this.asks.find((a) => a.beat.chat === chat && !a.answered) ?? null;
   }
 
-  canAfford(o: Opt): boolean {
-    return this.s.budget >= (o.cost ?? 1);
+  /** Kısa/rutin cevap yarım akşam; zaman alan ya da uzun cevap tam akşam. */
+  costOf(o: Opt): number {
+    if (o.cost !== undefined) return o.cost;
+    const says = Array.isArray(o.say) ? o.say : [o.say];
+    if (says.length > 1 || says.some((t) => t.startsWith("#foto:") || t.startsWith("~ "))) return 1;
+    if ((o.fx?.st ?? 0) < 0) return 1;
+    return xPreview(this.s, says[0]).length <= 24 ? 0.5 : 1;
   }
+
+  canAfford(o: Opt): boolean {
+    return this.s.budget >= this.costOf(o) - 1e-9;
+  }
+
+  /** Son cevabın izi (kim ↑/↓) */
+  sonIz: Iz[] = [];
 
   answer(a: ActiveAsk, idx: number): void {
     const s = this.s;
     const o = a.opts[idx];
     if (a.answered || !this.canAfford(o)) return;
     a.answered = true;
-    s.budget -= o.cost ?? 1;
+    s.budget = Math.max(0, s.budget - this.costOf(o));
     s.answered++;
     const who = a.beat.ask?.who ?? OWNER[a.beat.chat] ?? a.beat.chat;
     s.monthLog.answeredWho.push(who);
+    s.answeredBy[who] = (s.answeredBy[who] ?? 0) + 1;
+    const once = { ...s.bond };
     s.f["cevap_" + a.beat.id] = idx + 1;
     const says = Array.isArray(o.say) ? o.say : [o.say];
     const [hh, mm] = this.lastTime(a.beat.chat);
@@ -326,6 +384,7 @@ export class Game {
       t += 500;
     }
     if (o.fx) this.apply(o.fx);
+    this.sonIz = Object.keys(s.bond).filter((k) => Math.abs(s.bond[k] - (once[k] ?? 0)) >= 3).map((k) => ({ ad: k, yon: s.bond[k] > (once[k] ?? 0) ? 1 : -1 }));
     const then = o.then ? (typeof o.then === "function" ? o.then(s) : o.then) : [];
     if (then.length) {
       const b: Beat = { id: a.beat.id + "_then", m: s.month, chat: a.beat.chat, at: 0, lines: then, saat: `${hh}:${mm}` };
@@ -366,11 +425,13 @@ export class Game {
     this.flush();
     for (const a of this.asks) {
       if (a.answered) continue;
+      if (!a.beat.ask) continue;
       const ask = a.beat.ask!;
       const who = ask.who ?? OWNER[a.beat.chat] ?? a.beat.chat;
       const d = a.seen ? ask.seen ?? -12 : ask.unread ?? -8;
       s.bond[who] = Math.max(0, (s.bond[who] ?? 50) + d);
       s.ignored[who] = (s.ignored[who] ?? 0) + 1;
+      if (who === "ilgi") s.f.ilgiIhmal = { m: s.month, seen: a.seen };
       if (d <= -4) s.monthLog.ignoredWho.push(who);
       if (ask.ignoreFx) this.apply(ask.ignoreFx);
       const late = a.seen ? ask.seenLine : ask.unreadLine;
@@ -393,8 +454,9 @@ export class Game {
       }
     }
     this.flush();
-    const leftover = s.budget;
-    if (s.month <= 9) s.study += leftover + (s.f.kursBirakti ? 0 : 1);
+    const leftover = s.budget + s.yedek;
+    s.lastLeftover = leftover;
+    if (s.month <= 9) s.study += leftover + 1.5;
     const sum: MonthSummary = { month: s.month, title: AYLAR[s.month], lines: SUMMARY(s, leftover), kind: s.month === 9 ? "sinav" : "ay" };
     s.month++;
     if (s.month >= 12) this.ended = true;

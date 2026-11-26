@@ -48,6 +48,29 @@ describe("sohbet demosu", () => {
     expect(erkek).toBeGreaterThan(5);
   });
 
+  it("akşam ekonomisi: kısa cevap yarım, zaman alan tam; kriz için ayrılan akşam krizle açılıyor", async () => {
+    const { Game } = await import("../src/sohbet/motor");
+    const g = new Game(5);
+    g.startMonth();
+    expect(g.s.budget).toBe(3);
+    expect(g.s.yedek).toBe(1);
+    expect(g.costOf({ say: "tamam anne 💛" })).toBe(0.5);
+    expect(g.costOf({ say: ["tabi, atıyorum", "#foto:notlar"] })).toBe(1);
+    expect(g.costOf({ say: "olur", fx: { st: -1 } })).toBe(1);
+    g.flush();
+    expect(g.s.yedek).toBe(0); // Eylül'ün krizi (ilgi) geldi
+    expect(g.s.budget).toBe(4);
+  });
+
+  it("varyantlar: farklı tohumlarda aile tipi, hane ve kriz türü değişiyor", () => {
+    const tip = new Set<string>();
+    for (let s = 1; s <= 20; s++) {
+      const g = oyna(s * 7, "karisik");
+      tip.add(`${g.s.f.aileTip}|${g.s.f.krizTip}|${g.s.f.ayriBaba}`);
+    }
+    expect(tip.size).toBeGreaterThan(4);
+  });
+
   it("strateji sonucu etkiliyor: hep ders > hep arkadaş (ortalama puan)", () => {
     const avg = (st: Strateji) => {
       let t = 0;

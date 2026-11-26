@@ -1,6 +1,6 @@
 // "dem" — Bir Ömür sohbet demosunun arayüzü. Tek dosyaya derlenir: prototype/sohbet-demo.html
 import { Game, AYLAR, AY_YIL, xPreview, type ChatId, type Msg, type ActiveAsk, type MonthSummary, type Opt } from "./motor";
-import { chatName, senderName, GROUPS, kalanlar, yerKisa, neden } from "./icerik";
+import { chatName, senderName, GROUPS, kalanlar, yerKisa, neden, durum } from "./icerik";
 import { photo, kartResim, portre, simge, type PortreTarif } from "./gorsel";
 import type { Raster } from "../scene";
 import { hash } from "../scene/palette";
@@ -82,7 +82,12 @@ function chatsSorted(): ChatId[] {
 function akşamlar(): string {
   const max = g.budgetMax;
   let h = "";
-  for (let i = 0; i < max; i++) h += `<i class="bardak ${i < g.s.budget ? "dolu" : ""}"></i>`;
+  const b = g.s.budget;
+  for (let i = 0; i < max; i++) {
+    const kilit = g.s.yedek > 0 && i === max - 1;
+    const c = kilit ? "kilit" : b >= i + 1 ? "dolu" : b >= i + 0.5 ? "yarim" : "";
+    h += `<i class="bardak ${c}"></i>`;
+  }
   return h;
 }
 function statusBar(): string {
@@ -144,6 +149,11 @@ function onDelivered(msgs: Msg[]): void {
     renderReply();
   } else liste(false);
   if (away.length) banner(away[away.length - 1]);
+  if (g.not) {
+    toast(g.not);
+    g.not = null;
+    if (screen === "liste") liste(false);
+  }
 }
 function refreshTyping(): void {
   if (screen === "sohbet" && cur) {
@@ -210,11 +220,12 @@ function liste(full = true): void {
   const html = `
   <div class="telefon">
     ${statusBar()}
+    <button class="tutamac" id="tutamac" aria-label="Durum paneli"><i></i></button>
     <header class="uygulama"><div class="logo">dem<span>.</span></div>
       <button class="aksam" id="aksam"><span>bu ay</span>${akşamlar()}</button></header>
     <div class="liste">${rows}</div>
     <div class="bırak"><button id="birak" class="${!g.queue.length && (bekleyen === 0 || g.s.budget === 0) ? "nabiz" : ""}">${birakOnay > Date.now() ? `${bekleyen} sohbet cevap bekliyor. Yine de bırak?` : `Telefonu bırak <small>→ ${sonAy ? "yılın sonu" : ayAdi}</small>`}</button></div>
-    ${!ipucuGosterildi ? `<div class="ipucu" id="ipucu"><b>Bu ay ${g.budgetMax} akşamın var.</b><br>Her cevap bir akşamını alır. Kalan akşamlar derse gider.<br>Herkese yetişemezsin.</div>` : ""}
+    ${!ipucuGosterildi ? `<div class="ipucu" id="ipucu"><b>Bu ay ${g.budgetMax} akşamın var.</b><br>Kısa cevap yarım akşam, sohbet bir akşam. Kilitli bardak önemli bir an için saklı.<br><small>Aşağı çek: durum paneli</small></div>` : ""}
   </div>`;
   if (full || !document.querySelector(".liste")) app.innerHTML = html;
   else {
@@ -230,14 +241,77 @@ function liste(full = true): void {
   }
   for (const el of document.querySelectorAll<HTMLElement>(".satir")) el.onclick = () => ac(el.dataset.c as ChatId);
   document.getElementById("birak")!.onclick = birak;
-  document.getElementById("aksam")!.onclick = () => toast("Her cevap bir akşamını alır. Kalan akşamlar masa başında, derste geçer.");
+  document.getElementById("aksam")!.onclick = panelAc;
+  document.getElementById("tutamac")!.onclick = panelAc;
+  cekmeKur();
   const ip = document.getElementById("ipucu");
   if (ip) {
     ip.onclick = () => { ipucuGosterildi = true; ip.remove(); };
     window.setTimeout(() => { ipucuGosterildi = true; ip.classList.add("git"); }, 5200);
   }
 }
+/* ---------- durum paneli ---------- */
+function panelAc(): void {
+  if (document.getElementById("panel")) return;
+  const d = durum(g.s, g.s.budget + g.s.yedek);
+  const ok = (y: number) => (y > 0 ? '<b class="yukari">↑</b>' : y < 0 ? '<b class="asagi">↓</b>' : '<b class="sabit">·</b>');
+  const el = document.createElement("div");
+  el.id = "panel";
+  el.innerHTML = `
+    <div class="panel-ic">
+      <div class="p-satir"><span>Akşamlar</span><div>${akşamlar()}</div></div>
+      <p class="p-alt">${g.s.budget.toString().replace(".", ",")} akşam açık${g.s.yedek ? " · 1 akşam önemli bir an için ayrılmış" : ""}. Kalan akşamlar derse gider.</p>
+      <div class="p-grid">
+        <div><small>Ruh hâli</small><b>${d.ruh.puan}</b><p>${esc(d.ruh.anlam)}</p></div>
+        <div><small>Uyku</small><b>${d.uyku.split(";")[0]}</b><p>${esc(d.uyku.split(";")[1] ?? "")}</p></div>
+        <div><small>Bilgi (TYT net)</small><b>${d.net ? `${d.net.alt}–${d.net.ust}` : "—"}</b><p>${d.net ? esc(d.net.anlam) : "ilk deneme Kasım'da"}</p></div>
+        <div><small>Cüzdan</small><p class="p-cuzdan">${esc(d.cuzdan)}</p></div>
+      </div>
+      <div class="p-hedef">
+        <small>Hedef · ${esc(d.hedef)}</small>
+        <div class="p-hedef-ust"><b>%${d.ihtimal}</b><span>${d.ihtimalAnlam}</span></div>
+        <div class="p-bar"><i style="width:${d.ihtimal}%"></i></div>
+        <p>Tahmini puan ${d.puan.alt}–${d.puan.ust}. Sınav günü stres, uyku ve şans da etkiler.</p>
+        <p class="p-not">Tahmini, oyun içi: kurgu puan sistemi. Gerçek ÖSYM taban sıralamaları bu demoda kullanılmıyor.</p>
+      </div>
+      <small class="p-baslik">En yakın 5 kişi (bu ay)</small>
+      ${d.yakinlar.map((y) => `<div class="p-kisi ${y.sustu ? "sus" : ""}">${avatar(y.who, "av kucuk")}<span>${esc(y.ad)}</span><div class="p-bag"><i style="width:${y.bag}%"></i></div>${y.sustu ? '<em>sustu</em>' : ok(y.yon)}</div>`).join("")}
+      <small class="p-baslik">Bu ay ne değişti</small>
+      <ul>${d.degisen.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+      <button id="panel-kapat">Kapat ⌃</button>
+    </div>`;
+  document.querySelector(".telefon")!.appendChild(el);
+  requestAnimationFrame(() => el.classList.add("acik"));
+  const kapat = () => { el.classList.remove("acik"); window.setTimeout(() => el.remove(), 300); };
+  document.getElementById("panel-kapat")!.onclick = kapat;
+  let y0 = 0;
+  el.addEventListener("touchstart", (e) => (y0 = e.touches[0].clientY), { passive: true });
+  el.addEventListener("touchend", (e) => { if (y0 - e.changedTouches[0].clientY > 60) kapat(); });
+}
+function cekmeKur(): void {
+  const t = document.querySelector<HTMLElement>(".telefon");
+  if (!t || (t as any)._cek) return;
+  (t as any)._cek = 1;
+  let y0 = -1;
+  t.addEventListener("touchstart", (e) => { const y = e.touches[0].clientY; const l = t.querySelector(".liste"); y0 = y < 150 || (l && l.scrollTop <= 0) ? y : -1; }, { passive: true });
+  t.addEventListener("touchend", (e) => { if (y0 >= 0 && e.changedTouches[0].clientY - y0 > 70) panelAc(); y0 = -1; });
+}
+function izGoster(): void {
+  const iz = g.sonIz.filter((z) => z.ad !== "sinif" || true);
+  const notu = g.not;
+  g.not = null;
+  if (!iz.length && !notu) return;
+  const ad = (w: string) => (w === "anne" ? "Annen" : w === "baba" ? "Baban" : w === "sinif" ? "Sınıf" : senderName(g.s, w));
+  const el = document.createElement("div");
+  el.className = "iz";
+  el.innerHTML = iz.map((z) => `<span class="${z.yon > 0 ? "yukari" : "asagi"}">${esc(ad(z.ad))} ${z.yon > 0 ? "↑" : "↓"}</span>`).join("") + (notu ? `<span class="not">${esc(notu)}</span>` : "");
+  document.querySelector(".telefon")?.appendChild(el);
+  window.setTimeout(() => el.classList.add("git"), 1900);
+  window.setTimeout(() => el.remove(), 2400);
+}
+
 function toast(t: string): void {
+  if (document.getElementById("ipucu")) return; // ipucu okunurken üstüne yazma
   const el = document.createElement("div");
   el.className = "toast";
   el.textContent = t;
@@ -271,9 +345,10 @@ function ac(c: ChatId): void {
     <div class="cevap" id="cevap"></div>
   </div>`;
   document.getElementById("geri")!.onclick = () => liste();
+  cekmeKur();
   renderHeader();
-  renderMessages(true);
   renderReply();
+  renderMessages(true);
 }
 function renderHeader(): void {
   const el = document.getElementById("alt");
@@ -320,7 +395,7 @@ function renderMessages(first = false): void {
   const box = document.getElementById("mesajlar");
   if (!box || !cur) return;
   const msgs = g.s.msgs.filter((m) => m.chat === cur);
-  const nearBottom = first || box.scrollHeight - box.scrollTop - box.clientHeight < 140;
+  const nearBottom = first || box.scrollHeight - box.scrollTop - box.clientHeight < 300;
   box.innerHTML = msgs.map((m, i) => bubble(m, msgs[i - 1])).join("") + `<div class="balon o yaziyor" id="yaziyor" style="display:${g.typing(cur) ? "flex" : "none"}"><i></i><i></i><i></i></div>`;
   if (!first) lastRenderedId = Math.max(lastRenderedId, ...msgs.map((m) => m.id));
   if (first) lastRenderedId = Math.max(0, ...msgs.map((m) => m.id));
@@ -351,27 +426,38 @@ function renderReply(): void {
   const a: ActiveAsk | null = g.askFor(cur);
   const own = { kanka: "kanka", ilgi: "ilgi", etut: "etut", kardes: "kardes", patron: "patron" }[cur as string];
   if (!a) {
-    el.innerHTML = cur === "kurs" || cur === "sonuc" ? `<div class="kapali">Bu hesaba cevap yazılamaz</div>` : `<div class="sahte-giris">${own && own in g.s.kus ? "Yazacak bir şey bulamıyorsun" : "Mesaj"}</div>`;
+    el.innerHTML = cur === "kurs" || cur === "sonuc" ? `<div class="kapali">Bu hesaba cevap yazılamaz</div>` : `<div class="kapali">${own && own in g.s.kus ? "Yazacak bir şey bulamıyorsun." : "Şu an cevap bekleyen bir şey yok."}</div>`;
     return;
   }
-  const key = a.beat.id + ":" + g.s.budget;
+  const key = a.beat.id + ":" + g.s.budget + ":" + g.s.yedek;
   if (el.dataset.k === key) return;
   el.dataset.k = key;
+  const box = document.getElementById("mesajlar");
+  const dipteydi = box ? box.scrollHeight - box.scrollTop - box.clientHeight < 300 : false;
+  requestAnimationFrame(() => { if (box && dipteydi) box.scrollTop = box.scrollHeight; });
   el.innerHTML =
     `<div class="secenekler">` +
     a.opts
       .map((o, i) => {
-        const cost = o.cost ?? 1;
+        const cost = g.costOf(o);
         const ok = g.canAfford(o);
-        return `<button class="secenek" data-i="${i}" ${ok ? "" : "disabled"}><span>${optLabel(o)}</span><em>${"<i class='bardak dolu'></i>".repeat(cost)}</em></button>`;
+        const bardak = cost === 0.5 ? "<i class='bardak yarim'></i>" : "<i class='bardak dolu'></i>".repeat(cost);
+        return `<button class="secenek" data-i="${i}" ${ok ? "" : "disabled"}><span>${optLabel(o)}</span><em>${bardak}</em></button>`;
       })
       .join("") +
-    (g.s.budget === 0 ? `<div class="vakit-yok">Bu ay başka akşamın kalmadı.</div>` : "") +
+    (g.s.budget < 0.5 ? `<div class="vakit-yok">${g.s.yedek ? "Açık akşamın kalmadı. Ayırdığın son akşam önemli bir an için bekliyor." : "Bu ay başka akşamın kalmadı."}</div>` : "") +
     `</div>`;
   for (const b of el.querySelectorAll<HTMLButtonElement>(".secenek")) {
     b.onclick = () => {
+      const once = g.s.budget;
       g.answer(a, Number(b.dataset.i));
       el.dataset.k = "";
+      const harcanan = once - g.s.budget;
+      izGoster();
+      const ak = document.createElement("span");
+      ak.className = "iz-aksam";
+      ak.textContent = harcanan === 0.5 ? "½ akşam" : `${harcanan} akşam`;
+      document.querySelector(".iz")?.appendChild(ak);
       const msgs = g.advance(0);
       renderMessages();
       renderReply();
@@ -433,6 +519,6 @@ function basla(seed: number): void {
 }
 
 // Test kancası: başsız tarayıcı otomatik oynatırken kullanır.
-(window as any).__dem = { get g() { return g; }, liste, ac, birak, basla };
+(window as any).__dem = { get g() { return g; }, liste, ac, birak, basla, panelAc };
 const q = new URLSearchParams(location.search);
 basla(Number(q.get("tohum")) || Date.now() % 1e9);

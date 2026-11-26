@@ -60,6 +60,10 @@ with sync_playwright() as p:
             if q == 0 and not targets:
                 break
         if shot: pg.screenshot(path=str(out / f"m{m:02d}-liste-son.png"))
+        if m in (2, 6, 10):
+            pg.evaluate("__dem.panelAc()"); pg.wait_for_timeout(500)
+            pg.screenshot(path=str(out / f"m{m:02d}-panel.png"))
+            pg.click("#panel-kapat", force=True); pg.wait_for_timeout(400)
         pg.click("#birak", force=True)
         pg.wait_for_timeout(300)
         if pg.query_selector("#birak"): pg.click("#birak", force=True)
