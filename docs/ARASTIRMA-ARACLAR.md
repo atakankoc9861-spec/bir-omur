@@ -47,6 +47,32 @@ Karar ilkesi: Bir aracı alırız, eğer (1) lisansı uygunsa, (2) Android'de ç
 
 ---
 
+## A2. GitHub taramasında ek bulunanlar (ikinci tur)
+
+### 9. SimPaths — akademik hayat simülasyonu (Simülasyon, danışman olarak)
+- **Ne:** Essex Üniversitesi'nin açık kaynak "yaşam seyri mikrosimülasyonu". Eğitim, iş, aile, sağlık ve para arasındaki karşılıklı etkileri modelliyor, gerçek veriyle doğrulanmış. Java, EUPL-1.2 lisansı. GitHub: simpaths/SimPaths
+- **Kullanım:** Kodunu almıyoruz (Java, Avrupa'ya özel, verisi serbest değil). Ama "eğitim işi, iş evliliği, evlilik sağlığı nasıl etkiler" sorularında yöntemlerine bakılacak. Simülasyon departmanının danışmanı.
+
+### 10. PPgp/wpp2024 — BM nüfus verisinin hazır paketi (Veri)
+- **Ne:** BM WPP 2024 verilerini tek yıllık ölçekte içeren R paketi. Lisans: CC BY 3.0 IGO.
+- **Kullanım:** Doğum, ölüm, yaşam tabloları için ham CSV'ler yerine bu paketten çekmek daha temiz olabilir.
+
+### 11. dr5hn/countries-states-cities-database — şehirler (Dünya ve Kültür)
+- **Ne:** 250 ülke, ~5.000 il/eyalet, ~150.000 şehir. Lisans: ODbL (kaynak gösterilir, türetilen veri de açık kalır).
+- **Kullanım:** "İzmir'in Bornova'sında doğdun" gibi yer adları için. Hangi şehrin çekileceği nüfus ağırlıklı olmalı.
+
+### 12. mledoze/countries — ülke kimlik kartları (Veri / Kültür)
+- **Ne:** ISO 3166-1'e göre ülkeler: diller, komşular, yüzölçümü, para birimi, bayrak. Lisans: ODbL.
+
+### 13. Wave Function Collapse — sahne yerleşimi (Görsel, aday)
+- **Ne:** Tek bir örnekten benzer ama farklı düzenler üreten algoritma (mxgmn/WaveFunctionCollapse). JavaScript uyarlaması: kchapelier/wavefunctioncollapse.
+- **Kullanım:** Oda içi eşya yerleşimi, sokak/köy düzeni gibi sahnelerin her seferinde farklı ama mantıklı çıkması için. Lisans kontrolü Görsel departmanında.
+
+### 14. kchapelier/procedural-generation — kaynak listesi (Görsel)
+- JavaScript odaklı prosedürel üretim kaynakları listesi. Görsel departmanının başvuru kitabı.
+
+---
+
 ## B. Bilinçli olarak REDDEDİLENLER
 
 | Araç | Neden almıyoruz |
